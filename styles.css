@@ -1,0 +1,94 @@
+/* Splatoon 3 风格基础样式 */
+:root {
+    --splat-yellow: #E6FF00; /* 打工黄色 */
+    --splat-purple: #603BFF;
+    --splat-orange: #FF8000;
+    --splat-black: #2d2d2d;
+    --splat-bg: #1a1a1a;
+}
+
+body {
+    background-color: var(--splat-bg);
+    color: white;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    margin: 0;
+}
+
+/* 导航栏 */
+.navbar {
+    background-color: var(--splat-black);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid var(--splat-yellow);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li:hover {
+    color: var(--splat-yellow);
+}
+
+/* 页面容器 */
+.page-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Boss/武器卡片基础样式 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #333;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    border-color: var(--splat-yellow);
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* 表格基础样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: var(--splat-yellow);
+    color: black;
+    padding: 10px;
+}
+
+td {
+    border-bottom: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
