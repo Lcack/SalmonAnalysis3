@@ -1,0 +1,1424 @@
+{
+    "weapon": {
+        "Blaster_Bear_Coop": {
+            "id": "Blaster_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章爆破枪",
+            "name_en": "Grizzco Blaster",
+            "name_jp": "クマサン印のブラスター",
+            "image": "images/weapon_flat/Path_Wst_Blaster_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Charger_Bear_Coop": {
+            "id": "Charger_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章狙击枪",
+            "name_en": "Grizzco Charger",
+            "name_jp": "クマサン印のチャージャー",
+            "image": "images/weapon_flat/Path_Wst_Charger_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "X",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Maneuver_Bear_Coop": {
+            "id": "Maneuver_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章机动枪",
+            "name_en": "Grizzco Dualies",
+            "name_jp": "クマサン印のマニューバー",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Roller_Bear_Coop": {
+            "id": "Roller_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章滚筒",
+            "name_en": "Grizzco Roller",
+            "name_jp": "クマサン印のローラー",
+            "image": "images/weapon_flat/Path_Wst_Roller_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "X",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Saber_Bear_Coop": {
+            "id": "Saber_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章刮水刀",
+            "name_en": "Grizzco Splatana",
+            "name_jp": "クマサン印のワイパー",
+            "image": "images/weapon_flat/Path_Wst_Saber_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "X",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shelter_Bear_Coop": {
+            "id": "Shelter_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章防空伞",
+            "name_en": "Grizzco Brella",
+            "name_jp": "クマサン印のシェルター",
+            "image": "images/weapon_flat/Path_Wst_Shelter_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Slosher_Bear_Coop": {
+            "id": "Slosher_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章泼桶",
+            "name_en": "Grizzco Slosher",
+            "name_jp": "クマサン印のスロッシャー",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "X",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Stringer_Bear_Coop": {
+            "id": "Stringer_Bear_Coop",
+            "type": "Bear",
+            "name_zh": "熊先生印章猎鱼弓",
+            "name_en": "Grizzco Stringer",
+            "name_jp": "クマサン印のストリンガー",
+            "image": "images/weapon_flat/Path_Wst_Stringer_Bear_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Blaster_LightLong_Coop": {
+            "id": "Blaster_LightLong_Coop",
+            "type": "Blaster",
+            "name_zh": "快速爆破枪 精英",
+            "name_en": "Rapid Blaster Pro",
+            "name_jp": "Rブラスターエリート",
+            "image": "images/weapon_flat/Path_Wst_Blaster_LightLong_00.png",
+            "rating": {
+                "overall": 2.0,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Blaster_LightShort_Coop": {
+            "id": "Blaster_LightShort_Coop",
+            "type": "Blaster",
+            "name_zh": "冲涂爆破枪",
+            "name_en": "Clash Blaster",
+            "name_jp": "クラッシュブラスター",
+            "image": "images/weapon_flat/Path_Wst_Blaster_LightShort_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Blaster_Light_Coop": {
+            "id": "Blaster_Light_Coop",
+            "type": "Blaster",
+            "name_zh": "快速爆破枪",
+            "name_en": "Rapid Blaster",
+            "name_jp": "ラピッドブラスター",
+            "image": "images/weapon_flat/Path_Wst_Blaster_Light_00.png",
+            "rating": {
+                "overall": 2.5,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Blaster_Long_Coop": {
+            "id": "Blaster_Long_Coop",
+            "type": "Blaster",
+            "name_zh": "远距爆破枪",
+            "name_en": "Range Blaster",
+            "name_jp": "ロングブラスター",
+            "image": "images/weapon_flat/Path_Wst_Blaster_Long_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 985,
+                    "Range": 2.9,
+                    "Inking": 0,
+                    "Ink Efficiency": 5000,
+                    "Mob Clearing": 72,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Blaster_Middle_Coop": {
+            "id": "Blaster_Middle_Coop",
+            "type": "Blaster",
+            "name_zh": "火热爆破枪",
+            "name_en": "Blaster",
+            "name_jp": "ホットブラスター",
+            "image": "images/weapon_flat/Path_Wst_Blaster_Middle_00.png",
+            "rating": {
+                "overall": 2.5,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Blaster_Precision_Coop": {
+            "id": "Blaster_Precision_Coop",
+            "type": "Blaster",
+            "name_zh": "S-BLAST92",
+            "name_en": "S-BLAST '92",
+            "name_jp": "S-BLAST92",
+            "image": "images/weapon_flat/Path_Wst_Blaster_Precision_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Blaster_Short_Coop": {
+            "id": "Blaster_Short_Coop",
+            "type": "Blaster",
+            "name_zh": "新星爆破枪",
+            "name_en": "Luna Blaster",
+            "name_jp": "ノヴァブラスター",
+            "image": "images/weapon_flat/Path_Wst_Blaster_Short_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Brush_Heavy_Coop": {
+            "id": "Brush_Heavy_Coop",
+            "type": "Brush",
+            "name_zh": "文森",
+            "name_en": "Painbrush",
+            "name_jp": "フィンセント",
+            "image": "images/weapon_flat/Path_Wst_Brush_Heavy_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Brush_Mini_Coop": {
+            "id": "Brush_Mini_Coop",
+            "type": "Brush",
+            "name_zh": "巴勃罗",
+            "name_en": "Inkbrush",
+            "name_jp": "パブロ",
+            "image": "images/weapon_flat/Path_Wst_Brush_Mini_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Brush_Normal_Coop": {
+            "id": "Brush_Normal_Coop",
+            "type": "Brush",
+            "name_zh": "北斋",
+            "name_en": "Octobrush",
+            "name_jp": "ホクサイ",
+            "image": "images/weapon_flat/Path_Wst_Brush_Normal_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Charger_Keeper_Coop": {
+            "id": "Charger_Keeper_Coop",
+            "type": "Charger",
+            "name_zh": "高压油管枪",
+            "name_en": "Goo Tuber",
+            "name_jp": "ソイチューバー",
+            "image": "images/weapon_flat/Path_Wst_Charger_Keeper_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Charger_Light_Coop": {
+            "id": "Charger_Light_Coop",
+            "type": "Charger",
+            "name_zh": "14式竹筒枪·甲",
+            "name_en": "Bamboozler 14 Mk I",
+            "name_jp": "14式竹筒銃・甲",
+            "image": "images/weapon_flat/Path_Wst_Charger_Light_00.png",
+            "rating": {
+                "overall": 2.5,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Charger_Long_Coop": {
+            "id": "Charger_Long_Coop",
+            "type": "Charger",
+            "name_zh": "公升4K",
+            "name_en": "E-liter 4K",
+            "name_jp": "リッター4K",
+            "image": "images/weapon_flat/Path_Wst_Charger_Long_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Charger_Normal_Coop": {
+            "id": "Charger_Normal_Coop",
+            "type": "Charger",
+            "name_zh": "斯普拉蓄力狙击枪",
+            "name_en": "Splat Charger",
+            "name_jp": "スプラチャージャー",
+            "image": "images/weapon_flat/Path_Wst_Charger_Normal_00.png",
+            "rating": {
+                "overall": 2.0,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Charger_Pencil_Coop": {
+            "id": "Charger_Pencil_Coop",
+            "type": "Charger",
+            "name_zh": "R-PEN/5H",
+            "name_en": "Snipewriter 5H",
+            "name_jp": "R-PEN/5H",
+            "image": "images/weapon_flat/Path_Wst_Charger_Pencil_00.png",
+            "rating": {
+                "overall": 3.5,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Charger_Quick_Coop": {
+            "id": "Charger_Quick_Coop",
+            "type": "Charger",
+            "name_zh": "鱿快洁α",
+            "name_en": "Classic Squiffer",
+            "name_jp": "スクイックリンα",
+            "image": "images/weapon_flat/Path_Wst_Charger_Quick_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Maneuver_Dual_Coop": {
+            "id": "Maneuver_Dual_Coop",
+            "type": "Maneuver",
+            "name_zh": "双重清洁枪",
+            "name_en": "Dualie Squelchers",
+            "name_jp": "デュアルスイーパー",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Dual_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Maneuver_Gallon_Coop": {
+            "id": "Maneuver_Gallon_Coop",
+            "type": "Maneuver",
+            "name_zh": "开尔文525",
+            "name_en": "Glooga Dualies",
+            "name_jp": "ケルビン525",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Gallon_00.png",
+            "rating": {
+                "overall": 2.0,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Maneuver_Long_Coop": {
+            "id": "Maneuver_Long_Coop",
+            "type": "Maneuver",
+            "name_zh": "灭熄FF",
+            "name_en": "Douser Dualies FF",
+            "name_jp": "ガエンFF",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Long_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Maneuver_Normal_Coop": {
+            "id": "Maneuver_Normal_Coop",
+            "type": "Maneuver",
+            "name_zh": "斯普拉机动枪",
+            "name_en": "Splat Dualies",
+            "name_jp": "スプラマニューバー",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Normal_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Maneuver_Short_Coop": {
+            "id": "Maneuver_Short_Coop",
+            "type": "Maneuver",
+            "name_zh": "溅镀枪",
+            "name_en": "Dapple Dualies",
+            "name_jp": "スパッタリー",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Short_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Maneuver_Stepper_Coop": {
+            "id": "Maneuver_Stepper_Coop",
+            "type": "Maneuver",
+            "name_zh": "四重弹跳手枪 黑",
+            "name_en": "Dark Tetra Dualies",
+            "name_jp": "クアッドホッパーブラック",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Stepper_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Roller_Compact_Coop": {
+            "id": "Roller_Compact_Coop",
+            "type": "Roller",
+            "name_zh": "碳纤维滚筒",
+            "name_en": "Carbon Roller",
+            "name_jp": "カーボンローラー",
+            "image": "images/weapon_flat/Path_Wst_Roller_Compact_00.png",
+            "rating": {
+                "overall": 2.0,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Roller_Heavy_Coop": {
+            "id": "Roller_Heavy_Coop",
+            "type": "Roller",
+            "name_zh": "电动马达滚筒",
+            "name_en": "Dynamo Roller",
+            "name_jp": "ダイナモローラー",
+            "image": "images/weapon_flat/Path_Wst_Roller_Heavy_00.png",
+            "rating": {
+                "overall": 2.0,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Roller_Hunter_Coop": {
+            "id": "Roller_Hunter_Coop",
+            "type": "Roller",
+            "name_zh": "可变式滚筒",
+            "name_en": "Flingza Roller",
+            "name_jp": "ヴァリアブルローラー",
+            "image": "images/weapon_flat/Path_Wst_Roller_Hunter_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Roller_Normal_Coop": {
+            "id": "Roller_Normal_Coop",
+            "type": "Roller",
+            "name_zh": "斯普拉滚筒",
+            "name_en": "Splat Roller",
+            "name_jp": "スプラローラー",
+            "image": "images/weapon_flat/Path_Wst_Roller_Normal_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Roller_Wide_Coop": {
+            "id": "Roller_Wide_Coop",
+            "type": "Roller",
+            "name_zh": "宽滚筒",
+            "name_en": "Big Swig Roller",
+            "name_jp": "ワイドローラー",
+            "image": "images/weapon_flat/Path_Wst_Roller_Wide_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Saber_Heavy_Coop": {
+            "id": "Saber_Heavy_Coop",
+            "type": "Saber",
+            "name_zh": "巨齿刮水刀 薄荷",
+            "name_en": "Mint Decavitator",
+            "name_jp": "デンタルワイパーミント",
+            "image": "images/weapon_flat/Path_Wst_Saber_Heavy_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Saber_Lite_Coop": {
+            "id": "Saber_Lite_Coop",
+            "type": "Saber",
+            "name_zh": "雨刷刮水刀",
+            "name_en": "Splatana Wiper",
+            "name_jp": "ドライブワイパー",
+            "image": "images/weapon_flat/Path_Wst_Saber_Lite_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Saber_Normal_Coop": {
+            "id": "Saber_Normal_Coop",
+            "type": "Saber",
+            "name_zh": "工作刮水刀",
+            "name_en": "Splatana Stamper",
+            "name_jp": "ジムワイパー",
+            "image": "images/weapon_flat/Path_Wst_Saber_Normal_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shelter_Compact_Coop": {
+            "id": "Shelter_Compact_Coop",
+            "type": "Shelter",
+            "name_zh": "特工配件",
+            "name_en": "Undercover Brella",
+            "name_jp": "スパイガジェット",
+            "image": "images/weapon_flat/Path_Wst_Shelter_Compact_00.png",
+            "rating": {
+                "overall": 2.0,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shelter_Focus_Coop": {
+            "id": "Shelter_Focus_Coop",
+            "type": "Shelter",
+            "name_zh": "24式可替换伞·甲",
+            "name_en": "Recycled Brella 24 Mk I",
+            "name_jp": "24式張替傘・甲",
+            "image": "images/weapon_flat/Path_Wst_Shelter_Focus_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shelter_Normal_Coop": {
+            "id": "Shelter_Normal_Coop",
+            "type": "Shelter",
+            "name_zh": "遮阳防空伞",
+            "name_en": "Splat Brella",
+            "name_jp": "パラシェルター",
+            "image": "images/weapon_flat/Path_Wst_Shelter_Normal_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shelter_Wide_Coop": {
+            "id": "Shelter_Wide_Coop",
+            "type": "Shelter",
+            "name_zh": "露营防空伞",
+            "name_en": "Tenta Brella",
+            "name_jp": "キャンピングシェルター",
+            "image": "images/weapon_flat/Path_Wst_Shelter_Wide_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Blaze_Coop": {
+            "id": "Shooter_Blaze_Coop",
+            "type": "Shooter",
+            "name_zh": "专业模型枪MG",
+            "name_en": "Aerospray MG",
+            "name_jp": "プロモデラーMG",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Blaze_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Expert_Coop": {
+            "id": "Shooter_Expert_Coop",
+            "type": "Shooter",
+            "name_zh": "顶尖射击枪",
+            "name_en": "Splattershot Pro",
+            "name_jp": "プライムシューター",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Expert_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_First_Coop": {
+            "id": "Shooter_First_Coop",
+            "type": "Shooter",
+            "name_zh": "新叶射击枪",
+            "name_en": "Splattershot Jr.",
+            "name_jp": "わかばシューター",
+            "image": "images/weapon_flat/Path_Wst_Shooter_First_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Flash_Coop": {
+            "id": "Shooter_Flash_Coop",
+            "type": "Shooter",
+            "name_zh": "开瓶喷泉枪",
+            "name_en": "Squeezer",
+            "name_jp": "ボトルガイザー",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Flash_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Gravity_Coop": {
+            "id": "Shooter_Gravity_Coop",
+            "type": "Shooter",
+            "name_zh": ".52加仑",
+            "name_en": ".52 Gal",
+            "name_jp": ".52ガロン",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Gravity_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 3.5,
+                    "Range": 1.5,
+                    "Inking": 3.5,
+                    "Ink Efficiency": 1.5,
+                    "Mob Clearing": 1.0,
+                    "Endlag": 5.0
+                }
+            }
+        },
+        "Shooter_Heavy_Coop": {
+            "id": "Shooter_Heavy_Coop",
+            "type": "Shooter",
+            "name_zh": ".96加仑",
+            "name_en": ".96 Gal",
+            "name_jp": ".96ガロン",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Heavy_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Long_Coop": {
+            "id": "Shooter_Long_Coop",
+            "type": "Shooter",
+            "name_zh": "喷射清洁枪",
+            "name_en": "Jet Squelcher",
+            "name_jp": "ジェットスイーパー",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Long_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Normal_Coop": {
+            "id": "Shooter_Normal_Coop",
+            "type": "Shooter",
+            "name_zh": "斯普拉射击枪",
+            "name_en": "Splattershot",
+            "name_jp": "スプラシューター",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Normal_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Precision_Coop": {
+            "id": "Shooter_Precision_Coop",
+            "type": "Shooter",
+            "name_zh": "窄域标记枪",
+            "name_en": "Splash-o-matic",
+            "name_jp": "シャープマーカー",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Precision_00.png",
+            "rating": {
+                "overall": 3.5,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_QuickLong_Coop": {
+            "id": "Shooter_QuickLong_Coop",
+            "type": "Shooter",
+            "name_zh": "太空射击枪",
+            "name_en": "Splattershot Nova",
+            "name_jp": "スペースシューター",
+            "image": "images/weapon_flat/Path_Wst_Shooter_QuickLong_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 2.5,
+                    "Range": 2.5,
+                    "Inking": 5.0,
+                    "Ink Efficiency": 1.5,
+                    "Mob Clearing": 0.0,
+                    "Endlag": 5.0
+                }
+            }
+        },
+        "Shooter_QuickMiddle_Coop": {
+            "id": "Shooter_QuickMiddle_Coop",
+            "type": "Shooter",
+            "name_zh": "N-ZAP85",
+            "name_en": "N-ZAP '85",
+            "name_jp": "N-ZAP85",
+            "image": "images/weapon_flat/Path_Wst_Shooter_QuickMiddle_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_Short_Coop": {
+            "id": "Shooter_Short_Coop",
+            "type": "Shooter",
+            "name_zh": "广域标记枪",
+            "name_en": "Sploosh-o-matic",
+            "name_jp": "ボールドマーカー",
+            "image": "images/weapon_flat/Path_Wst_Shooter_Short_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Shooter_TripleMiddle_Coop": {
+            "id": "Shooter_TripleMiddle_Coop",
+            "type": "Shooter",
+            "name_zh": "H3卷管枪",
+            "name_en": "H-3 Nozzlenose",
+            "name_jp": "H3リールガン",
+            "image": "images/weapon_flat/Path_Wst_Shooter_TripleMiddle_00.png",
+            "rating": {
+                "overall": 1.0,
+                "tier": "C",
+                "dimensions": {
+                    "Killing": 4.5,
+                    "Range": 3.0,
+                    "Inking": 1.5,
+                    "Ink Efficiency": 1.5,
+                    "Mob Clearing": 2.0,
+                    "Endlag": 2.0
+                }
+            }
+        },
+        "Shooter_TripleQuick_Coop": {
+            "id": "Shooter_TripleQuick_Coop",
+            "type": "Shooter",
+            "name_zh": "L3卷管枪",
+            "name_en": "L-3 Nozzlenose",
+            "name_jp": "L3リールガン",
+            "image": "images/weapon_flat/Path_Wst_Shooter_TripleQuick_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 4.0,
+                    "Range": 2.0,
+                    "Inking": 3.0,
+                    "Ink Efficiency": 2.0,
+                    "Mob Clearing": 2.0,
+                    "Endlag": 3.0
+                }
+            }
+        },
+        "Slosher_Bathtub_Coop": {
+            "id": "Slosher_Bathtub_Coop",
+            "type": "Slosher",
+            "name_zh": "满溢泡澡泼桶",
+            "name_en": "Bloblobber",
+            "name_jp": "オーバーフロッシャー",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Bathtub_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Slosher_Diffusion_Coop": {
+            "id": "Slosher_Diffusion_Coop",
+            "type": "Slosher",
+            "name_zh": "洗笔桶",
+            "name_en": "Tri-Slosher",
+            "name_jp": "ヒッセン",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Diffusion_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Slosher_Double_Coop": {
+            "id": "Slosher_Double_Coop",
+            "type": "Slosher",
+            "name_zh": "墨瀑淋",
+            "name_en": "Dread Wringer",
+            "name_jp": "モップリン",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Double_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Slosher_Launcher_Coop": {
+            "id": "Slosher_Launcher_Coop",
+            "type": "Slosher",
+            "name_zh": "回旋泼桶",
+            "name_en": "Sloshing Machine",
+            "name_jp": "スクリュースロッシャー",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Launcher_00.png",
+            "rating": {
+                "overall": 2.0,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Slosher_Strong_Coop": {
+            "id": "Slosher_Strong_Coop",
+            "type": "Slosher",
+            "name_zh": "飞溅泼桶",
+            "name_en": "Slosher",
+            "name_jp": "バケットスロッシャー",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Strong_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Slosher_Washtub_Coop": {
+            "id": "Slosher_Washtub_Coop",
+            "type": "Slosher",
+            "name_zh": "爆炸泼桶",
+            "name_en": "Explosher",
+            "name_jp": "エクスプロッシャー",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Washtub_00.png",
+            "rating": {
+                "overall": 2.5,
+                "tier": "B",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Spinner_Downpour_Coop": {
+            "id": "Spinner_Downpour_Coop",
+            "type": "Spinner",
+            "name_zh": "圆珠笔",
+            "name_en": "Ballpoint Splatling",
+            "name_jp": "クーゲルシュライバー",
+            "image": "images/weapon_flat/Path_Wst_Spinner_Downpour_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Spinner_HyperShort_Coop": {
+            "id": "Spinner_HyperShort_Coop",
+            "type": "Spinner",
+            "name_zh": "审查者",
+            "name_en": "Heavy Edit Splatling",
+            "name_jp": "イグザミナー",
+            "image": "images/weapon_flat/Path_Wst_Spinner_HyperShort_00.png",
+            "rating": {
+                "overall": 3.5,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Spinner_Hyper_Coop": {
+            "id": "Spinner_Hyper_Coop",
+            "type": "Spinner",
+            "name_zh": "消防栓旋转枪",
+            "name_en": "Hydra Splatling",
+            "name_jp": "ハイドラント",
+            "image": "images/weapon_flat/Path_Wst_Spinner_Hyper_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Spinner_Quick_Coop": {
+            "id": "Spinner_Quick_Coop",
+            "type": "Spinner",
+            "name_zh": "斯普拉旋转枪",
+            "name_en": "Mini Splatling",
+            "name_jp": "スプラスピナー",
+            "image": "images/weapon_flat/Path_Wst_Spinner_Quick_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Spinner_Serein_Coop": {
+            "id": "Spinner_Serein_Coop",
+            "type": "Spinner",
+            "name_zh": "鹦鹉螺号47",
+            "name_en": "Nautilus 47",
+            "name_jp": "ノーチラス47",
+            "image": "images/weapon_flat/Path_Wst_Spinner_Serein_00.png",
+            "rating": {
+                "overall": 2.5,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Spinner_Standard_Coop": {
+            "id": "Spinner_Standard_Coop",
+            "type": "Spinner",
+            "name_zh": "桶装旋转枪",
+            "name_en": "Heavy Splatling",
+            "name_jp": "バレルスピナー",
+            "image": "images/weapon_flat/Path_Wst_Spinner_Standard_00.png",
+            "rating": {
+                "overall": 3.5,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Stringer_Explosion_Coop": {
+            "id": "Stringer_Explosion_Coop",
+            "type": "Stringer",
+            "name_zh": "邦普V",
+            "name_en": "Wellstring V",
+            "name_jp": "フルイドV",
+            "image": "images/weapon_flat/Path_Wst_Stringer_Explosion_00.png",
+            "rating": {
+                "overall": 5.0,
+                "tier": "S+",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Stringer_Normal_Coop": {
+            "id": "Stringer_Normal_Coop",
+            "type": "Stringer",
+            "name_zh": "三发猎鱼弓",
+            "name_en": "Tri-Stringer",
+            "name_jp": "トライストリンガー",
+            "image": "images/weapon_flat/Path_Wst_Stringer_Normal_00.png",
+            "rating": {
+                "overall": 3.0,
+                "tier": "A",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        },
+        "Stringer_Short_Coop": {
+            "id": "Stringer_Short_Coop",
+            "type": "Stringer",
+            "name_zh": "LACT-450",
+            "name_en": "REEF-LUX 450",
+            "name_jp": "LACT-450",
+            "image": "images/weapon_flat/Path_Wst_Stringer_Short_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
+        }
+    }
+}

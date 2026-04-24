@@ -1,0 +1,40 @@
+{
+  "boss": {
+    "SakelienGiant":{
+      "id": "SakelienGiant",
+      "name_zh": "横纲",
+      "name_en": "Cohozuna",
+      "name_jp": "ヨコヅナ",
+      "image_path": "images/boss/Badge_CoopBossKillNum_SakelienGiant_Lv00.png"
+    },
+    "SakeRope": {
+      "id": "SakeRope",
+      "name_zh": "辰龙",
+      "name_en": "Horrorboros",
+      "name_jp": "タツ",
+      "image_path": "images/boss/Badge_CoopBossKillNum_SakeRope_Lv00.png"
+    },
+    "SakeJaw":{
+      "id": "SakeJaw",
+      "name_zh": "巨颚",
+      "name_en": "Megalodontia",
+      "name_jp": "ジョー",
+      "image_path": "images/boss/Badge_CoopBossKillNum_SakeJaw_Lv00.png"
+    },
+    "Double": {
+      "id": "Double",
+      "name_zh": "横纲 辰龙头目联合",
+      "name_en": "Consul",
+      "name_jp": "ヨコヅナ タツ連合",
+      "image_path": "images/boss/Badge_CoopKillTripleBoss_Lv00.png"
+    },
+    "Triple": {
+      "id": "Triple",
+      "name_zh": "头目联合",
+      "name_en": "Triumvirate",
+      "name_jp": "オカシラ連合",
+      "image_path": "images/boss/Badge_CoopKillTripleBoss_Lv00.png"
+    }
+  }
+}    
+    

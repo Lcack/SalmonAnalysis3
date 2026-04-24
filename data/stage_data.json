@@ -1,0 +1,139 @@
+{
+    "stage": {
+        "Carousel": {
+            "id": "Carousel",
+            "name_zh": "醋饭海洋世界",
+            "name_en": "Wahoo World",
+            "name_jp": "スメーシーワールド",
+            "image": "images/stage/Vss_Carousel.png",
+            "imageL": "images/stageL/Vss_Carousel.png",
+            "imageBanner": "images/stageBanner/Vss_Carousel.png"
+        },
+        "District": {
+            "id": "District",
+            "name_zh": "鳗鲶区",
+            "name_en": "Eeltail Alley",
+            "name_jp": "ゴンズイ地区",
+            "image": "images/stage/Vss_District.png",
+            "imageL": "images/stageL/Vss_District.png",
+            "imageBanner": "images/stageBanner/Vss_District.png"
+        },
+        "Factory": {
+            "id": "Factory",
+            "name_zh": "鱼露遗迹",
+            "name_en": "Um'ami Ruins",
+            "name_jp": "ナンプラー遺跡",
+            "image": "images/stage/Vss_Factory.png",
+            "imageL": "images/stageL/Vss_Factory.png",
+            "imageBanner": "images/stageBanner/Vss_Factory.png"
+        },
+        "Manbou": {
+            "id": "Manbou",
+            "name_zh": "蛮颓大巨蛋",
+            "name_en": "Grand Splatlands Bowl",
+            "name_jp": "グランドバンカラアリーナ",
+            "image": "images/stage/Vss_Manbou.png",
+            "imageL": "images/stageL/Vss_Manbou.png",
+            "imageBanner": "images/stageBanner/Vss_Manbou.png"
+        },
+        "Random": {
+            "id": "Random",
+            "name_zh": "各地同时发生",
+            "name_en": "Multiple Sites",
+            "name_jp": "各地で同時発生",
+            "image": "images/stage/Unknown.png",
+            "imageL": "images/stageL/Unknown.png",
+            "imageBanner": "images/stageBanner/Unknown.png"
+        },
+        "Section": {
+            "id": "Section",
+            "name_zh": "塔拉波特购物公园",
+            "name_en": "Barnacle & Dime",
+            "name_jp": "タラポートショッピングパーク",
+            "image": "images/stage/Vss_Section.png",
+            "imageL": "images/stageL/Vss_Section.png",
+            "imageBanner": "images/stageBanner/Vss_Section.png"
+        },
+        "Shakedent": {
+            "id": "Shakedent",
+            "name_zh": "麦年海洋发电所",
+            "name_en": "Gone Fission Hydroplant",
+            "name_jp": "ムニ・エール海洋発電所",
+            "image": "images/stage/Cop_Shakedent.png",
+            "imageL": "images/stageL/Cop_Shakedent.png",
+            "imageBanner": "images/stageBanner/Cop_Shakedent.png"
+        },
+        "Shakehighway": {
+            "id": "Shakehighway",
+            "name_zh": "生筋子系统交流道遗址",
+            "name_en": "Jammin' Salmon Junction",
+            "name_jp": "すじこジャンクション跡",
+            "image": "images/stage/Cop_Shakehighway.png",
+            "imageL": "images/stageL/Cop_Shakehighway.png",
+            "imageBanner": "images/stageBanner/Cop_Shakehighway.png"
+        },
+        "Shakelift": {
+            "id": "Shakelift",
+            "name_zh": "时不知鲑烟熏工房",
+            "name_en": "Salmonid Smokeyard",
+            "name_jp": "トキシラズいぶし工房",
+            "image": "images/stage/Cop_Shakelift.png",
+            "imageL": "images/stageL/Cop_Shakelift.png",
+            "imageBanner": "images/stageBanner/Cop_Shakelift.png"
+        },
+        "Shakerail": {
+            "id": "Shakerail",
+            "name_zh": "鲑鱼心脏斗技场",
+            "name_en": "Bonerattle Arena",
+            "name_jp": "どんぴこ闘技場",
+            "image": "images/stage/Cop_Shakerail.png",
+            "imageL": "images/stageL/Cop_Shakerail.png",
+            "imageBanner": "images/stageBanner/Cop_Shakerail.png"
+        },
+        "Shakeship": {
+            "id": "Shakeship",
+            "name_zh": "漂浮落难船",
+            "name_en": "Marooner's Bay",
+            "name_jp": "難破船ドン・ブラコ",
+            "image": "images/stage/Cop_Shakeship.png",
+            "imageL": "images/stageL/Cop_Shakeship.png",
+            "imageBanner": "images/stageBanner/Cop_Shakeship.png"
+        },
+        "Shakespiral": {
+            "id": "Shakespiral",
+            "name_zh": "新卷堡",
+            "name_en": "Sockeye Station",
+            "name_jp": "アラマキ砦",
+            "image": "images/stage/Cop_Shakespiral.png",
+            "imageL": "images/stageL/Cop_Shakespiral.png",
+            "imageBanner": "images/stageBanner/Cop_Shakespiral.png"
+        },
+        "Shakeup": {
+            "id": "Shakeup",
+            "name_zh": "鲑坝",
+            "name_en": "Spawning Grounds",
+            "name_jp": "シェケナダム",
+            "image": "images/stage/Cop_Shakeup.png",
+            "imageL": "images/stageL/Cop_Shakeup.png",
+            "imageBanner": "images/stageBanner/Cop_Shakeup.png"
+        },
+        "Temple": {
+            "id": "Temple",
+            "name_zh": "竹蛏疏洪道",
+            "name_en": "Undertow Spillway",
+            "name_jp": "マテガイ放水路",
+            "image": "images/stage/Vss_Temple.png",
+            "imageL": "images/stageL/Vss_Temple.png",
+            "imageBanner": "images/stageBanner/Vss_Temple.png"
+        },
+        "Upland": {
+            "id": "Upland",
+            "name_zh": "海女美术大学",
+            "name_en": "Inkblot Art Academy",
+            "name_jp": "海女美術大学",
+            "image": "images/stage/Vss_Upland.png",
+            "imageL": "images/stageL/Vss_Upland.png",
+            "imageBanner": "images/stageBanner/Vss_Upland.png"
+        }
+    }
+}
