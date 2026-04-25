@@ -1,94 +1,595 @@
-/* Splatoon 3 风格基础样式 */
+/* ================================
+   SalmonAnalysis3 - Splatoon3 打工分析
+   样式表
+   ================================ */
+
+/* CSS 变量 - Splatoon3 风格配色 */
 :root {
-    --splat-yellow: #E6FF00; /* 打工黄色 */
-    --splat-purple: #603BFF;
-    --splat-orange: #FF8000;
-    --splat-black: #2d2d2d;
-    --splat-bg: #1a1a1a;
+    --splat-yellow: #E6FF00;
+    --splat-yellow-dark: #C5D900;
+    --splat-purple: #8B5CF6;
+    --splat-orange: #FF6B35;
+    --splat-pink: #FF4785;
+    --splat-cyan: #00D9FF;
+    --splat-black: #1a1a1a;
+    --splat-dark: #2d2d2d;
+    --splat-gray: #3d3d3d;
+    --splat-light: #666666;
+    --splat-bg: #0f0f0f;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--splat-bg);
-    color: white;
-    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    margin: 0;
+    color: var(--text-primary);
+    font-family: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-/* 导航栏 */
+/* ================================
+   导航栏
+   ================================ */
 .navbar {
-    background-color: var(--splat-black);
+    background: linear-gradient(135deg, var(--splat-black) 0%, var(--splat-dark) 100%);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem 2rem;
-    border-bottom: 3px solid var(--splat-yellow);
+    border-bottom: 4px solid var(--splat-yellow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--splat-yellow);
+    text-shadow: 2px 2px 0 var(--splat-orange);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    margin: 0;
+    gap: 10px;
 }
 
 .nav-links li {
-    margin-left: 20px;
+    padding: 0.6rem 1.2rem;
     cursor: pointer;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
 }
 
 .nav-links li:hover {
+    background-color: rgba(230, 255, 0, 0.1);
     color: var(--splat-yellow);
 }
 
-/* 页面容器 */
-.page-content {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.nav-links li.active {
+    background-color: var(--splat-yellow);
+    color: var(--splat-black);
 }
 
-/* Boss/武器卡片基础样式 */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+/* ================================
+   加载动画
+   ================================ */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--splat-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
 }
 
-.card {
-    background: #333;
-    border-radius: 8px;
-    padding: 10px;
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-content {
     text-align: center;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--splat-gray);
+    border-top-color: var(--splat-yellow);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ================================
+   页面内容
+   ================================ */
+.page-content {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--splat-yellow);
+    border-left: 5px solid var(--splat-orange);
+    padding-left: 1rem;
+}
+
+.page-content h2 {
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+    color: var(--splat-cyan);
+}
+
+/* ================================
+   按钮
+   ================================ */
+.btn-primary, .btn-secondary {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--splat-yellow);
+    color: var(--splat-black);
+}
+
+.btn-primary:hover {
+    background-color: var(--splat-yellow-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(230, 255, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--splat-gray);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--splat-light);
+    transform: translateY(-2px);
+}
+
+.file-upload-label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hint {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-left: 1rem;
+}
+
+/* ================================
+   首页 - 场次卡片
+   ================================ */
+.schedule-container {
+    background: linear-gradient(135deg, var(--splat-dark) 0%, var(--splat-gray) 100%);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--splat-yellow);
+    box-shadow: var(--shadow);
+}
+
+.schedule-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.schedule-card {
+    background: var(--splat-dark);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
     border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.card:hover {
-    border-color: var(--splat-yellow);
+.schedule-card:hover {
+    border-color: var(--splat-cyan);
     transform: translateY(-5px);
-    transition: 0.2s;
 }
 
-.card img {
-    width: 80px;
-    height: 80px;
+.schedule-card.current {
+    border-color: var(--splat-yellow);
+    background: linear-gradient(135deg, var(--splat-dark) 0%, rgba(230, 255, 0, 0.1) 100%);
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.schedule-stage {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--splat-yellow);
+}
+
+.schedule-boss {
+    background: var(--splat-purple);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.schedule-time {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.weapons-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.weapon-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--splat-gray);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    text-align: center;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.weapon-icon img {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
 }
 
-/* 表格基础样式 */
+/* ================================
+   筛选栏
+   ================================ */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+    background: var(--splat-dark);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 0.5rem 0.8rem;
+    border: 2px solid var(--splat-gray);
+    border-radius: 8px;
+    background: var(--splat-black);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    min-width: 150px;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: var(--splat-yellow);
+}
+
+/* ================================
+   表格
+   ================================ */
+.table-container {
+    background: var(--splat-dark);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 th {
-    background-color: var(--splat-yellow);
-    color: black;
-    padding: 10px;
+    background: linear-gradient(135deg, var(--splat-yellow) 0%, var(--splat-yellow-dark) 100%);
+    color: var(--splat-black);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 
 td {
-    border-bottom: 1px solid #444;
-    padding: 10px;
-    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--splat-gray);
+    color: var(--text-primary);
 }
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 武器标签 */
+.weapon-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.weapon-tag {
+    background: var(--splat-gray);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* 评分样式 */
+.rating-high { color: #4ade80; font-weight: bold; }
+.rating-mid { color: var(--splat-yellow); font-weight: bold; }
+.rating-low { color: var(--splat-orange); font-weight: bold; }
+
+/* ================================
+   统计页
+   ================================ */
+.stats-section {
+    margin-bottom: 3rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    background: var(--splat-dark);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--splat-cyan);
+}
+
+.stat-bar {
+    height: 8px;
+    background: var(--splat-gray);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--splat-cyan), var(--splat-purple));
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* ================================
+   武器页
+   ================================ */
+.weapon-controls {
+    background: var(--splat-dark);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.weapon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.weapon-card {
+    background: var(--splat-dark);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.weapon-card:hover {
+    border-color: var(--splat-yellow);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.weapon-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    background: var(--splat-gray);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.weapon-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.weapon-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.weapon-type {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.weapon-rating {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.weapon-rating.S-plus { color: #4ade80; }
+.weapon-rating.S { color: #22c55e; }
+.weapon-rating.A { color: var(--splat-cyan); }
+.weapon-rating.B { color: var(--splat-yellow); }
+.weapon-rating.C { color: var(--splat-orange); }
+
+.tier-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.tier-S-plus { background: rgba(74, 222, 128, 0.2); color: #4ade80; }
+.tier-S { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.tier-A { background: rgba(0, 217, 255, 0.2); color: var(--splat-cyan); }
+.tier-B { background: rgba(230, 255, 0, 0.2); color: var(--splat-yellow); }
+.tier-C { background: rgba(255, 107, 53, 0.2); color: var(--splat-orange); }
+
+/* 维度评分条 */
+.dimension-bars {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--splat-gray);
+}
+
+.dimension-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+}
+
+.dimension-label {
+    width: 80px;
+    color: var(--text-secondary);
+    text-align: right;
+    margin-right: 0.5rem;
+}
+
+.dimension-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--splat-gray);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.dimension-fill {
+    height: 100%;
+    background: var(--splat-yellow);
+    border-radius: 3px;
+}
+
+/* ================================
+   响应式适配
+   ================================ */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .page-content {
+        padding: 1rem;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .weapon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+/* ================================
+   工具类
+   ================================ */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.hidden { display: none !important; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mt-2 { margin-top: 1rem; }

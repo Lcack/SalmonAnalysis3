@@ -1,0 +1,11 @@
+{
+  "eggstrawork": [
+    {"no": 1, "Stage": "新卷堡", "Start_time": "2023/04/15", "Gold": 160, "Silver": 145, "Bronze": 140},
+    {"no": 2, "Stage": "麦年海洋发电所", "Start_time": "2023/07/08", "Gold": 170, "Silver": 155, "Bronze": 150},
+    {"no": 3, "Stage": "鲑坝", "Start_time": "2023/10/14", "Gold": 165, "Silver": 150, "Bronze": 145},
+    {"no": 4, "Stage": "漂浮落难船", "Start_time": "2024/01/20", "Gold": 175, "Silver": 160, "Bronze": 155},
+    {"no": 5, "Stage": "时不知鲑烟熏工房", "Start_time": "2024/04/13", "Gold": 180, "Silver": 165, "Bronze": 160},
+    {"no": 6, "Stage": "生筋子系统交流道遗址", "Start_time": "2024/07/06", "Gold": 185, "Silver": 170, "Bronze": 165},
+    {"no": 7, "Stage": "鲑鱼心脏斗技场", "Start_time": "2024/10/12", "Gold": 190, "Silver": 175, "Bronze": 170}
+  ]
+}

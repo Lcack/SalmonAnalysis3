@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalmonAnalysis3 - Splatoon3 打工分析</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">🐟 SalmonAnalysis3</div>
+        <ul class="nav-links">
+            <li onclick="showPage('home')" class="active" data-page="home">首页</li>
+            <li onclick="showPage('history')" data-page="history">历史记录</li>
+            <li onclick="showPage('stats')" data-page="stats">统计</li>
+            <li onclick="showPage('weapons')" data-page="weapons">武器</li>
+        </ul>
+    </nav>
+
+    <!-- 加载提示 -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>正在加载数据...</p>
+        </div>
+    </div>
+
+    <!-- 首页：当前/未来场次 -->
+    <section id="home" class="page-content">
+        <h1>🎯 当期打工场次</h1>
+        <div id="current-schedule" class="schedule-container">
+            <!-- 当前场次会在这里渲染 -->
+        </div>
+        
+        <h2>⏰ 未来场次</h2>
+        <div id="future-schedules" class="schedule-list">
+            <!-- 未来4场会在这里渲染 -->
+        </div>
+    </section>
+
+    <!-- 历史记录页 -->
+    <section id="history" class="page-content" style="display: none;">
+        <h1>📊 历史记录分析</h1>
+        
+        <!-- 筛选器 -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>场地：</label>
+                <select id="filter-stage">
+                    <option value="">全部场地</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Boss：</label>
+                <select id="filter-boss">
+                    <option value="">全部Boss</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>武器搜索：</label>
+                <input type="text" id="filter-weapon" placeholder="输入武器名称">
+            </div>
+            <div class="filter-group">
+                <label>最低评分：</label>
+                <select id="filter-rating">
+                    <option value="">全部</option>
+                    <option value="4">≥4分</option>
+                    <option value="3.5">≥3.5分</option>
+                    <option value="3">≥3分</option>
+                </select>
+            </div>
+            <button onclick="applyFilters()" class="btn-primary">筛选</button>
+            <button onclick="resetFilters()" class="btn-secondary">重置</button>
+        </div>
+
+        <!-- 历史表格 -->
+        <div class="table-container">
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>场次</th>
+                        <th>时间</th>
+                        <th>场地</th>
+                        <th>Boss</th>
+                        <th>武器配置</th>
+                        <th>评分</th>
+                    </tr>
+                </thead>
+                <tbody id="history-tbody">
+                    <!-- 历史数据会在这里渲染 -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 统计页 -->
+    <section id="stats" class="page-content" style="display: none;">
+        <h1>📈 统计分析</h1>
+        
+        <!-- 武器出场频率 -->
+        <div class="stats-section">
+            <h2>🔫 武器出场频率 TOP20</h2>
+            <div id="weapon-frequency" class="stats-grid">
+                <!-- 武器频率图表 -->
+            </div>
+        </div>
+
+        <!-- Big Run 奖牌 -->
+        <div class="stats-section">
+            <h2>🌊 Big Run 历史奖牌</h2>
+            <div class="table-container">
+                <table id="bigrun-table">
+                    <thead>
+                        <tr>
+                            <th>期数</th>
+                            <th>场地</th>
+                            <th>时间</th>
+                            <th>金</th>
+                            <th>银</th>
+                            <th>铜</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bigrun-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Eggstra Work 奖牌 -->
+        <div class="stats-section">
+            <h2>🥚 Eggstra Work 历史奖牌</h2>
+            <div class="table-container">
+                <table id="eggstra-table">
+                    <thead>
+                        <tr>
+                            <th>期数</th>
+                            <th>场地</th>
+                            <th>时间</th>
+                            <th>金</th>
+                            <th>银</th>
+                            <th>铜</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eggstra-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 武器页 -->
+    <section id="weapons" class="page-content" style="display: none;">
+        <h1>🔫 武器库</h1>
+        
+        <!-- 武器评分自定义 -->
+        <div class="weapon-controls">
+            <button onclick="downloadWeaponScores()" class="btn-secondary">📥 下载武器评分配置</button>
+            <label class="btn-secondary file-upload-label">
+                📤 上传自定义评分
+                <input type="file" id="upload-scores" accept=".json" onchange="uploadWeaponScores(event)" hidden>
+            </label>
+            <span class="hint">上传后会用你自己的评分重新计算所有场次</span>
+        </div>
+
+        <!-- 武器筛选 -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>武器类型：</label>
+                <select id="weapon-type-filter" onchange="filterWeapons()">
+                    <option value="">全部</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>排序：</label>
+                <select id="weapon-sort" onchange="sortWeapons()">
+                    <option value="rating-desc">评分高→低</option>
+                    <option value="rating-asc">评分低→高</option>
+                    <option value="name">名称</option>
+                    <option value="type">类型</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 武器网格 -->
+        <div id="weapon-grid" class="weapon-grid">
+            <!-- 武器卡片会在这里渲染 -->
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

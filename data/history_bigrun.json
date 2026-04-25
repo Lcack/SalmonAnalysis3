@@ -1,0 +1,12 @@
+{
+  "bigrun": [
+    {"no": 1, "Stage": "醋饭海洋世界", "Start_time": "2022/12/10", "Gold": 120, "Silver": 105, "Bronze": 100},
+    {"no": 2, "Stage": "鳗鲶区", "Start_time": "2023/03/04", "Gold": 130, "Silver": 115, "Bronze": 110},
+    {"no": 3, "Stage": "竹蛏疏洪道", "Start_time": "2023/06/17", "Gold": 125, "Silver": 110, "Bronze": 105},
+    {"no": 4, "Stage": "海女美术大学", "Start_time": "2023/09/09", "Gold": 140, "Silver": 125, "Bronze": 120},
+    {"no": 5, "Stage": "塔拉波特购物公园", "Start_time": "2023/12/02", "Gold": 135, "Silver": 120, "Bronze": 115},
+    {"no": 6, "Stage": "鱼露遗迹", "Start_time": "2024/03/09", "Gold": 145, "Silver": 130, "Bronze": 125},
+    {"no": 7, "Stage": "蛮颓大巨蛋", "Start_time": "2024/06/15", "Gold": 150, "Silver": 135, "Bronze": 130},
+    {"no": 8, "Stage": "醋饭海洋世界", "Start_time": "2024/09/07", "Gold": 155, "Silver": 140, "Bronze": 135}
+  ]
+}
