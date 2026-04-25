@@ -1426,7 +1426,19 @@
             "name_zh": "绿问号",
             "name_en": "?",
             "name_jp": "?",
-            "image": "images/weapon_flat/QuestionIcon_00.png"
+            "image": "images/weapon_flat/QuestionIcon_00.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
         },
         "QuestionIcon_01": {
             "id": "QuestionIcon_01",
@@ -1434,7 +1446,19 @@
             "name_zh": "金问号",
             "name_en": "?",
             "name_jp": "?",
-            "image": "images/weapon_flat/QuestionIcon_01.png"
+            "image": "images/weapon_flat/QuestionIcon_01.png",
+            "rating": {
+                "overall": 4.0,
+                "tier": "S",
+                "dimensions": {
+                    "Killing": 0,
+                    "Range": 0,
+                    "Inking": 0,
+                    "Ink Efficiency": 0,
+                    "Mob Clearing": 0,
+                    "Endlag": 0
+                }
+            }
         }
     }
 }
