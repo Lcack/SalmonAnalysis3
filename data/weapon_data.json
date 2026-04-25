@@ -1419,6 +1419,22 @@
                     "Endlag": 0
                 }
             }
+        },
+        "QuestionIcon_00": {
+            "id": "QuestionIcon_00",
+            "type": "?",
+            "name_zh": "绿问号",
+            "name_en": "?",
+            "name_jp": "?",
+            "image": "images/weapon_flat/QuestionIcon_00.png"
+        },
+        "QuestionIcon_01": {
+            "id": "QuestionIcon_01",
+            "type": "?",
+            "name_zh": "金问号",
+            "name_en": "?",
+            "name_jp": "?",
+            "image": "images/weapon_flat/QuestionIcon_01.png"
         }
     }
 }
