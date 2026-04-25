@@ -1,12 +1,256 @@
 {
   "bigrun": [
-    {"no": 1, "Stage": "醋饭海洋世界", "Start_time": "2022/12/10", "Gold": 120, "Silver": 105, "Bronze": 100},
-    {"no": 2, "Stage": "鳗鲶区", "Start_time": "2023/03/04", "Gold": 130, "Silver": 115, "Bronze": 110},
-    {"no": 3, "Stage": "竹蛏疏洪道", "Start_time": "2023/06/17", "Gold": 125, "Silver": 110, "Bronze": 105},
-    {"no": 4, "Stage": "海女美术大学", "Start_time": "2023/09/09", "Gold": 140, "Silver": 125, "Bronze": 120},
-    {"no": 5, "Stage": "塔拉波特购物公园", "Start_time": "2023/12/02", "Gold": 135, "Silver": 120, "Bronze": 115},
-    {"no": 6, "Stage": "鱼露遗迹", "Start_time": "2024/03/09", "Gold": 145, "Silver": 130, "Bronze": 125},
-    {"no": 7, "Stage": "蛮颓大巨蛋", "Start_time": "2024/06/15", "Gold": 150, "Silver": 135, "Bronze": 130},
-    {"no": 8, "Stage": "醋饭海洋世界", "Start_time": "2024/09/07", "Gold": 155, "Silver": 140, "Bronze": 135}
+    {
+        "no": "1",
+        "Start_time": "2022/12/10 08:00",
+        "End_time": "2022/12/12 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "醋饭海洋世界",
+        "King_Salmonid": "横纲",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 137, 
+        "Silver": 113, 
+        "Bronze": 88
+    },
+    {
+        "no": "2",
+        "Start_time": "2023/03/04 08:00",
+        "End_time": "2023/03/06 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "海女美术大学",
+        "King_Salmonid": "辰龙",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 141, 
+        "Silver": 117, 
+        "Bronze": 90
+    },
+    {
+        "no": "3",
+        "Start_time": "2023/06/10 08:00",
+        "End_time": "2023/06/12 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "竹蛏疏洪道",
+        "King_Salmonid": "横纲",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 150, 
+        "Silver": 124, 
+        "Bronze": 94
+    },
+    {
+        "no": "4",
+        "Start_time": "2023/09/02 08:00",
+        "End_time": "2023/09/04 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "鱼露遗迹",
+        "King_Salmonid": "横纲",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 156,
+        "Silver": 131,
+        "Bronze": 102
+    },
+    {
+        "no": "5",
+        "Start_time": "2023/12/02 08:00",
+        "End_time": "2023/12/04 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "塔拉波特购物公园",
+        "King_Salmonid": "巨颚",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },
+    {
+        "no": "6",
+        "Start_time": "2024/03/09 08:00",
+        "End_time": "2024/03/11 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "鳗鲶区",
+        "King_Salmonid": "横纲",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },
+    {
+        "no": "7",
+        "Start_time": "2024/06/08 08:00",
+        "End_time": "2024/06/10 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "各地同时发生",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },
+    {
+        "no": "8",
+        "Start_time": "2024/09/07 08:00",
+        "End_time": "2024/09/09 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "蛮颓大巨蛋",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 150,
+        "Silver": 125,
+        "Bronze": 100
+    },
+    {
+        "no": "9",
+        "Start_time": "2024/12/14 08:00",
+        "End_time": "2024/12/16 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "醋饭海洋世界",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },
+    {
+        "no": "10",
+        "Start_time": "2025/03/08 08:00",
+        "End_time": "2025/03/10 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "海女美术大学",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },
+    {
+        "no": "11",
+        "Start_time": "2025/06/14 08:00",
+        "End_time": "2025/06/16 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "竹蛏疏洪道",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },
+    {
+        "no": "12",
+        "Start_time": "2025/09/20 08:00",
+        "End_time": "2025/09/22 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "鱼露遗迹",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },
+    {
+        "no": "13",
+        "Start_time": "2025/12/13 08:00",
+        "End_time": "2025/12/15 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "塔拉波特购物公园",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    },    
+    {
+        "no": "14",
+        "Start_time": "2026/03/14 08:00",
+        "End_time": "2026/03/16 08:00",
+        "Duration": "48",
+        "Is_Big_Run": "true",
+        "Stage": "鳗鲶区",
+        "King_Salmonid": "头目联合",
+        "Weapon": [
+            "绿问号",
+            "绿问号",
+            "绿问号",
+            "绿问号"
+        ],
+        "Gold": 135,
+        "Silver": 110,
+        "Bronze": 85
+    }
   ]
 }

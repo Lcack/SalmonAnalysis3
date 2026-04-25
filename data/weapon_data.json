@@ -6,7 +6,7 @@
             "name_zh": "熊先生印章爆破枪",
             "name_en": "Grizzco Blaster",
             "name_jp": "クマサン印のブラスター",
-            "image": "images/weapon_flat/Path_Wst_Blaster_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Blaster_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "S+",
@@ -26,7 +26,7 @@
             "name_zh": "熊先生印章狙击枪",
             "name_en": "Grizzco Charger",
             "name_jp": "クマサン印のチャージャー",
-            "image": "images/weapon_flat/Path_Wst_Charger_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Charger_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "X",
@@ -46,7 +46,7 @@
             "name_zh": "熊先生印章机动枪",
             "name_en": "Grizzco Dualies",
             "name_jp": "クマサン印のマニューバー",
-            "image": "images/weapon_flat/Path_Wst_Maneuver_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Maneuver_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "S+",
@@ -66,7 +66,7 @@
             "name_zh": "熊先生印章滚筒",
             "name_en": "Grizzco Roller",
             "name_jp": "クマサン印のローラー",
-            "image": "images/weapon_flat/Path_Wst_Roller_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Roller_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "X",
@@ -86,7 +86,7 @@
             "name_zh": "熊先生印章刮水刀",
             "name_en": "Grizzco Splatana",
             "name_jp": "クマサン印のワイパー",
-            "image": "images/weapon_flat/Path_Wst_Saber_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Saber_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "X",
@@ -106,7 +106,7 @@
             "name_zh": "熊先生印章防空伞",
             "name_en": "Grizzco Brella",
             "name_jp": "クマサン印のシェルター",
-            "image": "images/weapon_flat/Path_Wst_Shelter_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Shelter_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "S+",
@@ -126,7 +126,7 @@
             "name_zh": "熊先生印章泼桶",
             "name_en": "Grizzco Slosher",
             "name_jp": "クマサン印のスロッシャー",
-            "image": "images/weapon_flat/Path_Wst_Slosher_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Slosher_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "X",
@@ -146,7 +146,7 @@
             "name_zh": "熊先生印章猎鱼弓",
             "name_en": "Grizzco Stringer",
             "name_jp": "クマサン印のストリンガー",
-            "image": "images/weapon_flat/Path_Wst_Stringer_Bear_00.png",
+            "image": "images/weapon_flat/Path_Wst_Stringer_Bear.png",
             "rating": {
                 "overall": 5.0,
                 "tier": "S+",
