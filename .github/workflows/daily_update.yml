@@ -4,7 +4,8 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch: 
-
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,6 +23,9 @@ jobs:
         run: |
           node update_schedule.js > run_log.txt 2>&1
           cat run_log.txt
+          echo "MSG_BODY<<EOF" >> $GITHUB_ENV
+          cat run_log.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: 提交更新后的 JSON 到仓库
         run: |
@@ -42,9 +46,8 @@ jobs:
           subject: 鲑鱼跑数据更新报告
           to: ${{ secrets.MY_RECEIVE_EMAIL }}
           from: GitHub-Salmon-Bot
-          secure: true              # 465端口必须开启这个
-          connection_timeout: 30s   # 给跨国连接多一点时间
+          secure: true
           priority: normal
           body: |
             脚本运行结果：
-            $(cat run_log.txt)
+            ${{ env.MSG_BODY }}
