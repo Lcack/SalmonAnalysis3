@@ -35,13 +35,16 @@ jobs:
         if: always() 
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: imap.qq.com 
-          server_port: 993
+          server_address: smtp.qq.com 
+          server_port: 465
           username: ${{ secrets.MAIL_USERNAME }} 
           password: ${{ secrets.MAIL_PASSWORD }} 
           subject: 鲑鱼跑数据更新报告
           to: ${{ secrets.MY_RECEIVE_EMAIL }}
-          from: GitHub Action Update
+          from: GitHub-Salmon-Bot
+          secure: true              # 465端口必须开启这个
+          connection_timeout: 30s   # 给跨国连接多一点时间
+          priority: normal
           body: |
             脚本运行结果：
             $(cat run_log.txt)
