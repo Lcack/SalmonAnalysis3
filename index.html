@@ -9,7 +9,7 @@
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
-        <div class="logo">🐟 SalmonAnalysis3</div>
+        <div class="logo"><img src="images/icon/Badge_CoopClearDangerRateMax.png" alt="logo" class="logo-icon"> SalmonAnalysis3</div>
         <ul class="nav-links">
             <li onclick="showPage('home')" class="active" data-page="home">首页</li>
             <li onclick="showPage('history')" data-page="history">历史记录</li>
@@ -28,13 +28,13 @@
 
     <!-- 首页：当前/未来场次 -->
     <section id="home" class="page-content">
-        <h1>🎯 当期打工场次</h1>
-        <div id="current-schedule" class="schedule-container">
+        <h1>🎯 当前场次</h1>
+        <div id="current-schedule" class="current-schedule-container">
             <!-- 当前场次会在这里渲染 -->
         </div>
-        
+
         <h2>⏰ 未来场次</h2>
-        <div id="future-schedules" class="schedule-list">
+        <div id="future-schedules" class="future-schedules-grid">
             <!-- 未来4场会在这里渲染 -->
         </div>
     </section>
@@ -65,9 +65,10 @@
                 <label>最低评分：</label>
                 <select id="filter-rating">
                     <option value="">全部</option>
-                    <option value="4">≥4分</option>
-                    <option value="3.5">≥3.5分</option>
-                    <option value="3">≥3分</option>
+                    <option value="8">≥8/10</option>
+                    <option value="7">≥7/10</option>
+                    <option value="6">≥6/10</option>
+                    <option value="5">≥5/10</option>
                 </select>
             </div>
             <button onclick="applyFilters()" class="btn-primary">筛选</button>
@@ -82,9 +83,10 @@
                         <th>场次</th>
                         <th>时间</th>
                         <th>场地</th>
-                        <th>Boss</th>
+                        <th class="center-cell">Boss</th>
                         <th>武器配置</th>
-                        <th>评分</th>
+                        <th class="center-cell">雷达图</th>
+                        <th class="center-cell">评分</th>
                     </tr>
                 </thead>
                 <tbody id="history-tbody">
@@ -92,23 +94,20 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- 分页控件 -->
+        <div id="history-pagination" class="pagination-container">
+            <!-- 分页控件会在这里渲染 -->
+        </div>
     </section>
 
     <!-- 统计页 -->
     <section id="stats" class="page-content" style="display: none;">
         <h1>📈 统计分析</h1>
-        
-        <!-- 武器出场频率 -->
-        <div class="stats-section">
-            <h2>🔫 武器出场频率 TOP20</h2>
-            <div id="weapon-frequency" class="stats-grid">
-                <!-- 武器频率图表 -->
-            </div>
-        </div>
 
         <!-- Big Run 奖牌 -->
         <div class="stats-section">
-            <h2>🌊 Big Run 历史奖牌</h2>
+            <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopBigRunTrophy_Lv00.png" alt="Big Run" class="section-icon"> Big Run 历史奖牌</h2>
             <div class="table-container">
                 <table id="bigrun-table">
                     <thead>
@@ -128,7 +127,7 @@
 
         <!-- Eggstra Work 奖牌 -->
         <div class="stats-section">
-            <h2>🥚 Eggstra Work 历史奖牌</h2>
+            <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopContestTrophy_Lv02.png" alt="Eggstra Work" class="section-icon"> Eggstra Work 历史奖牌</h2>
             <div class="table-container">
                 <table id="eggstra-table">
                     <thead>

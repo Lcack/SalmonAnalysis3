@@ -58,6 +58,15 @@ body {
     font-weight: bold;
     color: var(--splat-yellow);
     text-shadow: 2px 2px 0 var(--splat-orange);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -202,19 +211,20 @@ body {
 /* ================================
    首页 - 场次卡片
    ================================ */
-.schedule-container {
-    background: linear-gradient(135deg, var(--splat-dark) 0%, var(--splat-gray) 100%);
-    border-radius: var(--border-radius);
-    padding: 2rem;
+.current-schedule-container {
     margin-bottom: 2rem;
-    border: 2px solid var(--splat-yellow);
-    box-shadow: var(--shadow);
 }
 
-.schedule-list {
+.future-schedules-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .future-schedules-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .schedule-card {
@@ -223,6 +233,11 @@ body {
     padding: 1.5rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
 }
 
 .schedule-card:hover {
@@ -232,7 +247,22 @@ body {
 
 .schedule-card.current {
     border-color: var(--splat-yellow);
-    background: linear-gradient(135deg, var(--splat-dark) 0%, rgba(230, 255, 0, 0.1) 100%);
+    min-height: 400px;
+}
+
+.current-schedule-overlay,
+.future-schedule-overlay {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(45, 45, 45, 0.6) 100%);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.schedule-card.current .current-schedule-overlay {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(45, 45, 45, 0.6) 100%);
 }
 
 .schedule-header {
@@ -255,6 +285,39 @@ body {
     font-size: 0.85rem;
 }
 
+.schedule-boss-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.countdown-timer {
+    color: var(--splat-cyan);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.future-timer {
+    color: var(--splat-yellow);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.current-duration {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: rgba(139, 92, 246, 0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--splat-purple);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+}
+
 .schedule-time {
     color: var(--text-secondary);
     font-size: 0.9rem;
@@ -265,6 +328,8 @@ body {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 1rem;
 }
 
 .weapon-icon {
@@ -360,6 +425,20 @@ td {
     color: var(--text-primary);
 }
 
+td.center-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.radar-cell {
+    padding: 0.5rem;
+}
+
+.radar-chart {
+    display: block;
+    margin: 0 auto;
+}
+
 tr:hover {
     background-color: rgba(255, 255, 255, 0.05);
 }
@@ -384,10 +463,104 @@ tr:hover {
 .rating-low { color: var(--splat-orange); font-weight: bold; }
 
 /* ================================
+   分页控件
+   ================================ */
+.pagination-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--splat-dark);
+    border-radius: var(--border-radius);
+}
+
+.pagination-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-size-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-size-selector select {
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--splat-gray);
+    border-radius: 6px;
+    background: var(--splat-black);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.page-buttons {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.page-buttons button {
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--splat-gray);
+    border-radius: 6px;
+    background: var(--splat-black);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 36px;
+}
+
+.page-buttons button:hover:not(:disabled) {
+    border-color: var(--splat-yellow);
+    background: rgba(230, 255, 0, 0.1);
+}
+
+.page-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.page-buttons button.active {
+    background: var(--splat-yellow);
+    border-color: var(--splat-yellow);
+    color: var(--splat-black);
+    font-weight: bold;
+}
+
+/* 历史表格中的武器图片 */
+.history-weapons {
+    justify-content: flex-start;
+}
+
+.history-weapons .weapon-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* ================================
    统计页
    ================================ */
 .stats-section {
     margin-bottom: 3rem;
+}
+
+.section-title-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    object-fit: contain;
 }
 
 .stats-grid {
@@ -489,6 +662,7 @@ tr:hover {
     font-weight: bold;
 }
 
+.weapon-rating.X { color: #fbbf24; text-shadow: 0 0 10px rgba(251, 191, 36, 0.5); }
 .weapon-rating.S-plus { color: #4ade80; }
 .weapon-rating.S { color: #22c55e; }
 .weapon-rating.A { color: var(--splat-cyan); }
@@ -504,6 +678,7 @@ tr:hover {
     margin-top: 0.5rem;
 }
 
+.tier-X { background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(251, 191, 36, 0.1)); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.5); }
 .tier-S-plus { background: rgba(74, 222, 128, 0.2); color: #4ade80; }
 .tier-S { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
 .tier-A { background: rgba(0, 217, 255, 0.2); color: var(--splat-cyan); }

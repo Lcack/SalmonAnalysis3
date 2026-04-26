@@ -1428,15 +1428,15 @@
             "name_jp": "オールランダム",
             "image": "images/weapon_flat/QuestionIcon_00.png",
             "rating": {
-                "overall": "?",
-                "tier": "?",
+                "overall": null,
+                "tier": null,
                 "dimensions": {
-                    "Killing": "?",
-                    "Range": "?",
-                    "Inking": "?",
-                    "Ink Efficiency": "?",
-                    "Mob Clearing": "?",
-                    "Endlag": "?"
+                    "Killing": null,
+                    "Range": null,
+                    "Inking": null,
+                    "Ink Efficiency": null,
+                    "Mob Clearing": null,
+                    "Endlag": null
                 }
             }
         },
@@ -1448,15 +1448,15 @@
             "name_jp": "クマフェス",
             "image": "images/weapon_flat/QuestionIcon_01.png",
             "rating": {
-                "overall": "?",
-                "tier": "?",
+                "overall": null,
+                "tier": null,
                 "dimensions": {
-                    "Killing": "?",
-                    "Range": "?",
-                    "Inking": "?",
-                    "Ink Efficiency": "?",
-                    "Mob Clearing": "?",
-                    "Endlag": "?"
+                    "Killing": null,
+                    "Range": null,
+                    "Inking": null,
+                    "Ink Efficiency": null,
+                    "Mob Clearing": null,
+                    "Endlag": null
                 }
             }
         }

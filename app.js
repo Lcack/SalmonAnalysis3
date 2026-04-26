@@ -188,7 +188,7 @@ function parseTimeString(timeStr) {
 function formatDateTime(date) {
     if (!date) return '-';
     const d = new Date(date);
-    return `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+    return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 }
 
 function formatDuration(hours) {
@@ -243,75 +243,294 @@ function showPage(pageId) {
 // ================================
 // 首页渲染
 // ================================
+let currentScheduleTimer = null;
+let futureScheduleTimer = null;
+
 function renderHome() {
     renderCurrentSchedule();
     renderFutureSchedules();
 }
 
+function startCurrentScheduleTimer(endTime) {
+    // 清除之前的定时器
+    if (currentScheduleTimer) {
+        clearInterval(currentScheduleTimer);
+    }
+
+    function updateTimer() {
+        const now = new Date();
+        const diff = endTime - now;
+
+        if (diff <= 0) {
+            document.getElementById('countdown-timer').textContent = '已结束';
+            clearInterval(currentScheduleTimer);
+            return;
+        }
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown-timer').textContent =
+            `还剩${hours}小时${minutes}分${seconds}秒`;
+    }
+
+    updateTimer();
+    currentScheduleTimer = setInterval(updateTimer, 1000);
+}
+
+function startFutureScheduleTimer(schedules) {
+    // 清除之前的定时器
+    if (futureScheduleTimer) {
+        clearInterval(futureScheduleTimer);
+    }
+
+    function updateTimers() {
+        const now = new Date();
+        schedules.forEach((s, index) => {
+            const timerEl = document.getElementById(`future-timer-${index}`);
+            if (!timerEl) return;
+
+            const diff = s.startTime - now;
+
+            if (diff <= 0) {
+                timerEl.textContent = '已开始';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            if (days > 0) {
+                timerEl.textContent = `${days}天${hours}小时${minutes}分钟后`;
+            } else {
+                timerEl.textContent = `${hours}小时${minutes}分钟后`;
+            }
+        });
+    }
+
+    updateTimers();
+    futureScheduleTimer = setInterval(updateTimers, 60000); // 每分钟更新一次
+}
+
+// 页面切换时清理定时器
+function showPage(pageId) {
+    // 清理首页定时器
+    if (pageId !== 'home') {
+        if (currentScheduleTimer) {
+            clearInterval(currentScheduleTimer);
+            currentScheduleTimer = null;
+        }
+        if (futureScheduleTimer) {
+            clearInterval(futureScheduleTimer);
+            futureScheduleTimer = null;
+        }
+    }
+
+    // 隐藏所有页面
+    document.querySelectorAll('.page-content').forEach(page => {
+        page.style.display = 'none';
+    });
+
+    // 显示目标页面
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.style.display = 'block';
+    }
+
+    // 更新导航状态
+    document.querySelectorAll('.nav-links li').forEach(li => {
+        li.classList.remove('active');
+        if (li.dataset.page === pageId) {
+            li.classList.add('active');
+        }
+    });
+
+    // 触发页面渲染
+    switch(pageId) {
+        case 'home':
+            renderHome();
+            break;
+        case 'history':
+            renderHistory();
+            break;
+        case 'stats':
+            renderStats();
+            break;
+        case 'weapons':
+            renderWeapons();
+            break;
+    }
+
+    // 滚动到顶部
+    window.scrollTo(0, 0);
+}
+
+function getStageByName(stageName) {
+    return Object.values(AppData.stages).find(s =>
+        s.name_zh === stageName || s.name_en === stageName || s.id === stageName
+    );
+}
+
+function generateRadarChart(weapons) {
+    const size = 80;
+    const center = size / 2;
+    const maxRadius = size * 0.4;
+    const ratings = weapons.map(w => w?.rating?.overall || 0);
+
+    // 四个角的坐标 (左上, 右上, 右下, 左下)
+    const corners = [
+        { x: center - maxRadius, y: center - maxRadius }, // 左上
+        { x: center + maxRadius, y: center - maxRadius }, // 右上
+        { x: center + maxRadius, y: center + maxRadius }, // 右下
+        { x: center - maxRadius, y: center + maxRadius }  // 左下
+    ];
+
+    // 生成网格线 (5层)
+    let gridLines = '';
+    for (let i = 1; i <= 5; i++) {
+        const r = (maxRadius * i) / 5;
+        const points = corners.map(c => {
+            const dx = c.x - center;
+            const dy = c.y - center;
+            return `${center + dx * i / 5},${center + dy * i / 5}`;
+        }).join(' ');
+        gridLines += `<polygon points="${points}" fill="none" stroke="#ddd" stroke-width="0.5"/>`;
+    }
+
+    // 生成对角线
+    const diagonals = `
+        <line x1="${center - maxRadius}" y1="${center - maxRadius}" x2="${center + maxRadius}" y2="${center + maxRadius}" stroke="#ddd" stroke-width="0.5"/>
+        <line x1="${center + maxRadius}" y1="${center - maxRadius}" x2="${center - maxRadius}" y2="${center + maxRadius}" stroke="#ddd" stroke-width="0.5"/>
+    `;
+
+    // 生成数据多边形
+    let dataPoints = '';
+    if (ratings.length > 0) {
+        const polygonPoints = ratings.slice(0, 4).map((rating, i) => {
+            const normalizedRating = Math.min(Math.max(rating / 5, 0), 1);
+            const corner = corners[i];
+            const dx = corner.x - center;
+            const dy = corner.y - center;
+            return `${center + dx * normalizedRating},${center + dy * normalizedRating}`;
+        }).join(' ');
+        dataPoints = `<polygon points="${polygonPoints}" fill="rgba(139, 92, 246, 0.5)" stroke="#8B5CF6" stroke-width="1.5"/>`;
+    }
+
+    return `
+        <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" class="radar-chart">
+            <rect width="100%" height="100%" fill="white"/>
+            ${gridLines}
+            ${diagonals}
+            ${dataPoints}
+        </svg>
+    `;
+}
+
 function renderCurrentSchedule() {
     const container = document.getElementById('current-schedule');
     if (!container) return;
-    
+
     if (!AppData.currentSchedule) {
         container.innerHTML = '<div class="schedule-card"><p>当前没有进行中的打工场次</p></div>';
         return;
     }
-    
+
     const s = AppData.currentSchedule;
     const weapons = getWeaponsForSchedule(s);
     const rating = calculateScheduleRating(weapons);
-    
+
+    // 格式化评分显示
+    const ratingDisplay = rating === null ? '?' : (rating.toFixed(1) + '/10');
+    const ratingClass = getRatingClass(rating === null ? 5 : rating / 2); // ?使用最高配色
+
+    // 获取boss图片
+    const bossImage = getBossImage(s.King_Salmonid);
+
+    // 获取场地Banner图片
+    const stage = getStageByName(s.Stage);
+    const bannerImage = stage?.imageBanner || null;
+
+    // 计算持续时间（小时）
+    const durationHours = s.Duration ? parseInt(s.Duration) : 0;
+
     container.innerHTML = `
-        <div class="schedule-card current">
-            <div class="schedule-header">
-                <span class="schedule-stage">${s.Stage || '未知场地'}</span>
-                <span class="schedule-boss">${s.King_Salmonid || '?'}</span>
-            </div>
-            <div class="schedule-time">
-                ${formatDateTime(s.startTime)} - ${formatDateTime(s.endTime)}
-                <span class="duration">(${formatDuration(s.Duration)})</span>
-            </div>
-            <div class="schedule-rating ${getRatingClass(rating)}">
-                综合评分: ${rating.toFixed(2)}
-            </div>
-            <div class="weapons-row">
-                ${weapons.map(w => renderWeaponIcon(w)).join('')}
+        <div class="schedule-card current" ${bannerImage ? `style="background-image: url('${bannerImage}'); background-size: cover; background-position: center;"` : ''}>
+            <div class="current-schedule-overlay">
+                <div class="schedule-header">
+                    <span class="schedule-stage">${s.Stage || '未知场地'}</span>
+                    ${bossImage ? `<img src="${bossImage}" alt="${s.King_Salmonid}" class="schedule-boss-img" title="${s.King_Salmonid}">` : '<span class="schedule-boss">?</span>'}
+                </div>
+                <div class="schedule-time">
+                    ${formatDateTime(s.startTime)} - ${formatDateTime(s.endTime)}
+                </div>
+                <div id="countdown-timer" class="countdown-timer">计算中...</div>
+                <div class="schedule-rating ${ratingClass}">
+                    综合评分: ${ratingDisplay}
+                </div>
+                <div class="weapons-row">
+                    ${weapons.map(w => renderWeaponIcon(w)).join('')}
+                </div>
+                <div class="current-duration">${durationHours}小时</div>
             </div>
         </div>
     `;
+
+    // 启动倒计时
+    if (s.endTime) {
+        startCurrentScheduleTimer(s.endTime);
+    }
 }
 
 function renderFutureSchedules() {
     const container = document.getElementById('future-schedules');
     if (!container) return;
-    
+
     if (AppData.futureSchedules.length === 0) {
         container.innerHTML = '<p>暂无未来的打工场次数据</p>';
         return;
     }
-    
+
     container.innerHTML = AppData.futureSchedules.map((s, index) => {
         const weapons = getWeaponsForSchedule(s);
         const rating = calculateScheduleRating(weapons);
-        
+
+        // 格式化评分显示
+        const ratingDisplay = rating === null ? '?' : (rating.toFixed(1) + '/10');
+        const ratingClass = getRatingClass(rating === null ? 5 : rating / 2); // ?使用最高配色
+
+        // 获取boss图片
+        const bossImage = getBossImage(s.King_Salmonid);
+
+        // 获取场地图片(imageL)
+        const stage = getStageByName(s.Stage);
+        const stageImage = stage?.imageL || null;
+
         return `
-            <div class="schedule-card">
-                <div class="schedule-header">
-                    <span class="schedule-stage">${s.Stage || '未知场地'}</span>
-                    <span class="schedule-boss">${s.King_Salmonid || '?'}</span>
-                </div>
-                <div class="schedule-time">
-                    ${formatDateTime(s.startTime)} - ${formatDateTime(s.endTime)}
-                </div>
-                <div class="schedule-rating ${getRatingClass(rating)}">
-                    评分: ${rating.toFixed(2)}
-                </div>
-                <div class="weapons-row">
-                    ${weapons.map(w => renderWeaponIcon(w)).join('')}
+            <div class="schedule-card future-card" ${stageImage ? `style="background-image: url('${stageImage}'); background-size: cover; background-position: center;"` : ''}>
+                <div class="future-schedule-overlay">
+                    <div class="schedule-header">
+                        <span class="schedule-stage">${s.Stage || '未知场地'}</span>
+                        ${bossImage ? `<img src="${bossImage}" alt="${s.King_Salmonid}" class="schedule-boss-img" title="${s.King_Salmonid}">` : '<span class="schedule-boss">?</span>'}
+                    </div>
+                    <div class="schedule-time">
+                        ${formatDateTime(s.startTime)} - ${formatDateTime(s.endTime)}
+                    </div>
+                    <div id="future-timer-${index}" class="future-timer">计算中...</div>
+                    <div class="schedule-rating ${ratingClass}">
+                        评分: ${ratingDisplay}
+                    </div>
+                    <div class="weapons-row">
+                        ${weapons.map(w => renderWeaponIcon(w)).join('')}
+                    </div>
                 </div>
             </div>
         `;
     }).join('');
+
+    // 启动未来场次倒计时
+    startFutureScheduleTimer(AppData.futureSchedules);
 }
 
 // ================================
@@ -322,6 +541,13 @@ let currentHistoryFilter = {
     boss: '',
     weapon: '',
     minRating: ''
+};
+
+// 分页状态
+let historyPagination = {
+    page: 1,
+    pageSize: 50,
+    total: 0
 };
 
 function initFilters() {
@@ -355,55 +581,78 @@ function initFilters() {
 
 function renderHistory() {
     const tbody = document.getElementById('history-tbody');
+    const paginationContainer = document.getElementById('history-pagination');
     if (!tbody) return;
-    
+
     // 筛选数据
     let filtered = AppData.schedules.filter(s => {
         if (currentHistoryFilter.stage && s.Stage !== currentHistoryFilter.stage) return false;
         if (currentHistoryFilter.boss && s.King_Salmonid !== currentHistoryFilter.boss) return false;
-        
+
         const weapons = getWeaponsForSchedule(s);
         if (currentHistoryFilter.weapon) {
-            const hasWeapon = weapons.some(w => 
-                w && (w.name_zh?.includes(currentHistoryFilter.weapon) || 
+            const hasWeapon = weapons.some(w =>
+                w && (w.name_zh?.includes(currentHistoryFilter.weapon) ||
                       w.name_en?.includes(currentHistoryFilter.weapon))
             );
             if (!hasWeapon) return false;
         }
-        
+
         const rating = calculateScheduleRating(weapons);
-        if (currentHistoryFilter.minRating && rating < parseFloat(currentHistoryFilter.minRating)) {
+        if (currentHistoryFilter.minRating && (rating === null || rating < parseFloat(currentHistoryFilter.minRating))) {
             return false;
         }
-        
+
         return true;
     });
-    
+
     // 按时间倒序
     filtered.sort((a, b) => b.startTime - a.startTime);
-    
-    // 限制显示数量（性能考虑）
-    const displayData = filtered.slice(0, 200);
-    
+
+    // 更新分页信息
+    historyPagination.total = filtered.length;
+    const totalPages = Math.ceil(historyPagination.total / historyPagination.pageSize);
+
+    // 确保当前页在有效范围内
+    if (historyPagination.page > totalPages) historyPagination.page = totalPages || 1;
+    if (historyPagination.page < 1) historyPagination.page = 1;
+
+    // 分页截取数据
+    const startIndex = (historyPagination.page - 1) * historyPagination.pageSize;
+    const displayData = filtered.slice(startIndex, startIndex + historyPagination.pageSize);
+
     tbody.innerHTML = displayData.map(s => {
         const weapons = getWeaponsForSchedule(s);
         const rating = calculateScheduleRating(weapons);
-        
+
+        // 格式化评分显示
+        const ratingDisplay = rating === null ? '?' : (rating.toFixed(1) + '/10');
+        const ratingClass = getRatingClass(rating === null ? 5 : rating / 2); // ?使用最高配色
+
+        // 生成雷达图
+        const radarSvg = generateRadarChart(weapons);
+
         return `
             <tr>
                 <td>#${s.no || '-'}</td>
-                <td>${formatDateTime(s.startTime)}<br>~${formatDateTime(s.endTime)}</td>
+                <td>${formatDateTime(s.startTime)}<br>${formatDateTime(s.endTime)}</td>
                 <td>${s.Stage || '-'}</td>
-                <td>${s.King_Salmonid || '-'}</td>
+                <td class="center-cell">${s.King_Salmonid || '-'}</td>
                 <td>
-                    <div class="weapon-tags">
-                        ${weapons.map(w => `<span class="weapon-tag">${w?.name_zh || '?'}</span>`).join('')}
+                    <div class="weapons-row history-weapons">
+                        ${weapons.map(w => renderWeaponIcon(w)).join('')}
                     </div>
                 </td>
-                <td class="${getRatingClass(rating)}">${rating.toFixed(2)}</td>
+                <td class="center-cell radar-cell">${radarSvg}</td>
+                <td class="center-cell ${ratingClass}">${ratingDisplay}</td>
             </tr>
         `;
     }).join('');
+
+    // 渲染分页控件
+    if (paginationContainer) {
+        renderPagination(paginationContainer, totalPages);
+    }
 }
 
 function applyFilters() {
@@ -411,8 +660,62 @@ function applyFilters() {
     currentHistoryFilter.boss = document.getElementById('filter-boss')?.value || '';
     currentHistoryFilter.weapon = document.getElementById('filter-weapon')?.value || '';
     currentHistoryFilter.minRating = document.getElementById('filter-rating')?.value || '';
-    
+
+    // 重置到第一页
+    historyPagination.page = 1;
     renderHistory();
+}
+
+function changePageSize(size) {
+    historyPagination.pageSize = parseInt(size);
+    historyPagination.page = 1;
+    renderHistory();
+}
+
+function goToPage(page) {
+    historyPagination.page = page;
+    renderHistory();
+}
+
+function renderPagination(container, totalPages) {
+    const currentPage = historyPagination.page;
+    const pageSize = historyPagination.pageSize;
+    const total = historyPagination.total;
+
+    let paginationHTML = `
+        <div class="pagination-controls">
+            <div class="page-size-selector">
+                <label>每页显示：</label>
+                <select onchange="changePageSize(this.value)">
+                    <option value="20" ${pageSize === 20 ? 'selected' : ''}>20条</option>
+                    <option value="50" ${pageSize === 50 ? 'selected' : ''}>50条</option>
+                    <option value="100" ${pageSize === 100 ? 'selected' : ''}>100条</option>
+                </select>
+            </div>
+            <div class="page-info">第 ${currentPage}/${totalPages} 页 (共 ${total} 条)</div>
+            <div class="page-buttons">
+                <button onclick="goToPage(${currentPage - 1})" ${currentPage <= 1 ? 'disabled' : ''}>上一页</button>
+    `;
+
+    // 显示页码按钮（最多显示5个）
+    const maxButtons = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+    let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+    if (endPage - startPage < maxButtons - 1) {
+        startPage = Math.max(1, endPage - maxButtons + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+        paginationHTML += `<button onclick="goToPage(${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
+    }
+
+    paginationHTML += `
+                <button onclick="goToPage(${currentPage + 1})" ${currentPage >= totalPages ? 'disabled' : ''}>下一页</button>
+            </div>
+        </div>
+    `;
+
+    container.innerHTML = paginationHTML;
 }
 
 function resetFilters() {
@@ -524,8 +827,16 @@ function renderWeapons() {
     weapons.sort((a, b) => {
         switch(currentWeaponSort) {
             case 'rating-desc':
+                // null 值排到最后
+                if (a.rating?.overall === null && b.rating?.overall === null) return 0;
+                if (a.rating?.overall === null) return 1;
+                if (b.rating?.overall === null) return -1;
                 return (b.rating?.overall || 0) - (a.rating?.overall || 0);
             case 'rating-asc':
+                // null 值排到最后
+                if (a.rating?.overall === null && b.rating?.overall === null) return 0;
+                if (a.rating?.overall === null) return 1;
+                if (b.rating?.overall === null) return -1;
                 return (a.rating?.overall || 0) - (b.rating?.overall || 0);
             case 'name':
                 return (a.name_zh || '').localeCompare(b.name_zh || '');
@@ -537,9 +848,13 @@ function renderWeapons() {
     });
     
     container.innerHTML = weapons.map(w => {
-        const rating = w.rating?.overall || 0;
-        const tier = w.rating?.tier || '?';
+        const rating = w.rating?.overall;
+        const tier = w.rating?.tier;
         const dimensions = w.rating?.dimensions || {};
+        
+        // 处理 null 值显示
+        const ratingDisplay = rating === null ? '?' : (rating || 0).toFixed(1);
+        const tierDisplay = tier === null ? '?' : (tier || '?');
         
         return `
             <div class="weapon-card">
@@ -548,15 +863,15 @@ function renderWeapons() {
                 </div>
                 <div class="weapon-name">${w.name_zh || w.name_en || '未知'}</div>
                 <div class="weapon-type">${w.type || '?'}</div>
-                <div class="weapon-rating ${getTierClass(tier)}">${rating.toFixed(1)}</div>
-                <span class="tier-badge tier-${tier.replace('+', '-plus')}">${tier}</span>
+                <div class="weapon-rating tier-${tierDisplay.replace('+', '-plus').replace('X', 'X')}">${ratingDisplay}</div>
+                <span class="tier-badge tier-${tierDisplay.replace('+', '-plus').replace('X', 'X')}">${tierDisplay}</span>
                 
                 <div class="dimension-bars">
                     ${Object.entries(dimensions).slice(0, 4).map(([key, val]) => `
                         <div class="dimension-row">
                             <span class="dimension-label">${key}</span>
                             <div class="dimension-bar">
-                                <div class="dimension-fill" style="width: ${(val || 0) * 20}%"></div>
+                                <div class="dimension-fill" style="width: ${(val === null ? 0 : (val || 0)) * 20}%"></div>
                             </div>
                         </div>
                     `).join('')}
@@ -649,18 +964,41 @@ function getWeaponsForSchedule(schedule) {
     if (!schedule.Weapon || !Array.isArray(schedule.Weapon)) {
         return [];
     }
-    
+
     return schedule.Weapon.map(weaponName => {
         return AppData.weaponNameMap.get(weaponName) || null;
     }).filter(Boolean);
 }
 
+function getBossImage(bossName) {
+    if (!bossName) return null;
+    // 在 boss 数据中查找
+    const boss = Object.values(AppData.bosses).find(b =>
+        b.name_zh === bossName || b.name_en === bossName || b.id === bossName
+    );
+    return boss?.image_path || null;
+}
+
 function calculateScheduleRating(weapons) {
-    if (!weapons || weapons.length === 0) return 0;
-    
-    const ratings = weapons.map(w => w.rating?.overall || 0);
+    if (!weapons || weapons.length === 0) return null;
+
+    // 检查是否有问号武器（overall 为 null 的武器）
+    const hasQuestionMarkWeapon = weapons.some(w => w?.rating?.overall === null);
+    if (hasQuestionMarkWeapon) {
+        return null; // 有问号武器时返回 null，显示 "?"
+    }
+
+    // 过滤掉无效值，只计算有评分的武器
+    const ratings = weapons
+        .map(w => w?.rating?.overall)
+        .filter(r => r !== null && r !== undefined && typeof r === 'number');
+
+    if (ratings.length === 0) return null;
+
+    // 计算总分（4把武器加起来除以2，总分10分制）
     const sum = ratings.reduce((a, b) => a + b, 0);
-    return sum / ratings.length;
+    const score = (sum / ratings.length) * 2;
+    return score; // 返回 0-10 的分数
 }
 
 function getRatingClass(rating) {
@@ -671,18 +1009,19 @@ function getRatingClass(rating) {
 
 function getTierClass(tier) {
     if (!tier) return '';
-    return 'tier-' + tier.replace('+', '-plus');
+    return 'tier-' + tier.replace('+', '-plus').replace('X', 'X');
 }
 
 function renderWeaponIcon(weapon) {
     if (!weapon) return '<div class="weapon-icon">?</div>';
-    
+
     const name = weapon.name_zh || weapon.name_en || '?';
-    const rating = weapon.rating?.overall || 0;
-    const ratingClass = getRatingClass(rating);
-    
+    const rating = weapon.rating?.overall;
+    const ratingDisplay = rating === null ? '?' : (rating || 0).toFixed(1);
+    const ratingClass = rating === null ? '' : getRatingClass(rating || 0);
+
     return `
-        <div class="weapon-icon ${ratingClass}" title="${name} (${rating.toFixed(1)})">
+        <div class="weapon-icon ${ratingClass}" title="${name} (${ratingDisplay})">
             ${weapon.image ? `<img src="${weapon.image}" alt="${name}" loading="lazy">` : name.slice(0, 2)}
         </div>
     `;
