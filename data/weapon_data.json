@@ -1425,7 +1425,7 @@
             "type": "?",
             "name_zh": "绿问号",
             "name_en": "Random",
-            "name_jp": "Random",
+            "name_jp": "オールランダム",
             "image": "images/weapon_flat/QuestionIcon_00.png",
             "rating": {
                 "overall": "?",
@@ -1444,8 +1444,8 @@
             "id": "QuestionIcon_01",
             "type": "?",
             "name_zh": "金问号",
-            "name_en": "Random_Gold",
-            "name_jp": "Random_Gold",
+            "name_en": "Random Rare",
+            "name_jp": "クマフェス",
             "image": "images/weapon_flat/QuestionIcon_01.png",
             "rating": {
                 "overall": "?",
