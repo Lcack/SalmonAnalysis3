@@ -35,8 +35,8 @@ jobs:
         if: always() 
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.qq.com 
-          server_port: 465
+          server_address: imap.qq.com 
+          server_port: 993
           username: ${{ secrets.MAIL_USERNAME }} 
           password: ${{ secrets.MAIL_PASSWORD }} 
           subject: 鲑鱼跑数据更新报告
