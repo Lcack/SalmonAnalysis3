@@ -1,0 +1,47 @@
+name: Daily Schedule Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 运行更新脚本
+        run: |
+          node update_schedule.js > run_log.txt 2>&1
+          cat run_log.txt
+
+      - name: 提交更新后的 JSON 到仓库
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/coop_schedule.json
+          git commit -m "自动更新打工场次: $(date)" || echo "没有新数据需要提交"
+          git push
+
+      - name: 发送运行结果到邮箱
+        if: always() 
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.qq.com 
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }} 
+          password: ${{ secrets.MAIL_PASSWORD }} 
+          subject: 鲑鱼跑数据更新报告
+          to: ${{ secrets.MY_RECEIVE_EMAIL }}
+          from: GitHub Action Update
+          body: |
+            脚本运行结果：
+            $(cat run_log.txt)

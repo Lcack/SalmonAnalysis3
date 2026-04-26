@@ -1424,8 +1424,8 @@
             "id": "QuestionIcon_00",
             "type": "?",
             "name_zh": "绿问号",
-            "name_en": "?",
-            "name_jp": "?",
+            "name_en": "Random",
+            "name_jp": "Random",
             "image": "images/weapon_flat/QuestionIcon_00.png",
             "rating": {
                 "overall": "?",
@@ -1444,8 +1444,8 @@
             "id": "QuestionIcon_01",
             "type": "?",
             "name_zh": "金问号",
-            "name_en": "?",
-            "name_jp": "?",
+            "name_en": "Random_Gold",
+            "name_jp": "Random_Gold",
             "image": "images/weapon_flat/QuestionIcon_01.png",
             "rating": {
                 "overall": "?",
