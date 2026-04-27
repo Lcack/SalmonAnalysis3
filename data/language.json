@@ -58,7 +58,7 @@
     "stats": {
       "title": "活动统计",
       "bigrun": {
-        "title": "Big Run 历史奖牌",
+        "title": "大型跑历史奖牌",
         "no": "期数",
         "stage": "场地",
         "time": "时间",
@@ -67,7 +67,7 @@
         "bronze": "铜"
       },
       "eggstra": {
-        "title": "Eggstra Work 历史奖牌",
+        "title": "团队打工竞赛历史奖牌",
         "no": "期数",
         "stage": "场地",
         "time": "时间",
@@ -123,103 +123,103 @@
   },
   "us": {
     "nav": {
-      "home": "",
-      "history": "",
-      "stats": "",
-      "weapons": ""
+      "home": "home",
+      "history": "history",
+      "stats": "stats",
+      "weapons": "weapons"
     },
     "home": {
-      "current": "",
-      "future": "",
-      "timeRemaining": "",
-      "timeUntil": "",
-      "after": "",
-      "hours": "",
-      "minutes": "",
-      "seconds": "",
-      "days": "",
-      "ended": "",
-      "started": "",
-      "rating": "",
-      "unknownStage": "",
-      "calculating": "",
-      "noCurrent": "",
-      "noFuture": ""
+      "current": "Now",
+      "future": "Future",
+      "timeRemaining": "Time Remaining ",
+      "timeUntil": "Time Until",
+      "after": " later",
+      "hours": "h ",
+      "minutes": "m ",
+      "seconds": "s ",
+      "days": "d ",
+      "ended": "Ended",
+      "started": "Started",
+      "rating": "Rating",
+      "unknownStage": "Unknown Stage",
+      "calculating": "Calculating...",
+      "noCurrent": "No current sessions available",
+      "noFuture": "No future sessions available"
     },
     "history": {
-      "title": "",
+      "title": "History Analysis",
       "filter": {
-        "stage": "",
-        "boss": "",
-        "weapons": "",
-        "rating": "",
-        "min": "",
-        "max": "",
-        "searchPlaceholder": "",
-        "apply": "",
-        "reset": ""
+        "stage": "Stage",
+        "boss": "Boss",
+        "weapons": "Weapons",
+        "rating": "Rating",
+        "min": "Min",
+        "max": "Max",
+        "searchPlaceholder": "Search weapons...",
+        "apply": "Apply",
+        "reset": "Reset"
       },
       "table": {
-        "no": "",
-        "time": "",
-        "stage": "",
-        "boss": "",
-        "weapons": "",
-        "radar": "",
-        "rating": ""
+        "no": "No.",
+        "time": "Time",
+        "stage": "Stage",
+        "boss": "Boss",
+        "weapons": "Weapons",
+        "radar": "Radar",
+        "rating": "Rating"
       },
       "pagination": {
-        "perPage": "",
-        "items": "",
-        "page": "",
-        "total": "",
-        "prev": "",
-        "next": ""
+        "perPage": "Per Page",
+        "items": "Items",
+        "page": "Page",
+        "total": "Total",
+        "prev": "Previous",
+        "next": "Next"
       }
     },
     "stats": {
-      "title": "",
+      "title": "Activity Statistics",
       "bigrun": {
-        "title": "",
-        "no": "",
-        "stage": "",
-        "time": "",
-        "gold": "",
-        "silver": "",
-        "bronze": ""
+        "title": "Big Run History",
+        "no": "No.",
+        "stage": "Stage",
+        "time": "Time",
+        "gold": "Gold",
+        "silver": "Silver",
+        "bronze": "Bronze"
       },
       "eggstra": {
-        "title": "",
-        "no": "",
-        "stage": "",
-        "time": "",
-        "gold": "",
-        "silver": "",
-        "bronze": ""
+        "title": "Eggstra Work History",
+        "no": "No.",
+        "stage": "Stage",
+        "time": "Time",
+        "gold": "Gold",
+        "silver": "Silver",
+        "bronze": "Bronze"
       }
     },
     "weapons": {
-      "title": "",
+      "title": "Weapon Ratings",
       "controls": {
-        "downloadMyScores": "",
-        "resetAll": "",
-        "upload": "",
-        "hint": ""
+        "downloadMyScores": "Download My Scores",
+        "resetAll": "Reset All",
+        "upload": "Upload Custom Scores",
+        "hint": "Click weapon cards to edit scores, save after editing"
       },
       "filter": {
-        "type": "",
-        "sort": "",
-        "all": "",
-        "ratingDesc": "",
-        "ratingAsc": "",
-        "name": "",
-        "typeSort": ""
+        "type": "Weapon Type",
+        "sort": "Sort",
+        "all": "All",
+        "ratingDesc": "Rating High → Low",
+        "ratingAsc": "Rating Low → High",
+        "name": "Name",
+        "typeSort": "Type"
       },
       "modal": {
-        "edit": "",
-        "save": "",
-        "cancel": "",
-        "saved": ""
+        "edit": "Edit Weapon Rating",
+        "save": "Save",
+        "cancel": "Cancel",
+        "saved": "Weapon rating saved"
       },
       "tiers": {
         "X": "X",
@@ -231,117 +231,117 @@
       }
     },
     "common": {
-      "loading": "",
-      "error": "",
-      "unknown": "",
-      "empty": ""
+      "loading": "Loading data...",
+      "error": "Failed to load data",
+      "unknown": "Unknown",
+      "empty": "-"
     },
     "footer": {
-      "dataSource": "",
-      "and": "",
-      "disclaimer": "",
-      "github": ""
+      "dataSource": "Data sourced from",
+      "and": "&",
+      "disclaimer": "This website is not affiliated with Nintendo. All game-related assets belong to their respective owners.",
+      "github": "GitHub"
     }
   },
   "jp": {
     "nav": {
-      "home": "",
-      "history": "",
-      "stats": "",
-      "weapons": ""
+      "home": "ホーム",
+      "history": "履歴",
+      "stats": "統計",
+      "weapons": "武器評価"
     },
     "home": {
-      "current": "",
-      "future": "",
-      "timeRemaining": "",
+      "current": "オープン",
+      "future": "そのつぎ",
+      "timeRemaining": "残り",
       "timeUntil": "",
-      "after": "",
-      "hours": "",
-      "minutes": "",
-      "seconds": "",
-      "days": "",
-      "ended": "",
-      "started": "",
-      "rating": "",
-      "unknownStage": "",
-      "calculating": "",
-      "noCurrent": "",
+      "after": "後",
+      "hours": "時間",
+      "minutes": "分",
+      "seconds": "秒",
+      "days": "日",
+      "ended": "終了",
+      "started": "開始",
+      "rating": "評価",
+      "unknownStage": "不明なステージ",
+      "calculating": "計算中...",
+      "noCurrent": "現在のセッションがありません",
       "noFuture": ""
     },
     "history": {
-      "title": "",
+      "title": "履歴分析",
       "filter": {
-        "stage": "",
-        "boss": "",
-        "weapons": "",
-        "rating": "",
-        "min": "",
-        "max": "",
-        "searchPlaceholder": "",
-        "apply": "",
-        "reset": ""
+        "stage": "ステージ",
+        "boss": "ボス",
+        "weapons": "武器",
+        "rating": "評価",
+        "min": "最小",
+        "max": "最大",
+        "searchPlaceholder": "武器を検索...",
+        "apply": "適用",
+        "reset": "リセット"
       },
       "table": {
-        "no": "",
-        "time": "",
-        "stage": "",
-        "boss": "",
-        "weapons": "",
-        "radar": "",
-        "rating": ""
+        "no": "No.",
+        "time": "時間",
+        "stage": "ステージ",
+        "boss": "ボス",
+        "weapons": "武器",
+        "radar": "ラダー",
+        "rating": "評価"
       },
       "pagination": {
-        "perPage": "",
-        "items": "",
-        "page": "",
-        "total": "",
-        "prev": "",
-        "next": ""
+        "perPage": "ページあたり",
+        "items": "項目",
+        "page": "ページ",
+        "total": "合計",
+        "prev": "前",
+        "next": "次"
       }
     },
     "stats": {
-      "title": "",
+      "title": "統計",
       "bigrun": {
-        "title": "",
-        "no": "",
-        "stage": "",
-        "time": "",
-        "gold": "",
-        "silver": "",
-        "bronze": ""
+        "title": "ビッグランのメダル",
+        "no": "No.",
+        "stage": "ステージ",
+        "time": "時間",
+        "gold": "金",
+        "silver": "銀",
+        "bronze": "銅"
       },
       "eggstra": {
-        "title": "",
-        "no": "",
-        "stage": "",
-        "time": "",
-        "gold": "",
-        "silver": "",
-        "bronze": ""
+        "title": "バイトチームコンテストのメダル",
+        "no": "No.",
+        "stage": "ステージ",
+        "time": "時間",
+        "gold": "金",
+        "silver": "銀",
+        "bronze": "銅"
       }
     },
     "weapons": {
-      "title": "",
+      "title": "武器評価",
       "controls": {
-        "downloadMyScores": "",
-        "resetAll": "",
-        "upload": "",
-        "hint": ""
+        "downloadMyScores": "自分のスコアをダウンロード",
+        "resetAll": "すべてをリセット",
+        "upload": "カスタムスコアをアップロード",
+        "hint": "武器カードをクリックしてスコアを編集し、編集後は保存してください"
       },
       "filter": {
-        "type": "",
-        "sort": "",
-        "all": "",
-        "ratingDesc": "",
-        "ratingAsc": "",
-        "name": "",
-        "typeSort": ""
+        "type": "武器タイプ",
+        "sort": "ソート",
+        "all": "すべて",
+        "ratingDesc": "評価高→低",
+        "ratingAsc": "評価低→高",
+        "name": "名前",
+        "typeSort": "タイプ"
       },
       "modal": {
-        "edit": "",
-        "save": "",
-        "cancel": "",
-        "saved": ""
+        "edit": "武器評価を編集",
+        "save": "保存",
+        "cancel": "キャンセル",
+        "saved": "武器評価が保存されました"
       },
       "tiers": {
         "X": "X",
@@ -353,16 +353,16 @@
       }
     },
     "common": {
-      "loading": "",
-      "error": "",
-      "unknown": "",
-      "empty": ""
+      "loading": "データを読み込んでいます...",
+      "error": "データを読み込めませんでした",
+      "unknown": "不明",
+      "empty": "-"
     },
     "footer": {
-      "dataSource": "",
-      "and": "",
-      "disclaimer": "",
-      "github": ""
+      "dataSource": "データソース",
+      "and": "と",
+      "disclaimer": "このウェブサイトは任天堂とは関係ありません。ゲーム関連のすべての資産はそれぞれの所有者に帰属します。",
+      "github": "GitHub"
     }
   }
 }
