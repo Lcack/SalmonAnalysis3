@@ -1,0 +1,368 @@
+{
+  "cn": {
+    "nav": {
+      "home": "首页",
+      "history": "历史记录",
+      "stats": "活动统计",
+      "weapons": "武器评分"
+    },
+    "home": {
+      "current": "当前场次",
+      "future": "未来场次",
+      "timeRemaining": "还剩",
+      "timeUntil": "",
+      "after": "后",
+      "hours": "小时",
+      "minutes": "分",
+      "seconds": "秒",
+      "days": "天",
+      "ended": "已结束",
+      "started": "已开始",
+      "rating": "评分",
+      "unknownStage": "未知场地",
+      "calculating": "计算中...",
+      "noCurrent": "当前没有进行中的打工场次",
+      "noFuture": "暂无未来的打工场次数据"
+    },
+    "history": {
+      "title": "历史记录分析",
+      "filter": {
+        "stage": "场地",
+        "boss": "Boss",
+        "weapons": "武器",
+        "rating": "评分",
+        "min": "",
+        "max": "",
+        "searchPlaceholder": "输入武器名称",
+        "apply": "筛选",
+        "reset": "重置"
+      },
+      "table": {
+        "no": "场次",
+        "time": "时间",
+        "stage": "场地",
+        "boss": "Boss",
+        "weapons": "武器配置",
+        "radar": "雷达图",
+        "rating": "评分"
+      },
+      "pagination": {
+        "perPage": "每页显示",
+        "items": "条",
+        "page": "第",
+        "total": "共",
+        "prev": "上一页",
+        "next": "下一页"
+      }
+    },
+    "stats": {
+      "title": "活动统计",
+      "bigrun": {
+        "title": "Big Run 历史奖牌",
+        "no": "期数",
+        "stage": "场地",
+        "time": "时间",
+        "gold": "金",
+        "silver": "银",
+        "bronze": "铜"
+      },
+      "eggstra": {
+        "title": "Eggstra Work 历史奖牌",
+        "no": "期数",
+        "stage": "场地",
+        "time": "时间",
+        "gold": "金",
+        "silver": "银",
+        "bronze": "铜"
+      }
+    },
+    "weapons": {
+      "title": "武器评分",
+      "controls": {
+        "downloadMyScores": "下载我的评分",
+        "resetAll": "重置所有修改",
+        "upload": "上传自定义评分",
+        "hint": "点击武器卡片可编辑评分，修改后下载保存"
+      },
+      "filter": {
+        "type": "武器类型",
+        "sort": "排序",
+        "all": "全部",
+        "ratingDesc": "评分高→低",
+        "ratingAsc": "评分低→高",
+        "name": "名称",
+        "typeSort": "类型"
+      },
+      "modal": {
+        "edit": "编辑武器评分",
+        "save": "保存",
+        "cancel": "取消",
+        "saved": "武器评分已保存"
+      },
+      "tiers": {
+        "X": "X",
+        "S+": "S+",
+        "S": "S",
+        "A": "A",
+        "B": "B",
+        "C": "C"
+      }
+    },
+    "common": {
+      "loading": "正在加载数据...",
+      "error": "数据加载失败",
+      "unknown": "未知",
+      "empty": "-"
+    },
+    "footer": {
+      "dataSource": "Data sourced from",
+      "and": "&",
+      "disclaimer": "This website is not affiliated with Nintendo. All game-related assets belong to their respective owners.",
+      "github": "GitHub"
+    }
+  },
+  "us": {
+    "nav": {
+      "home": "",
+      "history": "",
+      "stats": "",
+      "weapons": ""
+    },
+    "home": {
+      "current": "",
+      "future": "",
+      "timeRemaining": "",
+      "timeUntil": "",
+      "after": "",
+      "hours": "",
+      "minutes": "",
+      "seconds": "",
+      "days": "",
+      "ended": "",
+      "started": "",
+      "rating": "",
+      "unknownStage": "",
+      "calculating": "",
+      "noCurrent": "",
+      "noFuture": ""
+    },
+    "history": {
+      "title": "",
+      "filter": {
+        "stage": "",
+        "boss": "",
+        "weapons": "",
+        "rating": "",
+        "min": "",
+        "max": "",
+        "searchPlaceholder": "",
+        "apply": "",
+        "reset": ""
+      },
+      "table": {
+        "no": "",
+        "time": "",
+        "stage": "",
+        "boss": "",
+        "weapons": "",
+        "radar": "",
+        "rating": ""
+      },
+      "pagination": {
+        "perPage": "",
+        "items": "",
+        "page": "",
+        "total": "",
+        "prev": "",
+        "next": ""
+      }
+    },
+    "stats": {
+      "title": "",
+      "bigrun": {
+        "title": "",
+        "no": "",
+        "stage": "",
+        "time": "",
+        "gold": "",
+        "silver": "",
+        "bronze": ""
+      },
+      "eggstra": {
+        "title": "",
+        "no": "",
+        "stage": "",
+        "time": "",
+        "gold": "",
+        "silver": "",
+        "bronze": ""
+      }
+    },
+    "weapons": {
+      "title": "",
+      "controls": {
+        "downloadMyScores": "",
+        "resetAll": "",
+        "upload": "",
+        "hint": ""
+      },
+      "filter": {
+        "type": "",
+        "sort": "",
+        "all": "",
+        "ratingDesc": "",
+        "ratingAsc": "",
+        "name": "",
+        "typeSort": ""
+      },
+      "modal": {
+        "edit": "",
+        "save": "",
+        "cancel": "",
+        "saved": ""
+      },
+      "tiers": {
+        "X": "X",
+        "S+": "S+",
+        "S": "S",
+        "A": "A",
+        "B": "B",
+        "C": "C"
+      }
+    },
+    "common": {
+      "loading": "",
+      "error": "",
+      "unknown": "",
+      "empty": ""
+    },
+    "footer": {
+      "dataSource": "",
+      "and": "",
+      "disclaimer": "",
+      "github": ""
+    }
+  },
+  "jp": {
+    "nav": {
+      "home": "",
+      "history": "",
+      "stats": "",
+      "weapons": ""
+    },
+    "home": {
+      "current": "",
+      "future": "",
+      "timeRemaining": "",
+      "timeUntil": "",
+      "after": "",
+      "hours": "",
+      "minutes": "",
+      "seconds": "",
+      "days": "",
+      "ended": "",
+      "started": "",
+      "rating": "",
+      "unknownStage": "",
+      "calculating": "",
+      "noCurrent": "",
+      "noFuture": ""
+    },
+    "history": {
+      "title": "",
+      "filter": {
+        "stage": "",
+        "boss": "",
+        "weapons": "",
+        "rating": "",
+        "min": "",
+        "max": "",
+        "searchPlaceholder": "",
+        "apply": "",
+        "reset": ""
+      },
+      "table": {
+        "no": "",
+        "time": "",
+        "stage": "",
+        "boss": "",
+        "weapons": "",
+        "radar": "",
+        "rating": ""
+      },
+      "pagination": {
+        "perPage": "",
+        "items": "",
+        "page": "",
+        "total": "",
+        "prev": "",
+        "next": ""
+      }
+    },
+    "stats": {
+      "title": "",
+      "bigrun": {
+        "title": "",
+        "no": "",
+        "stage": "",
+        "time": "",
+        "gold": "",
+        "silver": "",
+        "bronze": ""
+      },
+      "eggstra": {
+        "title": "",
+        "no": "",
+        "stage": "",
+        "time": "",
+        "gold": "",
+        "silver": "",
+        "bronze": ""
+      }
+    },
+    "weapons": {
+      "title": "",
+      "controls": {
+        "downloadMyScores": "",
+        "resetAll": "",
+        "upload": "",
+        "hint": ""
+      },
+      "filter": {
+        "type": "",
+        "sort": "",
+        "all": "",
+        "ratingDesc": "",
+        "ratingAsc": "",
+        "name": "",
+        "typeSort": ""
+      },
+      "modal": {
+        "edit": "",
+        "save": "",
+        "cancel": "",
+        "saved": ""
+      },
+      "tiers": {
+        "X": "X",
+        "S+": "S+",
+        "S": "S",
+        "A": "A",
+        "B": "B",
+        "C": "C"
+      }
+    },
+    "common": {
+      "loading": "",
+      "error": "",
+      "unknown": "",
+      "empty": ""
+    },
+    "footer": {
+      "dataSource": "",
+      "and": "",
+      "disclaimer": "",
+      "github": ""
+    }
+  }
+}

@@ -14,14 +14,138 @@ const AppData = {
     bigRuns: [],        // Big Run 历史
     eggstraWorks: [],   // Eggstra Work 历史
     customScores: null, // 用户自定义评分
-    
+
     // 运行时缓存
     currentSchedule: null,   // 当前进行中的场次
     futureSchedules: [],     // 未来4场
-    
+
     // 武器名称到ID的映射（用于匹配）
     weaponNameMap: new Map()
 };
+
+// ================================
+// 多语言支持 (i18n)
+// ================================
+let i18nData = {};           // 语言数据
+let currentLang = 'cn';      // 当前语言
+
+// 加载语言文件
+async function loadLanguageData() {
+    try {
+        const response = await fetch('./data/language.json');
+        if (response.ok) {
+            i18nData = await response.json();
+            // 从 localStorage 读取用户设置的语言
+            const savedLang = localStorage.getItem('salmon_language');
+            if (savedLang && i18nData[savedLang]) {
+                currentLang = savedLang;
+            }
+            // 更新语言选择器
+            const langSelector = document.getElementById('lang-selector');
+            if (langSelector) {
+                langSelector.value = currentLang;
+            }
+            console.log('✅ 语言数据已加载:', currentLang);
+        }
+    } catch (error) {
+        console.error('❌ 加载语言数据失败:', error);
+    }
+}
+
+// 翻译函数
+function t(key) {
+    if (!i18nData[currentLang]) return key;
+
+    const keys = key.split('.');
+    let value = i18nData[currentLang];
+
+    for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+            value = value[k];
+        } else {
+            // 如果找不到翻译，返回中文或key本身
+            if (i18nData['cn'] && key !== '') {
+                let cnValue = i18nData['cn'];
+                for (const k2 of keys) {
+                    if (cnValue && typeof cnValue === 'object' && k2 in cnValue) {
+                        cnValue = cnValue[k2];
+                    } else {
+                        return key;
+                    }
+                }
+                return cnValue || key;
+            }
+            return key;
+        }
+    }
+
+    return value || key;
+}
+
+// 切换语言
+function changeLanguage(lang) {
+    if (!i18nData[lang]) {
+        console.warn('不支持的语言:', lang);
+        return;
+    }
+
+    currentLang = lang;
+    localStorage.setItem('salmon_language', lang);
+
+    // 重新渲染所有页面
+    const currentPage = document.querySelector('.page-content:not([style*="none"])')?.id;
+
+    // 更新静态文本
+    updateStaticText();
+
+    // 重新渲染当前页面内容
+    switch(currentPage) {
+        case 'home':
+            renderHome();
+            break;
+        case 'history':
+            renderHistory();
+            break;
+        case 'stats':
+            renderStats();
+            break;
+        case 'weapons':
+            renderWeapons();
+            break;
+    }
+
+    console.log('🌐 语言已切换:', lang);
+}
+
+// 更新静态文本（导航栏等）
+function updateStaticText() {
+    // 更新所有带有 data-i18n 属性的元素
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (key) {
+            const translated = t(key);
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = translated;
+            } else {
+                el.textContent = translated;
+            }
+        }
+    });
+
+    // 更新 placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (key) {
+            el.placeholder = t(key);
+        }
+    });
+
+    // 更新加载提示
+    const loadingText = document.querySelector('.loading-content p');
+    if (loadingText && !loadingText.getAttribute('data-i18n')) {
+        loadingText.textContent = t('common.loading');
+    }
+}
 
 // ================================
 // 初始化
@@ -30,14 +154,23 @@ document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     console.log('🐟 SalmonAnalysis3 初始化中...');
-    
+
     try {
-        // 并行加载所有数据
-        await loadAllData();
-        
-        // 加载用户自定义评分
+        // 并行加载所有数据（包括语言数据）
+        await Promise.all([
+            loadAllData(),
+            loadLanguageData()
+        ]);
+
+        // 更新静态文本
+        updateStaticText();
+
+        // 加载用户自定义评分（来自上传的JSON文件）
         loadCustomScores();
-        
+
+        // 加载用户对武器评分的修改
+        loadUserWeaponEdits();
+
         // 计算当前和未来场次
         calculateSchedules();
         
@@ -150,17 +283,47 @@ function applyCustomScores() {
 }
 
 // ================================
+// 时区处理
+// ================================
+// JSON 数据使用的基准时区（东八区）
+const DATA_TIMEZONE = 'Asia/Shanghai';
+const DATA_TIMEZONE_OFFSET = -8 * 60; // 东八区相对于 UTC 的分钟数（负值表示东时区）
+
+// 获取用户本地时区与数据时区的时差（分钟）
+function getTimezoneOffsetMinutes() {
+    const now = new Date();
+    // 用户本地时区偏移（分钟）
+    const userOffset = now.getTimezoneOffset(); // 注意：正值表示西时区
+    // 数据时区偏移（东八区 = -480 分钟）
+    const dataOffset = DATA_TIMEZONE_OFFSET;
+    // 返回需要调整的分钟数
+    return userOffset - dataOffset;
+}
+
+// 将数据时间（东八区）转换为用户本地时间
+function convertToLocalTime(date) {
+    if (!date) return null;
+    const offsetMinutes = getTimezoneOffsetMinutes();
+    return new Date(date.getTime() - offsetMinutes * 60 * 1000);
+}
+
+// ================================
 // 时间计算逻辑
 // ================================
 function calculateSchedules() {
     const now = new Date();
-    
-    // 将 schedule 的时间字符串转换为 Date 对象
+
+    // 将 schedule 的时间字符串转换为 Date 对象（并进行时区转换）
     const parsedSchedules = AppData.schedules.map(s => {
+        // 先按东八区解析
+        const startTimeCST = parseTimeString(s.Start_time);
+        const endTimeCST = parseTimeString(s.End_time);
+
+        // 转换为用户本地时间
         return {
             ...s,
-            startTime: parseTimeString(s.Start_time),
-            endTime: parseTimeString(s.End_time),
+            startTime: convertToLocalTime(startTimeCST),
+            endTime: convertToLocalTime(endTimeCST),
             isBigRun: s.Is_Big_Run === 'true'
         };
     });
@@ -185,10 +348,19 @@ function parseTimeString(timeStr) {
     return new Date(timeStr.replace(/\//g, '-'));
 }
 
-function formatDateTime(date) {
+function formatDateTime(date, showWeekday = false) {
     if (!date) return '-';
     const d = new Date(date);
-    return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+    const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
+    const weekday = showWeekday ? `(${weekdays[d.getDay()]})` : '';
+    return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}${weekday} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+}
+
+// 历史记录专用的时间格式化（不显示周几，用于历史记录表格）
+function formatDateTimeHistory(date) {
+    if (!date) return '-';
+    const d = new Date(date);
+    return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 }
 
 function formatDuration(hours) {
@@ -262,7 +434,8 @@ function startCurrentScheduleTimer(endTime) {
         const diff = endTime - now;
 
         if (diff <= 0) {
-            document.getElementById('countdown-timer').textContent = '已结束';
+            const timerEl = document.getElementById('countdown-timer');
+            if (timerEl) timerEl.textContent = t('home.ended');
             clearInterval(currentScheduleTimer);
             return;
         }
@@ -271,8 +444,10 @@ function startCurrentScheduleTimer(endTime) {
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        document.getElementById('countdown-timer').textContent =
-            `还剩${hours}小时${minutes}分${seconds}秒`;
+        const timerEl = document.getElementById('countdown-timer');
+        if (timerEl) {
+            timerEl.textContent = `${t('home.timeRemaining')}${hours}${t('home.hours')}${minutes}${t('home.minutes')}${seconds}${t('home.seconds')}`;
+        }
     }
 
     updateTimer();
@@ -294,7 +469,7 @@ function startFutureScheduleTimer(schedules) {
             const diff = s.startTime - now;
 
             if (diff <= 0) {
-                timerEl.textContent = '已开始';
+                timerEl.textContent = t('home.started');
                 return;
             }
 
@@ -303,9 +478,9 @@ function startFutureScheduleTimer(schedules) {
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
             if (days > 0) {
-                timerEl.textContent = `${days}天${hours}小时${minutes}分钟后`;
+                timerEl.textContent = `${days}${t('home.days')}${hours}${t('home.hours')}${minutes}${t('home.minutes')}${t('home.after')}`;
             } else {
-                timerEl.textContent = `${hours}小时${minutes}分钟后`;
+                timerEl.textContent = `${hours}${t('home.hours')}${minutes}${t('home.minutes')}${t('home.after')}`;
             }
         });
     }
@@ -433,7 +608,7 @@ function renderCurrentSchedule() {
     if (!container) return;
 
     if (!AppData.currentSchedule) {
-        container.innerHTML = '<div class="schedule-card"><p>当前没有进行中的打工场次</p></div>';
+        container.innerHTML = `<div class="schedule-card"><p>${t('home.noCurrent')}</p></div>`;
         return;
     }
 
@@ -452,27 +627,23 @@ function renderCurrentSchedule() {
     const stage = getStageByName(s.Stage);
     const bannerImage = stage?.imageBanner || null;
 
-    // 计算持续时间（小时）
-    const durationHours = s.Duration ? parseInt(s.Duration) : 0;
-
     container.innerHTML = `
         <div class="schedule-card current" ${bannerImage ? `style="background-image: url('${bannerImage}'); background-size: cover; background-position: center;"` : ''}>
             <div class="current-schedule-overlay">
                 <div class="schedule-header">
-                    <span class="schedule-stage">${s.Stage || '未知场地'}</span>
+                    <span class="schedule-stage">${s.Stage || t('home.unknownStage')}</span>
                     ${bossImage ? `<img src="${bossImage}" alt="${s.King_Salmonid}" class="schedule-boss-img" title="${s.King_Salmonid}">` : '<span class="schedule-boss">?</span>'}
                 </div>
                 <div class="schedule-time">
-                    ${formatDateTime(s.startTime)} - ${formatDateTime(s.endTime)}
+                    <span class="time-start">${formatDateTime(s.startTime, true)}</span> - <span class="time-end">${formatDateTime(s.endTime)}</span>
                 </div>
-                <div id="countdown-timer" class="countdown-timer">计算中...</div>
-                <div class="schedule-rating ${ratingClass}">
-                    综合评分: ${ratingDisplay}
-                </div>
+                <div id="countdown-timer" class="countdown-timer">${t('home.calculating')}</div>
                 <div class="weapons-row">
                     ${weapons.map(w => renderWeaponIcon(w)).join('')}
                 </div>
-                <div class="current-duration">${durationHours}小时</div>
+                <div class="schedule-rating-bottom ${ratingClass}">
+                    ${t('home.rating')}:${ratingDisplay}
+                </div>
             </div>
         </div>
     `;
@@ -488,7 +659,7 @@ function renderFutureSchedules() {
     if (!container) return;
 
     if (AppData.futureSchedules.length === 0) {
-        container.innerHTML = '<p>暂无未来的打工场次数据</p>';
+        container.innerHTML = `<p>${t('home.noFuture')}</p>`;
         return;
     }
 
@@ -515,14 +686,14 @@ function renderFutureSchedules() {
                         ${bossImage ? `<img src="${bossImage}" alt="${s.King_Salmonid}" class="schedule-boss-img" title="${s.King_Salmonid}">` : '<span class="schedule-boss">?</span>'}
                     </div>
                     <div class="schedule-time">
-                        ${formatDateTime(s.startTime)} - ${formatDateTime(s.endTime)}
+                        <span class="time-start">${formatDateTime(s.startTime, true)}</span> - <span class="time-end">${formatDateTime(s.endTime)}</span>
                     </div>
                     <div id="future-timer-${index}" class="future-timer">计算中...</div>
-                    <div class="schedule-rating ${ratingClass}">
-                        评分: ${ratingDisplay}
-                    </div>
                     <div class="weapons-row">
                         ${weapons.map(w => renderWeaponIcon(w)).join('')}
+                    </div>
+                    <div class="schedule-rating-bottom ${ratingClass}">
+                        评分:${ratingDisplay}
                     </div>
                 </div>
             </div>
@@ -539,8 +710,9 @@ function renderFutureSchedules() {
 let currentHistoryFilter = {
     stage: '',
     boss: '',
-    weapon: '',
-    minRating: ''
+    weapons: [], // 多武器筛选数组
+    minRating: '',
+    maxRating: ''
 };
 
 // 分页状态
@@ -555,24 +727,27 @@ function initFilters() {
     const stageSelect = document.getElementById('filter-stage');
     if (stageSelect) {
         const stages = [...new Set(AppData.schedules.map(s => s.Stage).filter(Boolean))];
+        stageSelect.innerHTML = `<option value="">${t('weapons.filter.all')}</option>`;
         stages.forEach(stage => {
             stageSelect.innerHTML += `<option value="${stage}">${stage}</option>`;
         });
     }
-    
+
     // 填充Boss筛选器
     const bossSelect = document.getElementById('filter-boss');
     if (bossSelect) {
         const bosses = [...new Set(AppData.schedules.map(s => s.King_Salmonid).filter(Boolean))];
+        bossSelect.innerHTML = `<option value="">${t('weapons.filter.all')}</option>`;
         bosses.forEach(boss => {
             bossSelect.innerHTML += `<option value="${boss}">${boss}</option>`;
         });
     }
-    
+
     // 填充武器类型筛选器
     const typeSelect = document.getElementById('weapon-type-filter');
     if (typeSelect) {
         const types = [...new Set(Object.values(AppData.weapons).map(w => w.type).filter(Boolean))];
+        typeSelect.innerHTML = `<option value="">${t('weapons.filter.all')}</option>`;
         types.forEach(type => {
             typeSelect.innerHTML += `<option value="${type}">${type}</option>`;
         });
@@ -590,16 +765,25 @@ function renderHistory() {
         if (currentHistoryFilter.boss && s.King_Salmonid !== currentHistoryFilter.boss) return false;
 
         const weapons = getWeaponsForSchedule(s);
-        if (currentHistoryFilter.weapon) {
-            const hasWeapon = weapons.some(w =>
-                w && (w.name_zh?.includes(currentHistoryFilter.weapon) ||
-                      w.name_en?.includes(currentHistoryFilter.weapon))
-            );
-            if (!hasWeapon) return false;
+        if (currentHistoryFilter.weapons && currentHistoryFilter.weapons.length > 0) {
+            // 多武器筛选：场次必须包含所有指定的武器（AND逻辑）
+            const hasAllWeapons = currentHistoryFilter.weapons.every(filterWeapon => {
+                return weapons.some(w =>
+                    w && (w.name_zh?.includes(filterWeapon) ||
+                          w.name_en?.includes(filterWeapon))
+                );
+            });
+            if (!hasAllWeapons) return false;
         }
 
         const rating = calculateScheduleRating(weapons);
-        if (currentHistoryFilter.minRating && (rating === null || rating < parseFloat(currentHistoryFilter.minRating))) {
+        const minRating = parseFloat(currentHistoryFilter.minRating);
+        const maxRating = parseFloat(currentHistoryFilter.maxRating);
+
+        if (!isNaN(minRating) && (rating === null || rating < minRating)) {
+            return false;
+        }
+        if (!isNaN(maxRating) && (rating === null || rating > maxRating)) {
             return false;
         }
 
@@ -635,7 +819,7 @@ function renderHistory() {
         return `
             <tr>
                 <td>#${s.no || '-'}</td>
-                <td>${formatDateTime(s.startTime)}<br>${formatDateTime(s.endTime)}</td>
+                <td>${formatDateTimeHistory(s.startTime)}<br>${formatDateTimeHistory(s.endTime)}</td>
                 <td>${s.Stage || '-'}</td>
                 <td class="center-cell">${s.King_Salmonid || '-'}</td>
                 <td>
@@ -658,8 +842,9 @@ function renderHistory() {
 function applyFilters() {
     currentHistoryFilter.stage = document.getElementById('filter-stage')?.value || '';
     currentHistoryFilter.boss = document.getElementById('filter-boss')?.value || '';
-    currentHistoryFilter.weapon = document.getElementById('filter-weapon')?.value || '';
-    currentHistoryFilter.minRating = document.getElementById('filter-rating')?.value || '';
+    currentHistoryFilter.weapons = getWeaponFilterValues();
+    currentHistoryFilter.minRating = document.getElementById('filter-rating-min')?.value || '';
+    currentHistoryFilter.maxRating = document.getElementById('filter-rating-max')?.value || '';
 
     // 重置到第一页
     historyPagination.page = 1;
@@ -721,11 +906,53 @@ function renderPagination(container, totalPages) {
 function resetFilters() {
     document.getElementById('filter-stage').value = '';
     document.getElementById('filter-boss').value = '';
-    document.getElementById('filter-weapon').value = '';
-    document.getElementById('filter-rating').value = '';
-    
-    currentHistoryFilter = { stage: '', boss: '', weapon: '', minRating: '' };
+    document.getElementById('filter-rating-min').value = '';
+    document.getElementById('filter-rating-max').value = '';
+
+    // 重置武器筛选为单个空输入框
+    const container = document.getElementById('weapon-filter-container');
+    container.innerHTML = '<input type="text" class="filter-weapon-input" placeholder="输入武器名称" data-index="0" oninput="onWeaponInputChange(this)">';
+
+    currentHistoryFilter = { stage: '', boss: '', weapons: [], minRating: '', maxRating: '' };
     renderHistory();
+}
+
+// 武器筛选输入框变化处理
+function onWeaponInputChange(input) {
+    const container = document.getElementById('weapon-filter-container');
+    const inputs = container.querySelectorAll('.filter-weapon-input');
+    const currentIndex = parseInt(input.dataset.index);
+
+    // 如果当前输入框有值且不是最后一个，且总数少于4个，添加新输入框
+    if (input.value.trim() !== '' && currentIndex === inputs.length - 1 && inputs.length < 4) {
+        const newInput = document.createElement('input');
+        newInput.type = 'text';
+        newInput.className = 'filter-weapon-input';
+        newInput.placeholder = '输入武器名称';
+        newInput.dataset.index = currentIndex + 1;
+        newInput.oninput = function() { onWeaponInputChange(this); };
+        container.appendChild(newInput);
+    }
+
+    // 如果当前输入框被清空且不是唯一一个，且后面没有值，移除后面的空输入框
+    if (input.value.trim() === '') {
+        // 移除当前之后的所有空输入框
+        for (let i = inputs.length - 1; i > currentIndex; i--) {
+            if (inputs[i].value.trim() === '') {
+                inputs[i].remove();
+            }
+        }
+    }
+}
+
+// 获取所有武器筛选值
+function getWeaponFilterValues() {
+    const container = document.getElementById('weapon-filter-container');
+    if (!container) return [];
+    const inputs = container.querySelectorAll('.filter-weapon-input');
+    return Array.from(inputs)
+        .map(input => input.value.trim())
+        .filter(value => value !== '');
 }
 
 // ================================
@@ -777,15 +1004,15 @@ function renderWeaponFrequency() {
 function renderBigRunTable() {
     const tbody = document.getElementById('bigrun-tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = AppData.bigRuns.map(run => `
         <tr>
-            <td>${run.no || '-'}</td>
-            <td>${run.Stage || '-'}</td>
-            <td>${run.Start_time || '-'}</td>
-            <td class="rating-high">${run.Gold ?? '-'}</td>
-            <td class="rating-mid">${run.Silver ?? '-'}</td>
-            <td class="rating-low">${run.Bronze ?? '-'}</td>
+            <td>${run.no || t('common.empty')}</td>
+            <td>${run.Stage || t('common.empty')}</td>
+            <td>${run.Start_time || t('common.empty')}</td>
+            <td class="rating-high">${run.Gold ?? t('common.empty')}</td>
+            <td class="rating-mid">${run.Silver ?? t('common.empty')}</td>
+            <td class="rating-low">${run.Bronze ?? t('common.empty')}</td>
         </tr>
     `).join('');
 }
@@ -793,18 +1020,356 @@ function renderBigRunTable() {
 function renderEggstraTable() {
     const tbody = document.getElementById('eggstra-tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = AppData.eggstraWorks.map(run => `
         <tr>
-            <td>${run.no || '-'}</td>
-            <td>${run.Stage || '-'}</td>
-            <td>${run.Start_time || '-'}</td>
-            <td class="rating-high">${run.Gold ?? '-'}</td>
-            <td class="rating-mid">${run.Silver ?? '-'}</td>
-            <td class="rating-low">${run.Bronze ?? '-'}</td>
+            <td>${run.no || t('common.empty')}</td>
+            <td>${run.Stage || t('common.empty')}</td>
+            <td>${run.Start_time || t('common.empty')}</td>
+            <td class="rating-high">${run.Gold ?? t('common.empty')}</td>
+            <td class="rating-mid">${run.Silver ?? t('common.empty')}</td>
+            <td class="rating-low">${run.Bronze ?? t('common.empty')}</td>
         </tr>
     `).join('');
 }
+
+// ================================
+// 武器详情弹窗
+// ================================
+let currentEditingWeapon = null;  // 当前正在编辑的武器
+let editModeData = null;          // 编辑中的数据副本
+
+function openWeaponModal(weaponDataEncoded) {
+    const modal = document.getElementById('weapon-modal');
+    const modalBody = document.getElementById('weapon-modal-body');
+    const modalFooter = document.getElementById('weapon-modal-footer');
+
+    // 解码武器数据
+    const w = JSON.parse(decodeURIComponent(weaponDataEncoded));
+    currentEditingWeapon = w;
+
+    // 隐藏底部按钮（重置为查看模式）
+    modalFooter.style.display = 'none';
+
+    // 渲染查看模式
+    renderViewMode(w);
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // 防止背景滚动
+}
+
+function renderViewMode(w) {
+    const modalBody = document.getElementById('weapon-modal-body');
+
+    // 获取用户的修改（如果有）
+    const userEdit = getUserWeaponEdit(w.id);
+    const rating = userEdit?.overall ?? w.rating?.overall;
+    const tier = userEdit?.tier ?? w.rating?.tier;
+    const dimensions = userEdit?.dimensions ?? w.rating?.dimensions ?? {};
+
+    // 处理 null 值显示
+    const ratingDisplay = rating === null ? '?' : (rating || 0).toFixed(1);
+    const tierDisplay = tier === null ? '?' : (tier || '?');
+    const isQuestionMarkWeapon = rating === null;
+
+    // 获取所有6个维度
+    const allDimensions = Object.entries(dimensions);
+
+    const ratingClass = getRatingClass(rating === null ? 5 : rating);
+    const tierClass = 'tier-' + tierDisplay.replace('+', '-plus').replace('X', 'X');
+
+    // 铅笔图标（SVG）
+    const editIcon = `
+        <button class="edit-icon-btn" onclick="enterEditMode()" title="编辑武器评分">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+            </svg>
+        </button>
+    `;
+
+    modalBody.innerHTML = `
+        <div class="modal-weapon-header">
+            <div class="modal-weapon-image">
+                ${w.image ? `<img src="${w.image}" alt="${w.name_zh}" onerror="this.style.display='none'">` : '?'}
+            </div>
+            <div class="modal-weapon-name">${w.name_zh || w.name_en || '未知'}${editIcon}</div>
+            <div class="modal-weapon-type">${w.type || '?'}</div>
+            <div class="modal-weapon-rating ${ratingClass} ${tierClass}">${ratingDisplay}</div>
+            <span class="modal-weapon-tier ${tierClass}">${tierDisplay}</span>
+        </div>
+
+        <div class="modal-dimensions">
+            ${isQuestionMarkWeapon ? `
+                ${allDimensions.map(([key, val]) => `
+                    <div class="modal-dimension-row">
+                        <span class="modal-dimension-label">${key}</span>
+                        <span class="modal-dimension-question">?</span>
+                    </div>
+                `).join('')}
+            ` : `
+                ${allDimensions.map(([key, val]) => `
+                    <div class="modal-dimension-row">
+                        <span class="modal-dimension-label">${key}</span>
+                        <div class="modal-dimension-bar-container">
+                            <div class="modal-dimension-bar">
+                                <div class="modal-dimension-fill" style="width: ${(val === null ? 0 : (val || 0)) * 20}%"></div>
+                            </div>
+                            <span class="modal-dimension-value">${val === null ? '?' : (val || 0).toFixed(1)}</span>
+                        </div>
+                    </div>
+                `).join('')}
+            `}
+        </div>
+    `;
+}
+
+function enterEditMode() {
+    const modalBody = document.getElementById('weapon-modal-body');
+    const modalFooter = document.getElementById('weapon-modal-footer');
+
+    if (!currentEditingWeapon) return;
+
+    // 获取当前值（优先使用用户已修改的值）
+    const userEdit = getUserWeaponEdit(currentEditingWeapon.id);
+    const currentRating = userEdit?.overall ?? currentEditingWeapon.rating?.overall ?? 0;
+    const currentTier = userEdit?.tier ?? currentEditingWeapon.rating?.tier ?? 'B';
+    const currentDimensions = userEdit?.dimensions ?? currentEditingWeapon.rating?.dimensions ?? {};
+
+    // 创建编辑数据副本
+    editModeData = {
+        overall: currentRating,
+        tier: currentTier,
+        dimensions: { ...currentDimensions }
+    };
+
+    // 渲染编辑模式
+    renderEditMode();
+
+    // 显示底部按钮
+    modalFooter.style.display = 'flex';
+}
+
+function renderEditMode() {
+    const modalBody = document.getElementById('weapon-modal-body');
+    const w = currentEditingWeapon;
+    const dimensions = editModeData.dimensions;
+
+    const allDimensions = Object.entries(dimensions);
+
+    modalBody.innerHTML = `
+        <div class="modal-weapon-header">
+            <div class="modal-weapon-image">
+                ${w.image ? `<img src="${w.image}" alt="${w.name_zh}" onerror="this.style.display='none'">` : '?'}
+            </div>
+            <div class="modal-weapon-name">${w.name_zh || w.name_en || '未知'}</div>
+            <div class="modal-weapon-type">${w.type || '?'}</div>
+            <div style="margin-bottom: 0.5rem;">
+                <input type="number" id="edit-rating" class="modal-input rating-input" 
+                       value="${editModeData.overall}" min="0" max="10" step="0.1" 
+                       onchange="updateEditData('overall', this.value)">
+            </div>
+            <input type="text" id="edit-tier" class="modal-input tier-input" 
+                   value="${editModeData.tier}" maxlength="2" placeholder="S+/X"
+                   onchange="updateEditData('tier', this.value)">
+        </div>
+
+        <div class="modal-dimensions">
+            ${allDimensions.map(([key, val]) => `
+                <div class="modal-dimension-row">
+                    <span class="modal-dimension-label">${key}</span>
+                    <div class="modal-dimension-bar-container">
+                        <div class="modal-dimension-bar">
+                            <div class="modal-dimension-fill" style="width: ${(val === null ? 0 : (val || 0)) * 20}%"></div>
+                        </div>
+                        <input type="number" class="modal-dimension-input" 
+                               value="${val === null ? '' : (val || 0)}" 
+                               min="0" max="5" step="0.1"
+                               onchange="updateEditDimension('${key}', this.value)">
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function updateEditData(field, value) {
+    if (!editModeData) return;
+    if (field === 'overall') {
+        editModeData.overall = parseFloat(value) || 0;
+    } else if (field === 'tier') {
+        editModeData.tier = value.toUpperCase();
+    }
+}
+
+function updateEditDimension(key, value) {
+    if (!editModeData || !editModeData.dimensions) return;
+    editModeData.dimensions[key] = parseFloat(value) || 0;
+}
+
+function saveWeaponEdit() {
+    if (!currentEditingWeapon || !editModeData) return;
+
+    // 保存到用户修改存储
+    saveUserWeaponEdit(currentEditingWeapon.id, editModeData);
+
+    // 更新武器数据（前端显示用）
+    if (AppData.weapons[currentEditingWeapon.id]) {
+        AppData.weapons[currentEditingWeapon.id].rating = {
+            overall: editModeData.overall,
+            tier: editModeData.tier,
+            dimensions: { ...editModeData.dimensions }
+        };
+    }
+
+    // 隐藏底部按钮
+    document.getElementById('weapon-modal-footer').style.display = 'none';
+
+    // 重新渲染查看模式
+    renderViewMode(currentEditingWeapon);
+
+    // 刷新武器列表显示
+    renderWeapons();
+
+    // 提示保存成功
+    showToast('武器评分已保存');
+}
+
+function cancelWeaponEdit() {
+    // 隐藏底部按钮
+    document.getElementById('weapon-modal-footer').style.display = 'none';
+
+    // 重新渲染查看模式（放弃修改）
+    if (currentEditingWeapon) {
+        renderViewMode(currentEditingWeapon);
+    }
+}
+
+// 获取用户对武器的修改
+function getUserWeaponEdit(weaponId) {
+    try {
+        const saved = localStorage.getItem('salmon_weapon_edits');
+        if (saved) {
+            const edits = JSON.parse(saved);
+            return edits[weaponId] || null;
+        }
+    } catch (e) {
+        console.warn('读取用户武器修改失败:', e);
+    }
+    return null;
+}
+
+// 保存用户对武器的修改
+function saveUserWeaponEdit(weaponId, data) {
+    try {
+        let edits = {};
+        const saved = localStorage.getItem('salmon_weapon_edits');
+        if (saved) {
+            edits = JSON.parse(saved);
+        }
+        edits[weaponId] = data;
+        localStorage.setItem('salmon_weapon_edits', JSON.stringify(edits));
+    } catch (e) {
+        console.error('保存用户武器修改失败:', e);
+    }
+}
+
+// 加载用户武器修改（初始化时调用）
+function loadUserWeaponEdits() {
+    try {
+        const saved = localStorage.getItem('salmon_weapon_edits');
+        if (saved) {
+            const edits = JSON.parse(saved);
+            // 应用到武器数据
+            Object.entries(edits).forEach(([weaponId, data]) => {
+                if (AppData.weapons[weaponId]) {
+                    AppData.weapons[weaponId].rating = {
+                        overall: data.overall,
+                        tier: data.tier,
+                        dimensions: { ...data.dimensions }
+                    };
+                }
+            });
+            console.log('✅ 已加载用户武器修改');
+        }
+    } catch (e) {
+        console.warn('加载用户武器修改失败:', e);
+    }
+}
+
+// 下载用户修改后的武器评分
+function downloadUserWeaponScores() {
+    // 获取当前武器数据（包含用户修改）
+    const scores = {};
+    Object.entries(AppData.weapons).forEach(([id, w]) => {
+        scores[id] = w.rating || { overall: 3, tier: 'B', dimensions: {} };
+    });
+
+    const blob = new Blob([JSON.stringify(scores, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'my_weapon_scores.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    console.log('📥 用户武器评分已下载');
+}
+
+// 重置所有用户修改
+function resetAllUserWeaponEdits() {
+    localStorage.removeItem('salmon_weapon_edits');
+    location.reload();
+}
+
+// 简单的 Toast 提示
+function showToast(message) {
+    // 创建 toast 元素
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--splat-yellow);
+        color: var(--splat-black);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: bold;
+        z-index: 2000;
+        animation: fadeInUp 0.3s ease;
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    // 2秒后移除
+    setTimeout(() => {
+        toast.style.animation = 'fadeOut 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 2000);
+}
+
+function closeWeaponModal(event) {
+    // 如果点击的是关闭按钮或遮罩层，则关闭弹窗
+    if (!event || event.target.id === 'weapon-modal' || event.target.classList.contains('modal-close')) {
+        const modal = document.getElementById('weapon-modal');
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // 恢复背景滚动
+        // 重置编辑状态
+        currentEditingWeapon = null;
+        editModeData = null;
+        document.getElementById('weapon-modal-footer').style.display = 'none';
+    }
+}
+
+// 键盘 ESC 关闭弹窗
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeWeaponModal();
+    }
+});
 
 // ================================
 // 武器页渲染
@@ -815,14 +1380,14 @@ let currentWeaponSort = 'rating-desc';
 function renderWeapons() {
     const container = document.getElementById('weapon-grid');
     if (!container) return;
-    
+
     let weapons = Object.values(AppData.weapons);
-    
+
     // 筛选
     if (currentWeaponFilter) {
         weapons = weapons.filter(w => w.type === currentWeaponFilter);
     }
-    
+
     // 排序
     weapons.sort((a, b) => {
         switch(currentWeaponSort) {
@@ -846,18 +1411,28 @@ function renderWeapons() {
                 return 0;
         }
     });
-    
+
     container.innerHTML = weapons.map(w => {
         const rating = w.rating?.overall;
         const tier = w.rating?.tier;
         const dimensions = w.rating?.dimensions || {};
-        
-        // 处理 null 值显示
+
+        // 处理 null 值显示 (绿问号和金问号武器)
         const ratingDisplay = rating === null ? '?' : (rating || 0).toFixed(1);
         const tierDisplay = tier === null ? '?' : (tier || '?');
-        
+        const isQuestionMarkWeapon = rating === null;
+
+        // 检查是否有用户修改
+        const hasUserEdit = getUserWeaponEdit(w.id) !== null;
+
+        // 获取所有6个维度
+        const allDimensions = Object.entries(dimensions);
+
+        // 将武器数据编码为 JSON 字符串，用于点击事件
+        const weaponData = encodeURIComponent(JSON.stringify(w));
+
         return `
-            <div class="weapon-card">
+            <div class="weapon-card${hasUserEdit ? ' user-modified' : ''}" onclick="openWeaponModal('${weaponData}')">
                 <div class="weapon-image">
                     ${w.image ? `<img src="${w.image}" alt="${w.name_zh}" onerror="this.style.display='none'">` : '?'}
                 </div>
@@ -865,16 +1440,25 @@ function renderWeapons() {
                 <div class="weapon-type">${w.type || '?'}</div>
                 <div class="weapon-rating tier-${tierDisplay.replace('+', '-plus').replace('X', 'X')}">${ratingDisplay}</div>
                 <span class="tier-badge tier-${tierDisplay.replace('+', '-plus').replace('X', 'X')}">${tierDisplay}</span>
-                
+
                 <div class="dimension-bars">
-                    ${Object.entries(dimensions).slice(0, 4).map(([key, val]) => `
-                        <div class="dimension-row">
-                            <span class="dimension-label">${key}</span>
-                            <div class="dimension-bar">
-                                <div class="dimension-fill" style="width: ${(val === null ? 0 : (val || 0)) * 20}%"></div>
+                    ${isQuestionMarkWeapon ? `
+                        ${allDimensions.map(([key, val]) => `
+                            <div class="dimension-row">
+                                <span class="dimension-label">${key}</span>
+                                <span class="dimension-question">?</span>
                             </div>
-                        </div>
-                    `).join('')}
+                        `).join('')}
+                    ` : `
+                        ${allDimensions.map(([key, val]) => `
+                            <div class="dimension-row">
+                                <span class="dimension-label">${key}</span>
+                                <div class="dimension-bar">
+                                    <div class="dimension-fill" style="width: ${(val === null ? 0 : (val || 0)) * 20}%"></div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    `}
                 </div>
             </div>
         `;

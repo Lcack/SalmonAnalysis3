@@ -64,8 +64,8 @@ body {
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 38px;
+    height: 38px;
     object-fit: contain;
 }
 
@@ -157,6 +157,8 @@ body {
     padding-left: 1rem;
 }
 
+
+
 .page-content h2 {
     font-size: 1.3rem;
     margin: 2rem 0 1rem;
@@ -247,7 +249,7 @@ body {
 
 .schedule-card.current {
     border-color: var(--splat-yellow);
-    min-height: 400px;
+    min-height: 260px;
 }
 
 .current-schedule-overlay,
@@ -286,8 +288,8 @@ body {
 }
 
 .schedule-boss-img {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
 }
 
@@ -295,33 +297,56 @@ body {
     color: var(--splat-cyan);
     font-size: 1rem;
     font-weight: 600;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
 }
 
 .future-timer {
     color: var(--splat-yellow);
     font-size: 0.9rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
+    font-weight: 600;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
-.current-duration {
+.schedule-rating-bottom {
     position: absolute;
     bottom: 1.5rem;
     right: 1.5rem;
-    background: rgba(139, 92, 246, 0.3);
-    padding: 0.3rem 0.8rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.85rem;
-    color: var(--splat-purple);
-    border: 1px solid rgba(139, 92, 246, 0.5);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.schedule-rating-bottom.rating-high {
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.5);
+}
+
+.schedule-rating-bottom.rating-mid {
+    color: var(--splat-yellow);
+    border-color: rgba(230, 255, 0, 0.5);
+}
+
+.schedule-rating-bottom.rating-low {
+    color: var(--splat-orange);
+    border-color: rgba(255, 107, 53, 0.5);
 }
 
 .schedule-time {
     color: var(--text-secondary);
     font-size: 0.9rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.schedule-time .time-start,
+.schedule-time .time-end {
+    color: #ffffff;
 }
 
 .weapons-row {
@@ -386,6 +411,53 @@ body {
     color: var(--text-primary);
     font-size: 0.95rem;
     min-width: 150px;
+}
+
+.rating-range-group .rating-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-range-group input {
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+}
+
+.rating-range-group span {
+    color: var(--text-secondary);
+}
+
+/* 武器筛选动态输入 */
+.weapon-filter-group {
+    min-width: 200px;
+}
+
+.weapon-filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-weapon-input {
+    padding: 0.5rem 0.8rem;
+    border: 2px solid var(--splat-gray);
+    border-radius: 8px;
+    background: var(--splat-black);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.filter-weapon-input:focus {
+    outline: none;
+    border-color: var(--splat-yellow);
+}
+
+.filter-weapon-input:placeholder-shown + .filter-weapon-input,
+.filter-weapon-input:placeholder-shown ~ .filter-weapon-input {
+    display: none;
 }
 
 .filter-group select:focus,
@@ -557,10 +629,20 @@ tr:hover {
     gap: 0.5rem;
 }
 
+.section-title-with-icon.future-title {
+    color: var(--splat-cyan);
+    border-left: 5px solid var(--splat-cyan);
+}
+
 .section-icon {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.43rem;
+    height: 1.43rem;
     object-fit: contain;
+}
+
+h1 .section-icon {
+    width: 2.2rem;
+    height: 2.2rem;
 }
 
 .stats-grid {
@@ -620,11 +702,26 @@ tr:hover {
     border: 2px solid transparent;
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .weapon-card:hover {
     border-color: var(--splat-yellow);
     transform: translateY(-5px) scale(1.02);
+}
+
+.weapon-card.user-modified {
+    border-color: var(--splat-cyan);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.weapon-card.user-modified::after {
+    content: '✏️';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
 .weapon-image {
@@ -718,6 +815,357 @@ tr:hover {
     height: 100%;
     background: var(--splat-yellow);
     border-radius: 3px;
+}
+
+.dimension-question {
+    flex: 1;
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: bold;
+}
+
+/* ================================
+   武器详情弹窗
+   ================================ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--splat-dark) 0%, var(--splat-black) 100%);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--splat-yellow);
+    max-width: 450px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: var(--splat-gray);
+    color: var(--splat-yellow);
+}
+
+.modal-weapon-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-weapon-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+    background: var(--splat-gray);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal-weapon-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.modal-weapon-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.modal-weapon-type {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-weapon-rating {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.modal-weapon-tier {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.modal-dimensions {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--splat-gray);
+}
+
+.modal-dimensions h3 {
+    color: var(--splat-yellow);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-dimension-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    gap: 1rem;
+}
+
+.modal-dimension-label {
+    width: 100px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-align: right;
+}
+
+.modal-dimension-bar-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.modal-dimension-bar {
+    flex: 1;
+    height: 10px;
+    background: var(--splat-gray);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.modal-dimension-fill {
+    height: 100%;
+    background: var(--splat-yellow);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.modal-dimension-value {
+    width: 40px;
+    text-align: left;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.modal-dimension-question {
+    flex: 1;
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* 编辑按钮 */
+.edit-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.edit-icon-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-secondary);
+    transition: fill 0.2s ease;
+}
+
+.edit-icon-btn:hover svg {
+    fill: var(--splat-yellow);
+}
+
+/* 编辑模式输入框 */
+.modal-input {
+    background: var(--splat-black);
+    border: 2px solid var(--splat-gray);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: var(--splat-yellow);
+}
+
+.modal-input.small {
+    width: 60px;
+}
+
+.modal-input.rating-input {
+    width: 80px;
+}
+
+.modal-input.tier-input {
+    width: 50px;
+    text-transform: uppercase;
+}
+
+.modal-dimension-input {
+    width: 50px;
+    background: var(--splat-black);
+    border: 2px solid var(--splat-gray);
+    border-radius: 4px;
+    color: var(--text-primary);
+    padding: 0.3rem 0.4rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.modal-dimension-input:focus {
+    outline: none;
+    border-color: var(--splat-yellow);
+}
+
+/* 底部按钮区域 */
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--splat-gray);
+}
+
+.modal-footer button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* 编辑模式下的只读显示 */
+.modal-value-display {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+/* ================================
+   页脚
+   ================================ */
+.site-footer {
+    background: linear-gradient(135deg, var(--splat-black) 0%, var(--splat-dark) 100%);
+    border-top: 2px solid var(--splat-gray);
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+}
+
+.footer-content a {
+    color: var(--splat-cyan);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-content a:hover {
+    color: var(--splat-yellow);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.github-link {
+    color: var(--splat-cyan);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.github-link:hover {
+    color: var(--splat-yellow);
+}
+
+.footer-separator {
+    color: var(--text-secondary);
+}
+
+.lang-selector {
+    background: var(--splat-black);
+    border: 2px solid var(--splat-gray);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.lang-selector:focus {
+    outline: none;
+    border-color: var(--splat-yellow);
 }
 
 /* ================================

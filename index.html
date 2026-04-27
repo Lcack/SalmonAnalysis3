@@ -11,10 +11,10 @@
     <nav class="navbar">
         <div class="logo"><img src="images/icon/Badge_CoopClearDangerRateMax.png" alt="logo" class="logo-icon"> SalmonAnalysis3</div>
         <ul class="nav-links">
-            <li onclick="showPage('home')" class="active" data-page="home">首页</li>
-            <li onclick="showPage('history')" data-page="history">历史记录</li>
-            <li onclick="showPage('stats')" data-page="stats">统计</li>
-            <li onclick="showPage('weapons')" data-page="weapons">武器</li>
+            <li onclick="showPage('home')" class="active" data-page="home" data-i18n="nav.home">首页</li>
+            <li onclick="showPage('history')" data-page="history" data-i18n="nav.history">历史记录</li>
+            <li onclick="showPage('stats')" data-page="stats" data-i18n="nav.stats">活动统计</li>
+            <li onclick="showPage('weapons')" data-page="weapons" data-i18n="nav.weapons">武器评分</li>
         </ul>
     </nav>
 
@@ -22,18 +22,18 @@
     <div id="loading" class="loading-overlay">
         <div class="loading-content">
             <div class="loading-spinner"></div>
-            <p>正在加载数据...</p>
+            <p data-i18n="common.loading">正在加载数据...</p>
         </div>
     </div>
 
     <!-- 首页：当前/未来场次 -->
     <section id="home" class="page-content">
-        <h1>🎯 当前场次</h1>
+        <h1 class="section-title-with-icon"><img src="images/enemy/SakelienStandard.png" alt="当前场次" class="section-icon"> <span data-i18n="home.current">当前场次</span></h1>
         <div id="current-schedule" class="current-schedule-container">
             <!-- 当前场次会在这里渲染 -->
         </div>
 
-        <h2>⏰ 未来场次</h2>
+        <h1 class="section-title-with-icon future-title"><img src="images/enemy/SakelienSmall.png" alt="未来场次" class="section-icon"> <span data-i18n="home.future">未来场次</span></h1>
         <div id="future-schedules" class="future-schedules-grid">
             <!-- 未来4场会在这里渲染 -->
         </div>
@@ -41,38 +41,38 @@
 
     <!-- 历史记录页 -->
     <section id="history" class="page-content" style="display: none;">
-        <h1>📊 历史记录分析</h1>
+        <h1 class="section-title-with-icon"><img src="images/enemy/Dummy.png" alt="历史记录" class="section-icon"> <span data-i18n="history.title">历史记录分析</span></h1>
         
         <!-- 筛选器 -->
         <div class="filter-bar">
             <div class="filter-group">
-                <label>场地：</label>
+                <label data-i18n="history.filter.stage">场地：</label>
                 <select id="filter-stage">
-                    <option value="">全部场地</option>
+                    <option value="" data-i18n="weapons.filter.all">全部</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Boss：</label>
+                <label data-i18n="history.filter.boss">Boss：</label>
                 <select id="filter-boss">
-                    <option value="">全部Boss</option>
+                    <option value="" data-i18n="weapons.filter.all">全部</option>
                 </select>
             </div>
-            <div class="filter-group">
-                <label>武器搜索：</label>
-                <input type="text" id="filter-weapon" placeholder="输入武器名称">
+            <div class="filter-group weapon-filter-group">
+                <label data-i18n="history.filter.weapons">武器：</label>
+                <div id="weapon-filter-container" class="weapon-filter-container">
+                    <input type="text" class="filter-weapon-input" data-i18n-placeholder="history.filter.searchPlaceholder" placeholder="输入武器名称" data-index="0" oninput="onWeaponInputChange(this)">
+                </div>
             </div>
-            <div class="filter-group">
-                <label>最低评分：</label>
-                <select id="filter-rating">
-                    <option value="">全部</option>
-                    <option value="8">≥8/10</option>
-                    <option value="7">≥7/10</option>
-                    <option value="6">≥6/10</option>
-                    <option value="5">≥5/10</option>
-                </select>
+            <div class="filter-group rating-range-group">
+                <label data-i18n="history.filter.rating">评分：</label>
+                <div class="rating-range-inputs">
+                    <input type="number" id="filter-rating-min" placeholder="0" min="0" max="10" step="0.1">
+                    <span>-</span>
+                    <input type="number" id="filter-rating-max" placeholder="10" min="0" max="10" step="0.1">
+                </div>
             </div>
-            <button onclick="applyFilters()" class="btn-primary">筛选</button>
-            <button onclick="resetFilters()" class="btn-secondary">重置</button>
+            <button onclick="applyFilters()" class="btn-primary" data-i18n="history.filter.apply">筛选</button>
+            <button onclick="resetFilters()" class="btn-secondary" data-i18n="history.filter.reset">重置</button>
         </div>
 
         <!-- 历史表格 -->
@@ -80,13 +80,13 @@
             <table id="history-table">
                 <thead>
                     <tr>
-                        <th>场次</th>
-                        <th>时间</th>
-                        <th>场地</th>
+                        <th data-i18n="history.table.no">场次</th>
+                        <th data-i18n="history.table.time">时间</th>
+                        <th data-i18n="history.table.stage">场地</th>
                         <th class="center-cell">Boss</th>
-                        <th>武器配置</th>
-                        <th class="center-cell">雷达图</th>
-                        <th class="center-cell">评分</th>
+                        <th data-i18n="history.table.weapons">武器配置</th>
+                        <th class="center-cell" data-i18n="history.table.radar">雷达图</th>
+                        <th class="center-cell" data-i18n="history.table.rating">评分</th>
                     </tr>
                 </thead>
                 <tbody id="history-tbody">
@@ -103,21 +103,21 @@
 
     <!-- 统计页 -->
     <section id="stats" class="page-content" style="display: none;">
-        <h1>📈 统计分析</h1>
+        <h1 class="section-title-with-icon"><img src="images/enemy/SakelienGolden.png" alt="活动统计" class="section-icon"> <span data-i18n="stats.title">活动统计</span></h1>
 
         <!-- Big Run 奖牌 -->
         <div class="stats-section">
-            <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopBigRunTrophy_Lv00.png" alt="Big Run" class="section-icon"> Big Run 历史奖牌</h2>
+            <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopBigRunTrophy_Lv00.png" alt="Big Run" class="section-icon"> <span data-i18n="stats.bigrun.title">Big Run 历史奖牌</span></h2>
             <div class="table-container">
                 <table id="bigrun-table">
                     <thead>
                         <tr>
-                            <th>期数</th>
-                            <th>场地</th>
-                            <th>时间</th>
-                            <th>金</th>
-                            <th>银</th>
-                            <th>铜</th>
+                            <th data-i18n="stats.bigrun.no">期数</th>
+                            <th data-i18n="stats.bigrun.stage">场地</th>
+                            <th data-i18n="stats.bigrun.time">时间</th>
+                            <th data-i18n="stats.bigrun.gold">金</th>
+                            <th data-i18n="stats.bigrun.silver">银</th>
+                            <th data-i18n="stats.bigrun.bronze">铜</th>
                         </tr>
                     </thead>
                     <tbody id="bigrun-tbody"></tbody>
@@ -127,17 +127,17 @@
 
         <!-- Eggstra Work 奖牌 -->
         <div class="stats-section">
-            <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopContestTrophy_Lv02.png" alt="Eggstra Work" class="section-icon"> Eggstra Work 历史奖牌</h2>
+            <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopContestTrophy_Lv02.png" alt="Eggstra Work" class="section-icon"> <span data-i18n="stats.eggstra.title">Eggstra Work 历史奖牌</span></h2>
             <div class="table-container">
                 <table id="eggstra-table">
                     <thead>
                         <tr>
-                            <th>期数</th>
-                            <th>场地</th>
-                            <th>时间</th>
-                            <th>金</th>
-                            <th>银</th>
-                            <th>铜</th>
+                            <th data-i18n="stats.eggstra.no">期数</th>
+                            <th data-i18n="stats.eggstra.stage">场地</th>
+                            <th data-i18n="stats.eggstra.time">时间</th>
+                            <th data-i18n="stats.eggstra.gold">金</th>
+                            <th data-i18n="stats.eggstra.silver">银</th>
+                            <th data-i18n="stats.eggstra.bronze">铜</th>
                         </tr>
                     </thead>
                     <tbody id="eggstra-tbody"></tbody>
@@ -148,33 +148,34 @@
 
     <!-- 武器页 -->
     <section id="weapons" class="page-content" style="display: none;">
-        <h1>🔫 武器库</h1>
+        <h1 class="section-title-with-icon"><img src="images/weapon_flat/Path_Wst_Shooter_Normal_00.png" alt="武器评分" class="section-icon"> <span data-i18n="weapons.title">武器评分</span></h1>
         
         <!-- 武器评分自定义 -->
         <div class="weapon-controls">
-            <button onclick="downloadWeaponScores()" class="btn-secondary">📥 下载武器评分配置</button>
-            <label class="btn-secondary file-upload-label">
-                📤 上传自定义评分
+            <button onclick="downloadUserWeaponScores()" class="btn-secondary" data-i18n="weapons.controls.downloadMyScores">📥 下载我的评分</button>
+            <button onclick="resetAllUserWeaponEdits()" class="btn-secondary" style="margin-left: 0.5rem;" data-i18n="weapons.controls.resetAll">🔄 重置所有修改</button>
+            <label class="btn-secondary file-upload-label" style="margin-left: 0.5rem;">
+                <span data-i18n="weapons.controls.upload">📤 上传自定义评分</span>
                 <input type="file" id="upload-scores" accept=".json" onchange="uploadWeaponScores(event)" hidden>
             </label>
-            <span class="hint">上传后会用你自己的评分重新计算所有场次</span>
+            <span class="hint" data-i18n="weapons.controls.hint">点击武器卡片可编辑评分，修改后下载保存</span>
         </div>
 
         <!-- 武器筛选 -->
         <div class="filter-bar">
             <div class="filter-group">
-                <label>武器类型：</label>
+                <label data-i18n="weapons.filter.type">武器类型：</label>
                 <select id="weapon-type-filter" onchange="filterWeapons()">
-                    <option value="">全部</option>
+                    <option value="" data-i18n="weapons.filter.all">全部</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>排序：</label>
+                <label data-i18n="weapons.filter.sort">排序：</label>
                 <select id="weapon-sort" onchange="sortWeapons()">
-                    <option value="rating-desc">评分高→低</option>
-                    <option value="rating-asc">评分低→高</option>
-                    <option value="name">名称</option>
-                    <option value="type">类型</option>
+                    <option value="rating-desc" data-i18n="weapons.filter.ratingDesc">评分高→低</option>
+                    <option value="rating-asc" data-i18n="weapons.filter.ratingAsc">评分低→高</option>
+                    <option value="name" data-i18n="weapons.filter.name">名称</option>
+                    <option value="type" data-i18n="weapons.filter.typeSort">类型</option>
                 </select>
             </div>
         </div>
@@ -184,6 +185,37 @@
             <!-- 武器卡片会在这里渲染 -->
         </div>
     </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><span data-i18n="footer.dataSource">Data sourced from</span> <a href="https://splatoon3.ink/" target="_blank" rel="noopener noreferrer">Splatoon3.ink</a> <span data-i18n="footer.and">&</span> <a href="https://wikiwiki.jp/splatoon3mix/" target="_blank" rel="noopener noreferrer">Splatoon3 Wiki (JP)</a></p>
+            <p data-i18n="footer.disclaimer">This website is not affiliated with Nintendo. All game-related assets belong to their respective owners.</p>
+            <div class="footer-bottom">
+                <a href="https://github.com/Lcack/SalmonAnalysis3" target="_blank" rel="noopener noreferrer" class="github-link" data-i18n="footer.github">GitHub</a>
+                <span class="footer-separator">-</span>
+                <select id="lang-selector" class="lang-selector" onchange="changeLanguage(this.value)">
+                    <option value="cn">cn 中文(简体)</option>
+                    <option value="jp">jp 日本语</option>
+                    <option value="us">us English(US)</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 武器详情弹窗 -->
+    <div id="weapon-modal" class="modal-overlay" style="display: none;" onclick="closeWeaponModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeWeaponModal()">×</button>
+            <div id="weapon-modal-body">
+                <!-- 弹窗内容会在这里渲染 -->
+            </div>
+            <div id="weapon-modal-footer" class="modal-footer" style="display: none;">
+                <button class="btn-secondary" onclick="cancelWeaponEdit()" data-i18n="weapons.modal.cancel">取消</button>
+                <button class="btn-primary" onclick="saveWeaponEdit()" data-i18n="weapons.modal.save">保存</button>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
