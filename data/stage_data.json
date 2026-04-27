@@ -7,7 +7,8 @@
             "name_jp": "スメーシーワールド",
             "image": "images/stage/Vss_Carousel.png",
             "imageL": "images/stageL/Vss_Carousel.png",
-            "imageBanner": "images/stageBanner/Vss_Carousel.png"
+            "imageBanner": "images/stageBanner/Vss_Carousel.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         },
         "District": {
             "id": "District",
@@ -16,7 +17,8 @@
             "name_jp": "ゴンズイ地区",
             "image": "images/stage/Vss_District.png",
             "imageL": "images/stageL/Vss_District.png",
-            "imageBanner": "images/stageBanner/Vss_District.png"
+            "imageBanner": "images/stageBanner/Vss_District.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         },
         "Factory": {
             "id": "Factory",
@@ -25,7 +27,8 @@
             "name_jp": "ナンプラー遺跡",
             "image": "images/stage/Vss_Factory.png",
             "imageL": "images/stageL/Vss_Factory.png",
-            "imageBanner": "images/stageBanner/Vss_Factory.png"
+            "imageBanner": "images/stageBanner/Vss_Factory.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         },
         "Manbou": {
             "id": "Manbou",
@@ -34,7 +37,8 @@
             "name_jp": "グランドバンカラアリーナ",
             "image": "images/stage/Vss_Manbou.png",
             "imageL": "images/stageL/Vss_Manbou.png",
-            "imageBanner": "images/stageBanner/Vss_Manbou.png"
+            "imageBanner": "images/stageBanner/Vss_Manbou.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         },
         "Random": {
             "id": "Random",
@@ -43,7 +47,8 @@
             "name_jp": "各地で同時発生",
             "image": "images/stage/Unknown.png",
             "imageL": "images/stageL/Unknown.png",
-            "imageBanner": "images/stageBanner/Unknown.png"
+            "imageBanner": "images/stageBanner/Unknown.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         },
         "Section": {
             "id": "Section",
@@ -52,7 +57,8 @@
             "name_jp": "タラポートショッピングパーク",
             "image": "images/stage/Vss_Section.png",
             "imageL": "images/stageL/Vss_Section.png",
-            "imageBanner": "images/stageBanner/Vss_Section.png"
+            "imageBanner": "images/stageBanner/Vss_Section.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         },
         "Shakedent": {
             "id": "Shakedent",
@@ -61,7 +67,8 @@
             "name_jp": "ムニ・エール海洋発電所",
             "image": "images/stage/Cop_Shakedent.png",
             "imageL": "images/stageL/Cop_Shakedent.png",
-            "imageBanner": "images/stageBanner/Cop_Shakedent.png"
+            "imageBanner": "images/stageBanner/Cop_Shakedent.png",
+            "imageBadge": "images/stage/Badge_CoopGrade_Normal_Shakedent_Lv00.png"
         },
         "Shakehighway": {
             "id": "Shakehighway",
@@ -70,7 +77,8 @@
             "name_jp": "すじこジャンクション跡",
             "image": "images/stage/Cop_Shakehighway.png",
             "imageL": "images/stageL/Cop_Shakehighway.png",
-            "imageBanner": "images/stageBanner/Cop_Shakehighway.png"
+            "imageBanner": "images/stageBanner/Cop_Shakehighway.png",
+            "imageBadge": "images/stage/Badge_CoopGrade_Normal_Shakehighway_Lv00.png"
         },
         "Shakelift": {
             "id": "Shakelift",
@@ -79,7 +87,8 @@
             "name_jp": "トキシラズいぶし工房",
             "image": "images/stage/Cop_Shakelift.png",
             "imageL": "images/stageL/Cop_Shakelift.png",
-            "imageBanner": "images/stageBanner/Cop_Shakelift.png"
+            "imageBanner": "images/stageBanner/Cop_Shakelift.png",
+            "imageBadge": "images/stage/Badge_CoopGrade_Normal_Shakelift_Lv00.png"
         },
         "Shakerail": {
             "id": "Shakerail",
@@ -88,7 +97,8 @@
             "name_jp": "どんぴこ闘技場",
             "image": "images/stage/Cop_Shakerail.png",
             "imageL": "images/stageL/Cop_Shakerail.png",
-            "imageBanner": "images/stageBanner/Cop_Shakerail.png"
+            "imageBanner": "images/stageBanner/Cop_Shakerail.png",
+            "imageBadge": "images/stage/Badge_CoopGrade_Normal_Shakerail_Lv00.png"
         },
         "Shakeship": {
             "id": "Shakeship",
@@ -97,7 +107,8 @@
             "name_jp": "難破船ドン・ブラコ",
             "image": "images/stage/Cop_Shakeship.png",
             "imageL": "images/stageL/Cop_Shakeship.png",
-            "imageBanner": "images/stageBanner/Cop_Shakeship.png"
+            "imageBanner": "images/stageBanner/Cop_Shakeship.png",
+            "imageBadge": "images/stage/Badge_CoopGrade_Normal_Shakeship_Lv00.png"
         },
         "Shakespiral": {
             "id": "Shakespiral",
@@ -106,7 +117,8 @@
             "name_jp": "アラマキ砦",
             "image": "images/stage/Cop_Shakespiral.png",
             "imageL": "images/stageL/Cop_Shakespiral.png",
-            "imageBanner": "images/stageBanner/Cop_Shakespiral.png"
+            "imageBanner": "images/stageBanner/Cop_Shakespiral.png",
+            "imageBadge": "images/stage/Badge_CoopGrade_Normal_Shakespiral_Lv00.png"
         },
         "Shakeup": {
             "id": "Shakeup",
@@ -115,7 +127,8 @@
             "name_jp": "シェケナダム",
             "image": "images/stage/Cop_Shakeup.png",
             "imageL": "images/stageL/Cop_Shakeup.png",
-            "imageBanner": "images/stageBanner/Cop_Shakeup.png"
+            "imageBanner": "images/stageBanner/Cop_Shakeup.png",
+            "imageBadge": "images/stage/Badge_CoopGrade_Normal_Shakeup_Lv00.png"
         },
         "Temple": {
             "id": "Temple",
@@ -124,7 +137,8 @@
             "name_jp": "マテガイ放水路",
             "image": "images/stage/Vss_Temple.png",
             "imageL": "images/stageL/Vss_Temple.png",
-            "imageBanner": "images/stageBanner/Vss_Temple.png"
+            "imageBanner": "images/stageBanner/Vss_Temple.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         },
         "Upland": {
             "id": "Upland",
@@ -133,7 +147,8 @@
             "name_jp": "海女美術大学",
             "image": "images/stage/Vss_Upland.png",
             "imageL": "images/stageL/Vss_Upland.png",
-            "imageBanner": "images/stageBanner/Vss_Upland.png"
+            "imageBanner": "images/stageBanner/Vss_Upland.png",
+            "imageBadge": "images/icon/Badge_CoopBigRunTrophy_Lv00.png"
         }
     }
 }
