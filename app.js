@@ -45,10 +45,26 @@ async function loadLanguageData() {
             if (langSelector) {
                 langSelector.value = currentLang;
             }
+            // 设置 body 的语言 class，用于字体适配
+            document.body.classList.remove('lang-cn', 'lang-us', 'lang-jp');
+            document.body.classList.add(`lang-${currentLang}`);
             console.log('✅ 语言数据已加载:', currentLang);
         }
     } catch (error) {
         console.error('❌ 加载语言数据失败:', error);
+    }
+}
+
+// 获取当前语言的字体配置（用于 Canvas/Chart.js）
+function getFontForCurrentLang() {
+    switch (currentLang) {
+        case 'us':
+            return '"Helvetica Neue", Helvetica, Arial, sans-serif';
+        case 'jp':
+            return '"Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif';
+        case 'cn':
+        default:
+            return '"PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif';
     }
 }
 
@@ -92,11 +108,18 @@ function changeLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('salmon_language', lang);
 
+    // 更新 body 的语言 class，用于字体适配
+    document.body.classList.remove('lang-cn', 'lang-us', 'lang-jp');
+    document.body.classList.add(`lang-${lang}`);
+
     // 重新渲染所有页面
     const currentPage = document.querySelector('.page-content:not([style*="none"])')?.id;
 
     // 更新静态文本
     updateStaticText();
+
+    // 重新初始化筛选器（更新选项的本地化显示）
+    initFilters();
 
     // 重新渲染当前页面内容
     switch(currentPage) {
@@ -112,6 +135,14 @@ function changeLanguage(lang) {
         case 'weapons':
             renderWeapons();
             break;
+    }
+
+    // 如果在统计页，强制重新渲染图表以应用新字体
+    if (currentPage === 'stats') {
+        setTimeout(() => {
+            renderBigRunTable();
+            renderEggstraTable();
+        }, 0);
     }
 
     console.log('🌐 语言已切换:', lang);
@@ -300,6 +331,68 @@ function getTimezoneOffsetMinutes() {
     return userOffset - dataOffset;
 }
 
+// ================================
+// 多语言名称获取
+// ================================
+// 获取场地本地化名称
+function getStageLocalizedName(stageName) {
+    const stage = Object.values(AppData.stages).find(s =>
+        s.name_zh === stageName || s.name_en === stageName || s.name_jp === stageName || s.id === stageName
+    );
+    if (!stage) return stageName || t('common.unknown');
+
+    switch (currentLang) {
+        case 'us':
+            return stage.name_en || stage.name_zh;
+        case 'jp':
+            return stage.name_jp || stage.name_zh;
+        case 'cn':
+        default:
+            return stage.name_zh;
+    }
+}
+
+// 获取场地图标
+function getStageBadge(stageName) {
+    const stage = Object.values(AppData.stages).find(s =>
+        s.name_zh === stageName || s.name_en === stageName || s.name_jp === stageName || s.id === stageName
+    );
+    return stage?.imageBadge || null;
+}
+
+// 获取Boss本地化名称
+function getBossLocalizedName(bossName) {
+    const boss = Object.values(AppData.bosses).find(b =>
+        b.name_zh === bossName || b.name_en === bossName || b.name_jp === bossName || b.id === bossName
+    );
+    if (!boss) return bossName || t('common.unknown');
+
+    switch (currentLang) {
+        case 'us':
+            return boss.name_en || boss.name_zh;
+        case 'jp':
+            return boss.name_jp || boss.name_zh;
+        case 'cn':
+        default:
+            return boss.name_zh;
+    }
+}
+
+// 获取武器本地化名称
+function getWeaponLocalizedName(weapon) {
+    if (!weapon) return t('common.unknown');
+
+    switch (currentLang) {
+        case 'us':
+            return weapon.name_en || weapon.name_zh;
+        case 'jp':
+            return weapon.name_jp || weapon.name_zh;
+        case 'cn':
+        default:
+            return weapon.name_zh;
+    }
+}
+
 // 将数据时间（东八区）转换为用户本地时间
 function convertToLocalTime(date) {
     if (!date) return null;
@@ -351,9 +444,36 @@ function parseTimeString(timeStr) {
 function formatDateTime(date, showWeekday = false) {
     if (!date) return '-';
     const d = new Date(date);
-    const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
-    const weekday = showWeekday ? `(${weekdays[d.getDay()]})` : '';
-    return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}${weekday} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+
+    // 根据当前语言返回对应的星期缩写
+    let weekday = '';
+    if (showWeekday) {
+        switch (currentLang) {
+            case 'us':
+                const enDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                weekday = `(${enDays[d.getDay()]})`;
+                break;
+            case 'jp':
+                const jpDays = ['日', '月', '火', '水', '木', '金', '土'];
+                weekday = `(${jpDays[d.getDay()]})`;
+                break;
+            case 'cn':
+            default:
+                const cnDays = ['日', '一', '二', '三', '四', '五', '六'];
+                weekday = `(${cnDays[d.getDay()]})`;
+                break;
+        }
+    }
+
+    // 首页不显示年份，只显示月/日（两位数格式）
+    return `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}${weekday} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+}
+
+// 历史记录专用的时间格式化（不显示周几，用于历史记录表格，保留年份）
+function formatDateTimeHistory(date) {
+    if (!date) return '-';
+    const d = new Date(date);
+    return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 }
 
 // 历史记录专用的时间格式化（不显示周几，用于历史记录表格）
@@ -620,19 +740,25 @@ function renderCurrentSchedule() {
     const ratingDisplay = rating === null ? '?' : (rating.toFixed(1) + '/10');
     const ratingClass = getRatingClass(rating === null ? 5 : rating / 2); // ?使用最高配色
 
-    // 获取boss图片
+    // 获取boss图片和本地化名称
     const bossImage = getBossImage(s.King_Salmonid);
+    const bossName = getBossLocalizedName(s.King_Salmonid);
 
-    // 获取场地Banner图片
+    // 获取场地信息
     const stage = getStageByName(s.Stage);
     const bannerImage = stage?.imageBanner || null;
+    const stageBadge = getStageBadge(s.Stage);
+    const stageName = getStageLocalizedName(s.Stage);
 
     container.innerHTML = `
         <div class="schedule-card current" ${bannerImage ? `style="background-image: url('${bannerImage}'); background-size: cover; background-position: center;"` : ''}>
             <div class="current-schedule-overlay">
                 <div class="schedule-header">
-                    <span class="schedule-stage">${s.Stage || t('home.unknownStage')}</span>
-                    ${bossImage ? `<img src="${bossImage}" alt="${s.King_Salmonid}" class="schedule-boss-img" title="${s.King_Salmonid}">` : '<span class="schedule-boss">?</span>'}
+                    <span class="schedule-stage">
+                        ${stageBadge ? `<img src="${stageBadge}" alt="${stageName}" class="stage-badge-icon">` : ''}
+                        ${stageName}
+                    </span>
+                    ${bossImage ? `<img src="${bossImage}" alt="${bossName}" class="schedule-boss-img" title="${bossName}">` : '<span class="schedule-boss">?</span>'}
                 </div>
                 <div class="schedule-time">
                     <span class="time-start">${formatDateTime(s.startTime, true)}</span> - <span class="time-end">${formatDateTime(s.endTime)}</span>
@@ -671,29 +797,35 @@ function renderFutureSchedules() {
         const ratingDisplay = rating === null ? '?' : (rating.toFixed(1) + '/10');
         const ratingClass = getRatingClass(rating === null ? 5 : rating / 2); // ?使用最高配色
 
-        // 获取boss图片
+        // 获取boss图片和本地化名称
         const bossImage = getBossImage(s.King_Salmonid);
+        const bossName = getBossLocalizedName(s.King_Salmonid);
 
-        // 获取场地图片(imageL)
+        // 获取场地信息
         const stage = getStageByName(s.Stage);
         const stageImage = stage?.imageL || null;
+        const stageBadge = getStageBadge(s.Stage);
+        const stageName = getStageLocalizedName(s.Stage);
 
         return `
             <div class="schedule-card future-card" ${stageImage ? `style="background-image: url('${stageImage}'); background-size: cover; background-position: center;"` : ''}>
                 <div class="future-schedule-overlay">
                     <div class="schedule-header">
-                        <span class="schedule-stage">${s.Stage || '未知场地'}</span>
-                        ${bossImage ? `<img src="${bossImage}" alt="${s.King_Salmonid}" class="schedule-boss-img" title="${s.King_Salmonid}">` : '<span class="schedule-boss">?</span>'}
+                        <span class="schedule-stage">
+                            ${stageBadge ? `<img src="${stageBadge}" alt="${stageName}" class="stage-badge-icon">` : ''}
+                            ${stageName}
+                        </span>
+                        ${bossImage ? `<img src="${bossImage}" alt="${bossName}" class="schedule-boss-img" title="${bossName}">` : '<span class="schedule-boss">?</span>'}
                     </div>
                     <div class="schedule-time">
                         <span class="time-start">${formatDateTime(s.startTime, true)}</span> - <span class="time-end">${formatDateTime(s.endTime)}</span>
                     </div>
-                    <div id="future-timer-${index}" class="future-timer">计算中...</div>
+                    <div id="future-timer-${index}" class="future-timer">${t('home.calculating')}</div>
                     <div class="weapons-row">
                         ${weapons.map(w => renderWeaponIcon(w)).join('')}
                     </div>
                     <div class="schedule-rating-bottom ${ratingClass}">
-                        评分:${ratingDisplay}
+                        ${t('home.rating')}:${ratingDisplay}
                     </div>
                 </div>
             </div>
@@ -729,7 +861,8 @@ function initFilters() {
         const stages = [...new Set(AppData.schedules.map(s => s.Stage).filter(Boolean))];
         stageSelect.innerHTML = `<option value="">${t('weapons.filter.all')}</option>`;
         stages.forEach(stage => {
-            stageSelect.innerHTML += `<option value="${stage}">${stage}</option>`;
+            const stageName = getStageLocalizedName(stage);
+            stageSelect.innerHTML += `<option value="${stage}">${stageName}</option>`;
         });
     }
 
@@ -739,7 +872,8 @@ function initFilters() {
         const bosses = [...new Set(AppData.schedules.map(s => s.King_Salmonid).filter(Boolean))];
         bossSelect.innerHTML = `<option value="">${t('weapons.filter.all')}</option>`;
         bosses.forEach(boss => {
-            bossSelect.innerHTML += `<option value="${boss}">${boss}</option>`;
+            const bossName = getBossLocalizedName(boss);
+            bossSelect.innerHTML += `<option value="${boss}">${bossName}</option>`;
         });
     }
 
@@ -816,12 +950,16 @@ function renderHistory() {
         // 生成雷达图
         const radarSvg = generateRadarChart(weapons);
 
+        // 获取本地化的场地和Boss名称
+        const stageName = getStageLocalizedName(s.Stage);
+        const bossName = getBossLocalizedName(s.King_Salmonid);
+
         return `
             <tr>
-                <td>#${s.no || '-'}</td>
+                <td>#${s.no || t('common.empty')}</td>
                 <td>${formatDateTimeHistory(s.startTime)}<br>${formatDateTimeHistory(s.endTime)}</td>
-                <td>${s.Stage || '-'}</td>
-                <td class="center-cell">${s.King_Salmonid || '-'}</td>
+                <td>${stageName}</td>
+                <td class="center-cell">${bossName}</td>
                 <td>
                     <div class="weapons-row history-weapons">
                         ${weapons.map(w => renderWeaponIcon(w)).join('')}
@@ -967,7 +1105,7 @@ function renderStats() {
 function renderWeaponFrequency() {
     const container = document.getElementById('weapon-frequency');
     if (!container) return;
-    
+
     // 统计武器出场次数
     const weaponCount = {};
     AppData.schedules.forEach(s => {
@@ -975,23 +1113,24 @@ function renderWeaponFrequency() {
             weaponCount[weaponName] = (weaponCount[weaponName] || 0) + 1;
         });
     });
-    
+
     // 排序取前20
     const sorted = Object.entries(weaponCount)
         .sort((a, b) => b[1] - a[1])
         .slice(0, 20);
-    
+
     const maxCount = sorted[0]?.[1] || 1;
-    
+
     container.innerHTML = sorted.map(([name, count]) => {
         const weapon = AppData.weaponNameMap.get(name);
         const percentage = (count / maxCount * 100).toFixed(0);
-        
+        const displayName = weapon ? getWeaponLocalizedName(weapon) : name;
+
         return `
             <div class="stat-card">
                 <div class="stat-header">
-                    <span>${weapon?.name_zh || name}</span>
-                    <span>${count} 次</span>
+                    <span>${displayName}</span>
+                    <span>${count} ${t('stats.times')}</span>
                 </div>
                 <div class="stat-bar">
                     <div class="stat-bar-fill" style="width: ${percentage}%"></div>
@@ -1001,36 +1140,541 @@ function renderWeaponFrequency() {
     }).join('');
 }
 
-function renderBigRunTable() {
-    const tbody = document.getElementById('bigrun-tbody');
-    if (!tbody) return;
+// Big Run 和 Eggstra Work 图表实例
+let bigRunChart = null;
+let eggstraChart = null;
 
-    tbody.innerHTML = AppData.bigRuns.map(run => `
-        <tr>
-            <td>${run.no || t('common.empty')}</td>
-            <td>${run.Stage || t('common.empty')}</td>
-            <td>${run.Start_time || t('common.empty')}</td>
-            <td class="rating-high">${run.Gold ?? t('common.empty')}</td>
-            <td class="rating-mid">${run.Silver ?? t('common.empty')}</td>
-            <td class="rating-low">${run.Bronze ?? t('common.empty')}</td>
-        </tr>
-    `).join('');
+function renderBigRunTable() {
+    const ctx = document.getElementById('bigrun-chart');
+    if (!ctx) return;
+
+    // 销毁旧图表
+    if (bigRunChart) {
+        bigRunChart.destroy();
+    }
+
+    // 准备数据 - 按时间顺序排列（最旧到最新）
+    const sortedData = [...AppData.bigRuns]; // 保持原顺序（假设原数据是从旧到新）
+    const labels = sortedData.map(run => {
+        const stageName = getStageLocalizedName(run.Stage);
+        // 获取场地图
+        const stage = Object.values(AppData.stages).find(s =>
+            s.name_zh === run.Stage || s.name_en === run.Stage || s.name_jp === run.Stage || s.id === run.Stage
+        );
+        const stageImage = stage?.image || null;
+        return [`#${run.no}`, run.Start_time || '', run.End_time || '', stageName, stageImage];
+    });
+    const goldData = sortedData.map(run => run.Gold || null);
+    const silverData = sortedData.map(run => run.Silver || null);
+    const bronzeData = sortedData.map(run => run.Bronze || null);
+
+    // 计算最大值用于调整Y轴
+    const allValues = [...goldData, ...silverData, ...bronzeData].filter(v => v !== null);
+    const maxValue = Math.max(...allValues);
+    const minValue = Math.min(...allValues);
+    const yPadding = (maxValue - minValue) * 0.1;
+
+    // 预加载场地图
+    const stageImages = {};
+    labels.forEach((label, index) => {
+        if (label[4]) {
+            const img = new Image();
+            img.src = label[4];
+            stageImages[index] = img;
+        }
+    });
+
+    // 创建图表
+    bigRunChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: t('stats.bigrun.gold'),
+                    data: goldData,
+                    borderColor: '#FFD700',
+                    backgroundColor: '#FFD700',
+                    borderWidth: 3.6,
+                    pointBackgroundColor: '#FFD700',
+                    pointBorderColor: '#FFD700',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0,
+                    datalabels: {
+                        color: '#FFD700'
+                    }
+                },
+                {
+                    label: t('stats.bigrun.silver'),
+                    data: silverData,
+                    borderColor: '#C0C0C0',
+                    backgroundColor: '#C0C0C0',
+                    borderWidth: 3.6,
+                    pointBackgroundColor: '#C0C0C0',
+                    pointBorderColor: '#C0C0C0',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0,
+                    datalabels: {
+                        color: '#C0C0C0'
+                    }
+                },
+                {
+                    label: t('stats.bigrun.bronze'),
+                    data: bronzeData,
+                    borderColor: '#CD7F32',
+                    backgroundColor: '#CD7F32',
+                    borderWidth: 3.6,
+                    pointBackgroundColor: '#CD7F32',
+                    pointBorderColor: '#CD7F32',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0,
+                    datalabels: {
+                        color: '#CD7F32'
+                    }
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            font: {
+                family: getFontForCurrentLang()
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#ffffff',
+                        font: {
+                            size: 14
+                        },
+                        padding: 20
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(26, 26, 26, 0.95)',
+                    titleColor: '#E6FF00',
+                    bodyColor: '#ffffff',
+                    borderColor: '#E6FF00',
+                    borderWidth: 1,
+                    padding: 12,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const index = tooltipItems[0].dataIndex;
+                            const label = sortedData[index];
+                            return label.Stage || '';
+                        },
+                        label: function(context) {
+                            const datasetLabel = context.dataset.label;
+                            const value = context.parsed.y;
+                            return `${datasetLabel}: ${value !== null ? value : '-'}`;
+                        },
+                        afterBody: function(tooltipItems) {
+                            const index = tooltipItems[0].dataIndex;
+                            const label = sortedData[index];
+                            const startTime = label.Start_time || '-';
+                            const endTime = label.End_time || '-';
+                            return [
+                                '',
+                                `${t('common.startTime') || '开始时间'}: ${startTime}`,
+                                `${t('common.endTime') || '结束时间'}: ${endTime}`
+                            ];
+                        }
+                    }
+                },
+                datalabels: {
+                    display: true,
+                    align: 'top',
+                    offset: 4,
+                    font: {
+                        size: 11,
+                        weight: 'bold'
+                    },
+                    formatter: function(value) {
+                        return value !== null ? value : '';
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    offset: true,
+                    ticks: {
+                        display: false // 隐藏默认标签，使用自定义
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#b0b0b0',
+                        font: {
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    min: Math.floor(minValue - yPadding),
+                    max: Math.ceil(maxValue + yPadding)
+                }
+            },
+            layout: {
+                padding: {
+                    left: 30,
+                    right: 30,
+                    bottom: 110 // 底部空间容纳场地图（60px高+文字）
+                }
+            },
+            interaction: {
+                intersect: false,
+                mode: 'index'
+            }
+        },
+        plugins: [{
+            id: 'customLabels',
+            afterDatasetsDraw: function(chart) {
+                const ctx = chart.ctx;
+                chart.data.datasets.forEach((dataset, i) => {
+                    const meta = chart.getDatasetMeta(i);
+                    meta.data.forEach((point, index) => {
+                        const value = dataset.data[index];
+                        if (value !== null) {
+                            ctx.fillStyle = dataset.borderColor;
+                            ctx.font = `bold 13px ${getFontForCurrentLang()}`;
+                            ctx.textAlign = 'center';
+                            ctx.fillText(value, point.x, point.y - 10);
+                        }
+                    });
+                });
+            }
+        }, {
+            id: 'xAxisLabels',
+            afterDraw: function(chart) {
+                const ctx = chart.ctx;
+                const xAxis = chart.scales.x;
+                const yBottom = xAxis.bottom;
+                const fontFamily = getFontForCurrentLang();
+
+                ctx.save();
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+
+                xAxis.ticks.forEach((tick, index) => {
+                    const x = xAxis.getPixelForTick(index);
+                    const label = chart.data.labels[index];
+
+                    if (Array.isArray(label) && label.length >= 4) {
+                        // 期数 - 黄色加粗
+                        ctx.fillStyle = '#E6FF00';
+                        ctx.font = `bold 12px ${fontFamily}`;
+                        ctx.fillText(label[0], x, yBottom + 5);
+
+                        // 开始时间 - 灰色
+                        ctx.fillStyle = '#b0b0b0';
+                        ctx.font = `10px ${fontFamily}`;
+                        ctx.fillText(label[1], x, yBottom + 20);
+
+                        // 结束时间 - 灰色
+                        ctx.fillText(label[2], x, yBottom + 32);
+
+                        // 场地名 - 白色
+                        ctx.fillStyle = '#ffffff';
+                        ctx.font = `11px ${fontFamily}`;
+                        ctx.fillText(label[3], x, yBottom + 44);
+
+                        // 绘制场地图（保持宽高比，最大宽度60px，1.2倍）
+                        const stageImg = stageImages[index];
+                        if (stageImg && stageImg.complete) {
+                            const maxWidth = 60;
+                            const aspectRatio = stageImg.naturalWidth / stageImg.naturalHeight;
+                            let imgWidth = maxWidth;
+                            let imgHeight = maxWidth / aspectRatio;
+                            ctx.drawImage(stageImg, x - imgWidth/2, yBottom + 58, imgWidth, imgHeight);
+                        }
+                    }
+                });
+                ctx.restore();
+            }
+        }]
+    });
 }
 
 function renderEggstraTable() {
-    const tbody = document.getElementById('eggstra-tbody');
-    if (!tbody) return;
+    const ctx = document.getElementById('eggstra-chart');
+    if (!ctx) return;
 
-    tbody.innerHTML = AppData.eggstraWorks.map(run => `
-        <tr>
-            <td>${run.no || t('common.empty')}</td>
-            <td>${run.Stage || t('common.empty')}</td>
-            <td>${run.Start_time || t('common.empty')}</td>
-            <td class="rating-high">${run.Gold ?? t('common.empty')}</td>
-            <td class="rating-mid">${run.Silver ?? t('common.empty')}</td>
-            <td class="rating-low">${run.Bronze ?? t('common.empty')}</td>
-        </tr>
-    `).join('');
+    // 销毁旧图表
+    if (eggstraChart) {
+        eggstraChart.destroy();
+    }
+
+    // 准备数据 - 按时间顺序排列（最旧到最新）
+    const sortedData = [...AppData.eggstraWorks]; // 保持原顺序
+    const labels = sortedData.map(run => {
+        const stageName = getStageLocalizedName(run.Stage);
+        // 获取场地图
+        const stage = Object.values(AppData.stages).find(s =>
+            s.name_zh === run.Stage || s.name_en === run.Stage || s.name_jp === run.Stage || s.id === run.Stage
+        );
+        const stageImage = stage?.image || null;
+        // 获取四把武器图片
+        const weaponImages = (run.Weapon || []).map(weaponName => {
+            const weapon = AppData.weaponNameMap.get(weaponName);
+            return weapon?.image || null;
+        });
+        return [`#${run.no}`, run.Start_time || '', run.End_time || '', stageName, stageImage, weaponImages];
+    });
+    const goldData = sortedData.map(run => run.Gold || null);
+    const silverData = sortedData.map(run => run.Silver || null);
+    const bronzeData = sortedData.map(run => run.Bronze || null);
+
+    // 计算最大值用于调整Y轴
+    const allValues = [...goldData, ...silverData, ...bronzeData].filter(v => v !== null);
+    const maxValue = Math.max(...allValues);
+    const minValue = Math.min(...allValues);
+    const yPadding = (maxValue - minValue) * 0.1;
+
+    // 预加载场地图和武器图片
+    const stageImages = {};
+    const weaponImgs = {};
+    labels.forEach((label, index) => {
+        if (label[4]) {
+            const img = new Image();
+            img.src = label[4];
+            stageImages[index] = img;
+        }
+        if (label[5] && Array.isArray(label[5])) {
+            weaponImgs[index] = label[5].map(src => {
+                if (!src) return null;
+                const img = new Image();
+                img.src = src;
+                return img;
+            });
+        }
+    });
+
+    // 创建图表
+    eggstraChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: t('stats.eggstra.gold'),
+                    data: goldData,
+                    borderColor: '#FFD700',
+                    backgroundColor: '#FFD700',
+                    borderWidth: 3.6,
+                    pointBackgroundColor: '#FFD700',
+                    pointBorderColor: '#FFD700',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0
+                },
+                {
+                    label: t('stats.eggstra.silver'),
+                    data: silverData,
+                    borderColor: '#C0C0C0',
+                    backgroundColor: '#C0C0C0',
+                    borderWidth: 3.6,
+                    pointBackgroundColor: '#C0C0C0',
+                    pointBorderColor: '#C0C0C0',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0
+                },
+                {
+                    label: t('stats.eggstra.bronze'),
+                    data: bronzeData,
+                    borderColor: '#CD7F32',
+                    backgroundColor: '#CD7F32',
+                    borderWidth: 3.6,
+                    pointBackgroundColor: '#CD7F32',
+                    pointBorderColor: '#CD7F32',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            font: {
+                family: getFontForCurrentLang()
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#ffffff',
+                        font: {
+                            size: 14
+                        },
+                        padding: 20
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(26, 26, 26, 0.95)',
+                    titleColor: '#E6FF00',
+                    bodyColor: '#ffffff',
+                    borderColor: '#E6FF00',
+                    borderWidth: 1,
+                    padding: 12,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const index = tooltipItems[0].dataIndex;
+                            const label = sortedData[index];
+                            return label.Stage || '';
+                        },
+                        label: function(context) {
+                            const datasetLabel = context.dataset.label;
+                            const value = context.parsed.y;
+                            return `${datasetLabel}: ${value !== null ? value : '-'}`;
+                        },
+                        afterBody: function(tooltipItems) {
+                            const index = tooltipItems[0].dataIndex;
+                            const label = sortedData[index];
+                            const startTime = label.Start_time || '-';
+                            const endTime = label.End_time || '-';
+                            return [
+                                '',
+                                `${t('common.startTime') || '开始时间'}: ${startTime}`,
+                                `${t('common.endTime') || '结束时间'}: ${endTime}`
+                            ];
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    offset: true,
+                    ticks: {
+                        display: false // 隐藏默认标签，使用自定义
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: '#b0b0b0',
+                        font: {
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    },
+                    min: Math.floor(minValue - yPadding),
+                    max: Math.ceil(maxValue + yPadding)
+                }
+            },
+            layout: {
+                padding: {
+                    left: 30,
+                    right: 30,
+                    bottom: 150 // 底部空间容纳场地图(60px)和武器图(2*29+4=62px)，确保折线图有足够空间
+                }
+            },
+            interaction: {
+                intersect: false,
+                mode: 'index'
+            }
+        },
+        plugins: [{
+            id: 'customLabels',
+            afterDatasetsDraw: function(chart) {
+                const ctx = chart.ctx;
+                chart.data.datasets.forEach((dataset, i) => {
+                    const meta = chart.getDatasetMeta(i);
+                    meta.data.forEach((point, index) => {
+                        const value = dataset.data[index];
+                        if (value !== null) {
+                            ctx.fillStyle = dataset.borderColor;
+                            ctx.font = `bold 13px ${getFontForCurrentLang()}`;
+                            ctx.textAlign = 'center';
+                            ctx.fillText(value, point.x, point.y - 10);
+                        }
+                    });
+                });
+            }
+        }, {
+            id: 'xAxisLabels',
+            afterDraw: function(chart) {
+                const ctx = chart.ctx;
+                const xAxis = chart.scales.x;
+                const yBottom = xAxis.bottom;
+                const fontFamily = getFontForCurrentLang();
+
+                ctx.save();
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+
+                xAxis.ticks.forEach((tick, index) => {
+                    const x = xAxis.getPixelForTick(index);
+                    const label = chart.data.labels[index];
+
+                    if (Array.isArray(label) && label.length >= 4) {
+                        // 期数 - 黄色加粗
+                        ctx.fillStyle = '#E6FF00';
+                        ctx.font = `bold 12px ${fontFamily}`;
+                        ctx.fillText(label[0], x, yBottom + 5);
+
+                        // 开始时间 - 灰色
+                        ctx.fillStyle = '#b0b0b0';
+                        ctx.font = `10px ${fontFamily}`;
+                        ctx.fillText(label[1], x, yBottom + 20);
+
+                        // 结束时间 - 灰色
+                        ctx.fillText(label[2], x, yBottom + 32);
+
+                        // 场地名 - 白色
+                        ctx.fillStyle = '#ffffff';
+                        ctx.font = `11px ${fontFamily}`;
+                        ctx.fillText(label[3], x, yBottom + 44);
+
+                        // 绘制场地图（保持宽高比，最大宽度60px，1.2倍）
+                        const stageImg = stageImages[index];
+                        if (stageImg && stageImg.complete) {
+                            const maxWidth = 60;
+                            const aspectRatio = stageImg.naturalWidth / stageImg.naturalHeight;
+                            const stageWidth = maxWidth;
+                            const stageHeight = maxWidth / aspectRatio;
+                            ctx.drawImage(stageImg, x - stageWidth/2, yBottom + 58, stageWidth, stageHeight);
+
+                            // 绘制四把武器图片（2x2排布，在场地图下方，29x29，1.2倍）
+                            const weapons = weaponImgs[index];
+                            if (weapons && weapons.length > 0) {
+                                const weaponSize = 29;
+                                const gap = 4;
+                                const totalWidth = weaponSize * 2 + gap;
+                                const startX = x - totalWidth / 2;
+                                const startY = yBottom + 58 + stageHeight + 4;
+
+                                weapons.forEach((wImg, wIndex) => {
+                                    if (wImg && wImg.complete) {
+                                        const row = Math.floor(wIndex / 2);
+                                        const col = wIndex % 2;
+                                        const wX = startX + col * (weaponSize + gap);
+                                        const wY = startY + row * (weaponSize + gap);
+                                        ctx.drawImage(wImg, wX, wY, weaponSize, weaponSize);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
+                ctx.restore();
+            }
+        }]
+    });
 }
 
 // ================================
@@ -1078,6 +1722,9 @@ function renderViewMode(w) {
     const ratingClass = getRatingClass(rating === null ? 5 : rating);
     const tierClass = 'tier-' + tierDisplay.replace('+', '-plus').replace('X', 'X');
 
+    // 获取本地化武器名称
+    const weaponName = getWeaponLocalizedName(w);
+
     // 铅笔图标（SVG）
     const editIcon = `
         <button class="edit-icon-btn" onclick="enterEditMode()" title="编辑武器评分">
@@ -1090,9 +1737,9 @@ function renderViewMode(w) {
     modalBody.innerHTML = `
         <div class="modal-weapon-header">
             <div class="modal-weapon-image">
-                ${w.image ? `<img src="${w.image}" alt="${w.name_zh}" onerror="this.style.display='none'">` : '?'}
+                ${w.image ? `<img src="${w.image}" alt="${weaponName}" onerror="this.style.display='none'">` : '?'}
             </div>
-            <div class="modal-weapon-name">${w.name_zh || w.name_en || '未知'}${editIcon}</div>
+            <div class="modal-weapon-name">${weaponName}${editIcon}</div>
             <div class="modal-weapon-type">${w.type || '?'}</div>
             <div class="modal-weapon-rating ${ratingClass} ${tierClass}">${ratingDisplay}</div>
             <span class="modal-weapon-tier ${tierClass}">${tierDisplay}</span>
@@ -1156,12 +1803,15 @@ function renderEditMode() {
 
     const allDimensions = Object.entries(dimensions);
 
+    // 获取本地化武器名称
+    const weaponName = getWeaponLocalizedName(w);
+
     modalBody.innerHTML = `
         <div class="modal-weapon-header">
             <div class="modal-weapon-image">
-                ${w.image ? `<img src="${w.image}" alt="${w.name_zh}" onerror="this.style.display='none'">` : '?'}
+                ${w.image ? `<img src="${w.image}" alt="${weaponName}" onerror="this.style.display='none'">` : '?'}
             </div>
-            <div class="modal-weapon-name">${w.name_zh || w.name_en || '未知'}</div>
+            <div class="modal-weapon-name">${weaponName}</div>
             <div class="modal-weapon-type">${w.type || '?'}</div>
             <div style="margin-bottom: 0.5rem;">
                 <input type="number" id="edit-rating" class="modal-input rating-input" 
@@ -1404,7 +2054,7 @@ function renderWeapons() {
                 if (b.rating?.overall === null) return -1;
                 return (a.rating?.overall || 0) - (b.rating?.overall || 0);
             case 'name':
-                return (a.name_zh || '').localeCompare(b.name_zh || '');
+                return getWeaponLocalizedName(a).localeCompare(getWeaponLocalizedName(b));
             case 'type':
                 return (a.type || '').localeCompare(b.type || '');
             default:
@@ -1431,12 +2081,15 @@ function renderWeapons() {
         // 将武器数据编码为 JSON 字符串，用于点击事件
         const weaponData = encodeURIComponent(JSON.stringify(w));
 
+        // 获取本地化武器名称
+        const weaponName = getWeaponLocalizedName(w);
+
         return `
             <div class="weapon-card${hasUserEdit ? ' user-modified' : ''}" onclick="openWeaponModal('${weaponData}')">
                 <div class="weapon-image">
-                    ${w.image ? `<img src="${w.image}" alt="${w.name_zh}" onerror="this.style.display='none'">` : '?'}
+                    ${w.image ? `<img src="${w.image}" alt="${weaponName}" onerror="this.style.display='none'">` : '?'}
                 </div>
-                <div class="weapon-name">${w.name_zh || w.name_en || '未知'}</div>
+                <div class="weapon-name">${weaponName}</div>
                 <div class="weapon-type">${w.type || '?'}</div>
                 <div class="weapon-rating tier-${tierDisplay.replace('+', '-plus').replace('X', 'X')}">${ratingDisplay}</div>
                 <span class="tier-badge tier-${tierDisplay.replace('+', '-plus').replace('X', 'X')}">${tierDisplay}</span>
@@ -1599,7 +2252,7 @@ function getTierClass(tier) {
 function renderWeaponIcon(weapon) {
     if (!weapon) return '<div class="weapon-icon">?</div>';
 
-    const name = weapon.name_zh || weapon.name_en || '?';
+    const name = getWeaponLocalizedName(weapon);
     const rating = weapon.rating?.overall;
     const ratingDisplay = rating === null ? '?' : (rating || 0).toFixed(1);
     const ratingClass = rating === null ? '' : getRatingClass(rating || 0);

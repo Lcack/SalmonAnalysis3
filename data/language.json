@@ -71,10 +71,11 @@
         "no": "期数",
         "stage": "场地",
         "time": "时间",
-        "gold": "金",
-        "silver": "银",
-        "bronze": "铜"
-      }
+        "gold": "前5%",
+        "silver": "前20%",
+        "bronze": "前50%"
+      },
+      "times": "次"
     },
     "weapons": {
       "title": "武器评分",
@@ -112,7 +113,9 @@
       "loading": "正在加载数据...",
       "error": "数据加载失败",
       "unknown": "未知",
-      "empty": "-"
+      "empty": "-",
+      "startTime": "开始时间",
+      "endTime": "结束时间"
     },
     "footer": {
       "dataSource": "Data sourced from",
@@ -193,10 +196,11 @@
         "no": "No.",
         "stage": "Stage",
         "time": "Time",
-        "gold": "Gold",
-        "silver": "Silver",
-        "bronze": "Bronze"
-      }
+        "gold": "Top 5%",
+        "silver": "Top 20%",
+        "bronze": "Top 50%"
+      },
+      "times": "times"
     },
     "weapons": {
       "title": "Weapon Ratings",
@@ -234,7 +238,9 @@
       "loading": "Loading data...",
       "error": "Failed to load data",
       "unknown": "Unknown",
-      "empty": "-"
+      "empty": "-",
+      "startTime": "Start Time",
+      "endTime": "End Time"
     },
     "footer": {
       "dataSource": "Data sourced from",
@@ -315,10 +321,11 @@
         "no": "No.",
         "stage": "ステージ",
         "time": "時間",
-        "gold": "金",
-        "silver": "銀",
-        "bronze": "銅"
-      }
+        "gold": "上位5%",
+        "silver": "上位20%",
+        "bronze": "上位50%"
+      },
+      "times": "回"
     },
     "weapons": {
       "title": "武器評価",
@@ -356,7 +363,9 @@
       "loading": "データを読み込んでいます...",
       "error": "データを読み込めませんでした",
       "unknown": "不明",
-      "empty": "-"
+      "empty": "-",
+      "startTime": "開始時間",
+      "endTime": "終了時間"
     },
     "footer": {
       "dataSource": "データソース",

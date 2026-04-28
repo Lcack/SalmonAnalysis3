@@ -38,6 +38,25 @@ body {
 }
 
 /* ================================
+   多语言字体适配
+   ================================ */
+
+/* 中文 - 使用苹方/微软雅黑 */
+body.lang-cn {
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans CJK SC", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 英文 - 使用 Helvetica/Arial 等西文字体 */
+body.lang-us {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 日文 - 使用 Hiragino/Noto Sans JP */
+body.lang-jp {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "Meiryo", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ================================
    导航栏
    ================================ */
 .navbar {
@@ -278,6 +297,15 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--splat-yellow);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stage-badge-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
 }
 
 .schedule-boss {
@@ -781,6 +809,22 @@ h1 .section-icon {
 .tier-A { background: rgba(0, 217, 255, 0.2); color: var(--splat-cyan); }
 .tier-B { background: rgba(230, 255, 0, 0.2); color: var(--splat-yellow); }
 .tier-C { background: rgba(255, 107, 53, 0.2); color: var(--splat-orange); }
+
+/* ================================
+   统计图表
+   ================================ */
+.chart-container {
+    background: var(--splat-dark);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    height: 520px;
+    position: relative;
+}
+
+.chart-container canvas {
+    max-height: 100%;
+}
 
 /* 维度评分条 */
 .dimension-bars {

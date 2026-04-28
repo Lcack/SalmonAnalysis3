@@ -6,7 +6,7 @@
     <title>SalmonAnalysis3 - Splatoon3 打工分析</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="lang-cn">
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="logo"><img src="images/icon/Badge_CoopClearDangerRateMax.png" alt="logo" class="logo-icon"> SalmonAnalysis3</div>
@@ -105,43 +105,19 @@
     <section id="stats" class="page-content" style="display: none;">
         <h1 class="section-title-with-icon"><img src="images/enemy/SakelienGolden.png" alt="活动统计" class="section-icon"> <span data-i18n="stats.title">活动统计</span></h1>
 
-        <!-- Big Run 奖牌 -->
+        <!-- Big Run 折线图 -->
         <div class="stats-section">
             <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopBigRunTrophy_Lv00.png" alt="Big Run" class="section-icon"> <span data-i18n="stats.bigrun.title">Big Run 历史奖牌</span></h2>
-            <div class="table-container">
-                <table id="bigrun-table">
-                    <thead>
-                        <tr>
-                            <th data-i18n="stats.bigrun.no">期数</th>
-                            <th data-i18n="stats.bigrun.stage">场地</th>
-                            <th data-i18n="stats.bigrun.time">时间</th>
-                            <th data-i18n="stats.bigrun.gold">金</th>
-                            <th data-i18n="stats.bigrun.silver">银</th>
-                            <th data-i18n="stats.bigrun.bronze">铜</th>
-                        </tr>
-                    </thead>
-                    <tbody id="bigrun-tbody"></tbody>
-                </table>
+            <div class="chart-container">
+                <canvas id="bigrun-chart"></canvas>
             </div>
         </div>
 
-        <!-- Eggstra Work 奖牌 -->
+        <!-- Eggstra Work 折线图 -->
         <div class="stats-section">
             <h2 class="section-title-with-icon"><img src="images/icon/Badge_CoopContestTrophy_Lv02.png" alt="Eggstra Work" class="section-icon"> <span data-i18n="stats.eggstra.title">Eggstra Work 历史奖牌</span></h2>
-            <div class="table-container">
-                <table id="eggstra-table">
-                    <thead>
-                        <tr>
-                            <th data-i18n="stats.eggstra.no">期数</th>
-                            <th data-i18n="stats.eggstra.stage">场地</th>
-                            <th data-i18n="stats.eggstra.time">时间</th>
-                            <th data-i18n="stats.eggstra.gold">金</th>
-                            <th data-i18n="stats.eggstra.silver">银</th>
-                            <th data-i18n="stats.eggstra.bronze">铜</th>
-                        </tr>
-                    </thead>
-                    <tbody id="eggstra-tbody"></tbody>
-                </table>
+            <div class="chart-container">
+                <canvas id="eggstra-chart"></canvas>
             </div>
         </div>
     </section>
@@ -217,6 +193,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
