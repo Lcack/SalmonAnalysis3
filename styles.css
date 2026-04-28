@@ -38,6 +38,30 @@ body {
 }
 
 /* ================================
+   随机散布背景
+   ================================ */
+.scattered-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    filter: grayscale(100%) brightness(0.20);
+    pointer-events: none;
+}
+
+.scattered-background img {
+    position: absolute;
+    width: 90px;
+    height: auto;
+    opacity: 1;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* ================================
    多语言字体适配
    ================================ */
 

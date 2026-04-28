@@ -24,6 +24,155 @@ const AppData = {
 };
 
 // ================================
+// 随机散布背景
+// ================================
+const backgroundImages = [
+    'images/background/Emi_Sti_Decoration_18.png',
+    'images/background/Emi_Sti_Decoration_19.png',
+    'images/background/Emi_Sti_Decoration_20.png',
+    'images/background/Emi_Sti_Decoration_31.png',
+    'images/background/Emi_Sti_Signboard_15.png',
+    'images/background/Grf_Sti_Graffiti_20.png',
+    'images/background/Grf_Sti_Graffiti_21.png',
+    'images/background/Grf_Sti_Graffiti_22.png',
+    'images/background/Grf_Sti_Graffiti_23.png',
+    'images/background/Grf_Sti_Graffiti_24.png',
+    'images/background/Grf_Sti_Graffiti_25.png',
+    'images/background/Grf_Sti_Graffiti_26.png',
+    'images/background/Grf_Sti_Graffiti_27.png',
+    'images/background/Grf_Sti_Graffiti_28.png',
+    'images/background/Grf_Sti_Graffiti_29.png',
+    'images/background/Grf_Sti_Graffiti_30.png',
+    'images/background/Grf_Sti_Graffiti_31.png',
+    'images/background/Grf_Sti_Graffiti_32.png',
+    'images/background/Grf_Sti_Graffiti_33.png',
+    'images/background/Grf_Sti_Graffiti_34.png',
+    'images/background/Grf_Sti_Graffiti_35.png',
+    'images/background/Grf_Sti_Graffiti_36.png',
+    'images/background/Grf_Sti_Graffiti_37.png',
+    'images/background/Grf_Sti_Graffiti_38.png',
+    'images/background/Grf_Sti_Graffiti_39.png',
+    'images/background/Grf_Sti_Graffiti_40.png',
+    'images/background/Grf_Sti_Graffiti_41.png',
+    'images/background/Stc_Sti_Character_24.png',
+    'images/background/Stc_Sti_Character_26.png',
+    'images/background/Stc_Sti_Character_27.png',
+    'images/background/Stc_Sti_Character_30.png',
+    'images/background/Stc_Sti_Character_31.png',
+    'images/background/Stc_Sti_Character_32.png',
+    'images/background/Stc_Sti_Character_33.png',
+    'images/background/Stc_Sti_Character_34.png',
+    'images/background/Stc_Sti_Character_35.png',
+    'images/background/Stc_Sti_Character_36.png',
+    'images/background/Stc_Sti_Character_37.png',
+    'images/background/Stc_Sti_Character_38.png',
+    'images/background/Stc_Sti_Character_39.png',
+    'images/background/Stc_Sti_Character_40.png',
+    'images/background/Stc_Sti_Character_41.png',
+    'images/background/Stc_Sti_Character_42.png',
+    'images/background/Stc_Sti_Character_43.png',
+    'images/background/Stc_Sti_Signboard_00.png',
+    'images/background/Stc_Sti_Signboard_01.png',
+    'images/background/Stc_Sti_Signboard_02.png',
+    'images/background/Stc_Sti_Signboard_03.png',
+    'images/background/Stc_Sti_Signboard_04.png',
+    'images/background/Stc_Sti_Signboard_05.png',
+    'images/background/Stc_Sti_Signboard_06.png',
+    'images/background/Stc_Sti_Signboard_07.png',
+    'images/background/Stc_Sti_Signboard_08.png',
+    'images/background/Stc_Sti_Signboard_09.png',
+    'images/background/Stc_Sti_Signboard_10.png',
+    'images/background/Stc_Sti_Signboard_13.png',
+    'images/background/Stc_Sti_Signboard_14.png',
+    'images/background/Stc_Sti_Signboard_16.png',
+    'images/background/Stc_Sti_Signboard_17.png',
+    'images/background/Stc_Sti_Signboard_18.png',
+    'images/background/Stc_Sti_Signboard_19.png',
+    'images/background/Stc_Sti_Signboard_20.png',
+    'images/background/Stc_Sti_Signboard_21.png',
+    'images/background/Stc_Sti_Signboard_22.png',
+    'images/background/Stc_Sti_Signboard_26.png',
+    'images/background/Stc_Sti_Signboard_27.png',
+    'images/background/Stc_Sti_Signboard_28.png',
+    'images/background/Stc_Sti_Signboard_29.png',
+    'images/background/Stc_Sti_Signboard_30.png',
+    'images/background/Stc_Sti_Signboard_31.png',
+    'images/background/Stc_Sti_Signboard_32.png',
+    'images/background/Stc_Sti_Signboard_33.png',
+    'images/background/Stc_Sti_Signboard_34.png',
+    'images/background/Stc_Sti_Signboard_35.png',
+    'images/background/Stc_Sti_Signboard_36.png',
+    'images/background/Stc_Sti_Signboard_37.png',
+    'images/background/Stc_Sti_Signboard_38.png',
+    'images/background/Stc_Sti_Signboard_39.png',
+    'images/background/Stc_Sti_Signboard_40.png',
+    'images/background/Stc_Sti_Signboard_41.png',
+    'images/background/Stc_Sti_Signboard_42.png',
+    'images/background/Stc_Sti_Signboard_43.png',
+    'images/background/Stc_Sti_Signboard_44.png',
+    'images/background/Stc_Sti_Signboard_46.png',
+    'images/background/Stc_Sti_Signboard_51.png',
+    'images/background/Stc_Sti_Signboard_54.png',
+    'images/background/Stc_Sti_Signboard_55.png',
+    'images/background/Stc_Sti_Signboard_56.png'
+];
+
+// 生成随机散布背景（密铺，完全不透明，深色融合）
+function generateScatteredBackground() {
+    const container = document.getElementById('scattered-bg');
+    if (!container) return;
+
+    // 清空现有内容
+    container.innerHTML = '';
+
+    // 密度：每1500px²一张图（约39x39区域）
+    const screenArea = window.innerWidth * window.innerHeight;
+    const imageCount = Math.floor(screenArea / 1500);
+
+    // 生成随机位置（允许重叠）
+    for (let i = 0; i < imageCount; i++) {
+        const img = document.createElement('img');
+        const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+        img.src = randomImage;
+
+        // 完全随机位置（允许重叠）
+        const left = Math.random() * window.innerWidth;
+        const top = Math.random() * window.innerHeight;
+
+        // 随机旋转角度
+        const rotate = Math.random() * 360;
+
+        // 固定大小（90px，1.5倍）
+        const size = 90;
+
+        img.style.left = `${left}px`;
+        img.style.top = `${top}px`;
+        img.style.transform = `rotate(${rotate}deg)`;
+        img.style.width = `${size}px`;
+
+        container.appendChild(img);
+    }
+}
+
+// 防抖函数
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// 窗口大小改变时重新生成背景（防抖300ms）
+window.addEventListener('resize', debounce(() => {
+    generateScatteredBackground();
+}, 300));
+
+// ================================
 // 多语言支持 (i18n)
 // ================================
 let i18nData = {};           // 语言数据
@@ -187,6 +336,9 @@ async function init() {
     console.log('🐟 SalmonAnalysis3 初始化中...');
 
     try {
+        // 生成随机散布背景
+        generateScatteredBackground();
+
         // 并行加载所有数据（包括语言数据）
         await Promise.all([
             loadAllData(),
