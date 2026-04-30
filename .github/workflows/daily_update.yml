@@ -2,7 +2,7 @@ name: Daily Schedule Update
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '30 23 * * *'
   workflow_dispatch: 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
