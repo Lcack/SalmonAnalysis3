@@ -177,6 +177,7 @@ window.addEventListener('resize', debounce(() => {
 // ================================
 let i18nData = {};           // 语言数据
 let currentLang = 'cn';      // 当前语言
+let noticeData = null;       // 武器评分提示弹窗数据
 
 // 加载语言文件
 async function loadLanguageData() {
@@ -188,6 +189,9 @@ async function loadLanguageData() {
             const savedLang = localStorage.getItem('salmon_language');
             if (savedLang && i18nData[savedLang]) {
                 currentLang = savedLang;
+            } else {
+                // 没有保存的语言偏好时，检测浏览器语言
+                currentLang = detectBrowserLanguage();
             }
             // 更新语言选择器
             const langSelector = document.getElementById('lang-selector');
@@ -204,7 +208,55 @@ async function loadLanguageData() {
     }
 }
 
-// 获取当前语言的字体配置（用于 Canvas/Chart.js）
+// 加载武器评分提示弹窗数据
+async function loadNoticeData() {
+    try {
+        const response = await fetch('./data/notice.json');
+        if (response.ok) {
+            noticeData = await response.json();
+            console.log('提示弹窗数据已加载');
+        }
+    } catch (error) {
+        console.warn('加载提示弹窗数据失败，跳过弹窗:', error);
+        noticeData = null;
+    }
+}
+
+// 检查提示弹窗是否有内容
+function hasNoticeContent() {
+    if (!noticeData) return false;
+    const langs = ['cn', 'us', 'jp'];
+    return langs.some(lang => {
+        const content = noticeData[lang];
+        return content && (content.title || content.message);
+    });
+}
+
+// 获取当前语言对应的提示内容
+function getNoticeContent() {
+    if (!noticeData) return null;
+    // 中文页面 → 中文，日文 → 日语，其他 → 英文
+    if (currentLang === 'cn') return noticeData.cn || noticeData.us;
+    if (currentLang === 'jp') return noticeData.jp || noticeData.us;
+    return noticeData.us || noticeData.cn;
+}
+
+// 显示武器评分提示弹窗
+function showNoticeModal() {
+    if (!hasNoticeContent()) return;
+    const content = getNoticeContent();
+    if (!content || !content.message) return;
+
+    document.getElementById('notice-title').textContent = content.title || '';
+    document.getElementById('notice-message').textContent = content.message;
+    document.getElementById('notice-confirm-btn').textContent = content.button || 'OK';
+    document.getElementById('notice-modal').style.display = 'flex';
+}
+
+// 关闭提示弹窗
+function closeNoticeModal() {
+    document.getElementById('notice-modal').style.display = 'none';
+}
 function getFontForCurrentLang() {
     switch (currentLang) {
         case 'us':
@@ -245,6 +297,14 @@ function t(key) {
     }
 
     return value || key;
+}
+
+// 检测浏览器语言
+function detectBrowserLanguage() {
+    const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (lang.startsWith('ja')) return 'jp';
+    if (lang.startsWith('zh')) return 'cn';
+    return 'us';
 }
 
 // 切换语言
@@ -339,10 +399,11 @@ async function init() {
         // 生成随机散布背景
         generateScatteredBackground();
 
-        // 并行加载所有数据（包括语言数据）
+        // 并行加载所有数据（包括语言数据和提示弹窗数据）
         await Promise.all([
             loadAllData(),
-            loadLanguageData()
+            loadLanguageData(),
+            loadNoticeData()
         ]);
 
         // 更新静态文本
@@ -365,6 +426,9 @@ async function init() {
         
         // 渲染首页
         renderHome();
+
+        // 显示武器评分提示弹窗（如果有内容）
+        showNoticeModal();
         
         console.log('✅ 初始化完成！');
         console.log('数据概览:', {

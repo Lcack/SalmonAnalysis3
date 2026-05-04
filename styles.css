@@ -1157,6 +1157,40 @@ h1 .section-icon {
     text-transform: uppercase;
 }
 
+/* ================================
+   武器评分提示弹窗
+   ================================ */
+.notice-modal-content {
+    background: linear-gradient(135deg, var(--splat-dark) 0%, var(--splat-black) 100%);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--splat-yellow);
+    max-width: 480px;
+    width: 100%;
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.notice-modal-content h2 {
+    color: var(--splat-yellow);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.notice-modal-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.notice-modal-content .btn-primary {
+    padding: 0.6rem 2.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 .modal-dimension-input {
     width: 50px;
     background: var(--splat-black);

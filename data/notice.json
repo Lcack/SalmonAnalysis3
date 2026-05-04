@@ -1,0 +1,17 @@
+{
+  "cn": {
+    "title": "关于武器评分",
+    "message": "武器具体评分尚未完善，当前场次评分并不准确，仅供参考。可在武器评分页面进行打分，网页会基于您的武器打分重新计算场次分数。不便之处还请见谅。",
+    "button": "确定"
+  },
+  "us": {
+    "title": "About Weapon Ratings",
+    "message": "Our weapon scoring system is still being refined, so current match ratings may not be fully accurate and should be used for reference only. You can contribute by rating your weapons on the dedicated scoring page; the site will then recalculate your match scores based on your input. We sincerely apologize for any inconvenience this may cause.",
+    "button": "Got it"
+  },
+  "jp": {
+    "title": "武器評価について",
+    "message": "武器ごとの詳細な評価システムは現在調整中のため、現在の試合スコアは必ずしも正確ではなく、あくまで参考値となります。お手数ですが、武器評価ページにて評価を行っていただければ、その内容に基づき試合スコアを再計算いたします。ご不便をおかけいたしますが、何卒ご理解とご協力のほどお願い申し上げます。",
+    "button": "確認"
+  }
+}
