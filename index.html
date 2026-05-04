@@ -31,9 +31,21 @@
 
     <!-- 首页：当前/未来场次 -->
     <section id="home" class="page-content">
-        <h1 class="section-title-with-icon"><img src="images/enemy/SakelienStandard.png" alt="当前场次" class="section-icon"> <span data-i18n="home.current">当前场次</span></h1>
+        <h1 class="section-title-with-icon"><img src="images/enemy/Dummy.png" alt="当前场次" class="section-icon"> <span data-i18n="home.current">当前场次</span></h1>
         <div id="current-schedule" class="current-schedule-container">
             <!-- 当前场次会在这里渲染 -->
+        </div>
+
+        <!-- 大型跑（Big Run） -->
+        <h1 class="section-title-with-icon bigrun-title" id="bigrun-section-title" style="display: none;"><img src="images/icon/Badge_CoopBigRunTrophy_Lv00.png" alt="大型跑" class="section-icon"> <span data-i18n="home.bigrun">大型跑</span></h1>
+        <div id="bigrun-schedule" class="current-schedule-container">
+            <!-- 大型跑会在这里渲染 -->
+        </div>
+
+        <!-- 团队打工竞赛（Team Contest / Eggstra Work） -->
+        <h1 class="section-title-with-icon teamcontest-title" id="teamcontest-section-title" style="display: none;"><img src="images/icon/Badge_CoopContestTrophy_Lv02.png" alt="团队打工竞赛" class="section-icon"> <span data-i18n="home.teamContest">团队打工竞赛</span></h1>
+        <div id="teamcontest-schedule" class="current-schedule-container">
+            <!-- 团队打工竞赛会在这里渲染 -->
         </div>
 
         <h1 class="section-title-with-icon future-title"><img src="images/enemy/SakelienSmall.png" alt="未来场次" class="section-icon"> <span data-i18n="home.future">未来场次</span></h1>
@@ -44,7 +56,7 @@
 
     <!-- 历史记录页 -->
     <section id="history" class="page-content" style="display: none;">
-        <h1 class="section-title-with-icon"><img src="images/enemy/Dummy.png" alt="历史记录" class="section-icon"> <span data-i18n="history.title">历史记录分析</span></h1>
+        <h1 class="section-title-with-icon"><img src="images/enemy/SakelienLarge.png" alt="历史记录" class="section-icon"> <span data-i18n="history.title">历史记录分析</span></h1>
         
         <!-- 筛选器 -->
         <div class="filter-bar">

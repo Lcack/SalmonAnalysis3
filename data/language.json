@@ -21,6 +21,8 @@
       "rating": "评分",
       "unknownStage": "未知场地",
       "calculating": "计算中...",
+      "bigrun": "大型跑",
+      "teamContest": "团队打工竞赛",
       "noCurrent": "当前没有进行中的打工场次",
       "noFuture": "暂无未来的打工场次数据"
     },
@@ -146,6 +148,8 @@
       "rating": "Rating",
       "unknownStage": "Unknown Stage",
       "calculating": "Calculating...",
+      "bigrun": "Big Run",
+      "teamContest": "Eggstra Work",
       "noCurrent": "No current sessions available",
       "noFuture": "No future sessions available"
     },
@@ -271,6 +275,8 @@
       "rating": "評価",
       "unknownStage": "不明なステージ",
       "calculating": "計算中...",
+      "bigrun": "ビッグラン",
+      "teamContest": "バイトチームコンテスト",
       "noCurrent": "現在のセッションがありません",
       "noFuture": ""
     },

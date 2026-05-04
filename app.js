@@ -689,9 +689,13 @@ function showPage(pageId) {
 // ================================
 let currentScheduleTimer = null;
 let futureScheduleTimer = null;
+let bigRunTimer = null;
+let teamContestTimer = null;
 
 function renderHome() {
     renderCurrentSchedule();
+    renderBigRun();
+    renderTeamContest();
     renderFutureSchedules();
 }
 
@@ -989,6 +993,226 @@ function renderFutureSchedules() {
 }
 
 // ================================
+// 大型跑（Big Run）渲染
+// ================================
+function shouldShowBigRun() {
+    if (!AppData.bigRuns || AppData.bigRuns.length === 0) return false;
+    const latest = AppData.bigRuns.reduce((prev, curr) =>
+        (new Date(curr.Start_time).getTime() > new Date(prev.Start_time).getTime()) ? curr : prev
+    );
+    const now = new Date();
+    return now <= new Date(latest.End_time);
+}
+
+function renderBigRun() {
+    const titleEl = document.getElementById('bigrun-section-title');
+    const container = document.getElementById('bigrun-schedule');
+    if (!titleEl || !container) return;
+
+    if (!shouldShowBigRun()) {
+        titleEl.style.display = 'none';
+        container.innerHTML = '';
+        if (bigRunTimer) { clearInterval(bigRunTimer); bigRunTimer = null; }
+        return;
+    }
+
+    titleEl.style.display = '';
+    const latest = AppData.bigRuns.reduce((prev, curr) =>
+        (new Date(curr.Start_time).getTime() > new Date(prev.Start_time).getTime()) ? curr : prev
+    );
+
+    const weapons = latest.Weapon.map(name => AppData.weaponNameMap.get(name) || null).filter(Boolean);
+    const rating = calculateScheduleRating(weapons);
+    const ratingDisplay = rating === null ? '?' : (rating.toFixed(1) + '/10');
+    const ratingClass = getRatingClass(rating === null ? 5 : rating / 2);
+
+    const stage = getStageByName(latest.Stage);
+    const bannerImage = stage?.imageBanner || null;
+    const stageBadge = getStageBadge(latest.Stage);
+    const stageName = getStageLocalizedName(latest.Stage);
+
+    container.innerHTML = `
+        <div class="schedule-card current" ${bannerImage ? `style="background-image: url('${bannerImage}'); background-size: cover; background-position: center;"` : ''}>
+            <div class="current-schedule-overlay">
+                <div class="schedule-header">
+                    <span class="schedule-stage">
+                        ${stageBadge ? `<img src="${stageBadge}" alt="${stageName}" class="stage-badge-icon">` : ''}
+                        ${stageName}
+                    </span>
+                </div>
+                <div class="schedule-time">
+                    <span class="time-start">${formatDateTime(latest.Start_time, true)}</span> - <span class="time-end">${formatDateTime(latest.End_time)}</span>
+                </div>
+                <div id="bigrun-countdown" class="countdown-timer">${t('home.calculating')}</div>
+                <div class="weapons-row">
+                    ${weapons.map(w => renderWeaponIcon(w)).join('')}
+                </div>
+                <div class="schedule-rating-bottom ${ratingClass}">
+                    ${t('home.rating')}:${ratingDisplay}
+                </div>
+            </div>
+        </div>
+    `;
+
+    startBigRunTimer(latest.Start_time, latest.End_time);
+}
+
+function startBigRunTimer(startTime, endTime) {
+    if (bigRunTimer) clearInterval(bigRunTimer);
+
+    function updateTimer() {
+        const now = new Date();
+        const startMs = new Date(startTime).getTime();
+        const endMs = new Date(endTime).getTime();
+
+        const timerEl = document.getElementById('bigrun-countdown');
+        if (!timerEl) return;
+
+        // 已结束
+        if (now.getTime() >= endMs) {
+            timerEl.textContent = t('home.ended');
+            clearInterval(bigRunTimer);
+            return;
+        }
+
+        // 未开始 → 使用未来场次格式（xx天xx小时xx分后）
+        if (now.getTime() < startMs) {
+            const diff = startMs - now.getTime();
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            if (days > 0) {
+                timerEl.textContent = `${days}${t('home.days')}${hours}${t('home.hours')}${minutes}${t('home.minutes')}${t('home.after')}`;
+            } else {
+                timerEl.textContent = `${hours}${t('home.hours')}${minutes}${t('home.minutes')}${t('home.after')}`;
+            }
+            return;
+        }
+
+        // 进行中 → 使用当前场次格式（还剩xx小时xx分钟xx秒）
+        const diff = endMs - now.getTime();
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        timerEl.textContent = `${t('home.timeRemaining')}${hours}${t('home.hours')}${minutes}${t('home.minutes')}${seconds}${t('home.seconds')}`;
+    }
+
+    updateTimer();
+    bigRunTimer = setInterval(updateTimer, 1000);
+}
+
+// ================================
+// 团队打工竞赛（Team Contest）渲染
+// ================================
+function shouldShowTeamContest() {
+    if (!AppData.eggstraWorks || AppData.eggstraWorks.length === 0) return false;
+    const latest = AppData.eggstraWorks.reduce((prev, curr) =>
+        (new Date(curr.Start_time).getTime() > new Date(prev.Start_time).getTime()) ? curr : prev
+    );
+    const now = new Date();
+    return now <= new Date(latest.End_time);
+}
+
+function renderTeamContest() {
+    const titleEl = document.getElementById('teamcontest-section-title');
+    const container = document.getElementById('teamcontest-schedule');
+    if (!titleEl || !container) return;
+
+    if (!shouldShowTeamContest()) {
+        titleEl.style.display = 'none';
+        container.innerHTML = '';
+        if (teamContestTimer) { clearInterval(teamContestTimer); teamContestTimer = null; }
+        return;
+    }
+
+    titleEl.style.display = '';
+    const latest = AppData.eggstraWorks.reduce((prev, curr) =>
+        (new Date(curr.Start_time).getTime() > new Date(prev.Start_time).getTime()) ? curr : prev
+    );
+
+    const weapons = latest.Weapon.map(name => AppData.weaponNameMap.get(name) || null).filter(Boolean);
+    const rating = calculateScheduleRating(weapons);
+    const ratingDisplay = rating === null ? '?' : (rating.toFixed(1) + '/10');
+    const ratingClass = getRatingClass(rating === null ? 5 : rating / 2);
+
+    const stage = getStageByName(latest.Stage);
+    const bannerImage = stage?.imageBanner || null;
+    const stageBadge = getStageBadge(latest.Stage);
+    const stageName = getStageLocalizedName(latest.Stage);
+
+    container.innerHTML = `
+        <div class="schedule-card current" ${bannerImage ? `style="background-image: url('${bannerImage}'); background-size: cover; background-position: center;"` : ''}>
+            <div class="current-schedule-overlay">
+                <div class="schedule-header">
+                    <span class="schedule-stage">
+                        ${stageBadge ? `<img src="${stageBadge}" alt="${stageName}" class="stage-badge-icon">` : ''}
+                        ${stageName}
+                    </span>
+                </div>
+                <div class="schedule-time">
+                    <span class="time-start">${formatDateTime(latest.Start_time, true)}</span> - <span class="time-end">${formatDateTime(latest.End_time)}</span>
+                </div>
+                <div id="teamcontest-countdown" class="countdown-timer">${t('home.calculating')}</div>
+                <div class="weapons-row">
+                    ${weapons.map(w => renderWeaponIcon(w)).join('')}
+                </div>
+                <div class="schedule-rating-bottom ${ratingClass}">
+                    ${t('home.rating')}:${ratingDisplay}
+                </div>
+            </div>
+        </div>
+    `;
+
+    startTeamContestTimer(latest.Start_time, latest.End_time);
+}
+
+function startTeamContestTimer(startTime, endTime) {
+    if (teamContestTimer) clearInterval(teamContestTimer);
+
+    function updateTimer() {
+        const now = new Date();
+        const startMs = new Date(startTime).getTime();
+        const endMs = new Date(endTime).getTime();
+
+        const timerEl = document.getElementById('teamcontest-countdown');
+        if (!timerEl) return;
+
+        // 已结束
+        if (now.getTime() >= endMs) {
+            timerEl.textContent = t('home.ended');
+            clearInterval(teamContestTimer);
+            return;
+        }
+
+        // 未开始 → 使用未来场次格式（xx天xx小时xx分后）
+        if (now.getTime() < startMs) {
+            const diff = startMs - now.getTime();
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            if (days > 0) {
+                timerEl.textContent = `${days}${t('home.days')}${hours}${t('home.hours')}${minutes}${t('home.minutes')}${t('home.after')}`;
+            } else {
+                timerEl.textContent = `${hours}${t('home.hours')}${minutes}${t('home.minutes')}${t('home.after')}`;
+            }
+            return;
+        }
+
+        // 进行中 → 使用当前场次格式（还剩xx小时xx分钟xx秒）
+        const diff = endMs - now.getTime();
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        timerEl.textContent = `${t('home.timeRemaining')}${hours}${t('home.hours')}${minutes}${t('home.minutes')}${seconds}${t('home.seconds')}`;
+    }
+
+    updateTimer();
+    teamContestTimer = setInterval(updateTimer, 1000);
+}
 // 历史记录页渲染
 // ================================
 let currentHistoryFilter = {

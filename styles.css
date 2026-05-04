@@ -5,19 +5,37 @@
 
 /* CSS 变量 - Splatoon3 风格配色 */
 :root {
+    /* 主题色 */
     --splat-yellow: #E6FF00;
     --splat-yellow-dark: #C5D900;
     --splat-purple: #8B5CF6;
     --splat-orange: #FF6B35;
     --splat-pink: #FF4785;
     --splat-cyan: #00D9FF;
+    --splat-red: #EF4444;
+    /* 中性色 */
     --splat-black: #1a1a1a;
     --splat-dark: #2d2d2d;
     --splat-gray: #3d3d3d;
     --splat-light: #666666;
     --splat-bg: #0f0f0f;
+    /* 文字色 */
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
+    /* 评级色 */
+    --rating-green: #4ade80;
+    --rating-green-dark: #22c55e;
+    --rating-gold: #fbbf24;
+    /* 模块标题色 */
+    --bigrun-gold: #F0A030;
+    --teamcontest-green: #40C080;
+    /* RGB 分量（用于 rgba() 调用） */
+    --splat-yellow-rgb: 230, 255, 0;
+    --splat-cyan-rgb: 0, 217, 255;
+    --splat-orange-rgb: 255, 107, 53;
+    --splat-black-rgb: 26, 26, 26;
+    --splat-dark-rgb: 45, 45, 45;
+    /* 其他 */
     --border-radius: 12px;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
@@ -128,7 +146,7 @@ body.lang-jp {
 }
 
 .nav-links li:hover {
-    background-color: rgba(230, 255, 0, 0.1);
+    background-color: rgba(var(--splat-yellow-rgb), 0.1);
     color: var(--splat-yellow);
 }
 
@@ -229,7 +247,7 @@ body.lang-jp {
 .btn-primary:hover {
     background-color: var(--splat-yellow-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(230, 255, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(var(--splat-yellow-rgb), 0.3);
 }
 
 .btn-secondary {
@@ -297,7 +315,7 @@ body.lang-jp {
 
 .current-schedule-overlay,
 .future-schedule-overlay {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(45, 45, 45, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(var(--splat-black-rgb), 0.6) 0%, rgba(var(--splat-dark-rgb), 0.6) 100%);
     border-radius: var(--border-radius);
     padding: 1.5rem;
     height: 100%;
@@ -307,7 +325,7 @@ body.lang-jp {
 }
 
 .schedule-card.current .current-schedule-overlay {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(45, 45, 45, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(var(--splat-black-rgb), 0.6) 0%, rgba(var(--splat-dark-rgb), 0.6) 100%);
 }
 
 .schedule-header {
@@ -351,7 +369,7 @@ body.lang-jp {
     font-weight: 600;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
-    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+    text-shadow: 0 0 10px rgba(var(--splat-cyan-rgb), 0.3);
 }
 
 .future-timer {
@@ -375,18 +393,18 @@ body.lang-jp {
 }
 
 .schedule-rating-bottom.rating-high {
-    color: #4ade80;
+    color: var(--rating-green);
     border-color: rgba(74, 222, 128, 0.5);
 }
 
 .schedule-rating-bottom.rating-mid {
     color: var(--splat-yellow);
-    border-color: rgba(230, 255, 0, 0.5);
+    border-color: rgba(var(--splat-yellow-rgb), 0.5);
 }
 
 .schedule-rating-bottom.rating-low {
     color: var(--splat-orange);
-    border-color: rgba(255, 107, 53, 0.5);
+    border-color: rgba(var(--splat-orange-rgb), 0.5);
 }
 
 .schedule-time {
@@ -398,7 +416,7 @@ body.lang-jp {
 
 .schedule-time .time-start,
 .schedule-time .time-end {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .weapons-row {
@@ -582,7 +600,7 @@ tr:hover {
 }
 
 /* 评分样式 */
-.rating-high { color: #4ade80; font-weight: bold; }
+.rating-high { color: var(--rating-green); font-weight: bold; }
 .rating-mid { color: var(--splat-yellow); font-weight: bold; }
 .rating-low { color: var(--splat-orange); font-weight: bold; }
 
@@ -643,7 +661,7 @@ tr:hover {
 
 .page-buttons button:hover:not(:disabled) {
     border-color: var(--splat-yellow);
-    background: rgba(230, 255, 0, 0.1);
+    background: rgba(var(--splat-yellow-rgb), 0.1);
 }
 
 .page-buttons button:disabled {
@@ -684,6 +702,16 @@ tr:hover {
 .section-title-with-icon.future-title {
     color: var(--splat-cyan);
     border-left: 5px solid var(--splat-cyan);
+}
+
+.section-title-with-icon.bigrun-title {
+    color: var(--bigrun-gold);
+    border-left: 5px solid var(--bigrun-gold);
+}
+
+.section-title-with-icon.teamcontest-title {
+    color: var(--teamcontest-green);
+    border-left: 5px solid var(--teamcontest-green);
 }
 
 .section-icon {
@@ -764,7 +792,7 @@ h1 .section-icon {
 
 .weapon-card.user-modified {
     border-color: var(--splat-cyan);
-    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+    box-shadow: 0 0 10px rgba(var(--splat-cyan-rgb), 0.3);
 }
 
 .weapon-card.user-modified::after {
@@ -811,9 +839,9 @@ h1 .section-icon {
     font-weight: bold;
 }
 
-.weapon-rating.X { color: #fbbf24; text-shadow: 0 0 10px rgba(251, 191, 36, 0.5); }
-.weapon-rating.S-plus { color: #4ade80; }
-.weapon-rating.S { color: #22c55e; }
+.weapon-rating.X { color: var(--rating-gold); text-shadow: 0 0 10px rgba(251, 191, 36, 0.5); }
+.weapon-rating.S-plus { color: var(--rating-green); }
+.weapon-rating.S { color: var(--rating-green-dark); }
 .weapon-rating.A { color: var(--splat-cyan); }
 .weapon-rating.B { color: var(--splat-yellow); }
 .weapon-rating.C { color: var(--splat-orange); }
@@ -827,12 +855,12 @@ h1 .section-icon {
     margin-top: 0.5rem;
 }
 
-.tier-X { background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(251, 191, 36, 0.1)); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.5); }
-.tier-S-plus { background: rgba(74, 222, 128, 0.2); color: #4ade80; }
-.tier-S { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
-.tier-A { background: rgba(0, 217, 255, 0.2); color: var(--splat-cyan); }
-.tier-B { background: rgba(230, 255, 0, 0.2); color: var(--splat-yellow); }
-.tier-C { background: rgba(255, 107, 53, 0.2); color: var(--splat-orange); }
+.tier-X { background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(251, 191, 36, 0.1)); color: var(--rating-gold); border: 1px solid rgba(251, 191, 36, 0.5); }
+.tier-S-plus { background: rgba(74, 222, 128, 0.2); color: var(--rating-green); }
+.tier-S { background: rgba(34, 197, 94, 0.2); color: var(--rating-green-dark); }
+.tier-A { background: rgba(var(--splat-cyan-rgb), 0.2); color: var(--splat-cyan); }
+.tier-B { background: rgba(var(--splat-yellow-rgb), 0.2); color: var(--splat-yellow); }
+.tier-C { background: rgba(var(--splat-orange-rgb), 0.2); color: var(--splat-orange); }
 
 /* ================================
    统计图表
