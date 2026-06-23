@@ -12584,6 +12584,21 @@
                 "灭熄FF",
                 "快速爆破枪 精英"
             ]
+        },
+        {
+            "no": "840",
+            "Start_time": "2026/06/29 16:00",
+            "End_time": "2026/07/01 08:00",
+            "Duration": "40",
+            "Is_Big_Run": "false",
+            "Stage": "新卷堡",
+            "King_Salmonid": "横纲",
+            "Weapon": [
+                "工作刮水刀",
+                "S-BLAST92",
+                "N-ZAP85",
+                "邦普V"
+            ]
         }
     ]
 }
