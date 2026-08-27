@@ -84,21 +84,30 @@ async function updateSchedules() {
         const weaponDict = buildDict(WEAPON_FILE, 'weapon');
 
         let localData = { schedule: [] };
-        let lastStartTimeMs = 0;
         let lastNo = 0;
+        // 常规场次和 Big Run 都写入 coop_schedule.json，因此分别记录各自类型在本地的最新开始时间，
+        // 比对时各按各的类型进行，避免两类场次相互影响（例如 Big Run 晚于常规场次时，
+        // 用 Big Run 的时间去卡常规场次，导致场次重复录入、序号膨胀）。
+        let lastRegularMs = 0;
+        let lastBigRunMs = 0;
 
         if (fs.existsSync(SCHEDULE_FILE)) {
             const content = fs.readFileSync(SCHEDULE_FILE, 'utf-8');
             if (content.trim()) {
                 localData = JSON.parse(content);
                 if (localData.schedule && localData.schedule.length > 0) {
-                    const latestRecord = localData.schedule.reduce((prev, current) => {
-                        return (new Date(current.Start_time).getTime() > new Date(prev.Start_time).getTime()) ? current : prev;
-                    });
-                    lastStartTimeMs = new Date(latestRecord.Start_time).getTime();
-                    const lastItem = localData.schedule[localData.schedule.length - 1];
-                    lastNo = parseInt(lastItem.no) || 0;
-                    console.log(`读取到本地共 ${localData.schedule.length} 条数据。最新序号 ${lastNo}，开始时间 ${latestRecord.Start_time}。`);
+                    for (const item of localData.schedule) {
+                        const t = new Date(item.Start_time).getTime();
+                        if (item.Is_Big_Run === "true") {
+                            if (t > lastBigRunMs) lastBigRunMs = t;
+                        } else {
+                            if (t > lastRegularMs) lastRegularMs = t;
+                        }
+                        const n = parseInt(item.no) || 0;
+                        if (n > lastNo) lastNo = n;
+                    }
+                    const fmtMs = ms => ms > 0 ? formatToUTC8(new Date(ms).toISOString()) : "无";
+                    console.log(`读取到本地共 ${localData.schedule.length} 条数据。最新序号 ${lastNo}，最新常规场次 ${fmtMs(lastRegularMs)}，最新 Big Run ${fmtMs(lastBigRunMs)}。`);
                 }
             }
         }
@@ -157,7 +166,7 @@ async function updateSchedules() {
         }
 
         const newRegularItems = fetchedSchedules.filter(item => {
-            return new Date(item.Start_time).getTime() > lastStartTimeMs;
+            return new Date(item.Start_time).getTime() > lastRegularMs;
         });
 
         if (newRegularItems.length > 0) {
@@ -181,7 +190,7 @@ async function updateSchedules() {
         if (coopGroupingSchedule.bigRunSchedules?.nodes && coopGroupingSchedule.bigRunSchedules.nodes.length > 0) {
             coopGroupingSchedule.bigRunSchedules.nodes.forEach(node => {
                 const item = parseNode(node, "true");
-                if (item && new Date(item.Start_time).getTime() > bigRunInfo.lastStartTimeMs) {
+                if (item && new Date(item.Start_time).getTime() > lastBigRunMs) {
                     newBigRunItems.push(item);
                 }
             });
