@@ -59,6 +59,23 @@ function getLatestFromFile(filePath, arrayKey) {
     }
 }
 
+// 金问号随机武器（Random Rare）的识别信息：
+// 在 splatoon3.ink 的 API 中，绿问号（Random）与金问号（Random Rare）的 name 都是 "Random"，
+// 但两者的 __splatoon3ink_id 和图片 url 不同，据此区分。
+const RANDOM_RARE_SPLATOON3INK_ID = "747937841598fff7";
+const RANDOM_RARE_IMAGE_URL = "https://splatoon3.ink/assets/splatnet/v3/ui_img/9d7272733ae2f2282938da17d69f13419a935eef42239132a02fcf37d8678f10_0.png";
+
+// 将单个武器对象解析为最终武器名称（先做金问号识别，再查字典翻译）
+function resolveWeaponName(w, weaponDict) {
+    let wName = w.name || "Random";
+    if (wName === "Random" &&
+        w.__splatoon3ink_id === RANDOM_RARE_SPLATOON3INK_ID &&
+        w.image && w.image.url === RANDOM_RARE_IMAGE_URL) {
+        wName = "Random Rare";
+    }
+    return weaponDict[wName] || wName;
+}
+
 async function updateSchedules() {
     try {
         console.log('正在加载本地字典数据...');
@@ -112,11 +129,7 @@ async function updateSchedules() {
             // 3. 安全提取武器
             let weaponsZh = ["未知", "未知", "未知", "未知"];
             if (finalSetting.weapons && Array.isArray(finalSetting.weapons)) {
-                weaponsZh = finalSetting.weapons.map(w => {
-                    // 这里的 w 可能没有 name，继续防御
-                    const wName = w.name || "Random";
-                    return weaponDict[wName] || wName;
-                });
+                weaponsZh = finalSetting.weapons.map(w => resolveWeaponName(w, weaponDict));
             }
 
             return {
@@ -233,10 +246,7 @@ async function updateSchedules() {
 
                 let weaponsZh = ["未知", "未知", "未知", "未知"];
                 if (finalSetting.weapons && Array.isArray(finalSetting.weapons)) {
-                    weaponsZh = finalSetting.weapons.map(w => {
-                        const wName = w.name || "Random";
-                        return weaponDict[wName] || wName;
-                    });
+                    weaponsZh = finalSetting.weapons.map(w => resolveWeaponName(w, weaponDict));
                 }
 
                 newEggstraItems.push({
