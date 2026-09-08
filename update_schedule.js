@@ -47,15 +47,33 @@ function getLatestFromFile(filePath, arrayKey) {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         const items = data[arrayKey];
         if (!items || items.length === 0) return { lastStartTimeMs: 0, lastNo: 0 };
-        const latest = items.reduce((prev, curr) => {
-            return (new Date(curr.Start_time).getTime() > new Date(prev.Start_time).getTime()) ? curr : prev;
-        });
-        return {
-            lastStartTimeMs: new Date(latest.Start_time).getTime(),
-            lastNo: parseInt(latest.no) || 0
-        };
+        // 分开取「最新开始时间」与「最大序号」：即使条目未按时间或序号排序，
+        // 也能保证下一个序号紧接该文件里已有的最大序号，而不会错用别的文件（如 coop_schedule）的序号。
+        let lastStartTimeMs = 0;
+        let lastNo = 0;
+        for (const item of items) {
+            const t = new Date(item.Start_time).getTime();
+            if (t > lastStartTimeMs) lastStartTimeMs = t;
+            const n = parseInt(item.no) || 0;
+            if (n > lastNo) lastNo = n;
+        }
+        return { lastStartTimeMs, lastNo };
     } catch (e) {
         return { lastStartTimeMs: 0, lastNo: 0 };
+    }
+}
+
+// 安全性读取 JSON 文件：解析失败时返回 { ok: false }，并打印警告，
+// 避免某个数据文件损坏时中断整场更新（尤其是常规场次的更新）。
+function loadJson(filePath) {
+    if (!fs.existsSync(filePath)) return { ok: true, data: null };
+    try {
+        const content = fs.readFileSync(filePath, 'utf-8');
+        if (!content.trim()) return { ok: true, data: null };
+        return { ok: true, data: JSON.parse(content) };
+    } catch (e) {
+        console.warn(`警告：${path.basename(filePath)} 是无效 JSON（${e.message}），本次跳过该文件的更新，不影响其他数据。`);
+        return { ok: false, data: null };
     }
 }
 
@@ -91,24 +109,22 @@ async function updateSchedules() {
         let lastRegularMs = 0;
         let lastBigRunMs = 0;
 
-        if (fs.existsSync(SCHEDULE_FILE)) {
-            const content = fs.readFileSync(SCHEDULE_FILE, 'utf-8');
-            if (content.trim()) {
-                localData = JSON.parse(content);
-                if (localData.schedule && localData.schedule.length > 0) {
-                    for (const item of localData.schedule) {
-                        const t = new Date(item.Start_time).getTime();
-                        if (item.Is_Big_Run === "true") {
-                            if (t > lastBigRunMs) lastBigRunMs = t;
-                        } else {
-                            if (t > lastRegularMs) lastRegularMs = t;
-                        }
-                        const n = parseInt(item.no) || 0;
-                        if (n > lastNo) lastNo = n;
+        const scheduleLoad = loadJson(SCHEDULE_FILE);
+        if (scheduleLoad.ok && scheduleLoad.data) {
+            localData = scheduleLoad.data;
+            if (localData.schedule && localData.schedule.length > 0) {
+                for (const item of localData.schedule) {
+                    const t = new Date(item.Start_time).getTime();
+                    if (item.Is_Big_Run === "true") {
+                        if (t > lastBigRunMs) lastBigRunMs = t;
+                    } else {
+                        if (t > lastRegularMs) lastRegularMs = t;
                     }
-                    const fmtMs = ms => ms > 0 ? formatToUTC8(new Date(ms).toISOString()) : "无";
-                    console.log(`读取到本地共 ${localData.schedule.length} 条数据。最新序号 ${lastNo}，最新常规场次 ${fmtMs(lastRegularMs)}，最新 Big Run ${fmtMs(lastBigRunMs)}。`);
+                    const n = parseInt(item.no) || 0;
+                    if (n > lastNo) lastNo = n;
                 }
+                const fmtMs = ms => ms > 0 ? formatToUTC8(new Date(ms).toISOString()) : "无";
+                console.log(`读取到本地共 ${localData.schedule.length} 条数据。最新序号 ${lastNo}，最新常规场次 ${fmtMs(lastRegularMs)}，最新 Big Run ${fmtMs(lastBigRunMs)}。`);
             }
         }
 
@@ -198,40 +214,42 @@ async function updateSchedules() {
             if (newBigRunItems.length > 0) {
                 newBigRunItems.sort((a, b) => new Date(a.Start_time) - new Date(b.Start_time));
 
-                // 读取现有 bigrun 数据
-                let bigRunData = { bigrun: [] };
-                if (fs.existsSync(BIGRUN_FILE)) {
-                    const content = fs.readFileSync(BIGRUN_FILE, 'utf-8');
-                    if (content.trim()) bigRunData = JSON.parse(content);
-                }
+                // 读取现有 bigrun 数据；若文件损坏则跳过本次 Big Run 更新，避免覆盖或破坏历史数据
+                const bigRunLoad = loadJson(BIGRUN_FILE);
+                if (!bigRunLoad.ok) {
+                    console.log('Big Run：history_bigrun.json 已损坏，本次跳过 Big Run 更新（不影响常规场次）。');
+                } else {
+                    const bigRunData = bigRunLoad.data || { bigrun: [] };
+                    if (!Array.isArray(bigRunData.bigrun)) bigRunData.bigrun = [];
 
-                newBigRunItems.forEach(item => {
-                    // 写入 coop_schedule.json
-                    lastNo++;
-                    item.no = String(lastNo);
-                    item.Duration = "48";
-                    localData.schedule.push(item);
+                    newBigRunItems.forEach(item => {
+                        // 写入 coop_schedule.json
+                        lastNo++;
+                        item.no = String(lastNo);
+                        item.Duration = "48";
+                        localData.schedule.push(item);
 
-                    // 写入 history_bigrun.json
-                    lastBigRunNo++;
-                    bigRunData.bigrun.push({
-                        no: String(lastBigRunNo),
-                        Start_time: item.Start_time,
-                        End_time: item.End_time,
-                        Duration: "48",
-                        Is_Big_Run: "true",
-                        Stage: item.Stage,
-                        King_Salmonid: item.King_Salmonid,
-                        Weapon: item.Weapon,
-                        Gold: 135,
-                        Silver: 110,
-                        Bronze: 85
+                        // 写入 history_bigrun.json
+                        lastBigRunNo++;
+                        bigRunData.bigrun.push({
+                            no: String(lastBigRunNo),
+                            Start_time: item.Start_time,
+                            End_time: item.End_time,
+                            Duration: "48",
+                            Is_Big_Run: "true",
+                            Stage: item.Stage,
+                            King_Salmonid: item.King_Salmonid,
+                            Weapon: item.Weapon,
+                            Gold: 135,
+                            Silver: 110,
+                            Bronze: 85
+                        });
                     });
-                });
 
-                fs.writeFileSync(BIGRUN_FILE, JSON.stringify(bigRunData, null, 4), 'utf-8');
-                totalNewBigRun = newBigRunItems.length;
-                console.log(`Big Run：新增 ${totalNewBigRun} 条（已同步更新 coop_schedule 和 history_bigrun）。`);
+                    fs.writeFileSync(BIGRUN_FILE, JSON.stringify(bigRunData, null, 4), 'utf-8');
+                    totalNewBigRun = newBigRunItems.length;
+                    console.log(`Big Run：新增 ${totalNewBigRun} 条（已同步更新 coop_schedule 和 history_bigrun）。`);
+                }
             } else {
                 console.log('Big Run：没有发现比本地更新的场次。');
             }
@@ -269,30 +287,33 @@ async function updateSchedules() {
             if (newEggstraItems.length > 0) {
                 newEggstraItems.sort((a, b) => new Date(a.Start_time) - new Date(b.Start_time));
 
-                let eggstraData = { eggstrawork: [] };
-                if (fs.existsSync(EGGSTRA_FILE)) {
-                    const content = fs.readFileSync(EGGSTRA_FILE, 'utf-8');
-                    if (content.trim()) eggstraData = JSON.parse(content);
-                }
+                // 读取现有 eggstra 数据；若文件损坏则跳过本次更新，避免覆盖历史数据
+                const eggstraLoad = loadJson(EGGSTRA_FILE);
+                if (!eggstraLoad.ok) {
+                    console.log('Team Contest：history_EggstraWork.json 已损坏，本次跳过更新。');
+                } else {
+                    const eggstraData = eggstraLoad.data || { eggstrawork: [] };
+                    if (!Array.isArray(eggstraData.eggstrawork)) eggstraData.eggstrawork = [];
 
-                newEggstraItems.forEach(item => {
-                    lastEggstraNo++;
-                    eggstraData.eggstrawork.push({
-                        no: String(lastEggstraNo),
-                        Start_time: item.Start_time,
-                        End_time: item.End_time,
-                        Duration: "48",
-                        Stage: item.Stage,
-                        Weapon: item.Weapon,
-                        Gold: "",
-                        Silver: "",
-                        Bronze: ""
+                    newEggstraItems.forEach(item => {
+                        lastEggstraNo++;
+                        eggstraData.eggstrawork.push({
+                            no: String(lastEggstraNo),
+                            Start_time: item.Start_time,
+                            End_time: item.End_time,
+                            Duration: "48",
+                            Stage: item.Stage,
+                            Weapon: item.Weapon,
+                            Gold: "",
+                            Silver: "",
+                            Bronze: ""
+                        });
                     });
-                });
 
-                fs.writeFileSync(EGGSTRA_FILE, JSON.stringify(eggstraData, null, 4), 'utf-8');
-                totalNewEggstra = newEggstraItems.length;
-                console.log(`Team Contest：新增 ${totalNewEggstra} 条（已更新 history_EggstraWork）。`);
+                    fs.writeFileSync(EGGSTRA_FILE, JSON.stringify(eggstraData, null, 4), 'utf-8');
+                    totalNewEggstra = newEggstraItems.length;
+                    console.log(`Team Contest：新增 ${totalNewEggstra} 条（已更新 history_EggstraWork）。`);
+                }
             } else {
                 console.log('Team Contest：没有发现比本地更新的场次。');
             }
