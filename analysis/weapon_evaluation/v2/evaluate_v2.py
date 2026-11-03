@@ -14,6 +14,8 @@ from evaluate import AXES,read,load_source
 from scenarios import boss_benchmark,mob_benchmark,nth_frame
 from field_adapters import adapt_modes
 
+OVERALL_CONFIG=read(HERE/'overall_config.json')
+
 PROFILES=[
     dict(id='balanced',name='均衡任务',boss_sets=1,mob_groups=2,ground_area=240,wall_area=48,distance=18),
     dict(id='combat',name='战斗偏重',boss_sets=2,mob_groups=3,ground_area=80,wall_area=16,distance=24),
@@ -27,6 +29,7 @@ CONFIG=dict(version='1110-model-v2-reference-definitions',fps=60,cohock_hp=400,m
             approach_policy='每个战斗块初始距离统一为profile.distance 使用实际选用模式射程 不借全局最远模式',
             blaster_paint_discount=1.0,
             confidence='显式参数与定义高；固定模式资源排程中；涂墙等同涂地、极限射程和工作量情景低；不是原视频排名')
+CONFIG['overall_policy']=copy.deepcopy(OVERALL_CONFIG)
 
 
 def semantic_sha(path):
@@ -141,15 +144,42 @@ def workload(row,profile,refill=180,wall_factor=1.,floor_factor=1.,distance_fact
                 task_plan=result['taskplans'],resource_assumptions=result['resource_assumptions'])
 
 
+def overall_raw_score(frames,calibration):
+    """Unrounded 1–5 task score under the ordinary-weapon time anchors."""
+    if not math.isfinite(frames) or frames<=0:
+        raise ValueError('Task frames must be positive and finite')
+    low=OVERALL_CONFIG['score_min'];high=OVERALL_CONFIG['score_max']
+    return float(np.clip(low+(high-low)*(math.log(1/frames)-calibration['log_low'])/
+                         (calibration['log_high']-calibration['log_low']),low,high))
+
+
+def tier_for_score(score):
+    """Classify the final one-decimal display value, including rounding to 5."""
+    if not math.isfinite(score) or not 1<=score<=5:
+        raise ValueError('Overall score must be finite and within 1–5')
+    displayed=round(float(score),1)
+    for band in OVERALL_CONFIG['tier_anchors']:
+        if 'equals' in band and displayed==band['equals']:
+            return band['tier']
+        if 'min_inclusive' in band and band['min_inclusive']<=displayed<band['max_exclusive']:
+            return band['tier']
+    raise ValueError(f'No overall tier for {displayed}')
+
+
 def _overall_map(vals,regular_mask):
-    lo,hi=np.quantile(np.log([1/v for v,is_regular in zip(vals,regular_mask) if is_regular]),[.05,.95])
-    return [round(float(np.clip(.5+4.5*(math.log(1/v)-lo)/(hi-lo),.5,5)),1) for v in vals],dict(log_low=float(lo),log_high=float(hi))
+    lo,hi=np.quantile(np.log([1/v for v,is_regular in zip(vals,regular_mask) if is_regular]),OVERALL_CONFIG['ordinary_anchor_quantiles'])
+    calibration=dict(log_low=float(lo),log_high=float(hi),
+                     time_slow_anchor=math.exp(-float(lo)),time_fast_anchor=math.exp(-float(hi)),
+                     scale=[OVERALL_CONFIG['score_min'],OVERALL_CONFIG['score_max']],
+                     population=sum(regular_mask),overall_version=OVERALL_CONFIG['version'])
+    return [overall_raw_score(v,calibration) for v in vals],calibration
 
 
 def run(write=False):
     legacy=read(BASE/'evaluation.json')
     source_manifest,source_semantic_manifest=verify_source_manifests(legacy)
-    before=read(HERE/'weapon_data.before_v2.json');rows=[]
+    before=read(HERE/OVERALL_CONFIG['historical_manual_baseline'])
+    publication_before=read(HERE/OVERALL_CONFIG['publication_baseline']);rows=[]
     for old in legacy['weapons']:
         src,_,_=load_source(old['id']);g=src['GameParameters'];modes=adapt_modes(old['id'],g,old['modes'])
         mm=[mode_metrics(m,g) for m in modes]
@@ -160,19 +190,28 @@ def run(write=False):
         row['source_sha256']=source_manifest[row['source']]
         row['source_semantic_sha256']=source_semantic_manifest[row['source']]
         row.update(modes=modes,mode_metrics=mm,benchmarks=dict(boss=boss,mob=mob),raw=raw,selected_modes=selected,features=feat,
-                   previous_scores=old['scores'],original_overall=before['weapon'][old['id']]['rating']['overall'])
+                   previous_scores=old['scores'],original_overall=before['weapon'][old['id']]['rating']['overall'],
+                   original_tier=before['weapon'][old['id']]['rating']['tier'])
         rows.append(row)
     cal=calibrate(rows)
-    for r in rows:r['scores']=scores(r['raw'],cal)
+    for r in rows:
+        r['scores']=scores(r['raw'],cal)
+        assert r['scores']==publication_before['weapon'][r['id']]['rating']['dimensions'],('frozen_dimensions_changed',r['id'])
     regular=[not r['is_bear'] for r in rows]
+    assert sum(regular)==63
     for r in rows:r['overall']=dict(original=r['original_overall'],equal_axis_baseline=round(statistics.mean(r['scores'].values()),1),scenarios=[workload(r,p) for p in PROFILES])
     overall_cal={}
     for i,p in enumerate(PROFILES):
         vals=[r['overall']['scenarios'][i]['frames'] for r in rows];ss,ac=_overall_map(vals,regular);overall_cal[p['id']]=ac
-        for r,s in zip(rows,ss):r['overall']['scenarios'][i]['score']=s
+        for r,s in zip(rows,ss):
+            r['overall']['scenarios'][i].update(raw_score=s,score=round(s,1))
     for r in rows:
-        ss=[x['score'] for x in r['overall']['scenarios']]
-        r['overall'].update(recommended=round(statistics.mean(ss),1),range=[min(ss),max(ss)],policy='三类工作量情景分数的等权平均 不是原视频公式 未回填旧overall')
+        ss=[x['raw_score'] for x in r['overall']['scenarios']]
+        mean=statistics.mean(ss);display=round(mean,1)
+        r['overall'].update(raw_mean=mean,recommended=display,model_tier=tier_for_score(display),
+                            original_tier=r['original_tier'],range=[round(min(ss),1),round(max(ss),1)],
+                            overall_version=OVERALL_CONFIG['version'],
+                            policy='三类1–5未取整任务分数等权平均后保留一位小数；普通武器采用，熊武器仅列候选')
     for i,p in enumerate(PROFILES):
         ranked=sorted(rows,key=lambda r:r['overall']['scenarios'][i]['frames'])
         for rank,r in enumerate(ranked,1):r['overall']['scenarios'][i]['rank']=rank
@@ -200,32 +239,60 @@ def run(write=False):
             for refill in [120,180,240]:
                 for p in PROFILES:
                     w=workload(r,p,wall_factor=wf,refill=refill);ac=overall_cal[p['id']]
-                    variations.append(float(np.clip(.5+4.5*(math.log(1/w['frames'])-ac['log_low'])/(ac['log_high']-ac['log_low']),.5,5)))
+                    variations.append(overall_raw_score(w['frames'],ac))
         r['overall']['sensitivity_range']=[round(min(variations),1),round(max(variations),1)]
+    current=read(ROOT/'data/weapon_data.json')
+    for r in rows:
+        wid=r['id'];rating=current['weapon'][wid]['rating'];previous=publication_before['weapon'][wid]['rating']
+        if write and not r['is_bear']:
+            # Bear and random objects are never assigned, restored, or rebuilt.
+            rating['overall']=r['overall']['recommended'];rating['tier']=r['overall']['model_tier']
+        published=(rating['overall'],rating['tier'])
+        candidate=(r['overall']['recommended'],r['overall']['model_tier'])
+        r['overall'].update(previous_published=previous['overall'],previous_published_tier=previous['tier'],
+                            published=published[0],published_tier=published[1],
+                            ordinary_eligible=not r['is_bear'],
+                            applied_to_product=not r['is_bear'] and published==candidate,
+                            changed_from_publication_baseline=published!=(previous['overall'],previous['tier']))
+    overall_summary=dict(ordinary_eligible=63,
+                         ordinary_applied=sum(not r['is_bear'] and r['overall']['applied_to_product'] for r in rows),
+                         ordinary_changed=sum(not r['is_bear'] and r['overall']['changed_from_publication_baseline'] for r in rows),
+                         ordinary_score_changed=sum(not r['is_bear'] and r['overall']['published']!=r['overall']['previous_published'] for r in rows),
+                         ordinary_tier_changed=sum(not r['is_bear'] and r['overall']['published_tier']!=r['overall']['previous_published_tier'] for r in rows),
+                         bear_preserved=8,random_preserved=len(legacy['excluded']),dimensions_unchanged=426)
     changes={a:sum(r['scores'][a]!=r['previous_scores'][a] for r in rows) for a in AXES}
     result=dict(config=CONFIG,calibration=cal,overall_calibration=overall_cal,weapons=rows,sensitivity=sensitivity,
                 source_manifest=source_manifest,source_semantic_manifest=source_semantic_manifest,
                 excluded=legacy['excluded'],changes=changes,
-                overall_written=False,reference_definition_image='figures/reference_definition.png')
+                overall_policy=copy.deepcopy(OVERALL_CONFIG),overall_write_summary=overall_summary,
+                overall_written=bool(write),reference_definition_image='figures/reference_definition.png')
     (HERE/'evaluation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     (HERE/'model_config.json').write_text(json.dumps(CONFIG,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     with (HERE/'scores.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=['id','name','family']+AXES);w.writeheader()
         for r in rows:w.writerow({**{k:r[k] for k in ['id','name','family']},**r['scores']})
     with (HERE/'comparison.csv').open('w',encoding='utf-8-sig',newline='') as f:
-        fields=['id','武器','旧击杀分','新击杀分','五种血量总帧','清杂帧','整箱最大伤害','射出到潜墨帧','原总分','等权六维基线','任务模型建议总分','场景最低分','场景最高分','跨场景最优名次','跨场景最差名次','墙涂证据状态','硬直证据状态']
+        fields=['id','武器','旧击杀分','新击杀分','五种血量总帧','清杂帧','整箱最大伤害','射出到潜墨帧','原总分','等权六维基线','任务模型建议总分','场景最低分','场景最高分','跨场景最优名次','跨场景最差名次','墙涂证据状态','硬直证据状态','原档位','已发布总分','已发布档位','模型候选档位','普通武器已采用','相对发布前有改动']
         w=csv.writer(f);w.writerow(fields)
-        for r in rows:w.writerow([r['id'],r['name'],r['previous_scores']['Killing'],r['scores']['Killing'],r['benchmarks']['boss']['frames'],r['benchmarks']['mob']['frames'],r['features']['ink_damage_tank'],r['features']['release_to_swim_frames'],r['overall']['original'],r['overall']['equal_axis_baseline'],r['overall']['recommended'],*r['overall']['range'],*r['overall']['rank_range'],r['features']['wall_status'],r['features']['endlag_status']])
+        for r in rows:w.writerow([r['id'],r['name'],r['previous_scores']['Killing'],r['scores']['Killing'],r['benchmarks']['boss']['frames'],r['benchmarks']['mob']['frames'],r['features']['ink_damage_tank'],r['features']['release_to_swim_frames'],r['overall']['original'],r['overall']['equal_axis_baseline'],r['overall']['recommended'],*r['overall']['range'],*r['overall']['rank_range'],r['features']['wall_status'],r['features']['endlag_status'],r['overall']['original_tier'],r['overall']['published'],r['overall']['published_tier'],r['overall']['model_tier'],r['overall']['applied_to_product'],r['overall']['changed_from_publication_baseline']])
+    with (HERE/'overall_scores.csv').open('w',encoding='utf-8-sig',newline='') as f:
+        fields=['id','武器','family','is_bear','原总分','原档位','发布前总分','发布前档位','模型未取整均值','模型候选总分','模型候选档位','已发布总分','已发布档位','普通武器已采用','总分或档位有改动']
+        fields += [p['id']+suffix for p in PROFILES for suffix in ['_耗时帧','_未取整分','_展示分']]
+        w=csv.writer(f);w.writerow(fields)
+        for r in rows:
+            o=r['overall'];values=[r['id'],r['name'],r['family'],r['is_bear'],o['original'],o['original_tier'],o['previous_published'],o['previous_published_tier'],o['raw_mean'],o['recommended'],o['model_tier'],o['published'],o['published_tier'],o['applied_to_product'],o['changed_from_publication_baseline']]
+            values += [v for scenario in o['scenarios'] for v in [scenario['frames'],scenario['raw_score'],scenario['score']]]
+            w.writerow(values)
     with (HERE/'benchmarks.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.writer(f);w.writerow(['id','武器','300血帧','500血帧','600盾加500本体帧','900血帧','1200血帧','五项总帧','杂鱼规则队形帧','杂鱼分散帧','杂鱼聚集帧','整箱最大伤害','射出到潜墨帧','涂地墙同效代理每秒','极限距离代理'])
         for r in rows:w.writerow([r['id'],r['name'],*[c['frames'] for c in r['benchmarks']['boss']['cases']],r['benchmarks']['boss']['frames'],*[r['benchmarks']['mob']['layouts'][l]['frames'] for l in ['grid','dispersed','clustered']],r['features']['ink_damage_tank'],r['features']['release_to_swim_frames'],r['features']['ground_rate'],r['features']['range_extreme']])
     if write:
-        current=read(ROOT/'data/weapon_data.json')
-        for r in rows:current['weapon'][r['id']]['rating']['dimensions']=r['scores']
         (ROOT/'data/weapon_data.json').write_text(json.dumps(current,ensure_ascii=False,indent=4)+'\n',encoding='utf8')
-    print(json.dumps(dict(weapons=len(rows),changes=changes,overall_written=False,written=write),ensure_ascii=False))
+    print(json.dumps(dict(weapons=len(rows),changes=changes,overall_written=bool(write),overall_summary=overall_summary,written=write),ensure_ascii=False))
     return result
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--write',action='store_true');run(p.parse_args().write)
+    p=argparse.ArgumentParser(description='复算六维和1–5任务总分；熊武器与随机图标不改写。')
+    p.add_argument('--write',action='store_true',help='写入63把普通武器的overall/tier，并保留冻结六维；8把熊武器和2个随机图标完整保留当次current对象')
+    run(p.parse_args().write)

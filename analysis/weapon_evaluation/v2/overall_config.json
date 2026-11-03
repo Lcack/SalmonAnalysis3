@@ -1,0 +1,29 @@
+{
+  "version": "1110-task-overall-v1",
+  "method": "三类工作量的共享墨箱与逐动作退出时间模型，不是六维雷达分数的直接均分",
+  "score_min": 1.0,
+  "score_max": 5.0,
+  "calibration_population": "63把普通武器，8把熊武器不参与锚点定标",
+  "ordinary_anchor_quantiles": [0.05, 0.95],
+  "scenario_input": "每种任务情景完成帧的倒数取自然对数",
+  "scenario_formula": "clip(1 + 4 * (log(1 / frames) - log_low) / (log_high - log_low), 1, 5)",
+  "scenario_weights": {
+    "balanced": 0.3333333333333333,
+    "combat": 0.3333333333333333,
+    "environment": 0.3333333333333333
+  },
+  "aggregation": "三种未四舍五入的情景分数等权算术平均，最后仅对平均值round(value, 1)",
+  "tier_input": "最终展示的一位小数总分，先四舍五入再分档",
+  "tier_anchors": [
+    {"tier": "C", "min_inclusive": 1.0, "max_exclusive": 2.0},
+    {"tier": "B", "min_inclusive": 2.0, "max_exclusive": 3.0},
+    {"tier": "A", "min_inclusive": 3.0, "max_exclusive": 4.0},
+    {"tier": "S", "min_inclusive": 4.0, "max_exclusive": 5.0},
+    {"tier": "S+", "equals": 5.0}
+  ],
+  "write_policy": "只更新63把普通武器的overall和tier；426个六维数值保持；8把熊武器与2个随机图标从当次current原封保留",
+  "historical_manual_baseline": "weapon_data.before_v2.json",
+  "publication_baseline": "weapon_data.before_overall.json",
+  "publication_baseline_commit": "c4ceb3968a3ef0a1e4e1c2186254f8d0cc76f3a9",
+  "bear_candidate_policy": "熊武器可以列出同锚点的独立模型候选，但不写入其完整武器对象"
+}

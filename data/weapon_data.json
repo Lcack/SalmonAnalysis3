@@ -168,8 +168,8 @@
             "name_jp": "Rブラスターエリート",
             "image": "images/weapon_flat/Path_Wst_Blaster_LightLong_00.png",
             "rating": {
-                "overall": 2.0,
-                "tier": "B",
+                "overall": 1.3,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 0.6,
                     "Range": 3.6,
@@ -188,8 +188,8 @@
             "name_jp": "クラッシュブラスター",
             "image": "images/weapon_flat/Path_Wst_Blaster_LightShort_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 1.2,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 0.7,
                     "Range": 1.4,
@@ -208,8 +208,8 @@
             "name_jp": "ラピッドブラスター",
             "image": "images/weapon_flat/Path_Wst_Blaster_Light_00.png",
             "rating": {
-                "overall": 2.5,
-                "tier": "A",
+                "overall": 1.5,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 0.5,
                     "Range": 3.0,
@@ -248,8 +248,8 @@
             "name_jp": "ホットブラスター",
             "image": "images/weapon_flat/Path_Wst_Blaster_Middle_00.png",
             "rating": {
-                "overall": 2.5,
-                "tier": "A",
+                "overall": 1.1,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 1.0,
                     "Range": 1.5,
@@ -268,8 +268,8 @@
             "name_jp": "S-BLAST92",
             "image": "images/weapon_flat/Path_Wst_Blaster_Precision_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 1.8,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 3.6,
                     "Range": 2.5,
@@ -288,8 +288,8 @@
             "name_jp": "ノヴァブラスター",
             "image": "images/weapon_flat/Path_Wst_Blaster_Short_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 1.7,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 2.1,
                     "Range": 0.8,
@@ -308,8 +308,8 @@
             "name_jp": "フィンセント",
             "image": "images/weapon_flat/Path_Wst_Brush_Heavy_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 3.6,
+                "tier": "A",
                 "dimensions": {
                     "Killing": 5.0,
                     "Range": 1.4,
@@ -328,8 +328,8 @@
             "name_jp": "パブロ",
             "image": "images/weapon_flat/Path_Wst_Brush_Mini_00.png",
             "rating": {
-                "overall": 1.0,
-                "tier": "C",
+                "overall": 2.8,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 2.7,
                     "Range": 0.5,
@@ -348,8 +348,8 @@
             "name_jp": "ホクサイ",
             "image": "images/weapon_flat/Path_Wst_Brush_Normal_00.png",
             "rating": {
-                "overall": 1.0,
-                "tier": "C",
+                "overall": 2.9,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 2.8,
                     "Range": 1.8,
@@ -368,8 +368,8 @@
             "name_jp": "ソイチューバー",
             "image": "images/weapon_flat/Path_Wst_Charger_Keeper_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 2.7,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 2.2,
                     "Range": 3.4,
@@ -388,8 +388,8 @@
             "name_jp": "14式竹筒銃・甲",
             "image": "images/weapon_flat/Path_Wst_Charger_Light_00.png",
             "rating": {
-                "overall": 2.5,
-                "tier": "A",
+                "overall": 1.9,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 2.3,
                     "Range": 3.3,
@@ -408,8 +408,8 @@
             "name_jp": "リッター4K",
             "image": "images/weapon_flat/Path_Wst_Charger_Long_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 2.2,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 2.0,
                     "Range": 5.0,
@@ -428,8 +428,8 @@
             "name_jp": "スプラチャージャー",
             "image": "images/weapon_flat/Path_Wst_Charger_Normal_00.png",
             "rating": {
-                "overall": 2.0,
-                "tier": "B",
+                "overall": 1.2,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 1.0,
                     "Range": 4.3,
@@ -448,8 +448,8 @@
             "name_jp": "R-PEN/5H",
             "image": "images/weapon_flat/Path_Wst_Charger_Pencil_00.png",
             "rating": {
-                "overall": 3.5,
-                "tier": "S",
+                "overall": 2.2,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 2.6,
                     "Range": 4.6,
@@ -468,8 +468,8 @@
             "name_jp": "スクイックリンα",
             "image": "images/weapon_flat/Path_Wst_Charger_Quick_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 2.7,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 2.4,
                     "Range": 2.6,
@@ -488,7 +488,7 @@
             "name_jp": "デュアルスイーパー",
             "image": "images/weapon_flat/Path_Wst_Maneuver_Dual_00.png",
             "rating": {
-                "overall": 3.0,
+                "overall": 3.9,
                 "tier": "A",
                 "dimensions": {
                     "Killing": 1.8,
@@ -508,8 +508,8 @@
             "name_jp": "ケルビン525",
             "image": "images/weapon_flat/Path_Wst_Maneuver_Gallon_00.png",
             "rating": {
-                "overall": 2.0,
-                "tier": "B",
+                "overall": 4.4,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 3.1,
                     "Range": 4.5,
@@ -528,7 +528,7 @@
             "name_jp": "ガエンFF",
             "image": "images/weapon_flat/Path_Wst_Maneuver_Long_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.1,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 4.1,
@@ -548,7 +548,7 @@
             "name_jp": "スプラマニューバー",
             "image": "images/weapon_flat/Path_Wst_Maneuver_Normal_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.2,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 3.2,
@@ -588,8 +588,8 @@
             "name_jp": "クアッドホッパーブラック",
             "image": "images/weapon_flat/Path_Wst_Maneuver_Stepper_00.png",
             "rating": {
-                "overall": 1.0,
-                "tier": "C",
+                "overall": 3.4,
+                "tier": "A",
                 "dimensions": {
                     "Killing": 2.0,
                     "Range": 3.4,
@@ -608,8 +608,8 @@
             "name_jp": "カーボンローラー",
             "image": "images/weapon_flat/Path_Wst_Roller_Compact_00.png",
             "rating": {
-                "overall": 2.0,
-                "tier": "B",
+                "overall": 1.6,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 1.8,
                     "Range": 0.5,
@@ -628,8 +628,8 @@
             "name_jp": "ダイナモローラー",
             "image": "images/weapon_flat/Path_Wst_Roller_Heavy_00.png",
             "rating": {
-                "overall": 2.0,
-                "tier": "B",
+                "overall": 1.6,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 0.5,
                     "Range": 2.8,
@@ -648,7 +648,7 @@
             "name_jp": "ヴァリアブルローラー",
             "image": "images/weapon_flat/Path_Wst_Roller_Hunter_00.png",
             "rating": {
-                "overall": 1.0,
+                "overall": 1.3,
                 "tier": "C",
                 "dimensions": {
                     "Killing": 1.9,
@@ -668,7 +668,7 @@
             "name_jp": "スプラローラー",
             "image": "images/weapon_flat/Path_Wst_Roller_Normal_00.png",
             "rating": {
-                "overall": 1.0,
+                "overall": 1.4,
                 "tier": "C",
                 "dimensions": {
                     "Killing": 1.5,
@@ -708,8 +708,8 @@
             "name_jp": "デンタルワイパーミント",
             "image": "images/weapon_flat/Path_Wst_Saber_Heavy_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 2.8,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 4.0,
                     "Range": 2.5,
@@ -728,8 +728,8 @@
             "name_jp": "ドライブワイパー",
             "image": "images/weapon_flat/Path_Wst_Saber_Lite_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 2.9,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 5.0,
                     "Range": 2.9,
@@ -748,8 +748,8 @@
             "name_jp": "ジムワイパー",
             "image": "images/weapon_flat/Path_Wst_Saber_Normal_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 3.4,
+                "tier": "A",
                 "dimensions": {
                     "Killing": 5.0,
                     "Range": 3.9,
@@ -768,8 +768,8 @@
             "name_jp": "スパイガジェット",
             "image": "images/weapon_flat/Path_Wst_Shelter_Compact_00.png",
             "rating": {
-                "overall": 2.0,
-                "tier": "B",
+                "overall": 3.0,
+                "tier": "A",
                 "dimensions": {
                     "Killing": 2.8,
                     "Range": 2.3,
@@ -788,8 +788,8 @@
             "name_jp": "24式張替傘・甲",
             "image": "images/weapon_flat/Path_Wst_Shelter_Focus_00.png",
             "rating": {
-                "overall": 4.0,
-                "tier": "S",
+                "overall": 2.7,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 3.1,
                     "Range": 2.7,
@@ -808,8 +808,8 @@
             "name_jp": "パラシェルター",
             "image": "images/weapon_flat/Path_Wst_Shelter_Normal_00.png",
             "rating": {
-                "overall": 4.0,
-                "tier": "S",
+                "overall": 2.9,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 3.0,
                     "Range": 1.8,
@@ -828,8 +828,8 @@
             "name_jp": "キャンピングシェルター",
             "image": "images/weapon_flat/Path_Wst_Shelter_Wide_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 2.0,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 4.1,
                     "Range": 3.4,
@@ -848,8 +848,8 @@
             "name_jp": "プロモデラーMG",
             "image": "images/weapon_flat/Path_Wst_Shooter_Blaze_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 4.4,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 2.7,
                     "Range": 1.9,
@@ -868,7 +868,7 @@
             "name_jp": "プライムシューター",
             "image": "images/weapon_flat/Path_Wst_Shooter_Expert_00.png",
             "rating": {
-                "overall": 3.0,
+                "overall": 3.9,
                 "tier": "A",
                 "dimensions": {
                     "Killing": 2.3,
@@ -888,8 +888,8 @@
             "name_jp": "わかばシューター",
             "image": "images/weapon_flat/Path_Wst_Shooter_First_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 4.5,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 2.3,
                     "Range": 1.9,
@@ -908,8 +908,8 @@
             "name_jp": "ボトルガイザー",
             "image": "images/weapon_flat/Path_Wst_Shooter_Flash_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 4.2,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 3.1,
                     "Range": 4.6,
@@ -928,7 +928,7 @@
             "name_jp": ".52ガロン",
             "image": "images/weapon_flat/Path_Wst_Shooter_Gravity_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.2,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 2.5,
@@ -948,8 +948,8 @@
             "name_jp": ".96ガロン",
             "image": "images/weapon_flat/Path_Wst_Shooter_Heavy_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 4.8,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 3.7,
                     "Range": 4.1,
@@ -968,7 +968,7 @@
             "name_jp": "ジェットスイーパー",
             "image": "images/weapon_flat/Path_Wst_Shooter_Long_00.png",
             "rating": {
-                "overall": 3.0,
+                "overall": 3.7,
                 "tier": "A",
                 "dimensions": {
                     "Killing": 1.8,
@@ -988,7 +988,7 @@
             "name_jp": "スプラシューター",
             "image": "images/weapon_flat/Path_Wst_Shooter_Normal_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.1,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 2.7,
@@ -1008,8 +1008,8 @@
             "name_jp": "シャープマーカー",
             "image": "images/weapon_flat/Path_Wst_Shooter_Precision_00.png",
             "rating": {
-                "overall": 3.5,
-                "tier": "S",
+                "overall": 3.7,
+                "tier": "A",
                 "dimensions": {
                     "Killing": 2.3,
                     "Range": 1.9,
@@ -1028,8 +1028,8 @@
             "name_jp": "スペースシューター",
             "image": "images/weapon_flat/Path_Wst_Shooter_QuickLong_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 4.0,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 1.8,
                     "Range": 3.7,
@@ -1048,7 +1048,7 @@
             "name_jp": "N-ZAP85",
             "image": "images/weapon_flat/Path_Wst_Shooter_QuickMiddle_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.1,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 2.7,
@@ -1088,8 +1088,8 @@
             "name_jp": "H3リールガン",
             "image": "images/weapon_flat/Path_Wst_Shooter_TripleMiddle_00.png",
             "rating": {
-                "overall": 1.0,
-                "tier": "C",
+                "overall": 4.2,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 3.4,
                     "Range": 3.8,
@@ -1108,7 +1108,7 @@
             "name_jp": "L3リールガン",
             "image": "images/weapon_flat/Path_Wst_Shooter_TripleQuick_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.7,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 3.4,
@@ -1148,8 +1148,8 @@
             "name_jp": "ヒッセン",
             "image": "images/weapon_flat/Path_Wst_Slosher_Diffusion_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 1.5,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 1.2,
                     "Range": 1.1,
@@ -1168,8 +1168,8 @@
             "name_jp": "モップリン",
             "image": "images/weapon_flat/Path_Wst_Slosher_Double_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 1.7,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 2.4,
                     "Range": 2.6,
@@ -1188,8 +1188,8 @@
             "name_jp": "スクリュースロッシャー",
             "image": "images/weapon_flat/Path_Wst_Slosher_Launcher_00.png",
             "rating": {
-                "overall": 2.0,
-                "tier": "B",
+                "overall": 1.8,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 1.2,
                     "Range": 2.2,
@@ -1208,8 +1208,8 @@
             "name_jp": "バケットスロッシャー",
             "image": "images/weapon_flat/Path_Wst_Slosher_Strong_00.png",
             "rating": {
-                "overall": 4.0,
-                "tier": "S",
+                "overall": 1.7,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 1.3,
                     "Range": 2.3,
@@ -1228,8 +1228,8 @@
             "name_jp": "エクスプロッシャー",
             "image": "images/weapon_flat/Path_Wst_Slosher_Washtub_00.png",
             "rating": {
-                "overall": 2.5,
-                "tier": "A",
+                "overall": 1.6,
+                "tier": "C",
                 "dimensions": {
                     "Killing": 0.5,
                     "Range": 4.2,
@@ -1248,7 +1248,7 @@
             "name_jp": "クーゲルシュライバー",
             "image": "images/weapon_flat/Path_Wst_Spinner_Downpour_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.9,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 3.5,
@@ -1268,8 +1268,8 @@
             "name_jp": "イグザミナー",
             "image": "images/weapon_flat/Path_Wst_Spinner_HyperShort_00.png",
             "rating": {
-                "overall": 3.5,
-                "tier": "S",
+                "overall": 3.6,
+                "tier": "A",
                 "dimensions": {
                     "Killing": 1.6,
                     "Range": 3.1,
@@ -1288,8 +1288,8 @@
             "name_jp": "ハイドラント",
             "image": "images/weapon_flat/Path_Wst_Spinner_Hyper_00.png",
             "rating": {
-                "overall": 3.0,
-                "tier": "A",
+                "overall": 2.3,
+                "tier": "B",
                 "dimensions": {
                     "Killing": 0.5,
                     "Range": 5.0,
@@ -1308,7 +1308,7 @@
             "name_jp": "スプラスピナー",
             "image": "images/weapon_flat/Path_Wst_Spinner_Quick_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.2,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 2.6,
@@ -1328,7 +1328,7 @@
             "name_jp": "ノーチラス47",
             "image": "images/weapon_flat/Path_Wst_Spinner_Serein_00.png",
             "rating": {
-                "overall": 2.5,
+                "overall": 3.6,
                 "tier": "A",
                 "dimensions": {
                     "Killing": 1.4,
@@ -1348,7 +1348,7 @@
             "name_jp": "バレルスピナー",
             "image": "images/weapon_flat/Path_Wst_Spinner_Standard_00.png",
             "rating": {
-                "overall": 3.5,
+                "overall": 4.1,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 1.8,
@@ -1368,8 +1368,8 @@
             "name_jp": "フルイドV",
             "image": "images/weapon_flat/Path_Wst_Stringer_Explosion_00.png",
             "rating": {
-                "overall": 5.0,
-                "tier": "S+",
+                "overall": 4.3,
+                "tier": "S",
                 "dimensions": {
                     "Killing": 5.0,
                     "Range": 5.0,
@@ -1388,7 +1388,7 @@
             "name_jp": "トライストリンガー",
             "image": "images/weapon_flat/Path_Wst_Stringer_Normal_00.png",
             "rating": {
-                "overall": 3.0,
+                "overall": 3.9,
                 "tier": "A",
                 "dimensions": {
                     "Killing": 3.5,
@@ -1408,7 +1408,7 @@
             "name_jp": "LACT-450",
             "image": "images/weapon_flat/Path_Wst_Stringer_Short_00.png",
             "rating": {
-                "overall": 4.0,
+                "overall": 4.2,
                 "tier": "S",
                 "dimensions": {
                     "Killing": 4.0,

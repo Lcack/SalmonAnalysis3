@@ -55,8 +55,9 @@ for ax,factor,axis,title in zip(axes[:2],['hit_rate','wall_factor'],['Killing','
     ax.set_title(title);ax.set_xlabel('有效命中比例' if factor=='hit_rate' else '可选涂墨折扣  默认1.0');ax.set_ylim(0,5.3);ax.grid(alpha=.2);ax.legend(fontsize=8)
 for wid in ['Shooter_Normal_Coop','Charger_Normal_Coop','Roller_Heavy_Coop','Stringer_Normal_Coop']:
     r=get(wid);axes[2].plot(range(3),[s['score'] for s in r['overall']['scenarios']],marker='o',label=r['name'])
-axes[2].set_xticks(range(3),['均衡','战斗偏重','环境偏重']);axes[2].set_title('工作量情景与候选总分');axes[2].set_ylim(0,5.3);axes[2].grid(alpha=.2);axes[2].legend(fontsize=8)
-for ax in axes:ax.set_ylabel('固定基准下的模型分数')
+axes[2].set_xticks(range(3),['均衡','战斗偏重','环境偏重']);axes[2].set_title('工作量情景总分  1.0–5.0');axes[2].set_ylim(.8,5.3);axes[2].grid(alpha=.2);axes[2].legend(fontsize=8)
+for ax in axes[:2]:ax.set_ylabel('六维分数  0.5–5.0')
+axes[2].set_ylabel('情景总分  1.0–5.0')
 fig.suptitle('实验条件对评分的影响',fontsize=16);fig.tight_layout();save(fig,'sensitivity.png')
 
 fig,axes=plt.subplots(1,3,figsize=(16,5.5))
@@ -75,13 +76,13 @@ for y,r in zip(yy,rs):ax.plot([r['previous_scores']['Killing'],r['scores']['Kill
 ax.scatter([r['previous_scores']['Killing'] for r in rs],yy,color='#999999',label='旧400血基准');ax.scatter([r['scores']['Killing'] for r in rs],yy,color=COL[0],label='新五血量基准')
 ax.set_yticks(yy,[r['name'] for r in rs]);ax.invert_yaxis();ax.set_xlim(0,5.3);ax.grid(axis='x',alpha=.2);ax.legend();ax.set_xlabel('击杀能力分数');ax.set_title('击杀定义改变后的分数差异  展示绝对变化较大的18把');save(fig,'killing_changes.png')
 
-rs=sorted(rows,key=lambda r:abs(r['overall']['recommended']-r['overall']['original']),reverse=True)[:16]
+rs=sorted([r for r in rows if not r['is_bear']],key=lambda r:abs(r['overall']['recommended']-r['overall']['original']),reverse=True)[:16]
 fig,ax=plt.subplots(figsize=(12,7.8));yy=np.arange(len(rs))
 for y,r in zip(yy,rs):
     low,high=r['overall']['range'];ax.plot([low,high],[y,y],color=COL[0],lw=4,alpha=.5)
 ax.scatter([r['overall']['original'] for r in rs],yy,label='原人工总分',color='#999999',s=38)
-ax.scatter([r['overall']['recommended'] for r in rs],yy,label='三情景模型均值',color=COL[0],s=38)
-ax.set_yticks(yy,[r['name'] for r in rs]);ax.invert_yaxis();ax.set_xlim(0,5.3);ax.grid(axis='x',alpha=.2);ax.legend();ax.set_xlabel('总分  线段表示三情景范围');ax.set_title('工作量情景下的综合评分比较');save(fig,'overall_changes.png')
+ax.scatter([r['overall']['recommended'] for r in rs],yy,label='发布总分',color=COL[0],s=38)
+ax.set_yticks(yy,[r['name'] for r in rs]);ax.invert_yaxis();ax.set_xlim(.8,5.3);ax.grid(axis='x',alpha=.2);ax.legend();ax.set_xlabel('总分  1.0–5.0  线段表示三情景范围');ax.set_title('普通武器总评分与原评分对照');save(fig,'overall_changes.png')
 
 rs=[get(x) for x in ['Shooter_Normal_Coop','Charger_Long_Coop','Roller_Heavy_Coop','Stringer_Normal_Coop','Charger_Bear_Coop','Saber_Bear_Coop']]
 keys=['boss','mob','ground','wall','extra_refill','release','approach'];labels=['五血量战斗','混合杂鱼','涂地','涂墙','额外补墨','射击后潜墨','接敌位移']

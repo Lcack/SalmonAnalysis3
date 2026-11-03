@@ -1,72 +1,72 @@
-﻿id,武器,旧击杀分,新击杀分,五种血量总帧,清杂帧,整箱最大伤害,射出到潜墨帧,原总分,等权六维基线,任务模型建议总分,场景最低分,场景最高分,跨场景最优名次,跨场景最差名次,墙涂证据状态,硬直证据状态
-Blaster_Bear_Coop,熊先生印章爆破枪,2.1,2.1,730.0,227.0,1650.0,6.0,5.0,2.4,1.8,1.1,2.6,38,57,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Charger_Bear_Coop,熊先生印章狙击枪,5.0,5.0,93.0,17.0,1400.0,16,5.0,3.7,4.8,4.4,5.0,2,10,equal_ground_wall_user_assumption,客观事实 旧版实测
-Maneuver_Bear_Coop,熊先生印章机动枪,3.4,4.3,480.0,111.0,7000.0,4,5.0,3.8,2.3,2.1,2.5,42,47,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理
-Roller_Bear_Coop,熊先生印章滚筒,5.0,2.9,632.0,104.0,3000.0,13.0,5.0,2.2,2.5,2.0,2.9,37,47,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理
-Saber_Bear_Coop,熊先生印章刮水刀,4.6,4.7,452.0,276.0,7200.0,17.0,5.0,2.7,2.2,1.8,2.7,37,50,equal_ground_wall_user_assumption,缺少直接潜墨实测 仅保留参数收招代理 不等于已核实硬直
-Shelter_Bear_Coop,熊先生印章防空伞,3.3,3.0,621.0,225.0,4000.0,12.0,5.0,2.8,3.6,3.4,3.9,22,30,equal_ground_wall_user_assumption,缺少直接潜墨实测 仅保留参数收招代理 不等于已核实硬直
-Slosher_Bear_Coop,熊先生印章泼桶,1.5,3.5,560.0,166.0,1440.0,25.0,5.0,2.8,1.1,0.9,1.4,57,64,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理
-Stringer_Bear_Coop,熊先生印章猎鱼弓,5.0,5.0,236.0,99.0,5400.0,11.0,5.0,4.1,5.0,5.0,5.0,1,3,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理
-Blaster_LightLong_Coop,快速爆破枪 精英,0.5,0.6,965.0,449.0,3000.0,20.0,2.0,1.4,0.8,0.5,1.0,62,67,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Blaster_LightShort_Coop,冲涂爆破枪,0.8,0.7,945.0,369.0,2635.0,20.0,3.0,1.2,0.7,0.5,1.0,62,70,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Blaster_Light_Coop,快速爆破枪,1.0,0.5,990.0,394.0,3080.0,20.0,2.5,1.4,1.1,0.9,1.2,58,64,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Blaster_Long_Coop,远距爆破枪,1.0,1.4,835.0,551.0,5000.0,30.0,1.0,1.5,0.5,0.5,0.5,68,70,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Blaster_Middle_Coop,火热爆破枪,1.9,1.0,905.0,461.0,4000.0,21.0,2.5,1.2,0.6,0.5,0.8,66,68,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Blaster_Precision_Coop,S-BLAST92,1.4,3.6,550.0,506.0,6000.0,26.0,5.0,1.9,1.3,1.1,1.7,51,59,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Blaster_Short_Coop,新星爆破枪,2.9,2.1,735.0,371.0,5000.0,26.0,5.0,1.6,1.3,1.1,1.8,48,60,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨
-Brush_Heavy_Coop,文森,4.7,5.0,419.0,167.0,3300.0,21,5.0,3.0,3.4,3.1,3.7,26,34,equal_ground_wall_user_assumption,客观事实 旧版实测
-Brush_Mini_Coop,巴勃罗,2.4,2.7,658.0,230.0,2376.0,14,1.0,2.4,2.6,1.6,3.4,31,52,equal_ground_wall_user_assumption,客观事实 旧版实测
-Brush_Normal_Coop,北斋,2.7,2.8,640.0,222.0,2220.0,18,1.0,2.5,2.7,2.1,3.4,30,46,equal_ground_wall_user_assumption,客观事实 旧版实测
-Charger_Keeper_Coop,高压油管枪,2.6,2.2,717.0,261.0,6640.0,16,3.0,2.5,2.4,2.3,2.5,43,45,equal_ground_wall_user_assumption,客观事实 旧版实测
-Charger_Light_Coop,14式竹筒枪·甲,2.0,2.3,703.0,307.0,4000.0,16,2.5,2.0,1.5,0.5,2.7,39,70,equal_ground_wall_user_assumption,客观事实 旧版实测
-Charger_Long_Coop,公升4K,0.7,2.0,745.0,191.0,2400.0,16,3.0,2.3,1.8,0.7,3.0,35,67,equal_ground_wall_user_assumption,客观事实 旧版实测
-Charger_Normal_Coop,斯普拉蓄力狙击枪,0.5,1.0,899.0,259.0,2200.0,16,2.0,1.8,0.8,0.5,1.3,54,71,equal_ground_wall_user_assumption,客观事实 旧版实测
-Charger_Pencil_Coop,R-PEN/5H,1.7,2.6,667.0,298.0,3600.0,16,3.5,2.4,1.9,1.4,2.6,40,56,equal_ground_wall_user_assumption,客观事实 旧版实测
-Charger_Quick_Coop,鱿快洁α,0.5,2.4,689.0,199.0,3300.0,16,5.0,2.1,2.3,1.5,3.1,33,53,equal_ground_wall_user_assumption,客观事实 旧版实测
-Maneuver_Dual_Coop,双重清洁枪,1.6,1.8,779.0,271.0,3750.0,6,3.0,3.1,3.8,3.7,3.9,19,24,equal_ground_wall_user_assumption,客观事实 旧版实测
-Maneuver_Gallon_Coop,开尔文525,3.0,3.1,607.0,201.0,4550.0,6,2.0,3.6,4.3,3.9,5.0,5,20,equal_ground_wall_user_assumption,客观事实 旧版实测
-Maneuver_Long_Coop,灭熄FF,3.9,4.1,503.0,147.0,3320.0,6,4.0,4.0,3.9,3.8,4.0,18,21,equal_ground_wall_user_assumption,客观事实 旧版实测
-Maneuver_Normal_Coop,斯普拉机动枪,2.8,3.2,594.0,197.0,4140.0,6,4.0,3.4,4.1,4.0,4.4,11,16,equal_ground_wall_user_assumption,客观事实 旧版实测
-Maneuver_Short_Coop,溅镀枪,4.6,4.7,448.0,137.0,6000.0,6,5.0,3.9,5.0,5.0,5.0,4,4,equal_ground_wall_user_assumption,客观事实 旧版实测
-Maneuver_Stepper_Coop,四重弹跳手枪 黑,1.6,2.0,750.0,251.0,3750.0,6,1.0,3.0,3.2,3.0,3.5,27,33,equal_ground_wall_user_assumption,客观事实 旧版实测
-Roller_Compact_Coop,碳纤维滚筒,1.5,1.8,768.0,352.0,4480.0,13,2.0,1.7,1.2,1.0,1.5,54,61,equal_ground_wall_user_assumption,客观事实 旧版实测
-Roller_Heavy_Coop,电动马达滚筒,5.0,0.5,1045.0,123.0,1800.0,15,2.0,2.1,1.2,1.1,1.3,54,61,equal_ground_wall_user_assumption,客观事实 旧版实测
-Roller_Hunter_Coop,可变式滚筒,2.5,1.9,763.0,380.0,3200.0,15,1.0,1.4,0.8,0.6,1.0,63,66,equal_ground_wall_user_assumption,客观事实 旧版实测
-Roller_Normal_Coop,斯普拉滚筒,2.2,1.5,824.0,400.0,3200.0,15,1.0,1.4,1.0,0.5,1.4,55,69,equal_ground_wall_user_assumption,客观事实 旧版实测
-Roller_Wide_Coop,宽滚筒,0.5,0.5,992.0,448.0,1920.0,13,1.0,1.1,0.5,0.5,0.5,68,71,equal_ground_wall_user_assumption,客观事实 旧版实测
-Saber_Heavy_Coop,巨齿刮水刀 薄荷,4.5,4.0,508.0,200.0,7200.0,25,5.0,2.9,2.6,2.4,2.7,38,45,equal_ground_wall_user_assumption,计算得出 旧版首攻击实测扣除剑气偏移
-Saber_Lite_Coop,雨刷刮水刀,3.0,5.0,423.0,247.0,9100.0,13,5.0,3.3,2.6,2.5,2.7,36,43,equal_ground_wall_user_assumption,计算得出 旧版首攻击实测扣除剑气偏移
-Saber_Normal_Coop,工作刮水刀,5.0,5.0,423.0,192.0,6400.0,12,5.0,3.5,3.2,2.9,3.3,30,35,equal_ground_wall_user_assumption,计算得出 旧版首攻击实测扣除剑气偏移
-Shelter_Compact_Coop,特工配件,2.5,2.8,643.0,295.0,4950.0,20,2.0,2.2,2.8,2.6,2.9,35,39,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shelter_Focus_Coop,24式可替换伞·甲,3.9,3.1,606.0,306.0,5250.0,25,4.0,2.2,2.4,2.3,2.6,41,45,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shelter_Normal_Coop,遮阳防空伞,1.8,3.0,615.0,339.0,7200.0,20,4.0,2.3,2.6,2.5,2.6,40,42,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shelter_Wide_Coop,露营防空伞,1.8,4.1,505.0,461.0,7200.0,40,3.0,2.3,1.7,1.3,2.0,49,55,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Blaze_Coop,专业模型枪MG,2.7,2.7,657.0,217.0,4800.0,2,3.0,3.5,4.3,4.0,4.6,7,15,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Expert_Coop,顶尖射击枪,2.5,2.3,701.0,233.0,2790.0,4,3.0,3.1,3.8,3.5,4.0,17,29,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_First_Coop,新叶射击枪,2.2,2.3,705.0,236.0,6496.0,2,3.0,3.6,4.4,4.1,5.0,5,13,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Flash_Coop,开瓶喷泉枪,3.2,3.1,605.0,193.0,3774.0,3,3.0,3.8,4.1,3.8,4.7,7,25,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Gravity_Coop,.52加仑,2.6,2.5,680.0,217.0,3952.0,3,4.0,3.3,4.1,3.7,4.3,10,23,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Heavy_Coop,.96加仑,3.8,3.7,545.0,217.0,3655.0,4,3.0,3.7,4.8,4.6,5.0,3,7,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Long_Coop,喷射清洁枪,1.9,1.8,781.0,249.0,2480.0,4,3.0,3.1,3.5,3.2,3.9,19,33,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Normal_Coop,斯普拉射击枪,2.5,2.7,653.0,229.0,3888.0,4,4.0,3.1,4.0,3.5,4.3,12,26,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Precision_Coop,窄域标记枪,2.2,2.3,705.0,236.0,3500.0,3,3.5,3.2,3.6,3.2,4.2,16,32,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_QuickLong_Coop,太空射击枪,1.6,1.8,779.0,271.0,3750.0,3,3.0,3.3,3.8,3.7,4.0,17,23,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_QuickMiddle_Coop,N-ZAP85,2.6,2.7,650.0,226.0,3750.0,3,4.0,3.2,4.0,3.5,4.4,11,27,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_Short_Coop,广域标记枪,5.0,4.8,440.0,146.0,5625.0,2,5.0,4.0,5.0,5.0,5.0,1,6,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_TripleMiddle_Coop,H3卷管枪,4.3,3.4,574.0,203.0,3850.0,22,1.0,3.0,4.1,3.8,4.6,8,23,equal_ground_wall_user_assumption,客观事实 旧版实测
-Shooter_TripleQuick_Coop,L3卷管枪,4.1,3.4,579.0,185.0,4000.0,10,4.0,3.3,4.6,4.4,5.0,6,11,equal_ground_wall_user_assumption,客观事实 旧版实测
-Slosher_Bathtub_Coop,满溢泡澡泼桶,3.6,3.9,518.0,310.0,3840.0,10,3.0,2.6,2.7,2.5,2.9,34,43,equal_ground_wall_user_assumption,计算得出 旧版首发实测减本地发射偏移
-Slosher_Diffusion_Coop,洗笔桶,1.2,1.2,870.0,312.0,2200.0,20,3.0,1.5,1.0,0.5,1.6,51,67,equal_ground_wall_user_assumption,客观事实 旧版实测
-Slosher_Double_Coop,墨瀑淋,1.8,2.4,694.0,430.0,3000.0,8,5.0,2.0,1.2,1.2,1.3,55,58,equal_ground_wall_user_assumption,计算得出 旧版首发实测减本地发射偏移
-Slosher_Launcher_Coop,回旋泼桶,0.5,1.2,863.0,355.0,3060.0,20,2.0,1.6,1.4,1.0,1.6,50,59,equal_ground_wall_user_assumption,客观事实 旧版实测
-Slosher_Strong_Coop,飞溅泼桶,1.8,1.3,848.0,332.0,2520.0,16,4.0,1.8,1.3,1.0,1.5,52,60,equal_ground_wall_user_assumption,客观事实 旧版实测
-Slosher_Washtub_Coop,爆炸泼桶,1.2,0.5,1020.0,182.0,2200.0,35,2.5,1.9,1.2,0.9,1.5,53,65,equal_ground_wall_user_assumption,客观事实 旧版实测
-Spinner_Downpour_Coop,圆珠笔,3.2,3.5,563.0,178.0,10150.0,7,4.0,4.3,4.9,4.6,5.0,2,9,equal_ground_wall_user_assumption,客观事实 旧版实测
-Spinner_HyperShort_Coop,审查者,1.0,1.6,811.0,235.0,10500.0,7,3.5,3.3,3.4,3.3,3.5,26,32,equal_ground_wall_user_assumption,客观事实 旧版实测
-Spinner_Hyper_Coop,消防栓旋转枪,1.0,0.5,987.0,239.0,7800.0,7,3.0,3.4,1.9,1.6,2.1,46,50,equal_ground_wall_user_assumption,客观事实 旧版实测
-Spinner_Quick_Coop,斯普拉旋转枪,2.5,2.6,664.0,207.0,4410.0,7,4.0,3.2,4.1,3.6,4.4,9,24,equal_ground_wall_user_assumption,客观事实 旧版实测
-Spinner_Serein_Coop,鹦鹉螺号47,1.5,1.4,837.0,267.0,7350.0,7,2.5,3.2,3.4,3.2,3.5,25,34,equal_ground_wall_user_assumption,客观事实 旧版实测
-Spinner_Standard_Coop,桶装旋转枪,1.3,1.8,769.0,225.0,5600.0,7,3.5,3.4,4.0,3.7,4.5,10,25,equal_ground_wall_user_assumption,客观事实 旧版实测
-Stringer_Explosion_Coop,邦普V,5.0,5.0,377.0,229.0,7200.0,11,5.0,3.8,4.2,4.0,4.4,12,15,equal_ground_wall_user_assumption,客观事实 旧版实测
-Stringer_Normal_Coop,三发猎鱼弓,1.8,3.5,560.0,283.0,7500.0,11,3.0,3.3,3.8,3.5,4.0,14,28,equal_ground_wall_user_assumption,客观事实 旧版实测
-Stringer_Short_Coop,LACT-450,4.6,4.0,512.0,189.0,8400.0,11,4.0,3.8,4.1,3.9,4.4,9,20,equal_ground_wall_user_assumption,客观事实 旧版实测
+﻿id,武器,旧击杀分,新击杀分,五种血量总帧,清杂帧,整箱最大伤害,射出到潜墨帧,原总分,等权六维基线,任务模型建议总分,场景最低分,场景最高分,跨场景最优名次,跨场景最差名次,墙涂证据状态,硬直证据状态,原档位,已发布总分,已发布档位,模型候选档位,普通武器已采用,相对发布前有改动
+Blaster_Bear_Coop,熊先生印章爆破枪,2.1,2.1,730.0,227.0,1650.0,6.0,5.0,2.4,2.2,1.5,2.9,38,57,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,S+,5.0,S+,B,False,False
+Charger_Bear_Coop,熊先生印章狙击枪,5.0,5.0,93.0,17.0,1400.0,16,5.0,3.7,4.8,4.5,5.0,2,10,equal_ground_wall_user_assumption,客观事实 旧版实测,X,5.0,X,S,False,False
+Maneuver_Bear_Coop,熊先生印章机动枪,3.4,4.3,480.0,111.0,7000.0,4,5.0,3.8,2.6,2.4,2.8,42,47,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理,S+,5.0,S+,B,False,False
+Roller_Bear_Coop,熊先生印章滚筒,5.0,2.9,632.0,104.0,3000.0,13.0,5.0,2.2,2.8,2.4,3.1,37,47,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理,X,5.0,X,B,False,False
+Saber_Bear_Coop,熊先生印章刮水刀,4.6,4.7,452.0,276.0,7200.0,17.0,5.0,2.7,2.5,2.1,2.9,37,50,equal_ground_wall_user_assumption,缺少直接潜墨实测 仅保留参数收招代理 不等于已核实硬直,X,5.0,X,B,False,False
+Shelter_Bear_Coop,熊先生印章防空伞,3.3,3.0,621.0,225.0,4000.0,12.0,5.0,2.8,3.7,3.6,4.0,22,30,equal_ground_wall_user_assumption,缺少直接潜墨实测 仅保留参数收招代理 不等于已核实硬直,S+,5.0,S+,A,False,False
+Slosher_Bear_Coop,熊先生印章泼桶,1.5,3.5,560.0,166.0,1440.0,25.0,5.0,2.8,1.5,1.4,1.8,57,64,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理,X,5.0,X,C,False,False
+Stringer_Bear_Coop,熊先生印章猎鱼弓,5.0,5.0,236.0,99.0,5400.0,11.0,5.0,4.1,5.0,5.0,5.0,1,3,equal_ground_wall_user_assumption,推测假设 缺测熊武器参数代理,S+,5.0,S+,S+,False,False
+Blaster_LightLong_Coop,快速爆破枪 精英,0.5,0.6,965.0,449.0,3000.0,20.0,2.0,1.4,1.3,1.0,1.4,62,67,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,B,1.3,C,C,True,True
+Blaster_LightShort_Coop,冲涂爆破枪,0.8,0.7,945.0,369.0,2635.0,20.0,3.0,1.2,1.2,1.0,1.5,62,70,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,A,1.2,C,C,True,True
+Blaster_Light_Coop,快速爆破枪,1.0,0.5,990.0,394.0,3080.0,20.0,2.5,1.4,1.5,1.4,1.6,58,64,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,A,1.5,C,C,True,True
+Blaster_Long_Coop,远距爆破枪,1.0,1.4,835.0,551.0,5000.0,30.0,1.0,1.5,1.0,1.0,1.0,68,70,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,C,1.0,C,C,True,False
+Blaster_Middle_Coop,火热爆破枪,1.9,1.0,905.0,461.0,4000.0,21.0,2.5,1.2,1.1,1.0,1.2,66,68,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,A,1.1,C,C,True,True
+Blaster_Precision_Coop,S-BLAST92,1.4,3.6,550.0,506.0,6000.0,26.0,5.0,1.9,1.8,1.6,2.1,51,59,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,S+,1.8,C,C,True,True
+Blaster_Short_Coop,新星爆破枪,2.9,2.1,735.0,371.0,5000.0,26.0,5.0,1.6,1.7,1.5,2.2,48,60,equal_ground_wall_user_assumption,客观事实 参数值 逻辑推断对应潜墨,S+,1.7,C,C,True,True
+Brush_Heavy_Coop,文森,4.7,5.0,419.0,167.0,3300.0,21,5.0,3.0,3.6,3.3,3.8,26,34,equal_ground_wall_user_assumption,客观事实 旧版实测,S+,3.6,A,A,True,True
+Brush_Mini_Coop,巴勃罗,2.4,2.7,658.0,230.0,2376.0,14,1.0,2.4,2.8,2.0,3.6,31,52,equal_ground_wall_user_assumption,客观事实 旧版实测,C,2.8,B,B,True,True
+Brush_Normal_Coop,北斋,2.7,2.8,640.0,222.0,2220.0,18,1.0,2.5,2.9,2.5,3.6,30,46,equal_ground_wall_user_assumption,客观事实 旧版实测,C,2.9,B,B,True,True
+Charger_Keeper_Coop,高压油管枪,2.6,2.2,717.0,261.0,6640.0,16,3.0,2.5,2.7,2.6,2.7,43,45,equal_ground_wall_user_assumption,客观事实 旧版实测,A,2.7,B,B,True,True
+Charger_Light_Coop,14式竹筒枪·甲,2.0,2.3,703.0,307.0,4000.0,16,2.5,2.0,1.9,1.0,2.9,39,70,equal_ground_wall_user_assumption,客观事实 旧版实测,A,1.9,C,C,True,True
+Charger_Long_Coop,公升4K,0.7,2.0,745.0,191.0,2400.0,16,3.0,2.3,2.2,1.1,3.2,35,67,equal_ground_wall_user_assumption,客观事实 旧版实测,A,2.2,B,B,True,True
+Charger_Normal_Coop,斯普拉蓄力狙击枪,0.5,1.0,899.0,259.0,2200.0,16,2.0,1.8,1.2,1.0,1.7,54,71,equal_ground_wall_user_assumption,客观事实 旧版实测,B,1.2,C,C,True,True
+Charger_Pencil_Coop,R-PEN/5H,1.7,2.6,667.0,298.0,3600.0,16,3.5,2.4,2.2,1.8,2.9,40,56,equal_ground_wall_user_assumption,客观事实 旧版实测,S,2.2,B,B,True,True
+Charger_Quick_Coop,鱿快洁α,0.5,2.4,689.0,199.0,3300.0,16,5.0,2.1,2.7,1.9,3.4,33,53,equal_ground_wall_user_assumption,客观事实 旧版实测,S+,2.7,B,B,True,True
+Maneuver_Dual_Coop,双重清洁枪,1.6,1.8,779.0,271.0,3750.0,6,3.0,3.1,3.9,3.8,4.0,19,24,equal_ground_wall_user_assumption,客观事实 旧版实测,A,3.9,A,A,True,True
+Maneuver_Gallon_Coop,开尔文525,3.0,3.1,607.0,201.0,4550.0,6,2.0,3.6,4.4,4.0,5.0,5,20,equal_ground_wall_user_assumption,客观事实 旧版实测,B,4.4,S,S,True,True
+Maneuver_Long_Coop,灭熄FF,3.9,4.1,503.0,147.0,3320.0,6,4.0,4.0,4.1,4.0,4.1,18,21,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.1,S,S,True,True
+Maneuver_Normal_Coop,斯普拉机动枪,2.8,3.2,594.0,197.0,4140.0,6,4.0,3.4,4.2,4.1,4.4,11,16,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.2,S,S,True,True
+Maneuver_Short_Coop,溅镀枪,4.6,4.7,448.0,137.0,6000.0,6,5.0,3.9,5.0,5.0,5.0,4,4,equal_ground_wall_user_assumption,客观事实 旧版实测,S+,5.0,S+,S+,True,False
+Maneuver_Stepper_Coop,四重弹跳手枪 黑,1.6,2.0,750.0,251.0,3750.0,6,1.0,3.0,3.4,3.3,3.6,27,33,equal_ground_wall_user_assumption,客观事实 旧版实测,C,3.4,A,A,True,True
+Roller_Compact_Coop,碳纤维滚筒,1.5,1.8,768.0,352.0,4480.0,13,2.0,1.7,1.6,1.4,1.9,54,61,equal_ground_wall_user_assumption,客观事实 旧版实测,B,1.6,C,C,True,True
+Roller_Heavy_Coop,电动马达滚筒,5.0,0.5,1045.0,123.0,1800.0,15,2.0,2.1,1.6,1.5,1.7,54,61,equal_ground_wall_user_assumption,客观事实 旧版实测,B,1.6,C,C,True,True
+Roller_Hunter_Coop,可变式滚筒,2.5,1.9,763.0,380.0,3200.0,15,1.0,1.4,1.3,1.1,1.4,63,66,equal_ground_wall_user_assumption,客观事实 旧版实测,C,1.3,C,C,True,True
+Roller_Normal_Coop,斯普拉滚筒,2.2,1.5,824.0,400.0,3200.0,15,1.0,1.4,1.4,1.0,1.8,55,69,equal_ground_wall_user_assumption,客观事实 旧版实测,C,1.4,C,C,True,True
+Roller_Wide_Coop,宽滚筒,0.5,0.5,992.0,448.0,1920.0,13,1.0,1.1,1.0,1.0,1.0,68,71,equal_ground_wall_user_assumption,客观事实 旧版实测,C,1.0,C,C,True,False
+Saber_Heavy_Coop,巨齿刮水刀 薄荷,4.5,4.0,508.0,200.0,7200.0,25,5.0,2.9,2.8,2.7,2.9,38,45,equal_ground_wall_user_assumption,计算得出 旧版首攻击实测扣除剑气偏移,S+,2.8,B,B,True,True
+Saber_Lite_Coop,雨刷刮水刀,3.0,5.0,423.0,247.0,9100.0,13,5.0,3.3,2.9,2.8,3.0,36,43,equal_ground_wall_user_assumption,计算得出 旧版首攻击实测扣除剑气偏移,S+,2.9,B,B,True,True
+Saber_Normal_Coop,工作刮水刀,5.0,5.0,423.0,192.0,6400.0,12,5.0,3.5,3.4,3.2,3.5,30,35,equal_ground_wall_user_assumption,计算得出 旧版首攻击实测扣除剑气偏移,S+,3.4,A,A,True,True
+Shelter_Compact_Coop,特工配件,2.5,2.8,643.0,295.0,4950.0,20,2.0,2.2,3.0,2.9,3.1,35,39,equal_ground_wall_user_assumption,客观事实 旧版实测,B,3.0,A,A,True,True
+Shelter_Focus_Coop,24式可替换伞·甲,3.9,3.1,606.0,306.0,5250.0,25,4.0,2.2,2.7,2.6,2.9,41,45,equal_ground_wall_user_assumption,客观事实 旧版实测,S,2.7,B,B,True,True
+Shelter_Normal_Coop,遮阳防空伞,1.8,3.0,615.0,339.0,7200.0,20,4.0,2.3,2.9,2.8,2.9,40,42,equal_ground_wall_user_assumption,客观事实 旧版实测,S,2.9,B,B,True,True
+Shelter_Wide_Coop,露营防空伞,1.8,4.1,505.0,461.0,7200.0,40,3.0,2.3,2.0,1.7,2.3,49,55,equal_ground_wall_user_assumption,客观事实 旧版实测,A,2.0,B,B,True,True
+Shooter_Blaze_Coop,专业模型枪MG,2.7,2.7,657.0,217.0,4800.0,2,3.0,3.5,4.4,4.1,4.7,7,15,equal_ground_wall_user_assumption,客观事实 旧版实测,A,4.4,S,S,True,True
+Shooter_Expert_Coop,顶尖射击枪,2.5,2.3,701.0,233.0,2790.0,4,3.0,3.1,3.9,3.6,4.1,17,29,equal_ground_wall_user_assumption,客观事实 旧版实测,A,3.9,A,A,True,True
+Shooter_First_Coop,新叶射击枪,2.2,2.3,705.0,236.0,6496.0,2,3.0,3.6,4.5,4.2,5.0,5,13,equal_ground_wall_user_assumption,客观事实 旧版实测,A,4.5,S,S,True,True
+Shooter_Flash_Coop,开瓶喷泉枪,3.2,3.1,605.0,193.0,3774.0,3,3.0,3.8,4.2,3.9,4.7,7,25,equal_ground_wall_user_assumption,客观事实 旧版实测,A,4.2,S,S,True,True
+Shooter_Gravity_Coop,.52加仑,2.6,2.5,680.0,217.0,3952.0,3,4.0,3.3,4.2,3.8,4.4,10,23,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.2,S,S,True,True
+Shooter_Heavy_Coop,.96加仑,3.8,3.7,545.0,217.0,3655.0,4,3.0,3.7,4.8,4.6,5.0,3,7,equal_ground_wall_user_assumption,客观事实 旧版实测,A,4.8,S,S,True,True
+Shooter_Long_Coop,喷射清洁枪,1.9,1.8,781.0,249.0,2480.0,4,3.0,3.1,3.7,3.4,4.0,19,33,equal_ground_wall_user_assumption,客观事实 旧版实测,A,3.7,A,A,True,True
+Shooter_Normal_Coop,斯普拉射击枪,2.5,2.7,653.0,229.0,3888.0,4,4.0,3.1,4.1,3.6,4.3,12,26,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.1,S,S,True,True
+Shooter_Precision_Coop,窄域标记枪,2.2,2.3,705.0,236.0,3500.0,3,3.5,3.2,3.7,3.4,4.3,16,32,equal_ground_wall_user_assumption,客观事实 旧版实测,S,3.7,A,A,True,True
+Shooter_QuickLong_Coop,太空射击枪,1.6,1.8,779.0,271.0,3750.0,3,3.0,3.3,4.0,3.8,4.1,17,23,equal_ground_wall_user_assumption,客观事实 旧版实测,A,4.0,S,S,True,True
+Shooter_QuickMiddle_Coop,N-ZAP85,2.6,2.7,650.0,226.0,3750.0,3,4.0,3.2,4.1,3.6,4.4,11,27,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.1,S,S,True,True
+Shooter_Short_Coop,广域标记枪,5.0,4.8,440.0,146.0,5625.0,2,5.0,4.0,5.0,5.0,5.0,1,6,equal_ground_wall_user_assumption,客观事实 旧版实测,S+,5.0,S+,S+,True,False
+Shooter_TripleMiddle_Coop,H3卷管枪,4.3,3.4,574.0,203.0,3850.0,22,1.0,3.0,4.2,3.9,4.7,8,23,equal_ground_wall_user_assumption,客观事实 旧版实测,C,4.2,S,S,True,True
+Shooter_TripleQuick_Coop,L3卷管枪,4.1,3.4,579.0,185.0,4000.0,10,4.0,3.3,4.7,4.5,5.0,6,11,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.7,S,S,True,True
+Slosher_Bathtub_Coop,满溢泡澡泼桶,3.6,3.9,518.0,310.0,3840.0,10,3.0,2.6,3.0,2.8,3.1,34,43,equal_ground_wall_user_assumption,计算得出 旧版首发实测减本地发射偏移,A,3.0,A,A,True,False
+Slosher_Diffusion_Coop,洗笔桶,1.2,1.2,870.0,312.0,2200.0,20,3.0,1.5,1.5,1.0,2.0,51,67,equal_ground_wall_user_assumption,客观事实 旧版实测,A,1.5,C,C,True,True
+Slosher_Double_Coop,墨瀑淋,1.8,2.4,694.0,430.0,3000.0,8,5.0,2.0,1.7,1.6,1.7,55,58,equal_ground_wall_user_assumption,计算得出 旧版首发实测减本地发射偏移,S+,1.7,C,C,True,True
+Slosher_Launcher_Coop,回旋泼桶,0.5,1.2,863.0,355.0,3060.0,20,2.0,1.6,1.8,1.5,2.0,50,59,equal_ground_wall_user_assumption,客观事实 旧版实测,B,1.8,C,C,True,True
+Slosher_Strong_Coop,飞溅泼桶,1.8,1.3,848.0,332.0,2520.0,16,4.0,1.8,1.7,1.5,1.9,52,60,equal_ground_wall_user_assumption,客观事实 旧版实测,S,1.7,C,C,True,True
+Slosher_Washtub_Coop,爆炸泼桶,1.2,0.5,1020.0,182.0,2200.0,35,2.5,1.9,1.6,1.4,1.9,53,65,equal_ground_wall_user_assumption,客观事实 旧版实测,A,1.6,C,C,True,True
+Spinner_Downpour_Coop,圆珠笔,3.2,3.5,563.0,178.0,10150.0,7,4.0,4.3,4.9,4.6,5.0,2,9,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.9,S,S,True,True
+Spinner_HyperShort_Coop,审查者,1.0,1.6,811.0,235.0,10500.0,7,3.5,3.3,3.6,3.5,3.7,26,32,equal_ground_wall_user_assumption,客观事实 旧版实测,S,3.6,A,A,True,True
+Spinner_Hyper_Coop,消防栓旋转枪,1.0,0.5,987.0,239.0,7800.0,7,3.0,3.4,2.3,2.0,2.4,46,50,equal_ground_wall_user_assumption,客观事实 旧版实测,A,2.3,B,B,True,True
+Spinner_Quick_Coop,斯普拉旋转枪,2.5,2.6,664.0,207.0,4410.0,7,4.0,3.2,4.2,3.8,4.4,9,24,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.2,S,S,True,True
+Spinner_Serein_Coop,鹦鹉螺号47,1.5,1.4,837.0,267.0,7350.0,7,2.5,3.2,3.6,3.4,3.7,25,34,equal_ground_wall_user_assumption,客观事实 旧版实测,A,3.6,A,A,True,True
+Spinner_Standard_Coop,桶装旋转枪,1.3,1.8,769.0,225.0,5600.0,7,3.5,3.4,4.1,3.8,4.6,10,25,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.1,S,S,True,True
+Stringer_Explosion_Coop,邦普V,5.0,5.0,377.0,229.0,7200.0,11,5.0,3.8,4.3,4.1,4.4,12,15,equal_ground_wall_user_assumption,客观事实 旧版实测,S+,4.3,S,S,True,True
+Stringer_Normal_Coop,三发猎鱼弓,1.8,3.5,560.0,283.0,7500.0,11,3.0,3.3,3.9,3.6,4.1,14,28,equal_ground_wall_user_assumption,客观事实 旧版实测,A,3.9,A,A,True,True
+Stringer_Short_Coop,LACT-450,4.6,4.0,512.0,189.0,8400.0,11,4.0,3.8,4.2,4.0,4.5,9,20,equal_ground_wall_user_assumption,客观事实 旧版实测,S,4.2,S,S,True,True

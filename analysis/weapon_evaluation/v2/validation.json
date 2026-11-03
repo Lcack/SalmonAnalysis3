@@ -11,7 +11,21 @@
     "Endlag": 64
   },
   "source_hashes": 205,
-  "overall_and_tier_preserved": true,
+  "ordinary_overall_tier_applied": 63,
+  "bear_objects_preserved": 8,
+  "random_objects_preserved": 2,
+  "dimensions_unchanged": 426,
+  "overall_version": "1110-task-overall-v1",
+  "overall_write_summary": {
+    "ordinary_eligible": 63,
+    "ordinary_applied": 63,
+    "ordinary_changed": 58,
+    "ordinary_score_changed": 58,
+    "ordinary_tier_changed": 41,
+    "bear_preserved": 8,
+    "random_preserved": 2,
+    "dimensions_unchanged": 426
+  },
   "checks": [
     "five_hp_sum",
     "two_phase_no_overkill_carry",
@@ -23,6 +37,12 @@
     "atomic_charge_refills",
     "mode_specific_exits",
     "cold_start_paint",
-    "product_write_scope"
+    "product_write_scope",
+    "ordinary_only_overall_tier",
+    "bear_random_full_object_preservation",
+    "frozen_426_dimensions",
+    "unrounded_scenario_mean",
+    "one_to_five_scale",
+    "tier_boundaries_after_rounding"
   ]
 }

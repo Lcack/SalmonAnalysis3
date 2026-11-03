@@ -2,11 +2,14 @@
 
 当前版本以 `weapon_data_1110` 合并参数为输入，覆盖71把实际武器与137种动作，输出击杀能力、极限射程、涂地涂墙、墨水效率、清杂能力和射击硬直六项评分。
 
+六维仍采用0.5–5.0分。63把普通武器的正式总分采用三工作量任务模型，映射到1–5分；最终展示分按C[1,2)、B[2,3)、A[3,4)、S[4,5)、S+5定档。8把熊武器保留原总分与等级，其模型候选仅用于分析。
+
 - [完整分析与中文图表](../../docs/weapon-analysis.md)
 - [V2方法与复算说明](v2/README.md)
 - [六维分数](v2/scores.csv)
 - [原始指标](v2/benchmarks.csv)
-- [任务模型综合分与原综合分对照](v2/comparison.csv)
+- [当前发布总分与等级](v2/overall_scores.csv)
+- [任务模型、发布值与历史人工总分对照](v2/comparison.csv)
 
 ## 复算
 
@@ -19,7 +22,7 @@ python analysis/weapon_evaluation/v2/validate_v2.py
 python analysis/weapon_evaluation/v2/generate_figures_v2.py
 ```
 
-需要将重算结果写入网页武器表时，使用 `evaluate_v2.py --write`。该选项仅更新71把武器的 `rating.dimensions`，保留原 `overall`、`tier` 和两条随机武器占位记录。六维字段保存0.5–5.0的数字，所有维度均为高分更优。
+需要将重算总分写入网页武器表时，使用 `evaluate_v2.py --write`。该选项只更新63把普通武器的 `rating.overall` 和 `rating.tier`；71把武器现有的426个六维值、8把熊武器与两条随机武器占位记录完整保留。六维字段保存0.5–5.0的数字，总分保存1–5的数字，均为高分更优。不带 `--write` 时只生成分析产物。
 
 复算生成的 `v2/evaluation.json` 保存动作事件、共享墨量、任务排程与情景分解；该文件与报告排版产物不纳入Git。公开图表位于 `docs/images/weapon-analysis/`，重新绘图的输出位于本目录的 `v2/figures/`。
 
