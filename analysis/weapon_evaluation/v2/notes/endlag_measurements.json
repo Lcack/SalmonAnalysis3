@@ -1,0 +1,982 @@
+{
+  "checked_on": "2026-11-03",
+  "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+  "source_version": "10.0.1",
+  "source_last_modified": null,
+  "source_method": "60fps screen capture; source counts from event frame as1 to frame immediately before next action. Swim begins when character starts crouching, not when fully submerged.",
+  "target_snapshot": "11.1.0",
+  "version_boundary": "这是旧版机制实测补充，不能声称全部为1110实测。原始解包字段仍是1110；冲突保留两者。",
+  "measurement_scope": "列为潜墨开始的后摇；不等于回墨锁定、下一次射击间隔或总起手动作。",
+  "classifications": {
+    "explicit_local_parameters": "客观事实 高",
+    "source_measurements": "客观事实 中至高 受版本边界限制",
+    "event_offset_adjustments": "计算得出 中",
+    "missing": "未能检索到有效实测信源 不填造"
+  },
+  "weapons": {
+    "Blaster_Bear_Coop": {
+      "release_to_swim_frames": null,
+      "origin": "projectile_release",
+      "measurement_status": "missing_in_measurement_source",
+      "source_url": null,
+      "local_source": "data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [],
+      "local_PostDelayFrame_Blaster": 6
+    },
+    "Charger_Bear_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Maneuver_Bear_Coop": {
+      "release_to_swim_frames": null,
+      "origin": "cancel_input",
+      "measurement_status": "missing_in_measurement_source",
+      "source_url": null,
+      "local_source": "data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。",
+        "翻滚锁定与射击取消计时并行。数值6仅为普通射击取消基线；翻滚期间发出子弹时仍须等待剩余UnrelaxFrameNoSquid，不可直接给所有翻滚后射击6。"
+      ]
+    },
+    "Roller_Bear_Coop": {
+      "release_to_swim_frames": null,
+      "origin": "projectile_release",
+      "measurement_status": "missing_in_measurement_source",
+      "source_url": null,
+      "local_source": "data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Saber_Bear_Coop": {
+      "release_to_swim_frames": null,
+      "origin": "projectile_release",
+      "measurement_status": "missing_in_measurement_source",
+      "source_url": null,
+      "local_source": "data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "熊刀没有剑气子弹，且源表熊刀测量为空。严格子弹射出定义下不适用，不用普通刀或任意固定值补齐。"
+      ]
+    },
+    "Shelter_Bear_Coop": {
+      "release_to_swim_frames": null,
+      "origin": "projectile_release",
+      "measurement_status": "missing_in_measurement_source",
+      "source_url": null,
+      "local_source": "data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Slosher_Bear_Coop": {
+      "release_to_swim_frames": null,
+      "origin": "projectile_release",
+      "measurement_status": "missing_in_measurement_source",
+      "source_url": null,
+      "local_source": "data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Stringer_Bear_Coop": {
+      "release_to_swim_frames": null,
+      "origin": "projectile_release",
+      "measurement_status": "missing_in_measurement_source",
+      "source_url": null,
+      "local_source": "data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Blaster_LightLong_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [],
+      "local_PostDelayFrame_Blaster": 20
+    },
+    "Blaster_LightShort_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [],
+      "local_PostDelayFrame_Blaster": 20
+    },
+    "Blaster_Light_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [],
+      "local_PostDelayFrame_Blaster": 20
+    },
+    "Blaster_Long_Coop": {
+      "release_to_swim_frames": 30,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [],
+      "local_PostDelayFrame_Blaster": 30
+    },
+    "Blaster_Middle_Coop": {
+      "release_to_swim_frames": 23,
+      "origin": "projectile_release",
+      "measurement_status": "version_or_definition_conflict",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "公开旧版实测与本地PostDelayFrame_Blaster不一致；原测量保留，不直接覆盖1110。"
+      ],
+      "local_PostDelayFrame_Blaster": 21
+    },
+    "Blaster_Precision_Coop": {
+      "release_to_swim_frames": 26,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [],
+      "local_PostDelayFrame_Blaster": 26
+    },
+    "Blaster_Short_Coop": {
+      "release_to_swim_frames": 26,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [],
+      "local_PostDelayFrame_Blaster": 26
+    },
+    "Brush_Heavy_Coop": {
+      "release_to_swim_frames": 21,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json",
+      "modes": {
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "brush_roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Brush_Mini_Coop": {
+      "release_to_swim_frames": 14,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json",
+      "modes": {
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "brush_roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Brush_Normal_Coop": {
+      "release_to_swim_frames": 18,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json",
+      "modes": {
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "brush_roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Charger_Keeper_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Charger_Light_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Charger_Long_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Charger_Normal_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Charger_Pencil_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Charger_Quick_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Maneuver_Dual_Coop": {
+      "release_to_swim_frames": 6,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。",
+        "翻滚锁定与射击取消计时并行。数值6仅为普通射击取消基线；翻滚期间发出子弹时仍须等待剩余UnrelaxFrameNoSquid，不可直接给所有翻滚后射击6。"
+      ]
+    },
+    "Maneuver_Gallon_Coop": {
+      "release_to_swim_frames": 6,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。",
+        "翻滚锁定与射击取消计时并行。数值6仅为普通射击取消基线；翻滚期间发出子弹时仍须等待剩余UnrelaxFrameNoSquid，不可直接给所有翻滚后射击6。"
+      ]
+    },
+    "Maneuver_Long_Coop": {
+      "release_to_swim_frames": 6,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。",
+        "翻滚锁定与射击取消计时并行。数值6仅为普通射击取消基线；翻滚期间发出子弹时仍须等待剩余UnrelaxFrameNoSquid，不可直接给所有翻滚后射击6。"
+      ]
+    },
+    "Maneuver_Normal_Coop": {
+      "release_to_swim_frames": 6,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。",
+        "翻滚锁定与射击取消计时并行。数值6仅为普通射击取消基线；翻滚期间发出子弹时仍须等待剩余UnrelaxFrameNoSquid，不可直接给所有翻滚后射击6。"
+      ]
+    },
+    "Maneuver_Short_Coop": {
+      "release_to_swim_frames": 6,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。",
+        "翻滚锁定与射击取消计时并行。数值6仅为普通射击取消基线；翻滚期间发出子弹时仍须等待剩余UnrelaxFrameNoSquid，不可直接给所有翻滚后射击6。"
+      ]
+    },
+    "Maneuver_Stepper_Coop": {
+      "release_to_swim_frames": 6,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。",
+        "翻滚锁定与射击取消计时并行。数值6仅为普通射击取消基线；翻滚期间发出子弹时仍须等待剩余UnrelaxFrameNoSquid，不可直接给所有翻滚后射击6。"
+      ]
+    },
+    "Roller_Compact_Coop": {
+      "release_to_swim_frames": 13,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal": {
+          "release_to_swim_frames": 13,
+          "origin": "flick_projectile_release"
+        },
+        "vertical": {
+          "release_to_swim_frames": 19,
+          "origin": "flick_projectile_release",
+          "grounded_range_eligible": false
+        },
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Roller_Heavy_Coop": {
+      "release_to_swim_frames": 15,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal": {
+          "release_to_swim_frames": 15,
+          "origin": "flick_projectile_release"
+        },
+        "vertical": {
+          "release_to_swim_frames": 19,
+          "origin": "flick_projectile_release",
+          "grounded_range_eligible": false
+        },
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Roller_Hunter_Coop": {
+      "release_to_swim_frames": 15,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal": {
+          "release_to_swim_frames": 15,
+          "origin": "flick_projectile_release"
+        },
+        "vertical": {
+          "release_to_swim_frames": 19,
+          "origin": "flick_projectile_release",
+          "grounded_range_eligible": false
+        },
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Roller_Normal_Coop": {
+      "release_to_swim_frames": 15,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal": {
+          "release_to_swim_frames": 15,
+          "origin": "flick_projectile_release"
+        },
+        "vertical": {
+          "release_to_swim_frames": 19,
+          "origin": "flick_projectile_release",
+          "grounded_range_eligible": false
+        },
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Roller_Wide_Coop": {
+      "release_to_swim_frames": 13,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal": {
+          "release_to_swim_frames": 13,
+          "origin": "flick_projectile_release"
+        },
+        "vertical": {
+          "release_to_swim_frames": 19,
+          "origin": "flick_projectile_release",
+          "grounded_range_eligible": false
+        },
+        "rolling": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "roll_cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Saber_Heavy_Coop": {
+      "release_to_swim_frames": 25,
+      "origin": "ink_wave_release",
+      "measurement_status": "measured_first_attack_plus_explicit_event_offset",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal_first": {
+          "first_attack_to_swim_frames": 28,
+          "release_to_swim_frames": 25,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "horizontal_repeat": {
+          "first_attack_to_swim_frames": null,
+          "release_to_swim_frames": null,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "charged_stationary": {
+          "first_attack_to_swim_frames": 31,
+          "release_to_swim_frames": 28,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "charged_lunge": {
+          "first_attack_to_swim_frames": 50,
+          "release_to_swim_frames": 47,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        }
+      },
+      "notes": [
+        "表后摇从刀身首次攻击事件计；严格子弹口径扣除剑气晚3帧的偏移。不得把近战与剑气事件混成同一零时刻。"
+      ]
+    },
+    "Saber_Lite_Coop": {
+      "release_to_swim_frames": 13,
+      "origin": "ink_wave_release",
+      "measurement_status": "measured_first_attack_plus_explicit_event_offset",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal_first": {
+          "first_attack_to_swim_frames": 16,
+          "release_to_swim_frames": 13,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "horizontal_repeat": {
+          "first_attack_to_swim_frames": 15,
+          "release_to_swim_frames": 12,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "charged_stationary": {
+          "first_attack_to_swim_frames": 23,
+          "release_to_swim_frames": 20,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "charged_lunge": {
+          "first_attack_to_swim_frames": 26,
+          "release_to_swim_frames": 23,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        }
+      },
+      "notes": [
+        "表后摇从刀身首次攻击事件计；严格子弹口径扣除剑气晚3帧的偏移。不得把近战与剑气事件混成同一零时刻。"
+      ]
+    },
+    "Saber_Normal_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "ink_wave_release",
+      "measurement_status": "measured_first_attack_plus_explicit_event_offset",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json",
+      "modes": {
+        "horizontal_first": {
+          "first_attack_to_swim_frames": 23,
+          "release_to_swim_frames": 20,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "horizontal_repeat": {
+          "first_attack_to_swim_frames": 22,
+          "release_to_swim_frames": 19,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "charged_stationary": {
+          "first_attack_to_swim_frames": 15,
+          "release_to_swim_frames": 12,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        },
+        "charged_lunge": {
+          "first_attack_to_swim_frames": 26,
+          "release_to_swim_frames": 23,
+          "first_to_projectile_frames": 3,
+          "origin": "ink_wave_release",
+          "classification": "calculated_from_measured_first_attack_timing"
+        }
+      },
+      "notes": [
+        "表后摇从刀身首次攻击事件计；严格子弹口径扣除剑气晚3帧的偏移。不得把近战与剑气事件混成同一零时刻。"
+      ]
+    },
+    "Shelter_Compact_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Shelter_Focus_Coop": {
+      "release_to_swim_frames": 25,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Shelter_Normal_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Shelter_Wide_Coop": {
+      "release_to_swim_frames": 40,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Shooter_Blaze_Coop": {
+      "release_to_swim_frames": 2,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_Expert_Coop": {
+      "release_to_swim_frames": 4,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_First_Coop": {
+      "release_to_swim_frames": 2,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_Flash_Coop": {
+      "release_to_swim_frames": 6,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json",
+      "modes": {
+        "tap": {
+          "release_to_swim_frames": 6,
+          "origin": "projectile_release"
+        },
+        "hold": {
+          "release_to_swim_frames": 3,
+          "origin": "cancel_input"
+        }
+      },
+      "notes": []
+    },
+    "Shooter_Gravity_Coop": {
+      "release_to_swim_frames": 3,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_Heavy_Coop": {
+      "release_to_swim_frames": 4,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_Long_Coop": {
+      "release_to_swim_frames": 4,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_Normal_Coop": {
+      "release_to_swim_frames": 4,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_Precision_Coop": {
+      "release_to_swim_frames": 3,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_QuickLong_Coop": {
+      "release_to_swim_frames": 3,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_QuickMiddle_Coop": {
+      "release_to_swim_frames": 3,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_Short_Coop": {
+      "release_to_swim_frames": 2,
+      "origin": "cancel_input",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "最小值成立于与最后一发同帧取消；取消相位可增加0至RepeatFrame减1帧，不能声称任意取消时刻都固定为该值。"
+      ]
+    },
+    "Shooter_TripleMiddle_Coop": {
+      "release_to_swim_frames": 22,
+      "origin": "third_bullet_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "三连发以第3颗子弹为零时刻；第1颗到潜墨还须加两次RepeatFrame。"
+      ]
+    },
+    "Shooter_TripleQuick_Coop": {
+      "release_to_swim_frames": 10,
+      "origin": "third_bullet_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": [
+        "三连发以第3颗子弹为零时刻；第1颗到潜墨还须加两次RepeatFrame。"
+      ]
+    },
+    "Slosher_Bathtub_Coop": {
+      "release_to_swim_frames": 25,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json",
+      "modes": {
+        "last_projectile": {
+          "release_to_swim_frames": 10,
+          "origin": "last_projectile_release",
+          "classification": "calculated_from_measurement_and_local_emission_offsets",
+          "local_last_minus_first_frames": 15
+        }
+      },
+      "notes": []
+    },
+    "Slosher_Diffusion_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Slosher_Double_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json",
+      "modes": {
+        "last_projectile": {
+          "release_to_swim_frames": 8,
+          "origin": "last_projectile_release",
+          "classification": "calculated_from_measurement_and_local_emission_offsets",
+          "local_last_minus_first_frames": 8
+        }
+      },
+      "notes": []
+    },
+    "Slosher_Launcher_Coop": {
+      "release_to_swim_frames": 20,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Slosher_Strong_Coop": {
+      "release_to_swim_frames": 16,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Slosher_Washtub_Coop": {
+      "release_to_swim_frames": 35,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Spinner_Downpour_Coop": {
+      "release_to_swim_frames": 7,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json",
+      "modes": {
+        "sustained_cancel": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "cancel_input"
+        }
+      },
+      "notes": [
+        "源表末尾旋转枪章节给出首发至潜墨7F、持续射击取消输入至潜墨6F。作者称两种门限不并行，6至7F阈值机制还需检验；不把取消输入6直接冒充固定末弹6。"
+      ]
+    },
+    "Spinner_HyperShort_Coop": {
+      "release_to_swim_frames": 7,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json",
+      "modes": {
+        "sustained_cancel": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "cancel_input"
+        }
+      },
+      "notes": [
+        "源表末尾旋转枪章节给出首发至潜墨7F、持续射击取消输入至潜墨6F。作者称两种门限不并行，6至7F阈值机制还需检验；不把取消输入6直接冒充固定末弹6。"
+      ]
+    },
+    "Spinner_Hyper_Coop": {
+      "release_to_swim_frames": 7,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json",
+      "modes": {
+        "sustained_cancel": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "cancel_input"
+        }
+      },
+      "notes": [
+        "源表末尾旋转枪章节给出首发至潜墨7F、持续射击取消输入至潜墨6F。作者称两种门限不并行，6至7F阈值机制还需检验；不把取消输入6直接冒充固定末弹6。"
+      ]
+    },
+    "Spinner_Quick_Coop": {
+      "release_to_swim_frames": 7,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json",
+      "modes": {
+        "sustained_cancel": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "cancel_input"
+        }
+      },
+      "notes": [
+        "源表末尾旋转枪章节给出首发至潜墨7F、持续射击取消输入至潜墨6F。作者称两种门限不并行，6至7F阈值机制还需检验；不把取消输入6直接冒充固定末弹6。"
+      ]
+    },
+    "Spinner_Serein_Coop": {
+      "release_to_swim_frames": 7,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json",
+      "modes": {
+        "sustained_cancel": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "cancel_input"
+        }
+      },
+      "notes": [
+        "源表末尾旋转枪章节给出首发至潜墨7F、持续射击取消输入至潜墨6F。作者称两种门限不并行，6至7F阈值机制还需检验；不把取消输入6直接冒充固定末弹6。"
+      ]
+    },
+    "Spinner_Standard_Coop": {
+      "release_to_swim_frames": 7,
+      "origin": "first_projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json",
+      "modes": {
+        "sustained_cancel": {
+          "release_to_swim_frames": null,
+          "cancel_to_swim_frames": 6,
+          "origin": "cancel_input"
+        }
+      },
+      "notes": [
+        "源表末尾旋转枪章节给出首发至潜墨7F、持续射击取消输入至潜墨6F。作者称两种门限不并行，6至7F阈值机制还需检验；不把取消输入6直接冒充固定末弹6。"
+      ]
+    },
+    "Stringer_Explosion_Coop": {
+      "release_to_swim_frames": 11,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Stringer_Normal_Coop": {
+      "release_to_swim_frames": 11,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    },
+    "Stringer_Short_Coop": {
+      "release_to_swim_frames": 11,
+      "origin": "projectile_release",
+      "measurement_status": "measured_in_source_v10.0.1",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/メインウェポン/前隙・後隙",
+      "local_source": "data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json",
+      "modes": {},
+      "notes": []
+    }
+  },
+  "missing": [
+    "Blaster_Bear_Coop",
+    "Maneuver_Bear_Coop",
+    "Roller_Bear_Coop",
+    "Saber_Bear_Coop",
+    "Shelter_Bear_Coop",
+    "Slosher_Bear_Coop",
+    "Stringer_Bear_Coop"
+  ]
+}

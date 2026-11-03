@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "Blaster_Bear_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.45,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.0
+    }
+  },
+  {
+    "id": "Charger_Bear_Coop",
+    "family": "Charger",
+    "source": "data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.65,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.45,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.8,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 1.2
+    }
+  },
+  {
+    "id": "Maneuver_Bear_Coop",
+    "family": "Maneuver",
+    "source": "data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {}
+  },
+  {
+    "id": "Roller_Bear_Coop",
+    "family": "Roller",
+    "source": "data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 2.2,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 2.2,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 2.2,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.0,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.0
+    }
+  },
+  {
+    "id": "Saber_Bear_Coop",
+    "family": "Saber",
+    "source": "data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BulletSaberHorizontalParam.WallDropPaintParam.PaintRadiusShock": 1.4,
+      "BulletSaberVerticalParam.WallDropPaintParam.PaintRadiusShock": 1.55
+    }
+  },
+  {
+    "id": "Shelter_Bear_Coop",
+    "family": "Shelter",
+    "source": "data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "spl__BulletShelterShotgunParam.ShotgunWallDropCollisionParam.PaintRadiusShock": 1.65,
+      "spl__BulletShelterShotgunParam.SplashWallDropCollisionParam.PaintRadiusShock": 1.65
+    }
+  },
+  {
+    "id": "Slosher_Bear_Coop",
+    "family": "Slosher",
+    "source": "data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.0,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusShock": 2.2,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusShock": 2.4
+    }
+  },
+  {
+    "id": "Stringer_Bear_Coop",
+    "family": "Stringer",
+    "source": "data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "spl__BulletStringerParam.WallDropPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Blaster_LightLong_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "BlasterBurstParam.WallHitPaintRadius": 1.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Blaster_LightShort_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "BlasterBurstParam.WallHitPaintRadius": 1.8,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Blaster_Light_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "BlasterBurstParam.WallHitPaintRadius": 1.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Blaster_Long_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Blaster_Middle_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Blaster_Precision_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstJumpParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "BlasterBurstJumpParam.WallHitPaintRadius": 2.7,
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "BlasterBurstParam.WallHitPaintRadius": 1.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Blaster_Short_Coop",
+    "family": "Blaster",
+    "source": "data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BlasterBurstParam.SplashWallDropPaintParam.PaintRadiusShock": 1.2,
+      "SplashWallHitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 0.5,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Brush_Heavy_Coop",
+    "family": "Brush",
+    "source": "data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "SwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.68,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.68,
+      "SwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "SwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.68,
+      "SwingUnitGroupParam.Unit[3].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "SwingUnitGroupParam.Unit[3].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SwingUnitGroupParam.Unit[3].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2,
+      "SwingUnitGroupParam.Unit[4].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "SwingUnitGroupParam.Unit[4].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SwingUnitGroupParam.Unit[4].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2
+    }
+  },
+  {
+    "id": "Brush_Mini_Coop",
+    "family": "Brush",
+    "source": "data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "SwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.55,
+      "SwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.44,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2
+    }
+  },
+  {
+    "id": "Brush_Normal_Coop",
+    "family": "Brush",
+    "source": "data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "SwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.68,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2
+    }
+  },
+  {
+    "id": "Charger_Keeper_Coop",
+    "family": "Charger",
+    "source": "data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.45,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.8,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 1.2
+    }
+  },
+  {
+    "id": "Charger_Light_Coop",
+    "family": "Charger",
+    "source": "data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.5,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.34,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.27,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 0.45,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.9,
+      "WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.9,
+      "WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.35,
+      "WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 1.35,
+      "WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 1.35
+    }
+  },
+  {
+    "id": "Charger_Long_Coop",
+    "family": "Charger",
+    "source": "data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.45,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.8,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 1.2
+    }
+  },
+  {
+    "id": "Charger_Normal_Coop",
+    "family": "Charger",
+    "source": "data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.45,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.8,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 1.2
+    }
+  },
+  {
+    "id": "Charger_Pencil_Coop",
+    "family": "Charger",
+    "source": "data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.45,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.8,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 1.2
+    }
+  },
+  {
+    "id": "Charger_Quick_Coop",
+    "family": "Charger",
+    "source": "data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 0.675,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.45,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 0.9,
+      "SplashWallHitParam.WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusFall": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMaxCharge": 1.2,
+      "WallDropCollisionPaintParam.PaintRadiusFallMinCharge": 0.8,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMaxCharge": 1.8,
+      "WallDropCollisionPaintParam.PaintRadiusShockMinCharge": 1.2
+    }
+  },
+  {
+    "id": "Maneuver_Dual_Coop",
+    "family": "Maneuver",
+    "source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Maneuver_Gallon_Coop",
+    "family": "Maneuver",
+    "source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Maneuver_Long_Coop",
+    "family": "Maneuver",
+    "source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Maneuver_Normal_Coop",
+    "family": "Maneuver",
+    "source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Maneuver_Short_Coop",
+    "family": "Maneuver",
+    "source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Maneuver_Stepper_Coop",
+    "family": "Maneuver",
+    "source": "data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Roller_Compact_Coop",
+    "family": "Roller",
+    "source": "data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.6,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.6,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.6,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.0,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.0,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.0
+    }
+  },
+  {
+    "id": "Roller_Heavy_Coop",
+    "family": "Roller",
+    "source": "data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.6,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.6,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.6,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.6,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.35,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2
+    }
+  },
+  {
+    "id": "Roller_Hunter_Coop",
+    "family": "Roller",
+    "source": "data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.6,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.6,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.6,
+      "VerticalSwingUnitGroupParam.Unit[3].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[3].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.45,
+      "VerticalSwingUnitGroupParam.Unit[3].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2,
+      "VerticalSwingUnitGroupParam.Unit[4].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "VerticalSwingUnitGroupParam.Unit[4].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.45,
+      "VerticalSwingUnitGroupParam.Unit[4].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.2,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.0,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.5,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.0
+    }
+  },
+  {
+    "id": "Roller_Normal_Coop",
+    "family": "Roller",
+    "source": "data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.65,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.65,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.65,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Roller_Wide_Coop",
+    "family": "Roller",
+    "source": "data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.65,
+      "VerticalSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.65,
+      "VerticalSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.7,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.65,
+      "VerticalSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.4,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "WideSwingUnitGroupParam.Unit[0].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "WideSwingUnitGroupParam.Unit[1].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusGround": 0.5,
+      "WideSwingUnitGroupParam.Unit[2].UnitParam.WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Saber_Heavy_Coop",
+    "family": "Saber",
+    "source": "data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "BulletSaberHorizontalParam.WallDropPaintParam.PaintRadiusShock": 1.55,
+      "BulletSaberVerticalParam.WallDropPaintParam.PaintRadiusShock": 1.55
+    }
+  },
+  {
+    "id": "Saber_Lite_Coop",
+    "family": "Saber",
+    "source": "data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json",
+    "wall_related_values": {}
+  },
+  {
+    "id": "Saber_Normal_Coop",
+    "family": "Saber",
+    "source": "data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {}
+  },
+  {
+    "id": "Shelter_Compact_Coop",
+    "family": "Shelter",
+    "source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "spl__BulletShelterCanopyParam.CanopyPaintRadius": 1.0,
+      "spl__BulletShelterShotgunParam.SplashWallDropCollisionParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Shelter_Focus_Coop",
+    "family": "Shelter",
+    "source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "spl__BulletShelterCanopyParam.CanopyPaintRadius": 2.0,
+      "spl__BulletShelterShotgunParam.SplashWallDropCollisionParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Shelter_Normal_Coop",
+    "family": "Shelter",
+    "source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "spl__BulletShelterShotgunParam.SplashWallDropCollisionParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Shelter_Wide_Coop",
+    "family": "Shelter",
+    "source": "data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "spl__BulletShelterCanopyParam.CanopyPaintRadius": 2.4,
+      "spl__BulletShelterShotgunParam.SplashWallDropCollisionParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Shooter_Blaze_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_Expert_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_First_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_Flash_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Shooter_Gravity_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_Heavy_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_Long_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_Normal_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_Precision_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_QuickLong_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_QuickMiddle_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_Short_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Shooter_TripleMiddle_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.75,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.92
+    }
+  },
+  {
+    "id": "Shooter_TripleQuick_Coop",
+    "family": "Shooter",
+    "source": "data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.56
+    }
+  },
+  {
+    "id": "Slosher_Bathtub_Coop",
+    "family": "Slosher",
+    "source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 1.875,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.6,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusShock": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 0.6,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 1.875,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusFall": 0.6,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusShock": 1.875
+    }
+  },
+  {
+    "id": "Slosher_Diffusion_Coop",
+    "family": "Slosher",
+    "source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 0.8,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 0.8,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 0.8,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.PaintRadiusShock": 1.8,
+      "UnitGroupParam.Unit[3].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[3].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[3].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[3].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 0.8,
+      "UnitGroupParam.Unit[3].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[3].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[3].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[3].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[3].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[3].WallDropCollisionPaintParam.PaintRadiusFall": 0.8,
+      "UnitGroupParam.Unit[3].WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[3].WallDropCollisionPaintParam.PaintRadiusShock": 1.8
+    }
+  },
+  {
+    "id": "Slosher_Double_Coop",
+    "family": "Slosher",
+    "source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.585,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusShock": 2.585,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.0,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusShock": 2.0
+    }
+  },
+  {
+    "id": "Slosher_Launcher_Coop",
+    "family": "Slosher",
+    "source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.2,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusShock": 2.64,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusShock": 2.4
+    }
+  },
+  {
+    "id": "Slosher_Strong_Coop",
+    "family": "Slosher",
+    "source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusShock": 2.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.585,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[1].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[1].WallDropCollisionPaintParam.PaintRadiusShock": 2.585,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[2].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 2.0,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[2].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[2].WallDropCollisionPaintParam.PaintRadiusShock": 2.0
+    }
+  },
+  {
+    "id": "Slosher_Washtub_Coop",
+    "family": "Slosher",
+    "source": "data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusGround": 0.6,
+      "UnitGroupParam.Unit[0].AfterWallDropCollisionPaintPrm.PaintRadiusShock": 1.3,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.4,
+      "UnitGroupParam.Unit[0].SplashAndSplashWallHitSpawnPrm.SplashWallHitParam[0].WallDropCollisionPaintParam.PaintRadiusShock": 0.9,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.FallPeriodFirstSecondTargetAlp": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusFall": 1.0,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusGround": 0.7,
+      "UnitGroupParam.Unit[0].WallDropCollisionPaintParam.PaintRadiusShock": 2.0
+    }
+  },
+  {
+    "id": "Spinner_Downpour_Coop",
+    "family": "Spinner",
+    "source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Spinner_HyperShort_Coop",
+    "family": "Spinner",
+    "source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Spinner_Hyper_Coop",
+    "family": "Spinner",
+    "source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Spinner_Quick_Coop",
+    "family": "Spinner",
+    "source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Spinner_Serein_Coop",
+    "family": "Spinner",
+    "source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Spinner_Standard_Coop",
+    "family": "Spinner",
+    "source": "data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json",
+    "wall_related_values": {
+      "WallDropCollisionPaintParam.PaintRadiusFall": 0.65,
+      "WallDropCollisionPaintParam.PaintRadiusGround": 0.6,
+      "WallDropCollisionPaintParam.PaintRadiusShock": 1.3
+    }
+  },
+  {
+    "id": "Stringer_Explosion_Coop",
+    "family": "Stringer",
+    "source": "data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json",
+    "wall_related_values": {}
+  },
+  {
+    "id": "Stringer_Normal_Coop",
+    "family": "Stringer",
+    "source": "data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json",
+    "wall_related_values": {}
+  },
+  {
+    "id": "Stringer_Short_Coop",
+    "family": "Stringer",
+    "source": "data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json",
+    "wall_related_values": {}
+  }
+]

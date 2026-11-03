@@ -1,0 +1,40 @@
+{
+  "checked_on": "2026-11-03",
+  "classification": "参数库存为客观事实 高；机制映射为逻辑推断 中；射程和墙面几何代理为推测假设 低",
+  "range_contract": {
+    "user_definition": "平地不起跳，允许调整仰角，常用攻击方式能击中敌人的最远距离。",
+    "local_limit": "仅有武器参数，没有完整敌人碰撞形状、枪口动画轨迹、全部类默认和引擎碰撞事件，因此只能构造射程代理，不能称所有武器的实测最远命中距离。",
+    "must_not_use": ["ReduceStartFrame对应的满伤害衰减起点", "游戏武器匹配Range字段", "落地着色形状前伸后的地面涂墨射程", "Slosher MainEffectiveRangeUpParam.BaseDistance直接作为真实射程"],
+    "reference_definition_url": "https://wikiwiki.jp/splatoon3mix/ブキ/比較",
+    "reference_mechanism_url": "https://wikiwiki.jp/splatoon3mix/システム詳細仕様",
+    "reference_unit_fact": "该日本机制说明给出50DU=5m=试射线1格；本模型计算保留本地参数长度单位，不能未经单位换算混入旧DU。"
+  },
+  "family_guidance": {
+    "Shooter Maneuver Spinner": "对本地MoveParam作分段直行 制动 自由落体，固定发射高度1单位，仰角0至45度扫描，止于弹丸首次触地，加弹丸碰撞半径。Spinner使用对应蓄力名义初速，不能将随机初速最大幸运值当常态。双枪翻滚后读取MoveLapOverParam而非普通MoveParam。",
+    "Blaster": "弹道止于BurstFrame或地面，外加DistanceDamage最外伤害半径。S-BLAST跳跃短射模式排除；爆炸PaintRadius不是伤害半径。",
+    "Charger": "直接DistanceFullCharge或DistanceMinCharge，单独记缺少枪口位置偏移。本地KeepCharge等节点可能有枪口Z，但一致加入需逐类处理姿态，不能全武器统一随意加2单位。",
+    "Stringer": "根据充能状态读取SpawnSpeedMin Mid Max；逐段重力阻力与仰角扫描。最远爆炸可另加显式伤害半径。熊弓DiffusionArrowParamArray不同箭速，取最快箭明确是上界。",
+    "Roller Brush": "DamageMinDistance是伤害降至最小值的距离锚点，超过该点仍可有最小伤害，不是真正弹丸消失距离。adapter将其保留为partial代理，不能称极限。滚筒纵甩要求跳跃，排除本次无跳射程场景。若要严格最远需按每个Unit的SpawnSpeedBase 实际方向 单独飞行参数模拟。",
+    "Slosher": "Unit.BulletNum=0跳过；MoveParam.SpawnSpeed=0通常是占位，必须用Unit.SpawnSpeedGround，再应用AfterOffsetSpawnSpeed。BaseDistance不是弹丸极限。浴缸弹跳参数不全，首次触地射程为partial，不能冒充全程最远。",
+    "Shelter": "每Group散弹MoveParam分别模拟；极限一颗命中与DamageEffectiveTotalMax整发上限不同。壁/地面涂墨DrawRadius不等于对敌碰撞半径。",
+    "Saber": "普通剑气有显式SpawnSpeed和BurstFrame，可用直行长度加已列发射偏移与碰撞半径作代理，竖斩末段下坠保留partial。刀身使用盒/胶囊的前端；熊刀IsShotEnable=false，残留刀波MoveParam不可构造远程射程。"
+  },
+  "wall_contract": {
+    "inventory_file": "wall_parameter_inventory.json",
+    "available": "直接命中墙面半径、沿墙滴落半径、落地半径、滴落时序等字段在大部分类可见，但缺省继承和多个墨滴的墙距映射不完整。",
+    "conservative_proxy": "原directwall字段在存在适用显式PaintRadiusShock时取一个最大墨点的πr²，作为单次动作的单冲击圆代理。仅当节点显式$type等于spl__BulletWallDropCollisionPaintParam时，允许用原始参数表已列的缺省半径1.3；无节点或无类型不填。爆破枪另在wall_profiles中区分提前撞墙与自然爆点附近，使用两种独立涂墨半径候选，详细证据见blaster_wall_profiles_method.json。",
+    "not_guaranteed": "它不是实际着色面积，甚至不是数学严格下界，因为引擎墨迹纹理、重叠及半径字段的确切调用路径未完整验证。",
+    "missing_policy": "返回None及可用路径，不把地面WidthHalf或别的武器常数搬来填墙面。伞采用SplashWallDropCollisionParam的显式墙面冲击墨点半径，普通伞1.3、熊伞1.65；这不是散弹整体直接撞墙覆盖面积，数量与时序没有复现，证据中明确该路径与局限。",
+    "comparison_requirements": "可信同尺度实机墙涂比较应统一墙距、墙尺寸、射击时长/墨量、仰角、墨迹观测时刻，至少分初始墙面覆盖和随后垂直下流，随后与同一墙面场景模拟对照。",
+    "source_url": "https://wikiwiki.jp/splatoon3mix/検証/パラメータ情報/メイン",
+    "source_uncertainty_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable"
+  },
+  "endlag_cautions": [
+    "Endlag_measurements为10.0.1的60fps实测补充；检查日不等于源数据发布日期，source_last_modified保留null。",
+    "自动射击以取消输入起计的实测不能不加说明就当固定末弹起计；adapter列最小值和取消相位范围。",
+    "桶的多段发射、刀的刀身和剑气有不同起点；adapter对多段桶扣最后发射偏移，对刀波扣3帧，保留原表。",
+    "源表末尾222至237行包含全部6把旋转枪，首发至潜墨7F，持续射击取消输入至潜墨6F。源作者称两种门限不并行且阈值仍需检验；adapter保留首发7和独立取消6，不把后者冒充固定末弹后摇，也不使用无证PostDelayFrame4。",
+    "缺测熊武器的原始测量表保持null。adapter仅为有显式本地取消字段的熊双、熊滚、熊桶、熊弓列低置信代理及区间，保留推测分类；熊伞缺取消字段仍缺测。熊刀没有子弹时严格定义下不适用，仅单列攻击事件后摇代理。",
+    "三连发下一轮还需2F人形起手：L3首发至下一轮首发为2×4+8+2=18F，H3为2×5+20+2=32F；只在v2适配时给旧burst_gap加2。"
+  ]
+}

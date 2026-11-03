@@ -1,0 +1,78 @@
+{
+  "version": "1110-model-v2-reference-definitions",
+  "fps": 60,
+  "cohock_hp": 400,
+  "mob_hp": [
+    400,
+    400,
+    100,
+    100,
+    100,
+    40,
+    40,
+    40
+  ],
+  "boss_hp": [
+    [
+      300
+    ],
+    [
+      500
+    ],
+    [
+      600,
+      500
+    ],
+    [
+      900
+    ],
+    [
+      1200
+    ]
+  ],
+  "density": 0.04,
+  "paint_overlap": 0.55,
+  "hit_rate": 1,
+  "score_min": 0.5,
+  "score_max": 5,
+  "ordinary_anchor_quantiles": [
+    0.05,
+    0.95
+  ],
+  "higher_is_better": true,
+  "refill_frames": 180,
+  "approach_speed_units_per_frame": 0.18,
+  "profiles": [
+    {
+      "id": "balanced",
+      "name": "均衡任务",
+      "boss_sets": 1,
+      "mob_groups": 2,
+      "ground_area": 240,
+      "wall_area": 48,
+      "distance": 18
+    },
+    {
+      "id": "combat",
+      "name": "战斗偏重",
+      "boss_sets": 2,
+      "mob_groups": 3,
+      "ground_area": 80,
+      "wall_area": 16,
+      "distance": 24
+    },
+    {
+      "id": "environment",
+      "name": "环境维护偏重",
+      "boss_sets": 1,
+      "mob_groups": 1,
+      "ground_area": 480,
+      "wall_area": 120,
+      "distance": 12
+    }
+  ],
+  "painting_policy": "按用户统一熟练度前提 默认涂墙与涂地一致 爆破卡爆点视为已掌握",
+  "approach_policy": "每个战斗块初始距离统一为profile.distance 使用实际选用模式射程 不借全局最远模式",
+  "blaster_paint_discount": 1.0,
+  "confidence": "显式参数与定义高；固定模式资源排程中；涂墙等同涂地、极限射程和工作量情景低；不是原视频排名"
+}

@@ -1,0 +1,54 @@
+{
+  "checked_on": "2026-11-03",
+  "primary_parameter_example": {
+    "url": "https://github.com/Leanny/splat3/blob/main/data/parameter/1110/weapon/WeaponBlasterShort.game__GameParameterTable.json",
+    "verified_blob_sha": "3856c677cd2a948efb4f2ca25e0814feefe16ed6",
+    "scope": "此普通参数示例核实BlasterBurst有独立的非零涂墨半径而通用BlastParam.PaintRadius为0。实际计算仍读取本地已合并Coop文件，不用普通版替换打工参数。"
+  },
+  "sources": [
+    {
+      "url": "https://wikiwiki.jp/splatoon3mix/検証/パラメータ情報/メイン",
+      "section": "ブラスター 536至633行",
+      "evidence": "SplashPaintRadius被列为爆炸涂墨半径，SplashPaintShotColHitRadius被列为提前撞地形的爆炸涂墨半径；WallHitPaintRadius和SplashDropPaintRadius标含义不明。该页脚注同时提醒这些半径的精确调用关系未完全厘清，实机比较采用实测替代，因此本模型只能标几何候选。",
+      "classification": "客观事实：原研究表内容；参数至实际墙涂机制仍不确定"
+    },
+    {
+      "url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "section": "Blasters BlasterBurstParam 516至547行",
+      "evidence": "原研究表给BurstFrame缺省13、SplashPaintRadius缺省2.0、SplashPaintShotColHitRadius缺省1.4；表中许多爆破涂墨字段含义仍为Unknown。仅节点显式$type等于spl__BulletBlasterBurstParam时使用这些缺省，并逐模式写入参数补值证据。",
+      "classification": "客观事实：原作者参数缺省表；具体引擎调用解释不完整"
+    },
+    {
+      "url": "https://github.com/sendou-ink/sendou.ink/blob/main/app/features/comp-analyzer/core/WeaponRange.ts",
+      "verified_blob_sha": "bc82674d68e7e04b493e851fcb8c17b2285e70ff",
+      "evidence": "原始代码用直行、制动、下落三个阶段和离地1单位模拟弹道。此处只用同类代理推算0度发射到自然爆炸帧的弹心水平travel，不把碰撞半径、伤害半径或涂墨半径加到弹心距离里。",
+      "classification": "计算得出：由本地参数和已列弹道近似计算"
+    }
+  ],
+  "profiles": {
+    "near": {
+      "condition": "弹丸先撞墙，尚未到自然爆炸帧。",
+      "candidate_formula": "pi * SplashPaintShotColHitRadius^2",
+      "secondary_observation": "原WallDropCollisionPaintParam.PaintRadiusShock构造的单冲击墨点面积单列为direct_wall_drop_area，不能与上述提前碰撞爆炸墨点当成同一个量。"
+    },
+    "burst": {
+      "condition": "竖直墙位于自然爆点附近且没有提前拦下弹丸。",
+      "candidate_formula": "pi * SplashPaintRadius^2",
+      "distance": "0度发射、固定离地1单位的自然爆点中心水平travel。",
+      "damage_outer_edge_distance": "另列中心travel + max(BlastParam.DistanceDamage.Distance)。这是伤害最远边缘，不是爆点位置，更不能直接推导该墙距的涂墨圆面积。"
+    }
+  },
+  "unknown_fields_policy": "WallHitPaintRadius、SplashDropPaintRadius、SplashDropPaintShotColHitRadius仅保留本地显式值和含义未核实声明，不用于主要面积候选；BlastParam.PaintRadius为0不解释成无涂墨。",
+  "limits": [
+    "自然爆点附近不是最远伤害边缘；墙放到伤害边缘时，涂墨是否到达及面积大小还取决于独立涂墨生成机制，未能检索到完整有效信源。",
+    "几何圆只用于两个距离条件的同公式参数候选，未实现连续墙距、球面与墙相交、飞沫方向、地形碰撞时机、纹理重叠和滴落时序。",
+    "两个候选面积的调和均值若由评估脚本采用，是评估模型选择，不能称游戏真实墙涂面积。",
+    "其他武器家族near/burst均沿用原direct_wall代理，不假装已复现其距离依赖。"
+  ],
+  "confidence": {
+    "raw_explicit_parameter_values": "高",
+    "documented_class_defaults": "中至高",
+    "circle_computation": "高：在公式假设成立的条件下",
+    "mapping_circle_to_actual_wall_paint": "低，推测假设"
+  }
+}

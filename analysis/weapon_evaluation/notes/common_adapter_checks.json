@@ -1,0 +1,23 @@
+{
+  "tri_intervals": [
+    21,
+    45,
+    87
+  ],
+  "edit_full_interval": 3,
+  "edit_full_shots": 60,
+  "ballpoint_mode_intervals": [
+    3,
+    5
+  ],
+  "sblast_modes": 2,
+  "grizzco_charger_modes": 1,
+  "grizzco_charger_interval": 4,
+  "ordinary_charger_intervals": [
+    14,
+    66
+  ],
+  "pencil_interval": 17,
+  "pencil_batch_period": 157,
+  "status": "passed"
+}

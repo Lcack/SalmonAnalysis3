@@ -1,0 +1,17 @@
+__pycache__/
+report/baseline/
+report/final_qa/
+report/*_qa/
+report/qa*/
+notes/selected_parameters.txt
+v2/report/qa/
+v2/report/*_qa/
+v2/report/qa*/
+
+# Generated artifacts stay local; published charts live in docs/images.
+/figures/
+/report/
+/v2/figures/
+/v2/report/
+/v2/evaluation.json
+/v2/notes/adapted_modes_audit.json

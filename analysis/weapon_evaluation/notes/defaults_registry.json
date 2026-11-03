@@ -1,0 +1,246 @@
+{
+  "scope": "Only fills omitted class fields after ordinary parameters and Coop overrides have been merged. A value marked assumption must not be described as an extracted game value.",
+  "checked_on": "2026-11-03",
+  "entries": [
+    {
+      "field": "spl__WeaponShooterParam.RepeatFrame",
+      "value": 6,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high",
+      "note": "Shooter section explicitly lists default 6. Also cross-checked against Splattershot SRNW fire rate; only ShooterNormal omits it in the local merged shooter files."
+    },
+    {
+      "field": "spl__WeaponShooterParam.PostDelayFrame",
+      "value": 4,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high"
+    },
+    {
+      "field": "spl__WeaponShooterParam.InkRecoverStop",
+      "value": 20,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high"
+    },
+    {
+      "field": "spl__WeaponShooterParam.PostDelayFrame_Blaster",
+      "value": 23,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high",
+      "note": "Not interchangeable with shooter PostDelayFrame. Local blasters explicitly override it."
+    },
+    {
+      "field": "spl__WeaponShooterParam.PreDelayFrame_HumanShot",
+      "value": 0,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high",
+      "note": "For blasters, source says actual human shot release includes an additional four frames; this raw field alone is not a complete startup measurement."
+    },
+    {
+      "field": "spl__WeaponShooterParam.PreDelayFrame_SquidShot",
+      "value": 4,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high",
+      "note": "Raw field; source describes additional animation delay. Do not equate directly to full swim-to-shot startup."
+    },
+    {
+      "field": "spl__BulletSimpleMoveParam.BrakeAirResist",
+      "value": 0.36,
+      "source_url": "https://github.com/sendou-ink/sendou.ink/blob/main/app/features/comp-analyzer/core/WeaponRange.ts",
+      "status": "verified_analysis_implementation_default",
+      "confidence": "high",
+      "crosscheck_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable"
+    },
+    {
+      "field": "spl__BulletSimpleMoveParam.BrakeGravity",
+      "value": 0.07,
+      "source_url": "https://github.com/sendou-ink/sendou.ink/blob/main/app/features/comp-analyzer/core/WeaponRange.ts",
+      "status": "verified_analysis_implementation_default",
+      "confidence": "high"
+    },
+    {
+      "field": "spl__BulletSimpleMoveParam.BrakeToFreeStateFrame",
+      "value": 4,
+      "source_url": "https://github.com/sendou-ink/sendou.ink/blob/main/app/features/comp-analyzer/core/WeaponRange.ts",
+      "status": "verified_analysis_implementation_default",
+      "confidence": "medium",
+      "note": "Researcher table says field may be unused. A simulation that forces a state change here remains an approximation."
+    },
+    {
+      "field": "spl__BulletSimpleMoveParam.BrakeToFreeVelocityY",
+      "value": -0.15,
+      "source_url": "https://github.com/sendou-ink/sendou.ink/blob/main/app/features/comp-analyzer/core/WeaponRange.ts",
+      "status": "verified_analysis_implementation_default",
+      "confidence": "high"
+    },
+    {
+      "field": "spl__BulletSimpleMoveParam.FreeAirResist",
+      "value": 0.02,
+      "source_url": "https://github.com/sendou-ink/sendou.ink/blob/main/app/features/comp-analyzer/core/WeaponRange.ts",
+      "status": "verified_analysis_implementation_default",
+      "confidence": "high"
+    },
+    {
+      "field": "spl__BulletSimpleMoveParam.FreeGravity",
+      "value": 0.016,
+      "source_url": "https://github.com/sendou-ink/sendou.ink/blob/main/app/features/comp-analyzer/core/WeaponRange.ts",
+      "status": "verified_analysis_implementation_default",
+      "confidence": "high"
+    },
+    {
+      "field": "spl__WeaponChargerParam.ChargeFrameFullCharge",
+      "value": 60,
+      "source_url": "https://splatoonwiki.org/wiki/Salmon_Run_Next_Wave_data",
+      "status": "verified_weapon_measurement_for_SplatCharger",
+      "confidence": "high",
+      "note": "Splat Charger row has 60F full charge; local ShooterNormal is not relevant to this default. Not a universal charge time for every charger."
+    },
+    {
+      "field": "spl__WeaponChargerParam.ChargeFrameMinCharge",
+      "value": 8,
+      "source_url": "https://splatoonwiki.org/wiki/Salmon_Run_Next_Wave_data",
+      "status": "verified_weapon_measurement_for_ordinary_chargers",
+      "confidence": "high",
+      "note": "Ordinary charger rows list tap8; Grizzco Charger has explicit4 and cannot fire partial shots."
+    },
+    {
+      "field": "spl__WeaponChargerParam.PostDelayFrame",
+      "value": 8,
+      "source_url": null,
+      "status": "unverified_assumption_do_not_promote_to_fact",
+      "confidence": "low",
+      "note": "No valid source for omitted raw field default8 was retrieved. Published nominal charger DPS and inter-release intervals differ by timing convention; use sensitivity or omit this default rather than call it factual."
+    },
+    {
+      "field": "spl__BulletChargerMoveParam.ThroughFullCharge",
+      "value": true,
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/パラメータ情報/メイン",
+      "status": "verified_researcher_default",
+      "confidence": "high",
+      "note": "Japanese parameter explanation explicitly says initial value true. Bamboozler and Snipewriter explicitly set false in local files."
+    },
+    {
+      "field": "spl__WeaponSpinnerParam.ChargeFrame_Second_semantics",
+      "value": "total_full_charge_threshold_not_additional_duration",
+      "source_url": "https://splatoonwiki.org/wiki/Salmon_Run_Next_Wave_data",
+      "status": "verified_crosscheck",
+      "confidence": "high",
+      "note": "Mini18+9=27; Heavy48+24=72; Nautilus38+38=76. These match local First/Second thresholds. Do not add local First and Second together.",
+      "crosscheck_url": "https://gamerch.com/splatoonwiki-sogo/984768"
+    },
+    {
+      "field": "spl__WeaponStringerParam.ShotParam.ArrowNum_for_StringerNormal",
+      "value": 3,
+      "source_url": "https://wikiwiki.jp/splatoon3mix/ブキ/トライストリンガー",
+      "status": "verified_weapon_description",
+      "confidence": "high",
+      "note": "This is weapon-specific supplementation for omitted ArrowNum; explicit5 for Wellstring and9 for Grizzco take precedence."
+    },
+    {
+      "field": "spl__WeaponStringerParam.ShotParam.ArrowAngleMax_semantics",
+      "value": "uncharged_spread_angle",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/パラメータ情報/メイン",
+      "status": "verified_researcher_explanation",
+      "confidence": "high",
+      "note": "Max suffix is maximum spread at no charge, not maximum charge. ArrowAngleMid is first-ring spread; ArrowAngleMin is full-charge spread."
+    },
+    {
+      "field": "spl__WeaponStringerParam.ShotParam.ArrowAngleMin_semantics",
+      "value": "full_charge_spread_angle",
+      "source_url": "https://wikiwiki.jp/splatoon3mix/検証/パラメータ情報/メイン",
+      "status": "verified_researcher_explanation",
+      "confidence": "high"
+    },
+    {
+      "field": "spl__WeaponStringerParam.ShotParam.ArrowNum_for_StringerBear",
+      "value": 9,
+      "source_url": "https://github.com/Leanny/splat3/blob/main/data/parameter/1110/weapon/WeaponStringerBear_Coop.game__GameParameterTable.json",
+      "status": "explicit_local_and_remote_parameter",
+      "confidence": "high",
+      "note": "Local complete Bear file has9; not a default."
+    },
+    {
+      "field": "spl__PlayerSideStepParam.RepeatCnt",
+      "value": 2,
+      "source_url": "https://github.com/DesperC/Awesome-Splatoon3-Hacking",
+      "status": "verified_modding_author_explanation",
+      "confidence": "medium",
+      "note": "Repository tutorial explicitly states other dualies omit RepeatCnt because default2, while Tetra overrides it. Avoid any invulnerability inference from dodge availability."
+    },
+    {
+      "field": "spl__WeaponStringerParam.ChargeParam.next_release_interval",
+      "value": "ChargeFrame+FreezeFrame; PostDelayFrame is a parallel movement/cancel gate, not another serial shot delay",
+      "source_url": "https://overfishing.wiki/ウェポン情報",
+      "status": "verified_crosscheck_to_nominal_DPS",
+      "confidence": "high",
+      "note": "Local TriStringer uncharged120 damage/(9+12)frames=342.857 DPS; full450/(72+15)=310.345 DPS, matching published342.9/310.3. This is a crosscheck of timing semantics, not a patch of raw parameters."
+    },
+    {
+      "field": "spl__WeaponStringerParam.ShotParam.ArrowAngleMin_for_StringerNormal",
+      "value": 0,
+      "source_url": null,
+      "status": "unverified_convergence_assumption",
+      "confidence": "low",
+      "note": "Omitted in local sparse parameter file. Model explicitly assumes0 instead of incorrectly reusing ArrowAngleMax8."
+    },
+    {
+      "field": "ordinary_charger_release_interval",
+      "value": "ChargeFrame+6 frames",
+      "source_url": "https://overfishing.wiki/ウェポン情報",
+      "status": "supplemental_timing_measurement_not_raw_default",
+      "confidence": "medium",
+      "note": "Japanese timing table lists six firing frames in addition to the charge. Local v1110 charge frames remain authoritative; this avoids treating movement PostDelayFrame as a serial charge delay."
+    },
+    {
+      "field": "GrizzcoCharger_release_interval",
+      "value": 4,
+      "source_url": "https://splatoonwiki.org/wiki/Salmon_Run_Next_Wave_data",
+      "status": "supplemental_timing_measurement",
+      "confidence": "high",
+      "note": "200 damage at4-frame intervals is3000 damage/s; this is a Grizzco exception, not an ordinary charger minimum-charge mode."
+    },
+    {
+      "field": "Snipewriter_charged_shot_interval",
+      "value": 17,
+      "source_url": "https://splatoonwiki.org/wiki/Salmon_Run_Next_Wave_data",
+      "status": "supplemental_timing_measurement",
+      "confidence": "high",
+      "note": "Both English and Japanese tables identify17F between divided charged shots. Raw PostDelayFrame15 is not silently relabelled17.",
+      "crosscheck_url": "https://overfishing.wiki/ウェポン情報"
+    },
+    {
+      "field": "BlasterBurstParam.SplashDropPaintRadius",
+      "value": 3.2,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high"
+    },
+    {
+      "field": "BlasterBurstParam.BurstFrame",
+      "value": 13,
+      "source_url": "https://splatoonwiki.org/wiki/User:XarrotD/paramtable",
+      "status": "verified_researcher_default",
+      "confidence": "high"
+    },
+    {
+      "field": "Shooter_Triple*.burst_gap",
+      "value": "TripleShotSpanFrame",
+      "source_url": "https://splatoonwiki.org/wiki/L-3_Nozzlenose",
+      "status": "explicit_last_shot_wait_description_with_timing_caveat",
+      "confidence": "medium",
+      "note": "Weapon page says8F after last L3 shot; H3 page20F. Published sustained DPS tables give inconsistent total periods due to trigger animation conventions. Model retains raw gaps8/20 and states this theoretical lower-bound timing assumption instead of reverse-calibrating them."
+    }
+  ],
+  "warnings": [
+    "Leanny v1110 raw files have the same sparse fields as local files; re-downloading them does not recover omitted class defaults.",
+    "External live stat pages contain other game versions. They are crosschecks or default evidence, never replacements for local v1110 values.",
+    "ThroughFullCharge means enemy penetration; FriendThroughFrameForPlayer is not evidence for enemy penetration.",
+    "Raw PostDelayFrame, ink recovery lock, next-shot interval and time to enter swim form are different quantities.",
+    "Stringer direct hits and the explosion of that same arrow are alternative outcomes, not automatically additive damage to one target."
+  ]
+}

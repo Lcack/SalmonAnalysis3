@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "weapons": 71,
+  "dimensions": 426,
+  "changes": {
+    "Killing": 63,
+    "Range": 64,
+    "Inking": 2,
+    "Ink Efficiency": 47,
+    "Mob Clearing": 61,
+    "Endlag": 64
+  },
+  "source_hashes": 205,
+  "overall_and_tier_preserved": true,
+  "checks": [
+    "five_hp_sum",
+    "two_phase_no_overkill_carry",
+    "fixed_2_3_3_group",
+    "exclude_crush_ink_efficiency",
+    "same_skill_wall_equals_floor",
+    "source_hashes",
+    "shared_ink_carry",
+    "atomic_charge_refills",
+    "mode_specific_exits",
+    "cold_start_paint",
+    "product_write_scope"
+  ]
+}
