@@ -225,7 +225,7 @@ def _range(wid,gp,m):
         if diff:move['SpawnSpeed']=max(x.get('SpawnSpeed'+key,move['SpawnSpeed']) for x in diff)
         value,angle=_sweep(move,b.get('CollisionParam',{}))
         det=b.get('DetonationParam',{})
-        explosive=key=='Max' or (key=='Mid' and det.get('IsExplosiveBoltMidCharge',False))
+        explosive=wid!='Stringer_Short_Coop' and (key=='Max' or (key=='Mid' and det.get('IsExplosiveBoltMidCharge',False)))
         if explosive:
             rad=max((x['Distance'] for x in det.get('BlastParam',{}).get('DistanceDamage',[])),default=0)
             if value is not None:value+=rad
@@ -425,7 +425,21 @@ def _wall_profiles(wid,gp,m,direct_area,direct_evidence):
 
 
 def adapt_modes(wid,gp,modes):
-    result=deepcopy(modes)
+    if wid=='Stringer_Short_Coop':
+        # Historical bootstrap exports predate the verified no-burst mechanic.
+        # Re-extract all three legal charge states from the current source so a
+        # phantom detonation mode or added blast-paint area cannot survive here.
+        from extract_common import extract
+        result=extract(wid,gp,'mechanism-corrected-source:LACT-450')
+        for m in result:
+            m['mechanism_correction']=dict(version='1110-mechanism-correction-20261104-lact-no-detonation-v1',
+                mechanic='LACT-450 has no delayed arrow detonation',
+                source_urls=['https://www.nintendo.com/jp/character/splatoon/fashion/index.html',
+                             'https://x.com/SplatoonJP/status/1567090237096214529',
+                             'https://wikiwiki.jp/splatoon3mix/ブキ/LACT-450',
+                             'https://wikiwiki.jp/splatoon3mix/サーモンラン/ブキ別立ち回り/ストリンガー属'])
+    else:
+        result=deepcopy(modes)
     for m in result:
         if wid.startswith('Shooter_Triple') and 'burst_gap' in m:
             m['burst_gap']+=2

@@ -14,7 +14,16 @@
   "ordinary_overall_tier_applied": 63,
   "bear_objects_preserved": 8,
   "random_objects_preserved": 2,
-  "dimensions_unchanged": 426,
+  "dimensions_unchanged": 425,
+  "dimension_mechanism_changes": [
+    [
+      "Stringer_Short_Coop",
+      "Range",
+      3.7,
+      3.2
+    ]
+  ],
+  "mechanism_version": "1110-mechanism-correction-20261104-lact-no-detonation-v1",
   "overall_version": "1110-task-overall-v1",
   "overall_write_summary": {
     "ordinary_eligible": 63,
@@ -24,7 +33,15 @@
     "ordinary_tier_changed": 41,
     "bear_preserved": 8,
     "random_preserved": 2,
-    "dimensions_unchanged": 426
+    "dimensions_unchanged": 425,
+    "mechanism_dimension_corrections": [
+      {
+        "id": "Stringer_Short_Coop",
+        "dimension": "Range",
+        "before": 3.7,
+        "after": 3.2
+      }
+    ]
   },
   "checks": [
     "five_hp_sum",
@@ -40,7 +57,10 @@
     "product_write_scope",
     "ordinary_only_overall_tier",
     "bear_random_full_object_preservation",
-    "frozen_426_dimensions",
+    "frozen_425_dimensions_with_separate_LACT_Range_correction",
+    "LACT_no_detonation_3_modes",
+    "LACT_source_paint_and_no_blast_range",
+    "all_63_overall_tiers_unchanged_from_mechanism_baseline",
     "unrounded_scenario_mean",
     "one_to_five_scale",
     "tier_boundaries_after_rounding"

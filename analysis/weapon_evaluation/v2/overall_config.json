@@ -21,7 +21,8 @@
     {"tier": "S", "min_inclusive": 4.0, "max_exclusive": 5.0},
     {"tier": "S+", "equals": 5.0}
   ],
-  "write_policy": "只更新63把普通武器的overall和tier；426个六维数值保持；8把熊武器与2个随机图标从当次current原封保留",
+  "write_policy": "总分层只更新63把普通武器的overall和tier；六维仅另允许mechanism_corrections.json明列的LACT Range修正，其余425维保持；8熊和2随机从当次current原封保留",
+  "mechanism_corrections_config": "mechanism_corrections.json",
   "historical_manual_baseline": "weapon_data.before_v2.json",
   "publication_baseline": "weapon_data.before_overall.json",
   "publication_baseline_commit": "c4ceb3968a3ef0a1e4e1c2186254f8d0cc76f3a9",

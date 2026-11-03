@@ -1,0 +1,427 @@
+﻿id,武器,类型,维度,分数,原始指标,采用动作,起手帧,攻击间隔帧,收招代理帧,大鲑鱼所需动作数,冷启动击杀秒,整箱完整击杀数,敏感性最低分,敏感性最高分,参数文件,假设数量
+Blaster_Bear_Coop,熊先生印章爆破枪,Blaster,Killing,2.1,0.8163454198450778,站立射击,10,9,6,8,1.2333333333333334,4,1.2,3.3,data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json,2
+Blaster_Bear_Coop,熊先生印章爆破枪,Blaster,Range,0.5,7.345221510144,站立射击,10,9,6,8,1.2333333333333334,4,0.5,0.5,data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json,2
+Blaster_Bear_Coop,熊先生印章爆破枪,Blaster,Inking,4.0,209.4568590320676,站立射击,10,9,6,8,1.2333333333333334,4,3.0,4.6,data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json,2
+Blaster_Bear_Coop,熊先生印章爆破枪,Blaster,Ink Efficiency,0.5,4.125,站立射击,10,9,6,8,1.2333333333333334,4,0.5,0.5,data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json,2
+Blaster_Bear_Coop,熊先生印章爆破枪,Blaster,Mob Clearing,4.3,6.911318048287844,站立射击,10,9,6,8,1.2333333333333334,4,3.1,5.0,data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json,2
+Blaster_Bear_Coop,熊先生印章爆破枪,Blaster,Endlag,2.9,0.09595959595959597,站立射击,10,9,6,8,1.2333333333333334,4,2.6,3.3,data/weapon_data_1110/Blaster/Bear_WeaponBlasterBear_Coop.game__GameParameterTable.json,2
+Charger_Bear_Coop,熊先生印章狙击枪,Charger,Killing,5.0,6.620847108818944,满蓄力,4,4,8,2,0.15,3,5.0,5.0,data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json,2
+Charger_Bear_Coop,熊先生印章狙击枪,Charger,Range,5.0,29.05,满蓄力,4,4,8,2,0.15,3,5.0,5.0,data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json,2
+Charger_Bear_Coop,熊先生印章狙击枪,Charger,Inking,5.0,1006.5825000000001,满蓄力,4,4,8,2,0.15,3,5.0,5.0,data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json,2
+Charger_Bear_Coop,熊先生印章狙击枪,Charger,Ink Efficiency,0.5,3.5,满蓄力,4,4,8,2,0.15,3,0.5,0.5,data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json,2
+Charger_Bear_Coop,熊先生印章狙击枪,Charger,Mob Clearing,5.0,41.145,满蓄力,4,4,8,2,0.15,3,5.0,5.0,data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json,2
+Charger_Bear_Coop,熊先生印章狙击枪,Charger,Endlag,3.2,0.1111111111111111,满蓄力,4,4,8,2,0.15,3,3.0,3.5,data/weapon_data_1110/Charger/Bear_WeaponChargerBear_Coop.game__GameParameterTable.json,2
+Maneuver_Bear_Coop,熊先生印章机动枪,Maneuver,Killing,3.4,1.0350983390135313,站立射击,0,5,4,12,0.9333333333333333,16,2.4,4.6,data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json,2
+Maneuver_Bear_Coop,熊先生印章机动枪,Maneuver,Range,0.7,9.4587904,翻滚后射击,19,4,32,12,1.0666666666666667,15,0.7,0.7,data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json,2
+Maneuver_Bear_Coop,熊先生印章机动枪,Maneuver,Inking,3.3,153.89296026986125,翻滚爆炸,5,15,32,4,0.85,3,2.4,4.0,data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json,2
+Maneuver_Bear_Coop,熊先生印章机动枪,Maneuver,Ink Efficiency,4.4,16.666666666666668,站立射击,0,5,4,12,0.9333333333333333,16,4.4,4.4,data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json,2
+Maneuver_Bear_Coop,熊先生印章机动枪,Maneuver,Mob Clearing,5.0,11.36189695524279,翻滚爆炸,5,15,32,4,0.85,3,4.2,5.0,data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json,2
+Maneuver_Bear_Coop,熊先生印章机动枪,Maneuver,Endlag,4.8,0.22717391304347828,站立射击,0,5,4,12,0.9333333333333333,16,4.6,5.0,data/weapon_data_1110/Maneuver/Bear_WeaponManeuverBear_Coop.game__GameParameterTable.json,2
+Roller_Bear_Coop,熊先生印章滚筒,Roller,Killing,5.0,2.750095491084634,滚动碾压,33.0,10.0,8.0,1,0.5666666666666667,95,5.0,5.0,data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json,7
+Roller_Bear_Coop,熊先生印章滚筒,Roller,Range,3.7,18.5,纵甩,72.0,102.0,30,1,1.2166666666666666,5,3.7,3.7,data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json,7
+Roller_Bear_Coop,熊先生印章滚筒,Roller,Inking,1.4,61.2,横甩,12.0,33.0,21,3,1.3166666666666667,6,0.5,2.0,data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json,7
+Roller_Bear_Coop,熊先生印章滚筒,Roller,Ink Efficiency,5.0,95.0,滚动碾压,33.0,10.0,8.0,1,0.5666666666666667,95,5.0,5.0,data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json,7
+Roller_Bear_Coop,熊先生印章滚筒,Roller,Mob Clearing,4.4,7.075199999999999,滚动碾压,33.0,10.0,8.0,1,0.5666666666666667,95,3.8,5.0,data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json,7
+Roller_Bear_Coop,熊先生印章滚筒,Roller,Endlag,3.2,0.1099290780141844,滚动碾压,33.0,10.0,8.0,1,0.5666666666666667,95,2.9,3.6,data/weapon_data_1110/Roller/Bear_WeaponRollerBear_Coop.game__GameParameterTable.json,7
+Saber_Bear_Coop,熊先生印章刮水刀,Saber,Killing,4.6,1.3005121775247102,横斩近战,5.0,30.0,17.0,2,0.6,16,3.7,5.0,data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json,3
+Saber_Bear_Coop,熊先生印章刮水刀,Saber,Range,0.5,3.8000000000000003,蓄力近战,96.0,138.0,57.0,1,1.6166666666666667,6,0.5,0.5,data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json,3
+Saber_Bear_Coop,熊先生印章刮水刀,Saber,Inking,2.6,111.07800000000002,横斩近战,5.0,30.0,17.0,2,0.6,16,1.7,3.3,data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json,3
+Saber_Bear_Coop,熊先生印章刮水刀,Saber,Ink Efficiency,4.4,16.5,横斩近战,5.0,30.0,17.0,2,0.6,16,4.4,4.4,data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json,3
+Saber_Bear_Coop,熊先生印章刮水刀,Saber,Mob Clearing,1.9,3.2480000000000007,横斩近战,5.0,30.0,17.0,2,0.6,16,1.2,2.9,data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json,3
+Saber_Bear_Coop,熊先生印章刮水刀,Saber,Endlag,5.0,0.4325396825396826,横斩近战,5.0,30.0,17.0,2,0.6,16,5.0,5.0,data/weapon_data_1110/Saber/Bear_WeaponSaberBear_Coop.game__GameParameterTable.json,3
+Shelter_Bear_Coop,熊先生印章防空伞,Shelter,Killing,3.3,1.0164929865005359,散弹近距上限,8.0,12.0,12.0,5,0.95,10,2.3,4.5,data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json,5
+Shelter_Bear_Coop,熊先生印章防空伞,Shelter,Range,1.6,11.555555555555555,散弹近距上限,8.0,12.0,12.0,5,0.95,10,1.6,1.6,data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json,5
+Shelter_Bear_Coop,熊先生印章防空伞,Shelter,Inking,3.4,158.895,散弹近距上限,8.0,12.0,12.0,5,0.95,10,2.4,4.0,data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json,5
+Shelter_Bear_Coop,熊先生印章防空伞,Shelter,Ink Efficiency,2.6,10.0,散弹近距上限,8.0,12.0,12.0,5,0.95,10,2.6,2.6,data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json,5
+Shelter_Bear_Coop,熊先生印章防空伞,Shelter,Mob Clearing,3.9,6.194048297947665,散弹近距上限,8.0,12.0,12.0,5,0.95,10,3.2,5.0,data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json,5
+Shelter_Bear_Coop,熊先生印章防空伞,Shelter,Endlag,2.8,0.08974358974358974,散弹近距上限,8.0,12.0,12.0,5,0.95,10,2.5,3.1,data/weapon_data_1110/Shelter/Bear_WeaponShelterBear_Coop.game__GameParameterTable.json,5
+Slosher_Bear_Coop,熊先生印章泼桶,Slosher,Killing,1.5,0.7249729713466234,一泼直击,30.0,45.0,15.0,2,1.2666666666666666,2,0.5,2.7,data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json,3
+Slosher_Bear_Coop,熊先生印章泼桶,Slosher,Range,4.1,20.0,一泼直击,30.0,45.0,15.0,2,1.2666666666666666,2,4.1,4.1,data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json,3
+Slosher_Bear_Coop,熊先生印章泼桶,Slosher,Inking,3.6,177.936,一泼直击,30.0,45.0,15.0,2,1.2666666666666666,2,2.7,4.3,data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json,3
+Slosher_Bear_Coop,熊先生印章泼桶,Slosher,Ink Efficiency,0.5,2.0,一泼直击,30.0,45.0,15.0,2,1.2666666666666666,2,0.5,0.5,data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json,3
+Slosher_Bear_Coop,熊先生印章泼桶,Slosher,Mob Clearing,1.6,2.9333333333333336,一泼直击,30.0,45.0,15.0,2,1.2666666666666666,2,0.5,2.9,data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json,3
+Slosher_Bear_Coop,熊先生印章泼桶,Slosher,Endlag,0.5,0.025054466230936816,一泼直击,30.0,45.0,15.0,2,1.2666666666666666,2,0.5,0.5,data/weapon_data_1110/Slosher/Bear_WeaponSlosherBear_Coop.game__GameParameterTable.json,3
+Stringer_Bear_Coop,熊先生印章猎鱼弓,Stringer,Killing,5.0,1.6154383845688847,一段蓄力,30,45,10,1,0.5166666666666667,8,4.8,5.0,data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json,5
+Stringer_Bear_Coop,熊先生印章猎鱼弓,Stringer,Range,5.0,31.954993726821158,满蓄力,62,77,10,1,1.05,4,5.0,5.0,data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json,5
+Stringer_Bear_Coop,熊先生印章猎鱼弓,Stringer,Inking,4.0,214.7082229187774,点射,10,22,10,2,0.55,5,3.1,4.7,data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json,5
+Stringer_Bear_Coop,熊先生印章猎鱼弓,Stringer,Ink Efficiency,1.8,8.0,一段蓄力,30,45,10,1,0.5166666666666667,8,1.8,1.8,data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json,5
+Stringer_Bear_Coop,熊先生印章猎鱼弓,Stringer,Mob Clearing,5.0,8.907235428302466,点射,10,22,10,2,0.55,5,4.5,5.0,data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json,5
+Stringer_Bear_Coop,熊先生印章猎鱼弓,Stringer,Endlag,2.4,0.0747863247863248,点射,10,22,10,2,0.55,5,2.1,2.7,data/weapon_data_1110/Stringer/Bear_WeaponStringerBear_Coop.game__GameParameterTable.json,5
+Blaster_LightLong_Coop,快速爆破枪 精英,Blaster,Killing,0.5,0.5839398774012314,站立射击,8,40,20,3,1.4833333333333334,6,0.5,1.5,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json,2
+Blaster_LightLong_Coop,快速爆破枪 精英,Blaster,Range,3.4,17.386398396416002,站立射击,8,40,20,3,1.4833333333333334,6,3.4,3.4,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json,2
+Blaster_LightLong_Coop,快速爆破枪 精英,Blaster,Inking,1.3,58.18739699081283,站立射击,8,40,20,3,1.4833333333333334,6,0.5,1.9,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json,2
+Blaster_LightLong_Coop,快速爆破枪 精英,Blaster,Ink Efficiency,1.2,6.666666666666667,站立射击,8,40,20,3,1.4833333333333334,6,1.2,1.2,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json,2
+Blaster_LightLong_Coop,快速爆破枪 精英,Blaster,Mob Clearing,1.1,2.5121500276761592,站立射击,8,40,20,3,1.4833333333333334,6,0.5,2.5,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json,2
+Blaster_LightLong_Coop,快速爆破枪 精英,Blaster,Endlag,1.5,0.049836601307189546,站立射击,8,40,20,3,1.4833333333333334,6,1.2,1.9,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightLong_Coop.game__GameParameterTable.json,2
+Blaster_LightShort_Coop,冲涂爆破枪,Blaster,Killing,0.8,0.6324511400271201,站立射击,8,20,20,5,1.4833333333333334,6,0.5,2.0,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json,2
+Blaster_LightShort_Coop,冲涂爆破枪,Blaster,Range,0.5,8.851733407744003,站立射击,8,20,20,5,1.4833333333333334,6,0.5,0.5,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json,2
+Blaster_LightShort_Coop,冲涂爆破枪,Blaster,Inking,1.8,74.02717424014473,站立射击,8,20,20,5,1.4833333333333334,6,0.8,2.4,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json,2
+Blaster_LightShort_Coop,冲涂爆破枪,Blaster,Ink Efficiency,0.9,6.2,站立射击,8,20,20,5,1.4833333333333334,6,0.9,0.9,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json,2
+Blaster_LightShort_Coop,冲涂爆破枪,Blaster,Mob Clearing,4.0,6.386487964191675,站立射击,8,20,20,5,1.4833333333333334,6,2.7,5.0,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json,2
+Blaster_LightShort_Coop,冲涂爆破枪,Blaster,Endlag,1.8,0.057189542483660136,站立射击,8,20,20,5,1.4833333333333334,6,1.5,2.2,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLightShort_Coop.game__GameParameterTable.json,2
+Blaster_Light_Coop,快速爆破枪,Blaster,Killing,1.0,0.661149498602833,站立射击,8,35,20,3,1.3166666666666667,7,0.5,2.2,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json,2
+Blaster_Light_Coop,快速爆破枪,Blaster,Range,2.7,14.876365785087998,站立射击,8,35,20,3,1.3166666666666667,7,2.7,2.7,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json,2
+Blaster_Light_Coop,快速爆破枪,Blaster,Inking,1.5,63.95499249295155,站立射击,8,35,20,3,1.3166666666666667,7,0.5,2.1,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json,2
+Blaster_Light_Coop,快速爆破枪,Blaster,Ink Efficiency,1.5,7.333333333333333,站立射击,8,35,20,3,1.3166666666666667,7,1.5,1.5,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json,2
+Blaster_Light_Coop,快速爆破枪,Blaster,Mob Clearing,1.5,2.871028603058468,站立射击,8,35,20,3,1.3166666666666667,7,0.5,2.9,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json,2
+Blaster_Light_Coop,快速爆破枪,Blaster,Endlag,1.6,0.05187908496732026,站立射击,8,35,20,3,1.3166666666666667,7,1.2,2.0,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLight_Coop.game__GameParameterTable.json,2
+Blaster_Long_Coop,远距爆破枪,Blaster,Killing,1.0,0.6565567306081043,站立射击,10,60,30,2,1.1833333333333333,10,0.5,2.2,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json,2
+Blaster_Long_Coop,远距爆破枪,Blaster,Range,2.3,13.370316627968,站立射击,10,60,30,2,1.1833333333333333,10,2.3,2.3,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json,2
+Blaster_Long_Coop,远距爆破枪,Blaster,Inking,0.5,39.97962914362675,站立射击,10,60,30,2,1.1833333333333333,10,0.5,1.1,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json,2
+Blaster_Long_Coop,远距爆破枪,Blaster,Ink Efficiency,2.6,10.0,站立射击,10,60,30,2,1.1833333333333333,10,2.6,2.6,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json,2
+Blaster_Long_Coop,远距爆破枪,Blaster,Mob Clearing,1.1,2.539380400258999,站立射击,10,60,30,2,1.1833333333333333,10,0.5,2.6,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json,2
+Blaster_Long_Coop,远距爆破枪,Blaster,Endlag,0.6,0.033816425120772944,站立射击,10,60,30,2,1.1833333333333333,10,0.5,1.1,data/weapon_data_1110/Blaster/Merge_WeaponBlasterLong_Coop.game__GameParameterTable.json,2
+Blaster_Middle_Coop,火热爆破枪,Blaster,Killing,1.9,0.7770124004884136,站立射击,10,50,21,2,1.0166666666666666,10,0.9,3.1,data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json,3
+Blaster_Middle_Coop,火热爆破枪,Blaster,Range,0.9,9.855946205696,站立射击,10,50,21,2,1.0166666666666666,10,0.9,0.9,data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json,3
+Blaster_Middle_Coop,火热爆破枪,Blaster,Inking,0.6,42.308095156281595,站立射击,10,50,21,2,1.0166666666666666,10,0.5,1.3,data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json,3
+Blaster_Middle_Coop,火热爆破枪,Blaster,Ink Efficiency,2.6,10.0,站立射击,10,50,21,2,1.0166666666666666,10,2.6,2.6,data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json,3
+Blaster_Middle_Coop,火热爆破枪,Blaster,Mob Clearing,1.5,2.8421733118844563,站立射击,10,50,21,2,1.0166666666666666,10,0.5,2.9,data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json,3
+Blaster_Middle_Coop,火热爆破枪,Blaster,Endlag,1.2,0.04391891891891892,站立射击,10,50,21,2,1.0166666666666666,10,0.9,1.6,data/weapon_data_1110/Blaster/Merge_WeaponBlasterMiddle_Coop.game__GameParameterTable.json,3
+Blaster_Precision_Coop,S-BLAST92,Blaster,Killing,1.4,0.7114930189166269,站立射击,10,55,26,2,1.1,10,0.5,2.6,data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json,2
+Blaster_Precision_Coop,S-BLAST92,Blaster,Range,2.6,14.341201664,站立射击,10,55,26,2,1.1,10,2.6,2.6,data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json,2
+Blaster_Precision_Coop,S-BLAST92,Blaster,Inking,0.5,40.35341088295456,跳跃短射程,10,55,26,2,1.1,10,0.5,1.2,data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json,2
+Blaster_Precision_Coop,S-BLAST92,Blaster,Ink Efficiency,2.6,10.0,站立射击,10,55,26,2,1.1,10,2.6,2.6,data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json,2
+Blaster_Precision_Coop,S-BLAST92,Blaster,Mob Clearing,1.9,3.2843119617790553,跳跃短射程,10,55,26,2,1.1,10,0.6,3.5,data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json,2
+Blaster_Precision_Coop,S-BLAST92,Blaster,Endlag,0.8,0.037037037037037035,站立射击,10,55,26,2,1.1,10,0.5,1.3,data/weapon_data_1110/Blaster/Merge_WeaponBlasterPrecision_Coop.game__GameParameterTable.json,2
+Blaster_Short_Coop,新星爆破枪,Blaster,Killing,2.9,0.9415457766532966,站立射击,10,40,26,2,0.85,12,1.9,4.1,data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json,2
+Blaster_Short_Coop,新星爆破枪,Blaster,Range,0.5,7.345221510144,站立射击,10,40,26,2,0.85,12,0.5,0.5,data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json,2
+Blaster_Short_Coop,新星爆破枪,Blaster,Inking,1.2,57.12445178914893,站立射击,10,40,26,2,0.85,12,0.5,1.9,data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json,2
+Blaster_Short_Coop,新星爆破枪,Blaster,Ink Efficiency,3.4,12.5,站立射击,10,40,26,2,0.85,12,3.4,3.4,data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json,2
+Blaster_Short_Coop,新星爆破枪,Blaster,Mob Clearing,2.7,4.221875875070197,站立射击,10,40,26,2,0.85,12,1.5,4.3,data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json,2
+Blaster_Short_Coop,新星爆破枪,Blaster,Endlag,1.0,0.04034391534391535,站立射击,10,40,26,2,0.85,12,0.7,1.4,data/weapon_data_1110/Blaster/Merge_WeaponBlasterShort_Coop.game__GameParameterTable.json,2
+Brush_Heavy_Coop,文森,Brush,Killing,4.7,1.3093073414159542,挥刷,23.0,13.0,13.0,3,0.8333333333333334,7,3.7,5.0,data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json,5
+Brush_Heavy_Coop,文森,Brush,Range,2.2,13.0,挥刷,23.0,13.0,13.0,3,0.8333333333333334,7,2.2,2.2,data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json,5
+Brush_Heavy_Coop,文森,Brush,Inking,4.3,242.39769230769232,挥刷,23.0,13.0,13.0,3,0.8333333333333334,7,3.3,4.9,data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json,5
+Brush_Heavy_Coop,文森,Brush,Ink Efficiency,1.5,7.333333333333333,挥刷,23.0,13.0,13.0,3,0.8333333333333334,7,1.5,1.5,data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json,5
+Brush_Heavy_Coop,文森,Brush,Mob Clearing,4.5,7.52437688234488,挥刷,23.0,13.0,13.0,3,0.8333333333333334,7,3.9,5.0,data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json,5
+Brush_Heavy_Coop,文森,Brush,Endlag,3.5,0.125,推刷行进,14.0,8.0,8.0,8,1.1833333333333333,9,3.2,3.9,data/weapon_data_1110/Brush/Merge_WeaponBrushHeavy_Coop.game__GameParameterTable.json,5
+Brush_Mini_Coop,巴勃罗,Brush,Killing,2.4,0.853061408058493,挥刷,1.0,6.0,10.0,12,1.1333333333333333,5,1.4,3.6,data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json,3
+Brush_Mini_Coop,巴勃罗,Brush,Range,1.1,10.3,挥刷,1.0,6.0,10.0,12,1.1333333333333333,5,1.1,1.1,data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json,3
+Brush_Mini_Coop,巴勃罗,Brush,Inking,5.0,628.65,挥刷,1.0,6.0,10.0,12,1.1333333333333333,5,5.0,5.0,data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json,3
+Brush_Mini_Coop,巴勃罗,Brush,Ink Efficiency,0.5,5.5,挥刷,1.0,6.0,10.0,12,1.1333333333333333,5,0.5,0.5,data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json,3
+Brush_Mini_Coop,巴勃罗,Brush,Mob Clearing,4.6,7.62768040868454,挥刷,1.0,6.0,10.0,12,1.1333333333333333,5,3.8,5.0,data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json,3
+Brush_Mini_Coop,巴勃罗,Brush,Endlag,3.8,0.14423076923076925,推刷行进,12.0,8.0,8.0,10,1.4166666666666667,13,3.5,4.2,data/weapon_data_1110/Brush/Merge_WeaponBrushMini_Coop.game__GameParameterTable.json,3
+Brush_Normal_Coop,北斋,Brush,Killing,2.7,0.9091430882219086,挥刷,1.0,10.0,10.0,7,1.0333333333333334,5,1.8,3.9,data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json,6
+Brush_Normal_Coop,北斋,Brush,Range,2.6,14.3,挥刷,1.0,10.0,10.0,7,1.0333333333333334,5,2.6,2.6,data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json,6
+Brush_Normal_Coop,北斋,Brush,Inking,4.9,331.15500000000003,挥刷,1.0,10.0,10.0,7,1.0333333333333334,5,4.0,5.0,data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json,6
+Brush_Normal_Coop,北斋,Brush,Ink Efficiency,0.5,5.285714285714286,挥刷,1.0,10.0,10.0,7,1.0333333333333334,5,0.5,0.5,data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json,6
+Brush_Normal_Coop,北斋,Brush,Mob Clearing,4.7,7.9647374412550835,挥刷,1.0,10.0,10.0,7,1.0333333333333334,5,3.9,5.0,data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json,6
+Brush_Normal_Coop,北斋,Brush,Endlag,3.5,0.12820512820512822,推刷行进,12.0,8.0,8.0,10,1.4166666666666667,9,3.2,3.9,data/weapon_data_1110/Brush/Merge_WeaponBrushNormal_Coop.game__GameParameterTable.json,6
+Charger_Keeper_Coop,高压油管枪,Charger,Killing,2.6,0.8871261232618368,点射,8,14,8,5,1.0833333333333333,16,1.6,3.8,data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json,4
+Charger_Keeper_Coop,高压油管枪,Charger,Range,4.0,19.804,满蓄力,71,77,8,2,2.4833333333333334,4,4.0,4.0,data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json,4
+Charger_Keeper_Coop,高压油管枪,Charger,Inking,1.2,56.43895714285714,点射,8,14,8,5,1.0833333333333333,16,0.5,1.9,data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json,4
+Charger_Keeper_Coop,高压油管枪,Charger,Ink Efficiency,4.4,16.6,点射,8,14,8,5,1.0833333333333333,16,4.4,4.4,data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json,4
+Charger_Keeper_Coop,高压油管枪,Charger,Mob Clearing,1.7,3.0304576336566322,点射,8,14,8,5,1.0833333333333333,16,1.1,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json,4
+Charger_Keeper_Coop,高压油管枪,Charger,Endlag,2.1,0.06439393939393939,点射,8,14,8,5,1.0833333333333333,16,1.8,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerKeeper_Coop.game__GameParameterTable.json,4
+Charger_Light_Coop,14式竹筒枪·甲,Charger,Killing,2.0,0.7932334931867454,满蓄力,20,26,8,3,1.2166666666666666,8,1.0,3.2,data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json,3
+Charger_Light_Coop,14式竹筒枪·甲,Charger,Range,4.0,19.564,点射,8,14,8,7,1.55,8,4.0,4.0,data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json,3
+Charger_Light_Coop,14式竹筒枪·甲,Charger,Inking,0.5,26.470092000000005,点射,8,14,8,7,1.55,8,0.5,0.5,data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json,3
+Charger_Light_Coop,14式竹筒枪·甲,Charger,Ink Efficiency,2.2,8.857142857142858,点射,8,14,8,7,1.55,8,2.2,2.2,data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json,3
+Charger_Light_Coop,14式竹筒枪·甲,Charger,Mob Clearing,1.7,3.0304576336566322,点射,8,14,8,7,1.55,8,1.1,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json,3
+Charger_Light_Coop,14式竹筒枪·甲,Charger,Endlag,2.7,0.0883838383838384,点射,8,14,8,7,1.55,8,2.4,3.1,data/weapon_data_1110/Charger/Merge_WeaponChargerLight_Coop.game__GameParameterTable.json,3
+Charger_Long_Coop,公升4K,Charger,Killing,0.7,0.627288612197106,满蓄力,92,98,8,1,1.55,4,0.5,1.9,data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json,4
+Charger_Long_Coop,公升4K,Charger,Range,5.0,29.05,满蓄力,92,98,8,1,1.55,4,5.0,5.0,data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json,4
+Charger_Long_Coop,公升4K,Charger,Inking,0.5,39.44266071428573,点射,8,14,8,8,1.7833333333333334,5,0.5,1.1,data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json,4
+Charger_Long_Coop,公升4K,Charger,Ink Efficiency,0.5,5.5,点射,8,14,8,8,1.7833333333333334,5,0.5,0.5,data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json,4
+Charger_Long_Coop,公升4K,Charger,Mob Clearing,1.7,3.0304576336566322,点射,8,14,8,8,1.7833333333333334,5,1.1,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json,4
+Charger_Long_Coop,公升4K,Charger,Endlag,1.7,0.054924242424242424,点射,8,14,8,8,1.7833333333333334,5,1.4,2.0,data/weapon_data_1110/Charger/Merge_WeaponChargerLong_Coop.game__GameParameterTable.json,4
+Charger_Normal_Coop,斯普拉蓄力狙击枪,Charger,Killing,0.5,0.547172811001924,点射,8,14,8,8,1.7833333333333334,5,0.5,1.2,data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json,4
+Charger_Normal_Coop,斯普拉蓄力狙击枪,Charger,Range,4.9,24.037,满蓄力,60,66,8,2,2.1166666666666667,2,4.9,4.9,data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json,4
+Charger_Normal_Coop,斯普拉蓄力狙击枪,Charger,Inking,0.5,37.49772,满蓄力,60,66,8,2,2.1166666666666667,2,0.5,1.0,data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json,4
+Charger_Normal_Coop,斯普拉蓄力狙击枪,Charger,Ink Efficiency,0.5,5.5,点射,8,14,8,8,1.7833333333333334,5,0.5,0.5,data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json,4
+Charger_Normal_Coop,斯普拉蓄力狙击枪,Charger,Mob Clearing,1.7,3.0304576336566322,点射,8,14,8,8,1.7833333333333334,5,1.1,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json,4
+Charger_Normal_Coop,斯普拉蓄力狙击枪,Charger,Endlag,1.8,0.05808080808080807,点射,8,14,8,8,1.7833333333333334,5,1.5,2.2,data/weapon_data_1110/Charger/Merge_WeaponChargerNormal_Coop.game__GameParameterTable.json,4
+Charger_Pencil_Coop,R-PEN/5H,Charger,Killing,1.7,0.7566047878575344,满蓄力,72,17,15,2,1.5,7,0.8,2.9,data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json,1
+Charger_Pencil_Coop,R-PEN/5H,Charger,Range,5.0,26.037,满蓄力,72,17,15,2,1.5,7,5.0,5.0,data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json,1
+Charger_Pencil_Coop,R-PEN/5H,Charger,Inking,1.2,54.727452229299374,满蓄力,72,17,15,2,1.5,7,0.5,1.8,data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json,1
+Charger_Pencil_Coop,R-PEN/5H,Charger,Ink Efficiency,1.6,7.5,满蓄力,72,17,15,2,1.5,7,1.6,1.6,data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json,1
+Charger_Pencil_Coop,R-PEN/5H,Charger,Mob Clearing,1.7,3.0304576336566322,点射,8,14,15,7,1.55,7,1.1,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json,1
+Charger_Pencil_Coop,R-PEN/5H,Charger,Endlag,2.1,0.06704980842911878,点射,8,14,15,7,1.55,7,1.8,2.5,data/weapon_data_1110/Charger/Merge_WeaponChargerPencil_Coop.game__GameParameterTable.json,1
+Charger_Quick_Coop,鱿快洁α,Charger,Killing,0.5,0.6020997208638118,满蓄力,45,51,8,2,1.6166666666666667,5,0.5,1.7,data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json,3
+Charger_Quick_Coop,鱿快洁α,Charger,Range,3.3,16.765,满蓄力,45,51,8,2,1.6166666666666667,5,3.3,3.3,data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json,3
+Charger_Quick_Coop,鱿快洁α,Charger,Inking,0.5,40.384575,点射,8,14,8,8,1.7833333333333334,8,0.5,1.2,data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json,3
+Charger_Quick_Coop,鱿快洁α,Charger,Ink Efficiency,1.9,8.25,点射,8,14,8,8,1.7833333333333334,8,1.9,1.9,data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json,3
+Charger_Quick_Coop,鱿快洁α,Charger,Mob Clearing,1.7,3.0304576336566322,点射,8,14,8,8,1.7833333333333334,8,1.1,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json,3
+Charger_Quick_Coop,鱿快洁α,Charger,Endlag,2.1,0.06439393939393939,点射,8,14,8,8,1.7833333333333334,8,1.8,2.4,data/weapon_data_1110/Charger/Merge_WeaponChargerQuick_Coop.game__GameParameterTable.json,3
+Maneuver_Dual_Coop,双重清洁枪,Maneuver,Killing,1.6,0.7370915596117245,站立射击,0,6,4,14,1.3166666666666667,8,0.6,2.8,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json,3
+Maneuver_Dual_Coop,双重清洁枪,Maneuver,Range,2.7,14.858205779968,站立射击,0,6,4,14,1.3166666666666667,8,2.7,2.7,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json,3
+Maneuver_Dual_Coop,双重清洁枪,Maneuver,Inking,4.4,256.10955492554046,站立射击,0,6,4,14,1.3166666666666667,8,3.5,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json,3
+Maneuver_Dual_Coop,双重清洁枪,Maneuver,Ink Efficiency,2.2,8.928571428571429,站立射击,0,6,4,14,1.3166666666666667,8,2.2,2.2,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json,3
+Maneuver_Dual_Coop,双重清洁枪,Maneuver,Mob Clearing,2.1,3.535533905932737,站立射击,0,6,4,14,1.3166666666666667,8,1.6,2.9,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json,3
+Maneuver_Dual_Coop,双重清洁枪,Maneuver,Endlag,4.9,0.23645833333333335,站立射击,0,6,4,14,1.3166666666666667,8,4.7,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverDual_Coop.game__GameParameterTable.json,3
+Maneuver_Gallon_Coop,开尔文525,Maneuver,Killing,3.0,0.9495144870310791,翻滚后射击,20,9,40,6,1.1,10,2.0,4.1,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json,4
+Maneuver_Gallon_Coop,开尔文525,Maneuver,Range,2.6,14.33001316352,翻滚后射击,20,9,40,6,1.1,10,2.6,2.6,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json,4
+Maneuver_Gallon_Coop,开尔文525,Maneuver,Inking,3.5,170.8052946459367,站立射击,0,9,4,9,1.2166666666666666,7,2.6,4.2,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json,4
+Maneuver_Gallon_Coop,开尔文525,Maneuver,Ink Efficiency,2.9,10.833333333333334,翻滚后射击,20,9,40,6,1.1,10,2.9,2.9,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json,4
+Maneuver_Gallon_Coop,开尔文525,Maneuver,Mob Clearing,3.1,4.714045207910317,翻滚后射击,20,9,40,6,1.1,10,2.5,3.8,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json,4
+Maneuver_Gallon_Coop,开尔文525,Maneuver,Endlag,4.5,0.2011904761904762,站立射击,0,9,4,9,1.2166666666666666,7,4.4,4.7,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverGallon_Coop.game__GameParameterTable.json,4
+Maneuver_Long_Coop,灭熄FF,Maneuver,Killing,3.9,1.1348818045699307,翻滚后射击,22,4,40,10,0.9833333333333333,7,2.9,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json,3
+Maneuver_Long_Coop,灭熄FF,Maneuver,Range,3.8,18.702143938560003,站立射击,0,8,4,10,1.2166666666666666,8,3.8,3.8,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json,3
+Maneuver_Long_Coop,灭熄FF,Maneuver,Inking,5.0,341.94554942459035,翻滚后射击,22,4,40,10,0.9833333333333333,7,4.1,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json,3
+Maneuver_Long_Coop,灭熄FF,Maneuver,Ink Efficiency,1.9,8.3,站立射击,0,8,4,10,1.2166666666666666,8,1.9,1.9,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json,3
+Maneuver_Long_Coop,灭熄FF,Maneuver,Mob Clearing,5.0,8.660254037844386,翻滚后射击,22,4,40,10,0.9833333333333333,7,4.4,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json,3
+Maneuver_Long_Coop,灭熄FF,Maneuver,Endlag,4.7,0.2201388888888889,站立射击,0,8,4,10,1.2166666666666666,8,4.6,4.9,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverLong_Coop.game__GameParameterTable.json,3
+Maneuver_Normal_Coop,斯普拉机动枪,Maneuver,Killing,2.8,0.9201279833678159,翻滚后射击,16,4,32,14,1.15,9,1.8,4.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json,4
+Maneuver_Normal_Coop,斯普拉机动枪,Maneuver,Range,1.2,10.5757666048,站立射击,0,5,4,14,1.1,9,1.2,1.2,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json,4
+Maneuver_Normal_Coop,斯普拉机动枪,Maneuver,Inking,4.3,249.89211939062815,翻滚后射击,16,4,32,14,1.15,9,3.4,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json,4
+Maneuver_Normal_Coop,斯普拉机动枪,Maneuver,Ink Efficiency,2.5,9.857142857142858,站立射击,0,5,4,14,1.1,9,2.5,2.5,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json,4
+Maneuver_Normal_Coop,斯普拉机动枪,Maneuver,Mob Clearing,3.4,5.303300858899107,翻滚后射击,16,4,32,14,1.15,9,2.9,4.1,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json,4
+Maneuver_Normal_Coop,斯普拉机动枪,Maneuver,Endlag,4.8,0.23194444444444445,站立射击,0,5,4,14,1.1,9,4.7,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverNormal_Coop.game__GameParameterTable.json,4
+Maneuver_Short_Coop,溅镀枪,Maneuver,Killing,4.6,1.2831106089687767,翻滚后射击,12,4,28,10,0.8166666666666667,14,3.6,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json,3
+Maneuver_Short_Coop,溅镀枪,Maneuver,Range,0.5,8.1876079481856,站立射击,0,5,4,10,0.7666666666666667,15,0.5,0.5,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json,3
+Maneuver_Short_Coop,溅镀枪,Maneuver,Inking,4.7,295.79360567459037,翻滚后射击,12,4,28,10,0.8166666666666667,14,3.8,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json,3
+Maneuver_Short_Coop,溅镀枪,Maneuver,Ink Efficiency,4.0,15.0,站立射击,0,5,4,10,0.7666666666666667,15,4.0,4.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json,3
+Maneuver_Short_Coop,溅镀枪,Maneuver,Mob Clearing,5.0,8.660254037844386,翻滚后射击,12,4,28,10,0.8166666666666667,14,4.4,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json,3
+Maneuver_Short_Coop,溅镀枪,Maneuver,Endlag,4.9,0.2354166666666667,站立射击,0,5,4,10,0.7666666666666667,15,4.7,5.0,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverShort_Coop.game__GameParameterTable.json,3
+Maneuver_Stepper_Coop,四重弹跳手枪 黑,Maneuver,Killing,1.6,0.7370915596117245,站立射击,0,6,4,14,1.3166666666666667,8,0.6,2.8,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json,3
+Maneuver_Stepper_Coop,四重弹跳手枪 黑,Maneuver,Range,1.9,12.236187398860801,站立射击,0,6,4,14,1.3166666666666667,8,1.9,1.9,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json,3
+Maneuver_Stepper_Coop,四重弹跳手枪 黑,Maneuver,Inking,4.0,215.2452399252952,翻滚后射击,25,5,45,14,1.5166666666666666,8,3.1,4.7,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json,3
+Maneuver_Stepper_Coop,四重弹跳手枪 黑,Maneuver,Ink Efficiency,2.2,8.928571428571429,站立射击,0,6,4,14,1.3166666666666667,8,2.2,2.2,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json,3
+Maneuver_Stepper_Coop,四重弹跳手枪 黑,Maneuver,Mob Clearing,2.7,4.242640687119285,翻滚后射击,25,5,45,14,1.5166666666666666,8,2.1,3.4,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json,3
+Maneuver_Stepper_Coop,四重弹跳手枪 黑,Maneuver,Endlag,4.7,0.21434426229508197,站立射击,0,6,4,14,1.3166666666666667,8,4.5,4.8,data/weapon_data_1110/Maneuver/Merge_WeaponManeuverStepper_Coop.game__GameParameterTable.json,3
+Roller_Compact_Coop,碳纤维滚筒,Roller,Killing,1.5,0.7277072093065905,横甩,10.0,31.0,21,3,1.2166666666666666,9,0.6,2.7,data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json,8
+Roller_Compact_Coop,碳纤维滚筒,Roller,Range,2.5,14.2,纵甩,12.0,42.0,30,3,1.6166666666666667,9,2.5,2.5,data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json,8
+Roller_Compact_Coop,碳纤维滚筒,Roller,Inking,1.5,64.57354838709678,横甩,10.0,31.0,21,3,1.2166666666666666,9,0.6,2.2,data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json,8
+Roller_Compact_Coop,碳纤维滚筒,Roller,Ink Efficiency,2.4,9.333333333333334,横甩,10.0,31.0,21,3,1.2166666666666666,9,2.4,2.4,data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json,8
+Roller_Compact_Coop,碳纤维滚筒,Roller,Mob Clearing,1.7,3.1152172836572722,横甩,10.0,31.0,21,3,1.2166666666666666,9,1.1,2.8,data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json,8
+Roller_Compact_Coop,碳纤维滚筒,Roller,Endlag,2.2,0.06913580246913581,滚动碾压,31.0,8.0,8.0,6,1.2,20,1.9,2.6,data/weapon_data_1110/Roller/Merge_WeaponRollerCompact_Coop.game__GameParameterTable.json,8
+Roller_Heavy_Coop,电动马达滚筒,Roller,Killing,5.0,1.8114368348443641,滚动碾压,66.0,8.0,8.0,1,1.1166666666666667,106,5.0,5.0,data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json,7
+Roller_Heavy_Coop,电动马达滚筒,Roller,Range,4.2,20.6,纵甩,55.0,85.0,30,2,2.35,3,4.2,4.2,data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json,7
+Roller_Heavy_Coop,电动马达滚筒,Roller,Inking,2.3,94.54500000000002,横甩,45.0,66.0,21,2,1.8666666666666667,3,1.4,3.0,data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json,7
+Roller_Heavy_Coop,电动马达滚筒,Roller,Ink Efficiency,5.0,106.0,滚动碾压,66.0,8.0,8.0,1,1.1166666666666667,106,5.0,5.0,data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json,7
+Roller_Heavy_Coop,电动马达滚筒,Roller,Mob Clearing,5.0,8.676,滚动碾压,66.0,8.0,8.0,1,1.1166666666666667,106,4.4,5.0,data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json,7
+Roller_Heavy_Coop,电动马达滚筒,Roller,Endlag,0.5,0.03125,滚动碾压,66.0,8.0,8.0,1,1.1166666666666667,106,0.5,0.9,data/weapon_data_1110/Roller/Merge_WeaponRollerHeavy_Coop.game__GameParameterTable.json,7
+Roller_Hunter_Coop,可变式滚筒,Roller,Killing,2.5,0.8653496132766964,横甩,19.0,40.0,21,2,1.0,8,1.5,3.6,data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json,8
+Roller_Hunter_Coop,可变式滚筒,Roller,Range,3.1,16.2,纵甩,42.0,72.0,30,2,1.9166666666666667,4,3.1,3.1,data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json,8
+Roller_Hunter_Coop,可变式滚筒,Roller,Inking,1.2,56.80125,横甩,19.0,40.0,21,2,1.0,8,0.5,1.9,data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json,8
+Roller_Hunter_Coop,可变式滚筒,Roller,Ink Efficiency,1.8,8.0,横甩,19.0,40.0,21,2,1.0,8,1.8,1.8,data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json,8
+Roller_Hunter_Coop,可变式滚筒,Roller,Mob Clearing,5.0,8.676,滚动碾压,40.0,8.0,8.0,4,1.0833333333333333,29,4.4,5.0,data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json,8
+Roller_Hunter_Coop,可变式滚筒,Roller,Endlag,1.6,0.05246913580246914,滚动碾压,40.0,8.0,8.0,4,1.0833333333333333,29,1.2,2.0,data/weapon_data_1110/Roller/Merge_WeaponRollerHunter_Coop.game__GameParameterTable.json,8
+Roller_Normal_Coop,斯普拉滚筒,Roller,Killing,2.2,0.8177089002010762,横甩,21.0,42.0,21,2,1.0666666666666667,8,1.2,3.3,data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json,8
+Roller_Normal_Coop,斯普拉滚筒,Roller,Range,2.2,13.2,纵甩,26.0,56.0,30,2,1.3833333333333333,8,2.2,2.2,data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json,8
+Roller_Normal_Coop,斯普拉滚筒,Roller,Inking,1.8,75.87642857142858,横甩,21.0,42.0,21,2,1.0666666666666667,8,0.9,2.5,data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json,8
+Roller_Normal_Coop,斯普拉滚筒,Roller,Ink Efficiency,1.8,8.0,横甩,21.0,42.0,21,2,1.0666666666666667,8,1.8,1.8,data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json,8
+Roller_Normal_Coop,斯普拉滚筒,Roller,Mob Clearing,5.0,8.676,滚动碾压,42.0,8.0,8.0,4,1.1166666666666667,29,4.4,5.0,data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json,8
+Roller_Normal_Coop,斯普拉滚筒,Roller,Endlag,1.5,0.050595238095238096,滚动碾压,42.0,8.0,8.0,4,1.1166666666666667,29,1.2,2.0,data/weapon_data_1110/Roller/Merge_WeaponRollerNormal_Coop.game__GameParameterTable.json,8
+Roller_Wide_Coop,宽滚筒,Roller,Killing,0.5,0.5629120964024925,横甩,18.0,39.0,21,3,1.6166666666666667,4,0.5,1.3,data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json,7
+Roller_Wide_Coop,宽滚筒,Roller,Range,3.1,16.0,纵甩,20.0,50.0,30,3,2.0166666666666666,4,3.1,3.1,data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json,7
+Roller_Wide_Coop,宽滚筒,Roller,Inking,2.5,105.32076923076923,横甩,18.0,39.0,21,3,1.6166666666666667,4,1.6,3.2,data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json,7
+Roller_Wide_Coop,宽滚筒,Roller,Ink Efficiency,0.5,4.0,横甩,18.0,39.0,21,3,1.6166666666666667,4,0.5,0.5,data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json,7
+Roller_Wide_Coop,宽滚筒,Roller,Mob Clearing,5.0,9.264000000000001,滚动碾压,39.0,8.0,8.0,4,1.0666666666666667,57,4.6,5.0,data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json,7
+Roller_Wide_Coop,宽滚筒,Roller,Endlag,1.7,0.05607966457023061,滚动碾压,39.0,8.0,8.0,4,1.0666666666666667,57,1.4,2.2,data/weapon_data_1110/Roller/Merge_WeaponRollerWide_Coop.game__GameParameterTable.json,7
+Saber_Heavy_Coop,巨齿刮水刀 薄荷,Saber,Killing,4.5,1.2558733864367584,蓄力近战加刀波,43.0,52.0,7.0,1,0.7333333333333333,14,3.2,5.0,data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json,3
+Saber_Heavy_Coop,巨齿刮水刀 薄荷,Saber,Range,3.1,16.099999999999998,蓄力刀波,43.0,52.0,7.0,2,1.6,7,3.1,3.1,data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json,3
+Saber_Heavy_Coop,巨齿刮水刀 薄荷,Saber,Inking,2.0,81.081,横斩刀波,12.0,30.0,15.0,4,1.7166666666666666,10,1.0,2.6,data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json,3
+Saber_Heavy_Coop,巨齿刮水刀 薄荷,Saber,Ink Efficiency,3.8,14.0,蓄力近战加刀波,43.0,52.0,7.0,1,0.7333333333333333,14,3.8,3.8,data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json,3
+Saber_Heavy_Coop,巨齿刮水刀 薄荷,Saber,Mob Clearing,3.6,5.648000000000001,横斩刀波,12.0,30.0,15.0,4,1.7166666666666666,10,2.4,5.0,data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json,3
+Saber_Heavy_Coop,巨齿刮水刀 薄荷,Saber,Endlag,1.6,0.05345117845117845,横斩近战加刀波,12.0,30.0,15.0,3,1.1666666666666667,13,1.3,2.0,data/weapon_data_1110/Saber/Merge_WeaponSaberHeavy_Coop.game__GameParameterTable.json,3
+Saber_Lite_Coop,雨刷刮水刀,Saber,Killing,3.0,0.9639253854237597,蓄力近战加刀波,20.0,36.0,16.0,2,0.9,14,2.1,4.2,data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json,4
+Saber_Lite_Coop,雨刷刮水刀,Saber,Range,3.6,17.9,横斩刀波,6.0,16.0,9.0,8,1.9833333333333334,6,3.6,3.6,data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json,4
+Saber_Lite_Coop,雨刷刮水刀,Saber,Inking,2.0,82.78875000000001,横斩刀波,6.0,16.0,9.0,8,1.9833333333333334,6,1.1,2.7,data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json,4
+Saber_Lite_Coop,雨刷刮水刀,Saber,Ink Efficiency,3.8,14.0,蓄力近战加刀波,20.0,36.0,16.0,2,0.9,14,3.8,3.8,data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json,4
+Saber_Lite_Coop,雨刷刮水刀,Saber,Mob Clearing,4.1,6.448813844421313,横斩刀波,6.0,16.0,9.0,8,1.9833333333333334,6,2.9,5.0,data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json,4
+Saber_Lite_Coop,雨刷刮水刀,Saber,Endlag,3.2,0.11011904761904762,横斩近战加刀波,6.0,16.0,9.0,5,1.1833333333333333,10,2.9,3.6,data/weapon_data_1110/Saber/Merge_WeaponSaberLite_Coop.game__GameParameterTable.json,4
+Saber_Normal_Coop,工作刮水刀,Saber,Killing,5.0,1.8005965464253748,蓄力近战加刀波,26.0,42.0,8.0,1,0.45,16,5.0,5.0,data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json,3
+Saber_Normal_Coop,工作刮水刀,Saber,Range,3.7,18.400000000000002,蓄力刀波,26.0,42.0,8.0,3,1.85,5,3.7,3.7,data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json,3
+Saber_Normal_Coop,工作刮水刀,Saber,Inking,1.7,70.59461538461538,横斩刀波,9.0,26.0,13.0,4,1.4666666666666666,10,0.7,2.3,data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json,3
+Saber_Normal_Coop,工作刮水刀,Saber,Ink Efficiency,4.2,16.0,蓄力近战加刀波,26.0,42.0,8.0,1,0.45,16,4.2,4.2,data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json,3
+Saber_Normal_Coop,工作刮水刀,Saber,Mob Clearing,3.8,6.027692307692307,横斩刀波,9.0,26.0,13.0,4,1.4666666666666666,10,2.7,5.0,data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json,3
+Saber_Normal_Coop,工作刮水刀,Saber,Endlag,2.1,0.06547619047619048,横斩近战加刀波,9.0,26.0,13.0,3,1.0333333333333334,13,1.8,2.5,data/weapon_data_1110/Saber/Merge_WeaponSaberNormal_Coop.game__GameParameterTable.json,3
+Shelter_Compact_Coop,特工配件,Shelter,Killing,2.5,0.8677558615835296,散弹近距上限,8.0,26.0,20,3,1.0166666666666666,11,1.5,3.7,data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json,4
+Shelter_Compact_Coop,特工配件,Shelter,Range,1.6,11.392888888888889,散弹近距上限,8.0,26.0,20,3,1.0166666666666666,11,1.6,1.6,data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json,4
+Shelter_Compact_Coop,特工配件,Shelter,Inking,1.7,70.48038461538462,散弹近距上限,8.0,26.0,20,3,1.0166666666666666,11,0.7,2.3,data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json,4
+Shelter_Compact_Coop,特工配件,Shelter,Ink Efficiency,2.9,11.0,散弹近距上限,8.0,26.0,20,3,1.0166666666666666,11,2.9,2.9,data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json,4
+Shelter_Compact_Coop,特工配件,Shelter,Mob Clearing,1.1,2.573098238309944,散弹近距上限,8.0,26.0,20,3,1.0166666666666666,11,0.6,1.8,data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json,4
+Shelter_Compact_Coop,特工配件,Shelter,Endlag,1.9,0.058823529411764705,散弹近距上限,8.0,26.0,20,3,1.0166666666666666,11,1.5,2.2,data/weapon_data_1110/Shelter/Merge_WeaponShelterCompact_Coop.game__GameParameterTable.json,4
+Shelter_Focus_Coop,24式可替换伞·甲,Shelter,Killing,3.9,1.1385281229703952,散弹近距上限,8.0,33.0,25.0,2,0.7,12,3.0,5.0,data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json,3
+Shelter_Focus_Coop,24式可替换伞·甲,Shelter,Range,2.0,12.555555555555555,散弹近距上限,8.0,33.0,25.0,2,0.7,12,2.0,2.0,data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json,3
+Shelter_Focus_Coop,24式可替换伞·甲,Shelter,Inking,1.5,65.52,散弹近距上限,8.0,33.0,25.0,2,0.7,12,0.6,2.2,data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json,3
+Shelter_Focus_Coop,24式可替换伞·甲,Shelter,Ink Efficiency,3.4,12.5,散弹近距上限,8.0,33.0,25.0,2,0.7,12,3.4,3.4,data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json,3
+Shelter_Focus_Coop,24式可替换伞·甲,Shelter,Mob Clearing,0.5,1.9494609366105664,散弹近距上限,8.0,33.0,25.0,2,0.7,12,0.5,1.0,data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json,3
+Shelter_Focus_Coop,24式可替换伞·甲,Shelter,Endlag,1.3,0.0462962962962963,散弹近距上限,8.0,33.0,25.0,2,0.7,12,1.0,1.7,data/weapon_data_1110/Shelter/Merge_WeaponShelterFocus_Coop.game__GameParameterTable.json,3
+Shelter_Normal_Coop,遮阳防空伞,Shelter,Killing,1.8,0.7608587967983946,散弹近距上限,8.0,30.0,22.0,3,1.15,13,0.8,3.0,data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json,4
+Shelter_Normal_Coop,遮阳防空伞,Shelter,Range,1.3,10.73688888888889,散弹近距上限,8.0,30.0,22.0,3,1.15,13,1.3,1.3,data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json,4
+Shelter_Normal_Coop,遮阳防空伞,Shelter,Inking,1.7,72.07199999999999,散弹近距上限,8.0,30.0,22.0,3,1.15,13,0.8,2.4,data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json,4
+Shelter_Normal_Coop,遮阳防空伞,Shelter,Ink Efficiency,3.6,13.333333333333334,散弹近距上限,8.0,30.0,22.0,3,1.15,13,3.6,3.6,data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json,4
+Shelter_Normal_Coop,遮阳防空伞,Shelter,Mob Clearing,1.1,2.5330794683441735,散弹近距上限,8.0,30.0,22.0,3,1.15,13,0.5,1.8,data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json,4
+Shelter_Normal_Coop,遮阳防空伞,Shelter,Endlag,1.6,0.052854938271604944,散弹近距上限,8.0,30.0,22.0,3,1.15,13,1.3,2.0,data/weapon_data_1110/Shelter/Merge_WeaponShelterNormal_Coop.game__GameParameterTable.json,4
+Shelter_Wide_Coop,露营防空伞,Shelter,Killing,1.8,0.7677415909589108,散弹近距上限,10.0,50.0,40.0,2,1.0166666666666666,10,0.8,3.0,data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json,2
+Shelter_Wide_Coop,露营防空伞,Shelter,Range,2.4,13.712888888888887,散弹近距上限,10.0,50.0,40.0,2,1.0166666666666666,10,2.4,2.4,data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json,2
+Shelter_Wide_Coop,露营防空伞,Shelter,Inking,0.9,48.351600000000005,散弹近距上限,10.0,50.0,40.0,2,1.0166666666666666,10,0.5,1.5,data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json,2
+Shelter_Wide_Coop,露营防空伞,Shelter,Ink Efficiency,2.6,10.0,散弹近距上限,10.0,50.0,40.0,2,1.0166666666666666,10,2.6,2.6,data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json,2
+Shelter_Wide_Coop,露营防空伞,Shelter,Mob Clearing,0.5,1.6797885177162268,散弹近距上限,10.0,50.0,40.0,2,1.0166666666666666,10,0.5,0.6,data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json,2
+Shelter_Wide_Coop,露营防空伞,Shelter,Endlag,0.5,0.03025793650793651,散弹近距上限,10.0,50.0,40.0,2,1.0166666666666666,10,0.5,0.8,data/weapon_data_1110/Shelter/Merge_WeaponShelterWide_Coop.game__GameParameterTable.json,2
+Shooter_Blaze_Coop,专业模型枪MG,Shooter,Killing,2.7,0.9033158918728195,站立射击,0,4,2,17,1.0833333333333333,11,1.7,3.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json,2
+Shooter_Blaze_Coop,专业模型枪MG,Shooter,Range,1.0,10.00580622249984,站立射击,0,4,2,17,1.0833333333333333,11,1.0,1.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json,2
+Shooter_Blaze_Coop,专业模型枪MG,Shooter,Inking,5.0,374.3682182415239,站立射击,0,4,2,17,1.0833333333333333,11,4.2,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json,2
+Shooter_Blaze_Coop,专业模型枪MG,Shooter,Ink Efficiency,3.2,11.764705882352942,站立射击,0,4,2,17,1.0833333333333333,11,3.2,3.2,data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json,2
+Shooter_Blaze_Coop,专业模型枪MG,Shooter,Mob Clearing,3.1,4.743416490252569,站立射击,0,4,2,17,1.0833333333333333,11,2.5,3.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json,2
+Shooter_Blaze_Coop,专业模型枪MG,Shooter,Endlag,5.0,0.25,站立射击,0,4,2,17,1.0833333333333333,11,4.9,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterBlaze_Coop.game__GameParameterTable.json,2
+Shooter_Expert_Coop,顶尖射击枪,Shooter,Killing,2.5,0.8793509853619932,站立射击,0,8,4,9,1.0833333333333333,6,1.6,3.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json,3
+Shooter_Expert_Coop,顶尖射击枪,Shooter,Range,2.7,14.858204779967998,站立射击,0,8,4,9,1.0833333333333333,6,2.7,2.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json,3
+Shooter_Expert_Coop,顶尖射击枪,Shooter,Inking,3.8,193.77951310797576,站立射击,0,8,4,9,1.0833333333333333,6,2.9,4.5,data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json,3
+Shooter_Expert_Coop,顶尖射击枪,Shooter,Ink Efficiency,1.3,6.888888888888889,站立射击,0,8,4,9,1.0833333333333333,6,1.3,1.3,data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json,3
+Shooter_Expert_Coop,顶尖射击枪,Shooter,Mob Clearing,2.8,4.330127018922193,站立射击,0,8,4,9,1.0833333333333333,6,2.2,3.5,data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json,3
+Shooter_Expert_Coop,顶尖射击枪,Shooter,Endlag,4.2,0.17638888888888887,站立射击,0,8,4,9,1.0833333333333333,6,4.1,4.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterExpert_Coop.game__GameParameterTable.json,3
+Shooter_First_Coop,新叶射击枪,Shooter,Killing,2.2,0.823600264700592,站立射击,0,5,2,15,1.1833333333333333,15,1.2,3.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json,2
+Shooter_First_Coop,新叶射击枪,Shooter,Range,1.0,10.00580622249984,站立射击,0,5,2,15,1.1833333333333333,15,1.0,1.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json,2
+Shooter_First_Coop,新叶射击枪,Shooter,Inking,4.9,323.1982933804908,站立射击,0,5,2,15,1.1833333333333333,15,3.9,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json,2
+Shooter_First_Coop,新叶射击枪,Shooter,Ink Efficiency,4.1,15.466666666666667,站立射击,0,5,2,15,1.1833333333333333,15,4.1,4.1,data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json,2
+Shooter_First_Coop,新叶射击枪,Shooter,Mob Clearing,2.7,4.242640687119285,站立射击,0,5,2,15,1.1833333333333333,15,2.1,3.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json,2
+Shooter_First_Coop,新叶射击枪,Shooter,Endlag,5.0,0.2569444444444444,站立射击,0,5,2,15,1.1833333333333333,15,5.0,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterFirst_Coop.game__GameParameterTable.json,2
+Shooter_Flash_Coop,开瓶喷泉枪,Shooter,Killing,3.2,0.9973026198405479,站立射击,0,8,3,8,0.95,5,2.2,4.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json,2
+Shooter_Flash_Coop,开瓶喷泉枪,Shooter,Range,3.2,16.387474587648,站立射击,0,8,3,8,0.95,5,3.2,3.2,data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json,2
+Shooter_Flash_Coop,开瓶喷泉枪,Shooter,Inking,3.9,205.88473851811463,站立射击,0,8,3,8,0.95,5,3.0,4.6,data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json,2
+Shooter_Flash_Coop,开瓶喷泉枪,Shooter,Ink Efficiency,2.3,9.25,长按连射,0,7,3,12,1.3,9,2.3,2.3,data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json,2
+Shooter_Flash_Coop,开瓶喷泉枪,Shooter,Mob Clearing,3.4,5.303300858899107,站立射击,0,8,3,8,0.95,5,2.9,4.1,data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json,2
+Shooter_Flash_Coop,开瓶喷泉枪,Shooter,Endlag,4.7,0.2222222222222222,长按连射,0,7,3,12,1.3,9,4.6,4.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterFlash_Coop.game__GameParameterTable.json,2
+Shooter_Gravity_Coop,.52加仑,Shooter,Killing,2.6,0.8877449342582732,站立射击,0,9,3,8,1.0666666666666667,9,1.6,3.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json,2
+Shooter_Gravity_Coop,.52加仑,Shooter,Range,1.9,12.38475858293131,站立射击,0,9,3,8,1.0666666666666667,9,1.9,1.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json,2
+Shooter_Gravity_Coop,.52加仑,Shooter,Inking,3.8,193.55018328369368,站立射击,0,9,3,8,1.0666666666666667,9,2.9,4.5,data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json,2
+Shooter_Gravity_Coop,.52加仑,Shooter,Ink Efficiency,2.4,9.5,站立射击,0,9,3,8,1.0666666666666667,9,2.4,2.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json,2
+Shooter_Gravity_Coop,.52加仑,Shooter,Mob Clearing,3.1,4.714045207910317,站立射击,0,9,3,8,1.0666666666666667,9,2.5,3.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json,2
+Shooter_Gravity_Coop,.52加仑,Shooter,Endlag,4.6,0.20370370370370372,站立射击,0,9,3,8,1.0666666666666667,9,4.4,4.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterGravity_Coop.game__GameParameterTable.json,2
+Shooter_Heavy_Coop,.96加仑,Shooter,Killing,3.8,1.1147247235926088,站立射击,0,12,4,5,0.8166666666666667,8,2.8,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json,3
+Shooter_Heavy_Coop,.96加仑,Shooter,Range,3.0,15.766809912320001,站立射击,0,12,4,5,0.8166666666666667,8,3.0,3.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json,3
+Shooter_Heavy_Coop,.96加仑,Shooter,Inking,4.1,217.96300050700256,站立射击,0,12,4,5,0.8166666666666667,8,3.1,4.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json,3
+Shooter_Heavy_Coop,.96加仑,Shooter,Ink Efficiency,2.1,8.6,站立射击,0,12,4,5,0.8166666666666667,8,2.1,2.1,data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json,3
+Shooter_Heavy_Coop,.96加仑,Shooter,Mob Clearing,2.1,3.535533905932737,站立射击,0,12,4,5,0.8166666666666667,8,1.6,2.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json,3
+Shooter_Heavy_Coop,.96加仑,Shooter,Endlag,4.0,0.15555555555555556,站立射击,0,12,4,5,0.8166666666666667,8,3.8,4.2,data/weapon_data_1110/Shooter/Merge_WeaponShooterHeavy_Coop.game__GameParameterTable.json,3
+Shooter_Long_Coop,喷射清洁枪,Shooter,Killing,1.9,0.7869825408083805,站立射击,0,8,4,10,1.2166666666666666,6,1.0,3.1,data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json,2
+Shooter_Long_Coop,喷射清洁枪,Shooter,Range,4.1,20.10228006912,站立射击,0,8,4,10,1.2166666666666666,6,4.1,4.1,data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json,2
+Shooter_Long_Coop,喷射清洁枪,Shooter,Inking,4.1,224.73266396599627,站立射击,0,8,4,10,1.2166666666666666,6,3.2,4.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json,2
+Shooter_Long_Coop,喷射清洁枪,Shooter,Ink Efficiency,0.9,6.2,站立射击,0,8,4,10,1.2166666666666666,6,0.9,0.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json,2
+Shooter_Long_Coop,喷射清洁枪,Shooter,Mob Clearing,2.8,4.330127018922193,站立射击,0,8,4,10,1.2166666666666666,6,2.2,3.5,data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json,2
+Shooter_Long_Coop,喷射清洁枪,Shooter,Endlag,4.3,0.18333333333333335,站立射击,0,8,4,10,1.2166666666666666,6,4.2,4.5,data/weapon_data_1110/Shooter/Merge_WeaponShooterLong_Coop.game__GameParameterTable.json,2
+Shooter_Normal_Coop,斯普拉射击枪,Shooter,Killing,2.5,0.8646192891960239,站立射击,0,6,4,12,1.1166666666666667,9,1.5,3.6,data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json,4
+Shooter_Normal_Coop,斯普拉射击枪,Shooter,Range,1.5,11.27291762688,站立射击,0,6,4,12,1.1166666666666667,9,1.5,1.5,data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json,4
+Shooter_Normal_Coop,斯普拉射击枪,Shooter,Inking,4.0,215.67397161639357,站立射击,0,6,4,12,1.1166666666666667,9,3.1,4.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json,4
+Shooter_Normal_Coop,斯普拉射击枪,Shooter,Ink Efficiency,2.2,9.0,站立射击,0,6,4,12,1.1166666666666667,9,2.2,2.2,data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json,4
+Shooter_Normal_Coop,斯普拉射击枪,Shooter,Mob Clearing,2.6,4.08248290463863,站立射击,0,6,4,12,1.1166666666666667,9,2.0,3.3,data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json,4
+Shooter_Normal_Coop,斯普拉射击枪,Shooter,Endlag,4.5,0.2,站立射击,0,6,4,12,1.1166666666666667,9,4.3,4.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterNormal_Coop.game__GameParameterTable.json,4
+Shooter_Precision_Coop,窄域标记枪,Shooter,Killing,2.2,0.822912498180054,站立射击,0,5,3,15,1.1833333333333333,8,1.2,3.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json,2
+Shooter_Precision_Coop,窄域标记枪,Shooter,Range,0.9,9.784893440000001,站立射击,0,5,3,15,1.1833333333333333,8,0.9,0.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json,2
+Shooter_Precision_Coop,窄域标记枪,Shooter,Inking,4.6,281.63016355505886,站立射击,0,5,3,15,1.1833333333333333,8,3.6,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json,2
+Shooter_Precision_Coop,窄域标记枪,Shooter,Ink Efficiency,2.0,8.333333333333334,站立射击,0,5,3,15,1.1833333333333333,8,2.0,2.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json,2
+Shooter_Precision_Coop,窄域标记枪,Shooter,Mob Clearing,2.7,4.242640687119285,站立射击,0,5,3,15,1.1833333333333333,8,2.1,3.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json,2
+Shooter_Precision_Coop,窄域标记枪,Shooter,Endlag,4.7,0.2222222222222222,站立射击,0,5,3,15,1.1833333333333333,8,4.6,4.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterPrecision_Coop.game__GameParameterTable.json,2
+Shooter_QuickLong_Coop,太空射击枪,Shooter,Killing,1.6,0.7376414228434451,站立射击,0,6,3,14,1.3166666666666667,8,0.6,2.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json,2
+Shooter_QuickLong_Coop,太空射击枪,Shooter,Range,2.7,14.731398843760639,站立射击,0,6,3,14,1.3166666666666667,8,2.7,2.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json,2
+Shooter_QuickLong_Coop,太空射击枪,Shooter,Inking,4.4,259.5567144938769,站立射击,0,6,3,14,1.3166666666666667,8,3.5,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json,2
+Shooter_QuickLong_Coop,太空射击枪,Shooter,Ink Efficiency,2.2,8.928571428571429,站立射击,0,6,3,14,1.3166666666666667,8,2.2,2.2,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json,2
+Shooter_QuickLong_Coop,太空射击枪,Shooter,Mob Clearing,2.1,3.535533905932737,站立射击,0,6,3,14,1.3166666666666667,8,1.6,2.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json,2
+Shooter_QuickLong_Coop,太空射击枪,Shooter,Endlag,4.8,0.2330246913580247,站立射击,0,6,3,14,1.3166666666666667,8,4.7,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickLong_Coop.game__GameParameterTable.json,2
+Shooter_QuickMiddle_Coop,N-ZAP85,Shooter,Killing,2.6,0.8835240427419654,站立射击,0,5,3,14,1.1,8,1.6,3.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json,2
+Shooter_QuickMiddle_Coop,N-ZAP85,Shooter,Range,1.4,10.944558673920001,站立射击,0,5,3,14,1.1,8,1.4,1.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json,2
+Shooter_QuickMiddle_Coop,N-ZAP85,Shooter,Inking,4.3,238.7765092996723,站立射击,0,5,3,14,1.1,8,3.3,4.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json,2
+Shooter_QuickMiddle_Coop,N-ZAP85,Shooter,Ink Efficiency,2.2,8.928571428571429,站立射击,0,5,3,14,1.1,8,2.2,2.2,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json,2
+Shooter_QuickMiddle_Coop,N-ZAP85,Shooter,Mob Clearing,2.7,4.242640687119285,站立射击,0,5,3,14,1.1,8,2.1,3.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json,2
+Shooter_QuickMiddle_Coop,N-ZAP85,Shooter,Endlag,5.0,0.2469135802469136,站立射击,0,5,3,14,1.1,8,4.8,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterQuickMiddle_Coop.game__GameParameterTable.json,2
+Shooter_Short_Coop,广域标记枪,Shooter,Killing,5.0,1.4007570024315483,站立射击,0,5,2,9,0.6833333333333333,13,4.1,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json,2
+Shooter_Short_Coop,广域标记枪,Shooter,Range,0.5,6.834912153600001,站立射击,0,5,2,9,0.6833333333333333,13,0.5,0.5,data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json,2
+Shooter_Short_Coop,广域标记枪,Shooter,Inking,5.0,352.78668979028305,站立射击,0,5,2,9,0.6833333333333333,13,4.1,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json,2
+Shooter_Short_Coop,广域标记枪,Shooter,Ink Efficiency,3.7,13.88888888888889,站立射击,0,5,2,9,0.6833333333333333,13,3.7,3.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json,2
+Shooter_Short_Coop,广域标记枪,Shooter,Mob Clearing,4.3,6.92820323027551,站立射击,0,5,2,9,0.6833333333333333,13,3.7,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json,2
+Shooter_Short_Coop,广域标记枪,Shooter,Endlag,5.0,0.2638888888888889,站立射击,0,5,2,9,0.6833333333333333,13,5.0,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterShort_Coop.game__GameParameterTable.json,2
+Shooter_TripleMiddle_Coop,H3卷管枪,Shooter,Killing,4.3,1.2317251807644642,站立射击,0,5,2,6,0.6833333333333333,9,3.4,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json,3
+Shooter_TripleMiddle_Coop,H3卷管枪,Shooter,Range,2.7,14.858205779968,站立射击,0,5,2,6,0.6833333333333333,9,2.7,2.7,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json,3
+Shooter_TripleMiddle_Coop,H3卷管枪,Shooter,Inking,4.1,223.16556468263724,站立射击,0,5,2,6,0.6833333333333333,9,3.2,4.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json,3
+Shooter_TripleMiddle_Coop,H3卷管枪,Shooter,Ink Efficiency,2.3,9.166666666666666,站立射击,0,5,2,6,0.6833333333333333,9,2.3,2.3,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json,3
+Shooter_TripleMiddle_Coop,H3卷管枪,Shooter,Mob Clearing,2.7,4.242640687119285,站立射击,0,5,2,6,0.6833333333333333,9,2.1,3.4,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json,3
+Shooter_TripleMiddle_Coop,H3卷管枪,Shooter,Endlag,4.8,0.22916666666666669,站立射击,0,5,2,6,0.6833333333333333,9,4.7,4.9,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleMiddle_Coop.game__GameParameterTable.json,3
+Shooter_TripleQuick_Coop,L3卷管枪,Shooter,Killing,4.1,1.1787671385814782,站立射击,0,4,2,10,0.8166666666666667,10,3.1,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json,3
+Shooter_TripleQuick_Coop,L3卷管枪,Shooter,Range,2.3,13.4380933782528,站立射击,0,4,2,10,0.8166666666666667,10,2.3,2.3,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json,3
+Shooter_TripleQuick_Coop,L3卷管枪,Shooter,Inking,4.4,255.37546388625728,站立射击,0,4,2,10,0.8166666666666667,10,3.4,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json,3
+Shooter_TripleQuick_Coop,L3卷管枪,Shooter,Ink Efficiency,2.6,10.0,站立射击,0,4,2,10,0.8166666666666667,10,2.6,2.6,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json,3
+Shooter_TripleQuick_Coop,L3卷管枪,Shooter,Mob Clearing,4.1,6.49519052838329,站立射击,0,4,2,10,0.8166666666666667,10,3.5,4.8,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json,3
+Shooter_TripleQuick_Coop,L3卷管枪,Shooter,Endlag,5.0,0.2638888888888889,站立射击,0,4,2,10,0.8166666666666667,10,5.0,5.0,data/weapon_data_1110/Shooter/Merge_WeaponShooterTripleQuick_Coop.game__GameParameterTable.json,3
+Slosher_Bathtub_Coop,满溢泡澡泼桶,Slosher,Killing,3.6,1.0714285714285714,一泼直击,21.0,32.0,15.0,2,0.8166666666666667,8,1.4,4.8,data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json,3
+Slosher_Bathtub_Coop,满溢泡澡泼桶,Slosher,Range,2.5,14.0,一泼直击,21.0,32.0,15.0,2,0.8166666666666667,8,2.5,2.5,data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json,3
+Slosher_Bathtub_Coop,满溢泡澡泼桶,Slosher,Inking,1.9,78.6121875,一泼直击,21.0,32.0,15.0,2,0.8166666666666667,8,1.0,2.6,data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json,3
+Slosher_Bathtub_Coop,满溢泡澡泼桶,Slosher,Ink Efficiency,1.8,8.0,一泼直击,21.0,32.0,15.0,2,0.8166666666666667,8,0.5,1.8,data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json,3
+Slosher_Bathtub_Coop,满溢泡澡泼桶,Slosher,Mob Clearing,0.5,1.4955308422095481,一泼直击,21.0,32.0,15.0,2,0.8166666666666667,8,0.5,0.5,data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json,3
+Slosher_Bathtub_Coop,满溢泡澡泼桶,Slosher,Endlag,1.0,0.04034391534391535,一泼直击,21.0,32.0,15.0,2,0.8166666666666667,8,0.7,1.4,data/weapon_data_1110/Slosher/Merge_WeaponSlosherBathtub_Coop.game__GameParameterTable.json,3
+Slosher_Diffusion_Coop,洗笔桶,Slosher,Killing,1.2,0.690796948587756,一泼直击,12.0,23.0,10.0,4,1.3666666666666667,5,0.5,2.4,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json,3
+Slosher_Diffusion_Coop,洗笔桶,Slosher,Range,1.6,11.5,一泼直击,12.0,23.0,10.0,4,1.3666666666666667,5,1.6,1.6,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json,3
+Slosher_Diffusion_Coop,洗笔桶,Slosher,Inking,3.1,135.0704347826087,一泼直击,12.0,23.0,10.0,4,1.3666666666666667,5,2.1,3.7,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json,3
+Slosher_Diffusion_Coop,洗笔桶,Slosher,Ink Efficiency,0.5,5.5,一泼直击,12.0,23.0,10.0,4,1.3666666666666667,5,0.5,0.5,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json,3
+Slosher_Diffusion_Coop,洗笔桶,Slosher,Mob Clearing,5.0,8.540216494273126,一泼直击,12.0,23.0,10.0,4,1.3666666666666667,5,3.6,5.0,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json,3
+Slosher_Diffusion_Coop,洗笔桶,Slosher,Endlag,2.2,0.06845238095238096,一泼直击,12.0,23.0,10.0,4,1.3666666666666667,5,1.9,2.6,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDiffusion_Coop.game__GameParameterTable.json,3
+Slosher_Double_Coop,墨瀑淋,Slosher,Killing,1.8,0.7633871993869022,一泼直击,24.0,45.0,6.0,2,1.1666666666666667,6,0.8,3.0,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json,3
+Slosher_Double_Coop,墨瀑淋,Slosher,Range,2.5,14.0,一泼直击,24.0,45.0,6.0,2,1.1666666666666667,6,2.5,2.5,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json,3
+Slosher_Double_Coop,墨瀑淋,Slosher,Inking,1.5,64.02,一泼直击,24.0,45.0,6.0,2,1.1666666666666667,6,0.5,2.1,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json,3
+Slosher_Double_Coop,墨瀑淋,Slosher,Ink Efficiency,0.8,6.0,一泼直击,24.0,45.0,6.0,2,1.1666666666666667,6,0.8,0.8,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json,3
+Slosher_Double_Coop,墨瀑淋,Slosher,Mob Clearing,0.5,2.07112963279876,一泼直击,24.0,45.0,6.0,2,1.1666666666666667,6,0.5,1.4,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json,3
+Slosher_Double_Coop,墨瀑淋,Slosher,Endlag,1.2,0.043209876543209874,一泼直击,24.0,45.0,6.0,2,1.1666666666666667,6,0.8,1.6,data/weapon_data_1110/Slosher/Merge_WeaponSlosherDouble_Coop.game__GameParameterTable.json,3
+Slosher_Launcher_Coop,回旋泼桶,Slosher,Killing,0.5,0.6006272321813914,一泼直击,12.0,38.0,10.0,3,1.4833333333333334,6,0.5,1.7,data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json,3
+Slosher_Launcher_Coop,回旋泼桶,Slosher,Range,2.6,14.5,一泼直击,12.0,38.0,10.0,3,1.4833333333333334,6,2.6,2.6,data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json,3
+Slosher_Launcher_Coop,回旋泼桶,Slosher,Inking,1.9,76.90736842105264,一泼直击,12.0,38.0,10.0,3,1.4833333333333334,6,0.9,2.5,data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json,3
+Slosher_Launcher_Coop,回旋泼桶,Slosher,Ink Efficiency,0.8,6.0,一泼直击,12.0,38.0,10.0,3,1.4833333333333334,6,0.8,0.8,data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json,3
+Slosher_Launcher_Coop,回旋泼桶,Slosher,Mob Clearing,1.6,2.952631578947368,旋涡擦伤,12.0,38.0,10.0,4,2.1166666666666667,4,0.7,2.8,data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json,3
+Slosher_Launcher_Coop,回旋泼桶,Slosher,Endlag,2.2,0.07043650793650794,一泼直击,12.0,38.0,10.0,3,1.4833333333333334,6,1.9,2.6,data/weapon_data_1110/Slosher/Merge_WeaponSlosherLauncher_Coop.game__GameParameterTable.json,3
+Slosher_Strong_Coop,飞溅泼桶,Slosher,Killing,1.8,0.7667301197593804,一泼直击,12.0,29.0,10.0,3,1.1833333333333333,6,0.8,3.0,data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json,4
+Slosher_Strong_Coop,飞溅泼桶,Slosher,Range,2.5,14.0,一泼直击,12.0,29.0,10.0,3,1.1833333333333333,6,2.5,2.5,data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json,4
+Slosher_Strong_Coop,飞溅泼桶,Slosher,Inking,2.6,106.91999999999999,一泼直击,12.0,29.0,10.0,3,1.1833333333333333,6,1.6,3.2,data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json,4
+Slosher_Strong_Coop,飞溅泼桶,Slosher,Ink Efficiency,0.8,6.0,一泼直击,12.0,29.0,10.0,3,1.1833333333333333,6,0.8,0.8,data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json,4
+Slosher_Strong_Coop,飞溅泼桶,Slosher,Mob Clearing,1.7,3.0559982296446475,一泼直击,12.0,29.0,10.0,3,1.1833333333333333,6,1.1,2.6,data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json,4
+Slosher_Strong_Coop,飞溅泼桶,Slosher,Endlag,1.7,0.05555555555555556,一泼直击,12.0,29.0,10.0,3,1.1833333333333333,6,1.4,2.1,data/weapon_data_1110/Slosher/Merge_WeaponSlosherStrong_Coop.game__GameParameterTable.json,4
+Slosher_Washtub_Coop,爆炸泼桶,Slosher,Killing,1.2,0.6792356108113244,一泼直击含爆炸,16.0,55.0,25.0,2,1.2,5,0.5,2.3,data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json,3
+Slosher_Washtub_Coop,爆炸泼桶,Slosher,Range,4.2,20.7,一泼直击含爆炸,16.0,55.0,25.0,2,1.2,5,4.2,4.2,data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json,3
+Slosher_Washtub_Coop,爆炸泼桶,Slosher,Inking,1.6,68.688,一泼直击含爆炸,16.0,55.0,25.0,2,1.2,5,0.7,2.3,data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json,3
+Slosher_Washtub_Coop,爆炸泼桶,Slosher,Ink Efficiency,0.5,5.5,一泼直击含爆炸,16.0,55.0,25.0,2,1.2,5,0.5,0.5,data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json,3
+Slosher_Washtub_Coop,爆炸泼桶,Slosher,Mob Clearing,1.0,2.445818181818182,直弹贯通,16.0,55.0,25.0,4,3.033333333333333,2,0.5,2.4,data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json,3
+Slosher_Washtub_Coop,爆炸泼桶,Slosher,Endlag,0.7,0.034574468085106384,一泼直击含爆炸,16.0,55.0,25.0,2,1.2,5,0.5,1.1,data/weapon_data_1110/Slosher/Merge_WeaponSlosherWashtub_Coop.game__GameParameterTable.json,3
+Spinner_Downpour_Coop,圆珠笔,Spinner,Killing,3.2,0.9933822486489208,短射程补蓄循环,15.0,3,4,12,1.0833333333333333,24,2.2,4.4,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json,3
+Spinner_Downpour_Coop,圆珠笔,Spinner,Range,4.2,20.664156697599992,长射程持续射击,130,5,4,12,3.1,11,4.2,4.2,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json,3
+Spinner_Downpour_Coop,圆珠笔,Spinner,Inking,4.6,276.57825925498594,短射程补蓄循环,15.0,3,4,12,1.0833333333333333,24,3.6,5.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json,3
+Spinner_Downpour_Coop,圆珠笔,Spinner,Ink Efficiency,5.0,24.166666666666668,短射程补蓄循环,15.0,3,4,12,1.0833333333333333,24,5.0,5.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json,3
+Spinner_Downpour_Coop,圆珠笔,Spinner,Mob Clearing,3.4,5.3249777017025615,短射程补蓄循环,15.0,3,4,12,1.0833333333333333,24,2.9,4.2,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json,3
+Spinner_Downpour_Coop,圆珠笔,Spinner,Endlag,2.7,0.08777777777777779,短射程补蓄循环,15.0,3,4,12,1.0833333333333333,24,2.4,3.1,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerDownpour_Coop.game__GameParameterTable.json,3
+Spinner_HyperShort_Coop,审查者,Spinner,Killing,1.0,0.66246293696866,一段蓄力,60,4,4,12,1.75,25,0.5,2.2,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json,2
+Spinner_HyperShort_Coop,审查者,Spinner,Range,3.0,15.849477120000001,一段蓄力,60,4,4,12,1.75,25,3.0,3.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json,2
+Spinner_HyperShort_Coop,审查者,Spinner,Inking,3.8,195.71496347077945,满蓄力,120,3,4,12,2.566666666666667,25,2.9,4.5,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json,2
+Spinner_HyperShort_Coop,审查者,Spinner,Ink Efficiency,5.0,25.0,一段蓄力,60,4,4,12,1.75,25,5.0,5.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json,2
+Spinner_HyperShort_Coop,审查者,Spinner,Mob Clearing,3.2,4.882703806212315,满蓄力,120,3,4,12,2.566666666666667,25,2.6,3.9,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json,2
+Spinner_HyperShort_Coop,审查者,Spinner,Endlag,0.5,0.03134920634920635,一段蓄力,60,4,4,12,1.75,25,0.5,0.9,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyperShort_Coop.game__GameParameterTable.json,2
+Spinner_Hyper_Coop,消防栓旋转枪,Spinner,Killing,1.0,0.6624629369686601,满蓄力,150,4,4,7,2.9166666666666665,18,0.5,2.2,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json,2
+Spinner_Hyper_Coop,消防栓旋转枪,Spinner,Range,4.4,21.74478336,一段蓄力,120,4,4,12,2.75,8,4.4,4.4,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json,2
+Spinner_Hyper_Coop,消防栓旋转枪,Spinner,Inking,3.9,201.07604749424158,满蓄力,150,4,4,7,2.9166666666666665,18,2.9,4.5,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json,2
+Spinner_Hyper_Coop,消防栓旋转枪,Spinner,Ink Efficiency,4.8,18.571428571428573,满蓄力,150,4,4,7,2.9166666666666665,18,4.8,4.8,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json,2
+Spinner_Hyper_Coop,消防栓旋转枪,Spinner,Mob Clearing,4.8,8.081220356417687,满蓄力,150,4,4,7,2.9166666666666665,18,4.2,5.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json,2
+Spinner_Hyper_Coop,消防栓旋转枪,Spinner,Endlag,0.5,0.014102564102564105,一段蓄力,120,4,4,12,2.75,8,0.5,0.5,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerHyper_Coop.game__GameParameterTable.json,2
+Spinner_Quick_Coop,斯普拉旋转枪,Spinner,Killing,2.5,0.8770580193070292,满蓄力,27,4,4,12,1.2,10,1.6,3.7,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json,2
+Spinner_Quick_Coop,斯普拉旋转枪,Spinner,Range,2.3,13.44947712,一段蓄力,18,4,4,12,1.35,9,2.3,2.3,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json,2
+Spinner_Quick_Coop,斯普拉旋转枪,Spinner,Inking,4.6,278.96199722398734,满蓄力,27,4,4,12,1.2,10,3.6,5.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json,2
+Spinner_Quick_Coop,斯普拉旋转枪,Spinner,Ink Efficiency,2.8,10.5,满蓄力,27,4,4,12,1.2,10,2.8,2.8,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json,2
+Spinner_Quick_Coop,斯普拉旋转枪,Spinner,Mob Clearing,3.1,4.7794921810403475,满蓄力,27,4,4,12,1.2,10,2.5,3.8,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json,2
+Spinner_Quick_Coop,斯普拉旋转枪,Spinner,Endlag,2.5,0.07837301587301589,一段蓄力,18,4,4,12,1.35,9,2.2,2.9,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerQuick_Coop.game__GameParameterTable.json,2
+Spinner_Serein_Coop,鹦鹉螺号47,Spinner,Killing,1.5,0.730073699336387,一段蓄力,38,4,4,12,1.3833333333333333,17,0.6,2.7,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json,2
+Spinner_Serein_Coop,鹦鹉螺号47,Spinner,Range,3.1,15.994838685440001,一段蓄力,38,4,4,12,1.3833333333333333,17,3.1,3.1,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json,2
+Spinner_Serein_Coop,鹦鹉螺号47,Spinner,Inking,3.6,177.4748487681532,一段蓄力,38,4,4,12,1.3833333333333333,17,2.7,4.3,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json,2
+Spinner_Serein_Coop,鹦鹉螺号47,Spinner,Ink Efficiency,4.6,17.5,一段蓄力,38,4,4,12,1.3833333333333333,17,4.6,4.6,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json,2
+Spinner_Serein_Coop,鹦鹉螺号47,Spinner,Mob Clearing,2.3,3.749218994055885,一段蓄力,38,4,4,12,1.3833333333333333,17,1.8,3.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json,2
+Spinner_Serein_Coop,鹦鹉螺号47,Spinner,Endlag,1.1,0.041087962962962965,一段蓄力,38,4,4,12,1.3833333333333333,17,0.7,1.5,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerSerein_Coop.game__GameParameterTable.json,2
+Spinner_Standard_Coop,桶装旋转枪,Spinner,Killing,1.3,0.7039061521024957,一段蓄力,48,4,4,12,1.55,10,0.5,2.5,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json,2
+Spinner_Standard_Coop,桶装旋转枪,Spinner,Range,3.8,18.781389311999998,一段蓄力,48,4,4,12,1.55,10,3.8,3.8,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json,2
+Spinner_Standard_Coop,桶装旋转枪,Spinner,Inking,4.4,251.38816010400132,满蓄力,72,4,4,12,1.95,13,3.4,5.0,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json,2
+Spinner_Standard_Coop,桶装旋转枪,Spinner,Ink Efficiency,3.6,13.333333333333334,满蓄力,72,4,4,12,1.95,13,3.6,3.6,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json,2
+Spinner_Standard_Coop,桶装旋转枪,Spinner,Mob Clearing,2.7,4.223258177212376,满蓄力,72,4,4,12,1.95,13,2.1,3.4,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json,2
+Spinner_Standard_Coop,桶装旋转枪,Spinner,Endlag,0.7,0.034003831417624523,一段蓄力,48,4,4,12,1.55,10,0.5,1.1,data/weapon_data_1110/Spinner/Merge_WeaponSpinnerStandard_Coop.game__GameParameterTable.json,2
+Stringer_Explosion_Coop,邦普V,Stringer,Killing,5.0,1.4255944464650914,点射,12,24,10,2,0.6166666666666667,12,2.7,5.0,data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json,5
+Stringer_Explosion_Coop,邦普V,Stringer,Range,5.0,24.853884009749784,满蓄力,80,95,10,1,1.35,12,5.0,5.0,data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json,5
+Stringer_Explosion_Coop,邦普V,Stringer,Inking,2.7,114.25579782024379,点射,12,24,10,2,0.6166666666666667,12,1.8,3.4,data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json,5
+Stringer_Explosion_Coop,邦普V,Stringer,Ink Efficiency,4.2,16.0,一段蓄力,40,55,10,1,0.6833333333333333,16,3.2,4.2,data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json,5
+Stringer_Explosion_Coop,邦普V,Stringer,Mob Clearing,1.9,3.256335150645939,点射,12,24,10,2,0.6166666666666667,12,0.7,3.1,data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json,5
+Stringer_Explosion_Coop,邦普V,Stringer,Endlag,1.7,0.05555555555555556,点射,12,24,10,2,0.6166666666666667,12,1.4,2.1,data/weapon_data_1110/Stringer/Merge_WeaponStringerExplosion_Coop.game__GameParameterTable.json,5
+Stringer_Normal_Coop,三发猎鱼弓,Stringer,Killing,1.8,0.7667849032465389,点射,9,21,10,4,1.2166666666666666,8,0.8,3.0,data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json,6
+Stringer_Normal_Coop,三发猎鱼弓,Stringer,Range,5.0,27.33927241072477,满蓄力,72,87,10,1,1.2166666666666666,13,5.0,5.0,data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json,6
+Stringer_Normal_Coop,三发猎鱼弓,Stringer,Inking,2.3,92.5647835432707,点射,9,21,10,4,1.2166666666666666,8,1.3,2.9,data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json,6
+Stringer_Normal_Coop,三发猎鱼弓,Stringer,Ink Efficiency,3.5,13.0,满蓄力,72,87,10,1,1.2166666666666666,13,3.4,3.5,data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json,6
+Stringer_Normal_Coop,三发猎鱼弓,Stringer,Mob Clearing,1.6,2.940784773042396,点射,9,21,10,4,1.2166666666666666,8,0.5,2.7,data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json,6
+Stringer_Normal_Coop,三发猎鱼弓,Stringer,Endlag,2.5,0.07777777777777778,点射,9,21,10,4,1.2166666666666666,8,2.2,2.8,data/weapon_data_1110/Stringer/Merge_WeaponStringerNormal_Coop.game__GameParameterTable.json,6
+Stringer_Short_Coop,LACT-450,Stringer,Killing,4.6,1.2970131035013506,一段蓄力,12,27,10,2,0.6666666666666666,20,2.1,5.0,data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json,5
+Stringer_Short_Coop,LACT-450,Stringer,Range,3.6,18.10782977853199,满蓄力,34,49,10,2,1.4,12,3.6,3.6,data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json,5
+Stringer_Short_Coop,LACT-450,Stringer,Inking,3.6,174.16989671501815,点射,6,14,10,4,0.8166666666666667,13,2.6,4.2,data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json,5
+Stringer_Short_Coop,LACT-450,Stringer,Ink Efficiency,5.0,20.0,一段蓄力,12,27,10,2,0.6666666666666666,20,3.6,5.0,data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json,5
+Stringer_Short_Coop,LACT-450,Stringer,Mob Clearing,1.3,2.7269819178543147,点射,6,14,10,4,0.8166666666666667,13,0.5,2.3,data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json,5
+Stringer_Short_Coop,LACT-450,Stringer,Endlag,3.0,0.0984848484848485,点射,6,14,10,4,0.8166666666666667,13,2.7,3.3,data/weapon_data_1110/Stringer/Merge_WeaponStringerShort_Coop.game__GameParameterTable.json,5

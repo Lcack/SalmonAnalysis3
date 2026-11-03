@@ -226,7 +226,10 @@ def extract(wid, g, source_path):
             angle=abs(s.get('ArrowAngle'+angle_key,0))
             spread=2*ran*math.tan(math.radians(angle))+(n-1)*s.get('ArrowMargin',.2)
             rad=b['PaintParam']['WidthHalf'+key]
-            det=b.get('DetonationParam',{});explosive=suffix=='Full' or (suffix=='Mid' and det.get('IsExplosiveBoltMidCharge',False))
+            # LACT retains DetonationParam in the parameter table but its arrows
+            # do not burst. Presence of this shared structure is not activation.
+            det=b.get('DetonationParam',{})
+            explosive=wid!='Stringer_Short_Coop' and (suffix=='Full' or (suffix=='Mid' and det.get('IsExplosiveBoltMidCharge',False)))
             pa=n*math.pi*rad*rad
             if explosive:pa+=n*math.pi*det.get('BlastParam',{}).get('PaintRadius',0)**2
             x=mode(tag,dp['DirectHitDamage'+key]/10*n,pre+freeze,pre,post,c['InkConsume'+suffix+'Charge'],ran,max(.4,spread),pa,c['MoveSpeedFullCharge'],projectiles=n,projectile_damage=dp['DirectHitDamage'+key]/10)

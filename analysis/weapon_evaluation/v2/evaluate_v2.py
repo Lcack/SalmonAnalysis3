@@ -15,6 +15,7 @@ from scenarios import boss_benchmark,mob_benchmark,nth_frame
 from field_adapters import adapt_modes
 
 OVERALL_CONFIG=read(HERE/'overall_config.json')
+MECHANISM_CORRECTIONS=read(HERE/'mechanism_corrections.json')
 
 PROFILES=[
     dict(id='balanced',name='均衡任务',boss_sets=1,mob_groups=2,ground_area=240,wall_area=48,distance=18),
@@ -30,6 +31,17 @@ CONFIG=dict(version='1110-model-v2-reference-definitions',fps=60,cohock_hp=400,m
             blaster_paint_discount=1.0,
             confidence='显式参数与定义高；固定模式资源排程中；涂墙等同涂地、极限射程和工作量情景低；不是原视频排名')
 CONFIG['overall_policy']=copy.deepcopy(OVERALL_CONFIG)
+CONFIG['mechanism_corrections']=copy.deepcopy(MECHANISM_CORRECTIONS)
+
+
+def expected_frozen_dimensions(wid,baseline):
+    """Keep historical scores intact, applying separately versioned exceptions."""
+    expected=copy.deepcopy(baseline['weapon'][wid]['rating']['dimensions'])
+    for correction in MECHANISM_CORRECTIONS['changes']:
+        if wid==correction['weapon_id']:
+            assert expected[correction['dimension']]==correction['before_score']
+            expected[correction['dimension']]=correction['after_score']
+    return expected
 
 
 def semantic_sha(path):
@@ -196,7 +208,7 @@ def run(write=False):
     cal=calibrate(rows)
     for r in rows:
         r['scores']=scores(r['raw'],cal)
-        assert r['scores']==publication_before['weapon'][r['id']]['rating']['dimensions'],('frozen_dimensions_changed',r['id'])
+        assert r['scores']==expected_frozen_dimensions(r['id'],publication_before),('frozen_dimensions_changed_outside_mechanism_correction',r['id'])
     regular=[not r['is_bear'] for r in rows]
     assert sum(regular)==63
     for r in rows:r['overall']=dict(original=r['original_overall'],equal_axis_baseline=round(statistics.mean(r['scores'].values()),1),scenarios=[workload(r,p) for p in PROFILES])
@@ -247,6 +259,10 @@ def run(write=False):
         if write and not r['is_bear']:
             # Bear and random objects are never assigned, restored, or rebuilt.
             rating['overall']=r['overall']['recommended'];rating['tier']=r['overall']['model_tier']
+            for correction in MECHANISM_CORRECTIONS['changes']:
+                if wid==correction['weapon_id']:
+                    axis=correction['dimension']
+                    rating['dimensions'][axis]=r['scores'][axis]
         published=(rating['overall'],rating['tier'])
         candidate=(r['overall']['recommended'],r['overall']['model_tier'])
         r['overall'].update(previous_published=previous['overall'],previous_published_tier=previous['tier'],
@@ -259,12 +275,16 @@ def run(write=False):
                          ordinary_changed=sum(not r['is_bear'] and r['overall']['changed_from_publication_baseline'] for r in rows),
                          ordinary_score_changed=sum(not r['is_bear'] and r['overall']['published']!=r['overall']['previous_published'] for r in rows),
                          ordinary_tier_changed=sum(not r['is_bear'] and r['overall']['published_tier']!=r['overall']['previous_published_tier'] for r in rows),
-                         bear_preserved=8,random_preserved=len(legacy['excluded']),dimensions_unchanged=426)
+                         bear_preserved=8,random_preserved=len(legacy['excluded']),dimensions_unchanged=425,
+                         mechanism_dimension_corrections=[dict(id=c['weapon_id'],dimension=c['dimension'],
+                                                              before=c['before_score'],after=c['after_score'])
+                                                         for c in MECHANISM_CORRECTIONS['changes']])
     changes={a:sum(r['scores'][a]!=r['previous_scores'][a] for r in rows) for a in AXES}
     result=dict(config=CONFIG,calibration=cal,overall_calibration=overall_cal,weapons=rows,sensitivity=sensitivity,
                 source_manifest=source_manifest,source_semantic_manifest=source_semantic_manifest,
                 excluded=legacy['excluded'],changes=changes,
                 overall_policy=copy.deepcopy(OVERALL_CONFIG),overall_write_summary=overall_summary,
+                mechanism_corrections=copy.deepcopy(MECHANISM_CORRECTIONS),
                 overall_written=bool(write),reference_definition_image='figures/reference_definition.png')
     (HERE/'evaluation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     (HERE/'model_config.json').write_text(json.dumps(CONFIG,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
@@ -293,6 +313,6 @@ def run(write=False):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description='复算六维和1–5任务总分；熊武器与随机图标不改写。')
-    p.add_argument('--write',action='store_true',help='写入63把普通武器的overall/tier，并保留冻结六维；8把熊武器和2个随机图标完整保留当次current对象')
+    p=argparse.ArgumentParser(description='复算六维和1–5任务总分；应用显式版本机制修正，熊武器与随机图标不改写。')
+    p.add_argument('--write',action='store_true',help='写入63把普通武器overall/tier及机制配置指定的LACT Range；其他425维、8熊和2随机完整保留当次current对象')
     run(p.parse_args().write)

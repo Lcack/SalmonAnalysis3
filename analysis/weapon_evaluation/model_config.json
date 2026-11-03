@@ -1,0 +1,21 @@
+{
+  "version": "1110-model-v1",
+  "fps": 60,
+  "cohock_hp": 400,
+  "mob_hp": [
+    40,
+    100
+  ],
+  "density": 0.04,
+  "group_cap": 8,
+  "paint_overlap": 0.55,
+  "hit_rate": 1.0,
+  "ordinary_anchor_quantiles": [
+    0.05,
+    0.95
+  ],
+  "score_min": 0.5,
+  "score_max": 5.0,
+  "higher_is_better": true,
+  "confidence": "原始显式参数高；离散击杀计算中；涂墨群攻射程机动代理低至中；未做实机校准"
+}

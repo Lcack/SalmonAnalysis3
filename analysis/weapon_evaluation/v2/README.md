@@ -51,7 +51,9 @@ python analysis/weapon_evaluation/v2/validate_v2.py
 python analysis/weapon_evaluation/v2/generate_figures_v2.py
 ```
 
-添加`--write`只更新63把普通武器的总分和等级；现有426个六维值、8把熊武器及两条随机占位记录完整保留。不带该选项只输出分析产物。`weapon_data.before_v2.json`保存六维评估前的历史武器表，`weapon_data.before_overall.json`保存采用本次总分前的发布基线；`overall_config.json`记录1–5映射、未取整平均和等级边界。上一级`evaluation.json`提供动作初始表。
+添加`--write`写入63把普通武器的总分和等级，六维变化仅限下述机制修正配置中明确记录的项目；8把熊武器及两条随机占位记录完整保留。不带该选项只输出分析产物。`weapon_data.before_v2.json`保存六维评估前的历史武器表，`weapon_data.before_overall.json`保存采用本次总分前的发布基线；`overall_config.json`记录1–5映射、未取整平均和等级边界。上一级`evaluation.json`提供动作初始表。
+
+2026年11月4日的机制核验明确LACT-450不产生滞留爆炸。该修正由`mechanism_corrections.json`独立记录：移除无效爆炸模式及满蓄爆风半径，允许写回LACT-450的Range由3.7修正为3.2；其余425个六维值、全部综合分与档位、熊武器和随机记录保持。`weapon_data.before_mechanism_20261104.json`保留修正前快照，既有历史基线不改写。
 
 ## 结果文件
 

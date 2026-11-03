@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "evaluated_weapons": 71,
+  "dimensions_written": 426,
+  "random_icons_unchanged": 2,
+  "source_files_verified": 205,
+  "attacks": 137,
+  "preserved_fields": "All fields outside rating.dimensions, including overall and tier",
+  "checks": [
+    "merge equality",
+    "source SHA256",
+    "writeback scope",
+    "finite scores",
+    "one-decimal scores",
+    "batch ammunition",
+    "roll knockback eligibility",
+    "arrow blast union",
+    "S-BLAST modes",
+    "splat 400HP arithmetic",
+    "pencil cadence",
+    "bear charger",
+    "bear melee only",
+    "brella damage cap",
+    "Explosher AOE"
+  ]
+}

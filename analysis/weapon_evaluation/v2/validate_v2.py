@@ -1,18 +1,19 @@
 import json,math,pathlib,hashlib,statistics
-from evaluate_v2 import HERE,ROOT,AXES,read,scores,semantic_sha,tier_for_score,overall_raw_score,OVERALL_CONFIG
+from evaluate_v2 import HERE,ROOT,AXES,read,scores,semantic_sha,tier_for_score,overall_raw_score,OVERALL_CONFIG,MECHANISM_CORRECTIONS,expected_frozen_dimensions
 from scenarios import sequence_time,paint_task
 from workload_sequence import run_workload
 
 def check():
     x=read(HERE/'evaluation.json');current=read(ROOT/'data/weapon_data.json');before=read(HERE/OVERALL_CONFIG['publication_baseline'])
     manual=read(HERE/OVERALL_CONFIG['historical_manual_baseline'])
+    mechanism_before=read(HERE/MECHANISM_CORRECTIONS['baseline'])
     assert len(x['weapons'])==71
     assert set(current['weapon'])==set(before['weapon'])
     ordinary_count=0;bear_count=0
     for r in x['weapons']:
         assert r['scores']==scores(r['raw'],x['calibration'])
         assert r['scores']==current['weapon'][r['id']]['rating']['dimensions']
-        assert r['scores']==before['weapon'][r['id']]['rating']['dimensions']
+        assert r['scores']==expected_frozen_dimensions(r['id'],before)
         a=json.loads(json.dumps(current['weapon'][r['id']]))
         b=json.loads(json.dumps(before['weapon'][r['id']]))
         o=r['overall'];rating=current['weapon'][r['id']]['rating']
@@ -35,7 +36,19 @@ def check():
             assert rating['overall']==o['recommended'] and rating['tier']==o['model_tier']
             assert o['applied_to_product']
             b['rating']['overall']=o['recommended'];b['rating']['tier']=o['model_tier']
-            assert a==b,('ordinary_outside_overall_tier_changed',r['id'])
+            b['rating']['dimensions']=expected_frozen_dimensions(r['id'],before)
+            assert a==b,('ordinary_outside_overall_tier_and_mechanism_changed',r['id'])
+        # Mechanism correction is a separate release from the overall update.
+        # Every complete object must match its own pre-correction snapshot,
+        # except the one explicitly listed Range value.
+        mb=json.loads(json.dumps(mechanism_before['weapon'][r['id']]))
+        assert (rating['overall'],rating['tier'])==(mb['rating']['overall'],mb['rating']['tier'])
+        for correction in MECHANISM_CORRECTIONS['changes']:
+            if r['id']==correction['weapon_id']:
+                axis=correction['dimension']
+                assert mb['rating']['dimensions'][axis]==correction['before_score']
+                mb['rating']['dimensions'][axis]=correction['after_score']
+        assert a==mb,('outside_separate_mechanism_scope_changed',r['id'])
         assert r['benchmarks']['boss']['frames']==sum(c['frames'] for c in r['benchmarks']['boss']['cases'])
         assert len(r['benchmarks']['boss']['cases'])==5
         assert r['benchmarks']['boss']['cases'][2]['phases']==[600,500]
@@ -51,9 +64,34 @@ def check():
             for plan in plans:
                 assert plan['frames']>=1
                 assert 0<=plan['remaining_ink']<=1
-    for wid in x['excluded']:assert current['weapon'][wid]==before['weapon'][wid]
+    for wid in x['excluded']:
+        assert current['weapon'][wid]==before['weapon'][wid]==mechanism_before['weapon'][wid]
     assert ordinary_count==63 and bear_count==8 and len(x['excluded'])==2
     assert x['overall_policy']==OVERALL_CONFIG
+    assert x['mechanism_corrections']==MECHANISM_CORRECTIONS
+    dimension_changes=[(wid,axis,old['rating']['dimensions'][axis],current['weapon'][wid]['rating']['dimensions'][axis])
+                       for wid,old in mechanism_before['weapon'].items() if old.get('rating',{}).get('dimensions')
+                       for axis in AXES if old['rating']['dimensions'][axis]!=current['weapon'][wid]['rating']['dimensions'][axis]]
+    assert dimension_changes==[('Stringer_Short_Coop','Range',3.7,3.2)],dimension_changes
+    lact=next(r for r in x['weapons'] if r['id']=='Stringer_Short_Coop')
+    assert [m['name'] for m in lact['modes']]==['点射','一段蓄力','满蓄力']
+    assert all(not m.get('aoe_projectiles') for m in lact['modes'])
+    lact_source=read(ROOT/lact['source'])['GameParameters']
+    from extract_common import extract
+    from field_adapters import _sweep,adapt_modes
+    assert len(extract(lact['id'],lact_source,lact['source']))==3
+    # Old bootstrap still has the phantom mode; the v2 entry point must remove
+    # it while re-extracting legal paint areas directly from source.
+    legacy=read(HERE.parent/'evaluation.json')
+    historical=next(r for r in legacy['weapons'] if r['id']==lact['id'])
+    assert len(historical['modes'])==4 and len(adapt_modes(lact['id'],lact_source,historical['modes']))==3
+    full=next(m for m in lact['modes'] if m['name']=='满蓄力')
+    assert math.isclose(full['paint_area'],3*math.pi*2.8**2,abs_tol=1e-9)
+    bullet=lact_source['spl__BulletStringerParam'];move=dict(bullet['MoveParam'],SpawnSpeed=bullet['MoveParam']['SpawnSpeedMax'])
+    physical,_=_sweep(move,bullet['CollisionParam'])
+    assert math.isclose(full['range_extreme_proxy'],physical,abs_tol=1e-9)
+    assert math.isclose(full['range_extreme_proxy'],19.14472233847323,abs_tol=1e-9)
+    assert lact['scores']['Range']==3.2 and lact['overall']['published']==4.2 and lact['overall']['published_tier']=='S'
     assert all(c['population']==63 and c['scale']==[1.0,5.0] and c['overall_version']==OVERALL_CONFIG['version'] for c in x['overall_calibration'].values())
     for path,digest in x['source_manifest'].items():assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==digest
     if 'source_semantic_manifest' in x:
@@ -80,9 +118,10 @@ def check():
     assert abs(overall_raw_score(math.sqrt(1000),anchor)-3)<1e-12
     return dict(status='passed',weapons=71,dimensions=426,changes=x['changes'],source_hashes=len(x['source_manifest']),
                 ordinary_overall_tier_applied=63,bear_objects_preserved=8,random_objects_preserved=2,
-                dimensions_unchanged=426,overall_version=OVERALL_CONFIG['version'],
+                dimensions_unchanged=425,dimension_mechanism_changes=dimension_changes,
+                mechanism_version=MECHANISM_CORRECTIONS['version'],overall_version=OVERALL_CONFIG['version'],
                 overall_write_summary=x['overall_write_summary'],
-                checks=['five_hp_sum','two_phase_no_overkill_carry','fixed_2_3_3_group','exclude_crush_ink_efficiency','same_skill_wall_equals_floor','source_hashes','shared_ink_carry','atomic_charge_refills','mode_specific_exits','cold_start_paint','product_write_scope','ordinary_only_overall_tier','bear_random_full_object_preservation','frozen_426_dimensions','unrounded_scenario_mean','one_to_five_scale','tier_boundaries_after_rounding'])
+                checks=['five_hp_sum','two_phase_no_overkill_carry','fixed_2_3_3_group','exclude_crush_ink_efficiency','same_skill_wall_equals_floor','source_hashes','shared_ink_carry','atomic_charge_refills','mode_specific_exits','cold_start_paint','product_write_scope','ordinary_only_overall_tier','bear_random_full_object_preservation','frozen_425_dimensions_with_separate_LACT_Range_correction','LACT_no_detonation_3_modes','LACT_source_paint_and_no_blast_range','all_63_overall_tiers_unchanged_from_mechanism_baseline','unrounded_scenario_mean','one_to_five_scale','tier_boundaries_after_rounding'])
 
 if __name__=='__main__':
     result=check();(HERE/'validation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8');print(json.dumps(result,ensure_ascii=False))

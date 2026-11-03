@@ -120,10 +120,38 @@
         "equals": 5.0
       }
     ],
-    "write_policy": "只更新63把普通武器的overall和tier；426个六维数值保持；8把熊武器与2个随机图标从当次current原封保留",
+    "write_policy": "总分层只更新63把普通武器的overall和tier；六维仅另允许mechanism_corrections.json明列的LACT Range修正，其余425维保持；8熊和2随机从当次current原封保留",
+    "mechanism_corrections_config": "mechanism_corrections.json",
     "historical_manual_baseline": "weapon_data.before_v2.json",
     "publication_baseline": "weapon_data.before_overall.json",
     "publication_baseline_commit": "c4ceb3968a3ef0a1e4e1c2186254f8d0cc76f3a9",
     "bear_candidate_policy": "熊武器可以列出同锚点的独立模型候选，但不写入其完整武器对象"
+  },
+  "mechanism_corrections": {
+    "version": "1110-mechanism-correction-20261104-lact-no-detonation-v1",
+    "date": "2026-11-04",
+    "baseline": "weapon_data.before_mechanism_20261104.json",
+    "historical_bootstrap_policy": "父目录evaluation.json保留历史模式；V2在adapt_modes入口重建LACT有效模式，不沿用其残留爆炸模式。",
+    "changes": [
+      {
+        "weapon_id": "Stringer_Short_Coop",
+        "name": "LACT-450",
+        "mechanism": "箭落地后不产生滞留爆炸；DetonationParam残留不是启用证据",
+        "correction": "只保留点射、一段蓄力、满蓄力三种直击模式；满蓄涂墨不加爆炸圆面积，极限射程不加爆风半径",
+        "dimension": "Range",
+        "before_score": 3.7,
+        "after_score": 3.2,
+        "source_urls": [
+          "https://www.nintendo.com/jp/character/splatoon/fashion/index.html",
+          "https://x.com/SplatoonJP/status/1567090237096214529",
+          "https://wikiwiki.jp/splatoon3mix/ブキ/LACT-450",
+          "https://wikiwiki.jp/splatoon3mix/サーモンラン/ブキ別立ち回り/ストリンガー属"
+        ],
+        "source_access": "任天堂Splatoon角色时装官方页面可直读，LACT介绍明确着弹不爆炸；另保留2022-09-06官方原推及日文打工专页交叉核验。"
+      }
+    ],
+    "write_policy": "沿原63普通overall/tier政策，另仅允许写LACT-450的Range；其余425维、63普通总分档位以及8熊和2随机完整对象与机制修正前快照保持。",
+    "calibration_policy": "重新使用全部63普通武器计算各维5/95百分位对数锚点，不把旧锚点假定为不变；验证时记录真实前后差异。",
+    "historical_baselines": "weapon_data.before_overall.json与weapon_data.before_v2.json不修改，不把3.2伪装成原始历史值。"
   }
 }
